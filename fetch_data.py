@@ -333,133 +333,148 @@ def fetch_spread_2s10s():
     }
 
 # ===== RISK SCORE =====
+# Công thức theo framework của người dùng
+import re as _re
+
+def _get_num(s):
+    """Lấy số đầu tiên từ string."""
+    nums = _re.findall(r"[-+]?\d+\.?\d*", str(s))
+    return float(nums[0]) if nums else None
+
+def _oil_score(price, trend_pct):
+    if price is None: return 0
+    if price < 70:    s = 0
+    elif price < 80:  s = 2
+    elif price < 90:  s = 4
+    elif price < 95:  s = 6
+    elif price < 105: s = 8
+    else:             s = 10
+    if (trend_pct or 0) > 5:   s += 1
+    elif (trend_pct or 0) > 2: s += 0.5
+    return min(10, max(0, s))
+
+def _hormuz_score(value_str):
+    v = str(value_str).lower()
+    if "phông tỏa" in v and "chưa" not in v:
+        if "toàn bộ" in v or "hoàn toàn" in v: return 10
+        if "một phần" in v or "cục bộ" in v:  return 7
+        return 7
+    if "căng thẳng" in v or "tension" in v: return 4
+    return 0  # chưa phông tỏa
+
+def _vix_score(vix, trend_pct):
+    if vix is None: return 0
+    if vix < 15:    s = 0
+    elif vix < 20:  s = 2
+    elif vix < 25:  s = 4
+    elif vix < 30:  s = 6
+    elif vix < 35:  s = 8
+    else:           s = 10
+    if (trend_pct or 0) > 10:  s += 1
+    elif (trend_pct or 0) > 5: s += 0.5
+    return min(10, max(0, s))
+
+def _vix_curve_score(value_str, trend_pct):
+    v = str(value_str).lower()
+    if "deep backwardation" in v or "backwardation mạnh" in v: s = 10
+    elif "backwardation" in v:                                    s = 8
+    elif "phẳng" in v or "flat" in v:                           s = 6
+    elif "contango nhẹ" in v or "light contango" in v:          s = 4
+    elif "contango" in v:                                         s = 2
+    else:                                                         s = 4
+    # Đang tiến về backwardation
+    if (trend_pct or 0) > 5 and s == 4: s += 1
+    return min(10, max(0, s))
+
+def _hyg_tlt_score(weekly_chg):
+    if weekly_chg is None or weekly_chg >= 0: return 0
+    decline = abs(weekly_chg)
+    if decline < 2:  return 0
+    if decline < 5:  return 2
+    if decline < 10: return 5
+    if decline < 15: return 8
+    return 10
+
+def _put_call_score(ratio):
+    if ratio is None:  return 0
+    if ratio < 0.7:    return 0
+    if ratio < 0.9:    return 2
+    if ratio < 1.1:    return 4
+    if ratio < 1.3:    return 7
+    return 10
+
+def _yield_score(y10, trend_pct):
+    if y10 is None: return 0
+    if y10 < 3.5:   s = 0
+    elif y10 < 4.0: s = 2
+    elif y10 < 4.3: s = 4
+    elif y10 < 4.5: s = 6
+    elif y10 < 5.0: s = 8
+    else:           s = 10
+    if (trend_pct or 0) > 5: s += 1
+    return min(10, max(0, s))
+
+def _spread_score(spread, is_expanding):
+    if spread is None: return 0
+    if spread > 0.5:   return 0 if is_expanding else 1
+    if spread > 0:     return 3
+    if spread > -0.5:  return 6
+    if spread > -1.0:  return 8
+    return 10
+
 
 def calc_risk_score(indicators):
     """
-    Tính tổng điểm rủi ro (0-100) dựa trên framework:
-    - Địa chính trị: 30%
-    - Thị trường:    50%
-    - Vĩ mô:         20%
+    Tính tổng điểm rủi ro (0-100) theo framework của người dùng.
+    - Địa chính trị (geo):    30%  = trung bình(oil, hormuz)
+    - Thị trường (market): 50%  = trung bình(vix, vix_curve, hyg_tlt, put_call)
+    - Vĩ mô (macro):       20%  = trung bình(yield_10y, spread_2s10s)
+    Tổng = (geo*0.3 + market*0.5 + macro*0.2) * 10
     """
-    # Bản đồ indicator -> giá trị thô
     vals = {ind["indicator"]: ind for ind in indicators}
 
-    def raw(name):
-        ind = vals.get(name, {})
-        v = ind.get("value", "N/A")
-        return v
+    def v(name):   return vals.get(name, {})
+    def num(name): return _get_num(v(name).get("value", ""))
+    def tr(name):  return v(name).get("trend_raw") or 0
 
-    def raw_num(name):
-        """Lấy giá trị số từ value string."""
-        try:
-            v = vals.get(name, {}).get("value", "")
-            # Xóa ký tự không phải số
-            import re
-            nums = re.findall(r"[-+]?\d+\.?\d*", str(v))
-            return float(nums[0]) if nums else None
-        except:
-            return None
+    # --- Chấm điểm từng chỉ báo ---
+    oil_s     = _oil_score(num("Dầu WTI"), tr("Dầu WTI"))
+    hormuz_s  = _hormuz_score(v("Xung đột Hormuz").get("value", ""))
+    vix_s     = _vix_score(num("VIX"), tr("VIX"))
+    curve_s   = _vix_curve_score(v("VIX futures curve").get("value", ""), tr("VIX futures curve"))
+    hyg_s     = _hyg_tlt_score(tr("HYG/TLT ratio"))
+    pc_s      = _put_call_score(num("Put/Call ratio"))
+    y10_s     = _yield_score(num("10-year yield"), tr("10-year yield"))
 
-    scores = {}
-    details = {}
+    # 2s10s spread: lấy số đầu tiên (spread bật), kiểm tra xu hướng
+    spread_raw = v("2s10s spread").get("trend_raw") or 0
+    spread_val_str = v("2s10s spread").get("value", "")
+    spread_num = _get_num(spread_val_str)  # số đầu tiên = giá trị spread
+    is_expanding = (spread_raw or 0) > 0   # spread đang mở rộng
+    sp_s = _spread_score(spread_num, is_expanding)
 
-    # --- Dầu WTI (0-10) ---
-    wti = raw_num("Dầu WTI")
-    if wti is None:      wti_s = 0
-    elif wti >= 110:     wti_s = 10
-    elif wti >= 105:     wti_s = 9
-    elif wti >= 100:     wti_s = 8
-    elif wti >= 95:      wti_s = 7
-    elif wti >= 90:      wti_s = 5
-    elif wti >= 85:      wti_s = 3
-    else:                wti_s = 0
-    # Thưởng thêm 1 điểm nếu đang tăng tuần
-    wti_trend = vals.get("Dầu WTI", {}).get("trend_raw") or 0
-    if wti_trend > 3: wti_s = min(wti_s + 1, 10)
-    scores["wti"] = wti_s
+    scores = {
+        "oil": oil_s, "hormuz": hormuz_s,
+        "vix": vix_s, "vix_curve": curve_s,
+        "hyg_tlt": hyg_s, "put_call": pc_s,
+        "yield_10y": y10_s, "spread": sp_s,
+    }
 
-    # --- Xung đột Hormuz (0-10) ---
-    hormuz_val = raw("Xung đột Hormuz")
-    hormuz_s = 10 if "phông tỏa" in str(hormuz_val).lower() and "chưa" not in str(hormuz_val).lower() else 0
-    scores["hormuz"] = hormuz_s
+    # --- Điểm nhóm (thang 0-10) ---
+    geo_score    = (oil_s + hormuz_s) / 2
+    market_score = (vix_s + curve_s + hyg_s + pc_s) / 4
+    macro_score  = (y10_s + sp_s) / 2
 
-    # --- VIX (0-10) ---
-    vix = raw_num("VIX")
-    if vix is None:     vix_s = 0
-    elif vix >= 45:     vix_s = 10
-    elif vix >= 40:     vix_s = 9
-    elif vix >= 35:     vix_s = 8
-    elif vix >= 30:     vix_s = 7
-    elif vix >= 25:     vix_s = 5
-    elif vix >= 22:     vix_s = 3
-    else:               vix_s = 0
-    vix_trend = vals.get("VIX", {}).get("trend_raw") or 0
-    if vix_trend > 10: vix_s = min(vix_s + 1, 10)
-    scores["vix"] = vix_s
+    # --- Tổng điểm có trọng số -> thang 0-100 ---
+    weighted = geo_score * 0.3 + market_score * 0.5 + macro_score * 0.2
+    total = int(round(weighted * 10))
+    total = max(0, min(100, total))
 
-    # --- VIX futures curve (0-10) ---
-    vix_curve_status = vals.get("VIX futures curve", {}).get("status", "success")
-    if vix_curve_status == "danger":   vix_curve_s = 8
-    elif vix_curve_status == "warning": vix_curve_s = 4
-    else:                               vix_curve_s = 1
-    scores["vix_curve"] = vix_curve_s
-
-    # --- HYG/TLT ratio (0-10) ---
-    hyg_trend = vals.get("HYG/TLT ratio", {}).get("trend_raw") or 0
-    if hyg_trend <= -5:   hyg_s = 10
-    elif hyg_trend <= -3: hyg_s = 6
-    elif hyg_trend <= -1: hyg_s = 3
-    else:                 hyg_s = 0
-    scores["hyg_tlt"] = hyg_s
-
-    # --- Put/Call ratio (0-10) ---
-    pc = raw_num("Put/Call ratio")
-    if pc is None:    pc_s = 3
-    elif pc >= 1.3:   pc_s = 10
-    elif pc >= 1.1:   pc_s = 8
-    elif pc >= 0.95:  pc_s = 5
-    elif pc >= 0.8:   pc_s = 3
-    else:             pc_s = 1
-    scores["put_call"] = pc_s
-
-    # --- 10-year yield (0-10) ---
-    y10 = raw_num("10-year yield")
-    if y10 is None:   y10_s = 0
-    elif y10 >= 5.0:  y10_s = 10
-    elif y10 >= 4.7:  y10_s = 8
-    elif y10 >= 4.5:  y10_s = 7
-    elif y10 >= 4.3:  y10_s = 5
-    elif y10 >= 4.0:  y10_s = 3
-    else:             y10_s = 0
-    scores["yield_10y"] = y10_s
-
-    # --- 2s10s spread (0-10) ---
-    spread_val = vals.get("2s10s spread", {}).get("value", "")
-    import re
-    sp_nums = re.findall(r"[+-]?\d+\.?\d*", str(spread_val))
-    spread = float(sp_nums[0]) if sp_nums else None
-    if spread is None:      sp_s = 0
-    elif spread <= -0.5:    sp_s = 10
-    elif spread <= -0.2:    sp_s = 7
-    elif spread <= 0:       sp_s = 4
-    elif spread <= 0.3:     sp_s = 1
-    else:                   sp_s = 0
-    scores["spread"] = sp_s
-
-    # --- Tính điểm nhóm ---
-    geo_score    = (scores["wti"] * 0.6 + scores["hormuz"] * 0.4)          # 30%
-    market_score = (scores["vix"] * 0.35 + scores["vix_curve"] * 0.25
-                   + scores["hyg_tlt"] * 0.20 + scores["put_call"] * 0.20) # 50%
-    macro_score  = (scores["yield_10y"] * 0.5 + scores["spread"] * 0.5)    # 20%
-
-    total = round(geo_score * 0.30 + market_score * 0.50 + macro_score * 0.20, 1)
-    total = max(0, min(100, total * 10))  # scale 0-10 -> 0-100
-
-    # Xác định mức
-    if total <= 30:   level, color = "BÌNH THƯỜNG",        "success"
-    elif total <= 50: level, color = "CẢNH GIÁC",          "warning"
-    elif total <= 70: level, color = "CẢNH BÁO CAO",       "danger"
-    else:             level, color = "RỦI RO HỆ THỐNG",   "critical"
+    # --- Xác định mức ---
+    if total <= 30:   level, color = "BÌNH THƯỜNG",   "success"
+    elif total <= 50: level, color = "CẢNH GIÁC",      "warning"
+    elif total <= 70: level, color = "CẢNH BÁO CAO",   "danger"
+    else:             level, color = "RỦI RO HỆ THỐNG", "critical"
 
     return {
         "score": total,
@@ -470,7 +485,7 @@ def calc_risk_score(indicators):
             "market": round(market_score * 10, 1),
             "macro":  round(macro_score * 10, 1),
         },
-        "indicator_scores": scores,
+        "indicator_scores": {k: round(s, 2) for k, s in scores.items()},
     }
 
 
