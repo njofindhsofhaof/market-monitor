@@ -1,5 +1,5 @@
 {
-  "last_updated": "01:23 Sunday, 29/03/2026 (GMT+7)",
+  "last_updated": "01:43 Sunday, 29/03/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
@@ -105,5 +105,25 @@
       "link": "https://finance.yahoo.com/quote/%5ETNX/",
       "note": "Hiệu lợi suất 10Y – 2Y: âm = đường cong đảo ngược, tín hiệu suy thoái"
     }
-  ]
+  ],
+  "risk": {
+    "score": 40.0,
+    "level": "CẢNH GIÁC",
+    "color": "warning",
+    "breakdown": {
+      "geo": 42.0,
+      "market": 44.0,
+      "macro": 25.0
+    },
+    "indicator_scores": {
+      "wti": 7,
+      "hormuz": 0,
+      "vix": 8,
+      "vix_curve": 4,
+      "hyg_tlt": 0,
+      "put_call": 3,
+      "yield_10y": 5,
+      "spread": 0
+    }
+  }
 }
