@@ -5,7 +5,8 @@ Chạy bởi GitHub Actions mỗi giờ.
 import json, datetime, os
 import yfinance as yf
 
-OUTPUT = os.path.join(os.path.dirname(__file__), "data.json")
+OUTPUT      = os.path.join(os.path.dirname(__file__), "data.json")
+PC_HISTORY  = os.path.join(os.path.dirname(__file__), "pc_history.json")
 
 # ===== HELPERS =====
 
@@ -187,6 +188,44 @@ def fetch_hyg_tlt():
         "note": "Tỷ lệ trái phiếu rủi ro cao / trái phiếu dài hạn — đo khẩu vị rủi ro"
     }
 
+def _load_pc_history():
+    """Đọc lịch sử P/C ratio từ file JSON."""
+    if os.path.exists(PC_HISTORY):
+        with open(PC_HISTORY, encoding="utf-8") as f:
+            return json.load(f)
+    return []
+
+def _save_pc_history(ratio):
+    """
+    Thêm entry mới vào lịch sử, giữ tối đa 10 entries (≈10 giờ).
+    Chỉ lưu 1 entry mỗi ngày giao dịch (so sánh theo date).
+    """
+    hist = _load_pc_history()
+    now_str = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=7))).isoformat()
+    today = now_str[:10]  # YYYY-MM-DD
+
+    # Nếu đã có entry hôm nay thì cập nhật thay vì append
+    if hist and hist[-1]["date"] == today:
+        hist[-1]["ratio"] = ratio
+    else:
+        hist.append({"date": today, "ratio": ratio})
+
+    hist = hist[-10:]  # giữ 10 ngày gần nhất
+    with open(PC_HISTORY, "w", encoding="utf-8") as f:
+        json.dump(hist, f, ensure_ascii=False, indent=2)
+    return hist
+
+def _pc_week_change(current_ratio):
+    """Tính % thay đổi P/C ratio so với 5 ngày trước."""
+    hist = _load_pc_history()
+    # Tìm entry cũ nhất có thể (≥5 ngày trước)
+    if len(hist) >= 2:
+        old = hist[0]["ratio"]  # entry cũ nhất trong lịch sử
+        chg = round((current_ratio - old) / old * 100, 2)
+        days = len(hist) - 1
+        return chg, days
+    return None, None
+
 def fetch_put_call():
     try:
         spy = yf.Ticker("SPY")
@@ -195,13 +234,27 @@ def fetch_put_call():
         c = chain.calls["volume"].sum()
         p = chain.puts["volume"].sum()
         ratio = round(float(p/c), 3) if c > 0 else None
+
+        # Lưu vào lịch sử và tính xu hướng
+        trend_str = "—"
+        trend_raw = None
+        if ratio:
+            _save_pc_history(ratio)
+            chg, days = _pc_week_change(ratio)
+            if chg is not None and days >= 3:
+                trend_str = fmt_change(chg)
+                trend_raw = chg
+            elif chg is not None:
+                trend_str = f"{chg:+.1f}% ({days}ngày)"
+                trend_raw = chg
+
         status, label = evaluate("put_call", ratio)
         return {
             "category": "",
             "indicator": "Put/Call ratio",
             "value": f"{ratio:.3f}" if ratio else "N/A",
-            "trend": "—",   # intraday, không có 1w history
-            "trend_raw": None,
+            "trend": trend_str,
+            "trend_raw": trend_raw,
             "threshold": ">1.1",
             "status": status,
             "statusLabel": label,
