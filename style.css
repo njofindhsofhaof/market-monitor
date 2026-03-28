@@ -720,6 +720,13 @@ tr.group-start td:first-child {
 
 /* ===== LEGEND INFO ITEM ===== */
 .legend-item--source strong { color: var(--color-text-muted); }
+.legend-item--contact p { color: var(--color-text-muted); max-width: none; }
+.legend-item--contact a {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+.legend-item--contact a:hover { text-decoration: underline; }
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
