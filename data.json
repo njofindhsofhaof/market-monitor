@@ -1,5 +1,5 @@
 {
-  "last_updated": "01:43 Sunday, 29/03/2026 (GMT+7)",
+  "last_updated": "01:54 Sunday, 29/03/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
@@ -107,22 +107,22 @@
     }
   ],
   "risk": {
-    "score": 40.0,
+    "score": 41,
     "level": "CẢNH GIÁC",
     "color": "warning",
     "breakdown": {
-      "geo": 42.0,
-      "market": 44.0,
-      "macro": 25.0
+      "geo": 40.0,
+      "market": 45.0,
+      "macro": 30.0
     },
     "indicator_scores": {
-      "wti": 7,
+      "oil": 8,
       "hormuz": 0,
-      "vix": 8,
-      "vix_curve": 4,
+      "vix": 9,
+      "vix_curve": 5,
       "hyg_tlt": 0,
-      "put_call": 3,
-      "yield_10y": 5,
+      "put_call": 4,
+      "yield_10y": 6,
       "spread": 0
     }
   }
