@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bảng Tổng Hợp Theo Dõi Hàng Ngày</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="page-header">
+      <div class="header-left">
+        <svg class="logo" width="32" height="32" viewBox="0 0 32 32" fill="none" aria-label="Market Monitor Logo">
+          <rect x="2" y="2" width="28" height="28" rx="6" fill="var(--color-primary)" opacity="0.12"/>
+          <polyline points="5,22 10,14 16,18 22,10 27,13" stroke="var(--color-primary)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <circle cx="22" cy="10" r="2.5" fill="var(--color-primary)"/>
+        </svg>
+        <div>
+          <h1 class="page-title">Bảng Tổng Hợp Theo Dõi Hàng Ngày</h1>
+          <p class="page-subtitle">
+            Cập nhật lần cuối: <span id="last-updated">Đang tải...</span>
+            &nbsp;·&nbsp;
+            <span class="data-source-note">Nguồn: Yahoo Finance · FRED</span>
+          </p>
+        </div>
+      </div>
+      <div class="header-right">
+        <div class="summary-pills">
+          <span class="pill pill--danger"  id="count-canh-bao">–</span>
+          <span class="pill pill--warning" id="count-canh-giac">–</span>
+          <span class="pill pill--success" id="count-binh-thuong">–</span>
+        </div>
+        <button id="refresh-btn" class="refresh-btn" title="Tải lại dữ liệu">
+          <span id="refresh-spinner" class="spinner" style="display:none"></span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/>
+            <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
+          </svg>
+          Refresh
+        </button>
+        <button class="theme-toggle" data-theme-toggle aria-label="Chuyển chế độ tối">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Error banner -->
+    <div id="error-banner" class="error-banner" style="display:none"></div>
+
+    <main>
+      <section class="table-section">
+        <div class="table-wrapper">
+          <table class="monitor-table" id="monitor-table">
+            <thead>
+              <tr>
+                <th class="col-category">Hạng mục</th>
+                <th class="col-indicator">Chỉ báo</th>
+                <th class="col-value">Giá trị hiện tại</th>
+                <th class="col-threshold">Ngưỡng cảnh báo</th>
+                <th class="col-status">Trạng thái</th>
+              </tr>
+            </thead>
+            <tbody id="table-body">
+              <!-- Skeleton rows while loading -->
+              <tr><td colspan="5" class="loading-row">
+                <div class="loading-pulse">Đang tải dữ liệu thị trường...</div>
+              </td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="legend-section">
+        <h2 class="legend-title">Chú thích trạng thái</h2>
+        <div class="legend-grid">
+          <div class="legend-item">
+            <span class="status-dot dot--danger"></span>
+            <div>
+              <strong>CẢNH BÁO</strong>
+              <p>Chỉ số đã vượt ngưỡng nguy hiểm. Cần theo dõi sát và cân nhắc điều chỉnh danh mục.</p>
+            </div>
+          </div>
+          <div class="legend-item">
+            <span class="status-dot dot--warning"></span>
+            <div>
+              <strong>CẢNH GIÁC</strong>
+              <p>Chỉ số đang tiệm cận ngưỡng cảnh báo. Cần chú ý theo dõi thêm.</p>
+            </div>
+          </div>
+          <div class="legend-item">
+            <span class="status-dot dot--success"></span>
+            <div>
+              <strong>BÌNH THƯỜNG</strong>
+              <p>Chỉ số trong vùng an toàn. Tiếp tục quan sát định kỳ.</p>
+            </div>
+          </div>
+          <div class="legend-item legend-item--source">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-top:3px;flex-shrink:0;color:var(--color-text-faint)"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <div>
+              <strong>Nguồn dữ liệu</strong>
+              <p>Yahoo Finance (WTI, VIX, HYG, TLT, TNX, SPY options) · FRED St. Louis Fed (DGS2, DGS10) · Xung đột Hormuz cập nhật thủ công.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

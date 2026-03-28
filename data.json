@@ -1,0 +1,77 @@
+{
+  "last_updated": "00:03 Sunday, 29/03/2026 (GMT+7)",
+  "indicators": [
+    {
+      "category": "Địa chính trị",
+      "indicator": "Dầu WTI",
+      "value": "$99.64/thùng",
+      "threshold": ">95 USD/thùng",
+      "status": "danger",
+      "statusLabel": "CẢNH BÁO",
+      "source": "Yahoo Finance (CL=F)"
+    },
+    {
+      "category": "",
+      "indicator": "Xung đột Hormuz",
+      "value": "Chưa phong tỏa",
+      "threshold": "Có phong tỏa",
+      "status": "success",
+      "statusLabel": "Bình thường",
+      "source": "Đánh giá thủ công"
+    },
+    {
+      "category": "Thị trường",
+      "indicator": "VIX",
+      "value": "31.05",
+      "threshold": ">30",
+      "status": "danger",
+      "statusLabel": "CẢNH BÁO",
+      "source": "Yahoo Finance (^VIX)"
+    },
+    {
+      "category": "",
+      "indicator": "VIX futures curve",
+      "value": "Contango nhẹ (VIX spot 31.1)",
+      "threshold": "Backwardation",
+      "status": "warning",
+      "statusLabel": "CẢNH GIÁC",
+      "source": "Yahoo Finance (^VIX level)"
+    },
+    {
+      "category": "",
+      "indicator": "HYG/TLT ratio",
+      "value": "0.9192 (-0.0%/tuần)",
+      "threshold": "Giảm >5%/tuần",
+      "status": "success",
+      "statusLabel": "Bình thường",
+      "source": "Yahoo Finance (HYG, TLT)"
+    },
+    {
+      "category": "",
+      "indicator": "Put/Call ratio",
+      "value": "0.917",
+      "threshold": ">1.1",
+      "status": "success",
+      "statusLabel": "Bình thường",
+      "source": "Yahoo Finance (SPY options)"
+    },
+    {
+      "category": "Vĩ mô",
+      "indicator": "10-year yield",
+      "value": "4.44%",
+      "threshold": ">4.5%",
+      "status": "warning",
+      "statusLabel": "CẢNH GIÁC",
+      "source": "Yahoo Finance (^TNX)"
+    },
+    {
+      "category": "",
+      "indicator": "2s10s spread",
+      "value": "+0.64% (3.80% vs 4.44%)",
+      "threshold": "Đảo ngược âm",
+      "status": "success",
+      "statusLabel": "Bình thường",
+      "source": "Yahoo Finance (2YY=F, ^TNX)"
+    }
+  ]
+}
