@@ -41,6 +41,86 @@ function renderAll(data) {
   renderTable(data.indicators);
   updateTimestamp(data.last_updated, data.cache_age_minutes);
   updateSummaryPills(data.indicators);
+  if (data.risk) renderRiskScore(data.risk);
+}
+
+// ===== RENDER RISK SCORE =====
+function renderRiskScore(risk) {
+  const score   = risk.score;
+  const level   = risk.level;
+  const color   = risk.color;
+  const bd      = risk.breakdown || {};
+
+  // Score number
+  const scoreEl = document.getElementById('risk-score');
+  if (scoreEl) {
+    scoreEl.textContent = score;
+    scoreEl.className = `risk-score risk-color-${color}`;
+  }
+
+  // Level badge
+  const badgeEl = document.getElementById('risk-level-badge');
+  if (badgeEl) {
+    badgeEl.textContent = level;
+    badgeEl.className = `risk-level-badge risk-badge-${color}`;
+  }
+
+  // Progress bar
+  const barEl = document.getElementById('risk-bar-fill');
+  if (barEl) {
+    requestAnimationFrame(() => {
+      barEl.style.width = score + '%';
+      barEl.className = `risk-bar-fill risk-bar-${color}`;
+    });
+  }
+
+  // Breakdown scores
+  const scoreColor = (val) => {
+    if (val >= 70) return 'var(--color-danger)';
+    if (val >= 50) return 'var(--color-warning)';
+    if (val >= 30) return 'var(--color-text)';
+    return 'var(--color-success)';
+  };
+  ['geo','market','macro'].forEach(key => {
+    const el = document.getElementById(`bd-${key}`);
+    if (el && bd[key] !== undefined) {
+      el.textContent = bd[key].toFixed(1) + '/100';
+      el.style.color = scoreColor(bd[key]);
+    }
+  });
+
+  // Highlight active row in risk table
+  document.querySelectorAll('.risk-table tbody tr').forEach((tr, i) => {
+    const ranges = [[0,30],[31,50],[51,70],[71,100]];
+    const [lo, hi] = ranges[i];
+    tr.classList.toggle('risk-row-active', score >= lo && score <= hi);
+  });
+
+  // History mini chart
+  renderRiskHistory();
+}
+
+// ===== RENDER RISK HISTORY CHART =====
+async function renderRiskHistory() {
+  try {
+    const resp = await fetch('./risk_history.json?t=' + Date.now());
+    if (!resp.ok) return;
+    const hist = await resp.json();
+    const container = document.getElementById('risk-history-chart');
+    if (!container || !hist.length) return;
+
+    const maxScore = 100;
+    container.innerHTML = hist.map(entry => {
+      const h = Math.max(4, Math.round((entry.score / maxScore) * 60));
+      const color = entry.score <= 30 ? 'success'
+                  : entry.score <= 50 ? 'warning'
+                  : entry.score <= 70 ? 'danger' : 'critical';
+      const label = `${entry.date}\n${entry.score}/100 (${entry.level})`;
+      return `<div class="rh-bar rh-bar-${color}" style="height:${h}px" title="${escapeHtml(label)}"></div>`;
+    }).join('');
+  } catch (e) {
+    // không có lịch sử, bỏ qua
+  }
 }
 
 // ===== RENDER TABLE =====

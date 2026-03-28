@@ -53,6 +53,68 @@
     <div id="error-banner" class="error-banner" style="display:none"></div>
 
     <main>
+      <!-- Risk Score Card -->
+      <section class="risk-section" id="risk-section">
+        <div class="risk-card">
+          <div class="risk-left">
+            <div class="risk-label">TỔNG ĐIỂM RỦI RO</div>
+            <div class="risk-score-row">
+              <span class="risk-score" id="risk-score">--</span>
+              <span class="risk-score-max">/100</span>
+              <span class="risk-level-badge" id="risk-level-badge">--</span>
+            </div>
+            <div class="risk-bar-wrap">
+              <div class="risk-bar-track">
+                <div class="risk-bar-fill" id="risk-bar-fill"></div>
+                <!-- Zone markers -->
+                <div class="risk-zone-marker" style="left:30%" title="Bình thường / Cảnh giác"></div>
+                <div class="risk-zone-marker" style="left:50%" title="Cảnh giác / Cảnh báo cao"></div>
+                <div class="risk-zone-marker" style="left:70%" title="Cảnh báo cao / Rủi ro hệ thống"></div>
+              </div>
+              <div class="risk-bar-labels">
+                <span>0</span><span>30</span><span>50</span><span>70</span><span>100</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="risk-breakdown" id="risk-breakdown">
+            <div class="breakdown-item">
+              <span class="breakdown-label">Địa chính trị <small>(30%)</small></span>
+              <span class="breakdown-score" id="bd-geo">--</span>
+            </div>
+            <div class="breakdown-item">
+              <span class="breakdown-label">Thị trường <small>(50%)</small></span>
+              <span class="breakdown-score" id="bd-market">--</span>
+            </div>
+            <div class="breakdown-item">
+              <span class="breakdown-label">Vĩ mô <small>(20%)</small></span>
+              <span class="breakdown-score" id="bd-macro">--</span>
+            </div>
+          </div>
+
+          <div class="risk-history-wrap">
+            <div class="risk-history-label">Lịch sử điểm (30 ngày gần nhất)</div>
+            <div class="risk-history-chart" id="risk-history-chart"></div>
+          </div>
+        </div>
+
+        <div class="risk-table-wrap">
+          <table class="risk-table">
+            <thead>
+              <tr>
+                <th>Mức điểm</th><th>Ý nghĩa</th><th>Hành động</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="rz rz-success">0–30</td><td><b>BÌNH THƯỜNG</b></td><td>Duy trì tỷ trọng, theo dõi định kỳ</td></tr>
+              <tr><td class="rz rz-warning">31–50</td><td><b>CẢNH GIÁC</b></td><td>Giảm đòn bẩy, chuẩn bị phòng vệ</td></tr>
+              <tr><td class="rz rz-danger">51–70</td><td><b>CẢNH BÁO CAO</b></td><td>Giảm tỷ trọng rủi ro, tăng tiền mặt &amp; hedge</td></tr>
+              <tr><td class="rz rz-critical">71–100</td><td><b>RỦI RO HỆ THỐNG</b></td><td>Hedge mạnh, chuyển danh mục phòng thủ toàn phần</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
       <section class="table-section">
         <div class="table-wrapper">
           <table class="monitor-table" id="monitor-table">
@@ -61,6 +123,7 @@
                 <th class="col-category">Hạng mục</th>
                 <th class="col-indicator">Chỉ báo</th>
                 <th class="col-value">Giá trị hiện tại</th>
+                <th class="col-trend">Xu hướng 1 tuần</th>
                 <th class="col-threshold">Ngưỡng cảnh báo</th>
                 <th class="col-status">Trạng thái</th>
               </tr>

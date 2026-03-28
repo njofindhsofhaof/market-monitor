@@ -5,8 +5,9 @@ Chạy bởi GitHub Actions mỗi giờ.
 import json, datetime, os
 import yfinance as yf
 
-OUTPUT      = os.path.join(os.path.dirname(__file__), "data.json")
-PC_HISTORY  = os.path.join(os.path.dirname(__file__), "pc_history.json")
+OUTPUT        = os.path.join(os.path.dirname(__file__), "data.json")
+PC_HISTORY    = os.path.join(os.path.dirname(__file__), "pc_history.json")
+RISK_HISTORY  = os.path.join(os.path.dirname(__file__), "risk_history.json")
 
 # ===== HELPERS =====
 
@@ -331,6 +332,176 @@ def fetch_spread_2s10s():
         "note": "Hiệu lợi suất 10Y – 2Y: âm = đường cong đảo ngược, tín hiệu suy thoái"
     }
 
+# ===== RISK SCORE =====
+
+def calc_risk_score(indicators):
+    """
+    Tính tổng điểm rủi ro (0-100) dựa trên framework:
+    - Địa chính trị: 30%
+    - Thị trường:    50%
+    - Vĩ mô:         20%
+    """
+    # Bản đồ indicator -> giá trị thô
+    vals = {ind["indicator"]: ind for ind in indicators}
+
+    def raw(name):
+        ind = vals.get(name, {})
+        v = ind.get("value", "N/A")
+        return v
+
+    def raw_num(name):
+        """Lấy giá trị số từ value string."""
+        try:
+            v = vals.get(name, {}).get("value", "")
+            # Xóa ký tự không phải số
+            import re
+            nums = re.findall(r"[-+]?\d+\.?\d*", str(v))
+            return float(nums[0]) if nums else None
+        except:
+            return None
+
+    scores = {}
+    details = {}
+
+    # --- Dầu WTI (0-10) ---
+    wti = raw_num("Dầu WTI")
+    if wti is None:      wti_s = 0
+    elif wti >= 110:     wti_s = 10
+    elif wti >= 105:     wti_s = 9
+    elif wti >= 100:     wti_s = 8
+    elif wti >= 95:      wti_s = 7
+    elif wti >= 90:      wti_s = 5
+    elif wti >= 85:      wti_s = 3
+    else:                wti_s = 0
+    # Thưởng thêm 1 điểm nếu đang tăng tuần
+    wti_trend = vals.get("Dầu WTI", {}).get("trend_raw") or 0
+    if wti_trend > 3: wti_s = min(wti_s + 1, 10)
+    scores["wti"] = wti_s
+
+    # --- Xung đột Hormuz (0-10) ---
+    hormuz_val = raw("Xung đột Hormuz")
+    hormuz_s = 10 if "phông tỏa" in str(hormuz_val).lower() and "chưa" not in str(hormuz_val).lower() else 0
+    scores["hormuz"] = hormuz_s
+
+    # --- VIX (0-10) ---
+    vix = raw_num("VIX")
+    if vix is None:     vix_s = 0
+    elif vix >= 45:     vix_s = 10
+    elif vix >= 40:     vix_s = 9
+    elif vix >= 35:     vix_s = 8
+    elif vix >= 30:     vix_s = 7
+    elif vix >= 25:     vix_s = 5
+    elif vix >= 22:     vix_s = 3
+    else:               vix_s = 0
+    vix_trend = vals.get("VIX", {}).get("trend_raw") or 0
+    if vix_trend > 10: vix_s = min(vix_s + 1, 10)
+    scores["vix"] = vix_s
+
+    # --- VIX futures curve (0-10) ---
+    vix_curve_status = vals.get("VIX futures curve", {}).get("status", "success")
+    if vix_curve_status == "danger":   vix_curve_s = 8
+    elif vix_curve_status == "warning": vix_curve_s = 4
+    else:                               vix_curve_s = 1
+    scores["vix_curve"] = vix_curve_s
+
+    # --- HYG/TLT ratio (0-10) ---
+    hyg_trend = vals.get("HYG/TLT ratio", {}).get("trend_raw") or 0
+    if hyg_trend <= -5:   hyg_s = 10
+    elif hyg_trend <= -3: hyg_s = 6
+    elif hyg_trend <= -1: hyg_s = 3
+    else:                 hyg_s = 0
+    scores["hyg_tlt"] = hyg_s
+
+    # --- Put/Call ratio (0-10) ---
+    pc = raw_num("Put/Call ratio")
+    if pc is None:    pc_s = 3
+    elif pc >= 1.3:   pc_s = 10
+    elif pc >= 1.1:   pc_s = 8
+    elif pc >= 0.95:  pc_s = 5
+    elif pc >= 0.8:   pc_s = 3
+    else:             pc_s = 1
+    scores["put_call"] = pc_s
+
+    # --- 10-year yield (0-10) ---
+    y10 = raw_num("10-year yield")
+    if y10 is None:   y10_s = 0
+    elif y10 >= 5.0:  y10_s = 10
+    elif y10 >= 4.7:  y10_s = 8
+    elif y10 >= 4.5:  y10_s = 7
+    elif y10 >= 4.3:  y10_s = 5
+    elif y10 >= 4.0:  y10_s = 3
+    else:             y10_s = 0
+    scores["yield_10y"] = y10_s
+
+    # --- 2s10s spread (0-10) ---
+    spread_val = vals.get("2s10s spread", {}).get("value", "")
+    import re
+    sp_nums = re.findall(r"[+-]?\d+\.?\d*", str(spread_val))
+    spread = float(sp_nums[0]) if sp_nums else None
+    if spread is None:      sp_s = 0
+    elif spread <= -0.5:    sp_s = 10
+    elif spread <= -0.2:    sp_s = 7
+    elif spread <= 0:       sp_s = 4
+    elif spread <= 0.3:     sp_s = 1
+    else:                   sp_s = 0
+    scores["spread"] = sp_s
+
+    # --- Tính điểm nhóm ---
+    geo_score    = (scores["wti"] * 0.6 + scores["hormuz"] * 0.4)          # 30%
+    market_score = (scores["vix"] * 0.35 + scores["vix_curve"] * 0.25
+                   + scores["hyg_tlt"] * 0.20 + scores["put_call"] * 0.20) # 50%
+    macro_score  = (scores["yield_10y"] * 0.5 + scores["spread"] * 0.5)    # 20%
+
+    total = round(geo_score * 0.30 + market_score * 0.50 + macro_score * 0.20, 1)
+    total = max(0, min(100, total * 10))  # scale 0-10 -> 0-100
+
+    # Xác định mức
+    if total <= 30:   level, color = "BÌNH THƯỜNG",        "success"
+    elif total <= 50: level, color = "CẢNH GIÁC",          "warning"
+    elif total <= 70: level, color = "CẢNH BÁO CAO",       "danger"
+    else:             level, color = "RỦI RO HỆ THỐNG",   "critical"
+
+    return {
+        "score": total,
+        "level": level,
+        "color": color,
+        "breakdown": {
+            "geo":    round(geo_score * 10, 1),
+            "market": round(market_score * 10, 1),
+            "macro":  round(macro_score * 10, 1),
+        },
+        "indicator_scores": scores,
+    }
+
+
+def update_risk_history(risk):
+    """Lưu điểm rủi ro vào risk_history.json (giữ 30 ngày)."""
+    hist = []
+    if os.path.exists(RISK_HISTORY):
+        with open(RISK_HISTORY, encoding="utf-8") as f:
+            hist = json.load(f)
+
+    now = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=7)))
+    today = now.strftime("%Y-%m-%d")
+    entry = {
+        "date": today,
+        "time": now.strftime("%H:%M"),
+        "score": risk["score"],
+        "level": risk["level"],
+    }
+
+    # Cập nhật entry hôm nay nếu đã có
+    if hist and hist[-1]["date"] == today:
+        hist[-1] = entry
+    else:
+        hist.append(entry)
+
+    hist = hist[-30:]  # giữ 30 ngày gần nhất
+    with open(RISK_HISTORY, "w", encoding="utf-8") as f:
+        json.dump(hist, f, ensure_ascii=False, indent=2)
+    return hist
+
+
 # ===== MAIN =====
 
 def main():
@@ -355,11 +526,17 @@ def main():
         "indicators": indicators
     }
 
+    # Tính risk score và lưu lịch sử
+    risk = calc_risk_score(indicators)
+    update_risk_history(risk)
+    result["risk"] = risk
+
     with open(OUTPUT, "w", encoding="utf-8") as f:
         json.dump(result, f, ensure_ascii=False, indent=2)
 
     print(f"Saved → {OUTPUT}")
     print(f"last_updated: {result['last_updated']}")
+    print(f"Risk score: {risk['score']}/100 ({risk['level']})")
     for ind in indicators:
         print(f"  [{ind['status']:7}] {ind['indicator']:<22} = {ind['value']:<35} trend: {ind['trend']}")
 
