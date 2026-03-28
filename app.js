@@ -1,7 +1,7 @@
 // ===== CONFIG =====
-// Trang tĩnh: đọc từ data.json được cron job cập nhật mỗi giờ
-const API_URL = "./data.json";
-const REFRESH_URL = null; // không có server backend
+// Vercel: đọc data.json tĩnh (GitHub Actions cập nhật mỗi giờ)
+const API_URL     = "./data.json";
+const REFRESH_URL = "./data.json"; // không có backend, refresh chỉ đọc lại file
 
 // ===== STATUS MAP =====
 const STATUS_MAP = {
@@ -20,8 +20,7 @@ async function fetchData(forceRefresh = false) {
   setLoadingState(true);
 
   try {
-    // Thêm cache-buster để luôn lấy phiên bản mới nhất của data.json
-    const url = API_URL + "?t=" + Date.now();
+    const url = forceRefresh ? REFRESH_URL : API_URL;
     const resp = await fetch(url);
     if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
     const json = await resp.json();
@@ -59,9 +58,22 @@ function renderTable(indicators) {
          </td>`
       : `<td class="td-category" aria-hidden="true"></td>`;
 
+    // Source tag with link
     const sourceTag = row.source
-      ? `<span class="source-tag">${escapeHtml(row.source)}</span>`
+      ? (row.link
+          ? `<a href="${escapeHtml(row.link)}" target="_blank" rel="noopener" class="source-link">${escapeHtml(row.source)}</a>`
+          : `<span class="source-tag">${escapeHtml(row.source)}</span>`)
       : "";
+
+    // Trend cell
+    const trend = row.trend || "—";
+    const trendRaw = row.trend_raw;
+    let trendClass = "trend-na";
+    if (trend === "—" || trend === "N/A") {
+      trendClass = "trend-na";
+    } else if (trendRaw !== null && trendRaw !== undefined) {
+      trendClass = trendRaw > 0.05 ? "trend-up" : trendRaw < -0.05 ? "trend-down" : "trend-flat";
+    }
 
     html += `
       <tr class="${isGroupStart ? "group-start" : ""}">
@@ -71,6 +83,7 @@ function renderTable(indicators) {
           ${sourceTag}
         </td>
         <td class="td-value">${escapeHtml(row.value)}</td>
+        <td class="td-trend"><span class="${trendClass}">${escapeHtml(trend)}</span></td>
         <td class="td-threshold">${escapeHtml(row.threshold)}</td>
         <td class="td-status">
           <span class="status-badge ${sm.cls}">

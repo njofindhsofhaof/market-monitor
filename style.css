@@ -229,11 +229,12 @@ button { cursor: pointer; background: none; border: none; font: inherit; color: 
   white-space: nowrap;
 }
 
-.col-category   { width: 14%; }
-.col-indicator  { width: 20%; }
-.col-value      { width: 24%; }
-.col-threshold  { width: 22%; }
-.col-status     { width: 20%; text-align: center; }
+.col-category   { width: 12%; }
+.col-indicator  { width: 18%; }
+.col-value      { width: 20%; }
+.col-trend      { width: 13%; text-align: center; }
+.col-threshold  { width: 20%; }
+.col-status     { width: 17%; text-align: center; }
 
 /* ===== TABLE ROWS ===== */
 .monitor-table tbody tr {
@@ -405,6 +406,32 @@ tr.group-start td:first-child {
   line-height: 1.5;
 }
 
+/* ===== TREND CELL ===== */
+.td-trend {
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.trend-up   { color: var(--color-danger); }
+.trend-down { color: var(--color-success); }
+.trend-flat { color: var(--color-text-muted); }
+.trend-na   { color: var(--color-text-faint); }
+
+/* ===== SOURCE LINK ===== */
+.source-link {
+  font-size: 10px;
+  color: var(--color-primary);
+  text-decoration: none;
+  font-family: var(--font-mono);
+  margin-top: 2px;
+  display: inline-block;
+  opacity: 0.8;
+}
+.source-link:hover { opacity: 1; text-decoration: underline; }
+
 /* ===== REFRESH BUTTON ===== */
 .refresh-btn {
   display: inline-flex;
@@ -491,11 +518,12 @@ tr.group-start td:first-child {
   .monitor-table thead th,
   .monitor-table tbody td { padding: var(--space-3) var(--space-4); }
 
-  .col-category   { min-width: 100px; }
-  .col-indicator  { min-width: 140px; }
-  .col-value      { min-width: 160px; }
-  .col-threshold  { min-width: 150px; }
-  .col-status     { min-width: 130px; }
+  .col-category   { min-width: 90px; }
+  .col-indicator  { min-width: 130px; }
+  .col-value      { min-width: 140px; }
+  .col-trend      { min-width: 100px; }
+  .col-threshold  { min-width: 140px; }
+  .col-status     { min-width: 120px; }
 
   .legend-section { padding: var(--space-5); }
   .legend-grid { grid-template-columns: 1fr; }
