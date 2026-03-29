@@ -328,104 +328,141 @@ def _get_historical_max_short():
 
 def fetch_cot():
     """
-    COT Report — Dealer/Intermediary net positioning trên S&P 500 Consolidated futures.
-    Nguồn: CFTC static TXT file (Traders in Financial Futures, Futures-Only).
-    URL: https://www.cftc.gov/dea/newcot/FinFutWk.txt
-    File này không bị block từ GitHub Actions (khác với Socrata API).
+    COT Report — Commercial net positioning trên S&P 500 E-mini futures.
 
-    TFF format (no header row), columns:
-    0:  Market name
-    1:  Report_Date_as_YYMMDD
-    2:  Report_Date_as_YYYY-MM-DD
-    7:  Open_Interest_All
-    8:  Dealer_Positions_Long_All
-    9:  Dealer_Positions_Short_All
-    12: Asset_Mgr_Positions_Long_All
-    13: Asset_Mgr_Positions_Short_All
+    Nguồn 1 (ưu tiên): Nasdaq Data Link API (CFTC/ES_FO_L_ALL)
+      - API key từ env var NASDAQ_API_KEY (set trong GitHub Actions Secret)
+      - Dataset: Legacy Futures-Only, S&P 500 E-mini
+      - Cột: Commercial Long, Commercial Short
 
-    Dùng "Dealer/Intermediary" làm proxy cho Commercial (tương đương trong TFF report).
-    shortRatio = |dealer_net| / historicalMaxShort (rolling max từ lịch sử).
+    Nguồn 2 (fallback): CFTC static TXT file FinFutWk.txt
+      - Traders in Financial Futures, Dealers long/short
+      - Không cần API key, không bị block
+
+    shortRatio = |commercial_net| / historicalMaxShort (rolling max 104 tuần)
     """
+    import csv, io
+
+    NASDAQ_KEY = os.environ.get("NASDAQ_API_KEY", "")
+
+    # ── Nguồn 1: Nasdaq Data Link ──────────────────────────────────
+    if NASDAQ_KEY:
+        try:
+            url = (f"https://data.nasdaq.com/api/v3/datasets/CFTC/ES_FO_L_ALL/data.json"
+                   f"?rows=2&api_key={NASDAQ_KEY}")
+            resp = requests.get(url, timeout=20,
+                                headers={"User-Agent": "python-requests/2.31.0"})
+            resp.raise_for_status()
+            data = resp.json()
+
+            rows   = data["dataset_data"]["data"]      # [[date, col1, col2, ...], ...]
+            cols   = data["dataset_data"]["column_names"]  # ['Date', 'Open Interest', ...]
+
+            # Tìm index cột Commercial Long / Short
+            ci = {c.lower(): i for i, c in enumerate(cols)}
+            comm_long_i  = next((ci[k] for k in ci if "commercial" in k and "long"  in k), None)
+            comm_short_i = next((ci[k] for k in ci if "commercial" in k and "short" in k), None)
+
+            if comm_long_i is None or comm_short_i is None:
+                raise ValueError(f"Không tìm thấy cột Commercial. Cols: {cols}")
+
+            row0        = rows[0]
+            report_date = row0[0]
+            comm_long   = int(row0[comm_long_i]  or 0)
+            comm_short  = int(row0[comm_short_i] or 0)
+            net         = comm_long - comm_short
+            net_k       = round(net / 1000, 1)
+            short_k     = round(comm_short / 1000, 1)
+
+            # WoW từ row[1]
+            trend_str, trend_raw = "—", None
+            if len(rows) >= 2:
+                prev_net = int(rows[1][comm_long_i] or 0) - int(rows[1][comm_short_i] or 0)
+                delta_k  = round((net - prev_net) / 1000, 1)
+                arrow    = "↑" if delta_k > 0 else ("↓" if delta_k < 0 else "→")
+                trend_str = f"{delta_k:+.1f}K {arrow} (WoW)"
+                trend_raw = delta_k
+
+            source_label = "Nasdaq Data Link (CFTC/ES_FO_L_ALL)"
+            return _build_cot_result(net_k, short_k, report_date,
+                                     trend_str, trend_raw, source_label)
+        except Exception as e1:
+            pass  # fallback về FinFutWk.txt
+
+    # ── Nguồn 2: CFTC FinFutWk.txt (fallback) ─────────────────────
     try:
         url = "https://www.cftc.gov/dea/newcot/FinFutWk.txt"
         resp = requests.get(url, timeout=25,
-                            headers={"User-Agent": "Mozilla/5.0",
+                            headers={"User-Agent": "python-requests/2.31.0",
                                      "Accept": "text/plain,*/*"})
         resp.raise_for_status()
 
-        # Parse CSV — tìm dòng S&P 500 Consolidated
-        import csv, io
         reader = csv.reader(io.StringIO(resp.text))
-        rows = [r for r in reader if r and "S&P 500 Consolidated" in r[0]]
-
+        rows   = [r for r in reader if r and "S&P 500 Consolidated" in r[0]]
         if not rows:
-            # Fallback: tìm bất kỳ dòng S&P 500 nào
             reader2 = csv.reader(io.StringIO(resp.text))
-            rows = [r for r in reader2 if r and "S&P 500" in r[0] and "E-MINI" not in r[0].upper()]
-
+            rows    = [r for r in reader2 if r and "S&P 500" in r[0]
+                       and "E-MINI" not in r[0].upper() and len(r) > 13]
         if not rows:
-            raise ValueError("Không tìm thấy dòng S&P 500 trong FinFutWk.txt")
+            raise ValueError("Không tìm thấy S&P 500 trong FinFutWk.txt")
 
-        row = rows[0]
-        report_date = row[2].strip() if len(row) > 2 else "N/A"
+        row         = rows[0]
+        report_date = row[2].strip()
+        dealer_long  = int(row[8].strip().replace(",", ""))
+        dealer_short = int(row[9].strip().replace(",", ""))
+        net_k        = round((dealer_long - dealer_short) / 1000, 1)
+        short_k      = round(dealer_short / 1000, 1)
 
-        # Dealer long/short (col 8, 9)
-        dealer_long  = int(row[8].strip().replace(",",""))  if len(row) > 8  else 0
-        dealer_short = int(row[9].strip().replace(",",""))  if len(row) > 9  else 0
-        net   = dealer_long - dealer_short
-        net_k = round(net / 1000, 1)
-        short_k = round(dealer_short / 1000, 1)
-
-        # Xu hướng WoW từ history
-        _save_cot_history(net_k, short_k)
+        # WoW từ cot_history
         hist = _load_cot_history()
         trend_str, trend_raw = "—", None
         if len(hist) >= 2:
-            prev_net = hist[-2].get("net", net_k)
-            delta_k  = round(net_k - prev_net, 1)
-            arrow    = "↑" if delta_k > 0 else ("↓" if delta_k < 0 else "→")
+            prev_net  = hist[-2].get("net", net_k)
+            delta_k   = round(net_k - prev_net, 1)
+            arrow     = "↑" if delta_k > 0 else ("↓" if delta_k < 0 else "→")
             trend_str = f"{delta_k:+.1f}K {arrow} (WoW)"
             trend_raw = delta_k
 
-        hist_max = _get_historical_max_short()
+        source_label = "CFTC FinFutWk.txt (Dealers proxy)"
+        return _build_cot_result(net_k, short_k, report_date,
+                                 trend_str, trend_raw, source_label)
 
-        # shortRatio
-        if net_k < 0 and hist_max > 0:
-            short_ratio = round(abs(net_k) / hist_max, 3)
-        else:
-            short_ratio = 0.0
-
-        status, label = evaluate("cot_net", short_ratio)
-        ratio_pct = f"{short_ratio*100:.0f}% của đỉnh lịch sử ({hist_max:.0f}K)"
-        value_str = f"{net_k:+.1f}K contracts — {ratio_pct} ({report_date})"
-
-        return {
-            "category": "Dòng tiền tổ chức",
-            "indicator": "COT — Commercial Net",
-            "value": value_str,
-            "trend": trend_str,
-            "trend_raw": trend_raw,
-            "threshold": "Short > 70% đỉnh lịch sử",
-            "status": status,
-            "statusLabel": label,
-            "source": "CFTC (Traders in Financial Futures, FinFutWk.txt)",
-            "link": "https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm",
-            "note": "Dealer/Intermediary net = long − short S&P 500. shortRatio = |net| / rolling-max-short (104 tuần).",
-            "_meta": {"net_k": net_k, "short_ratio": short_ratio}
-        }
-
-    except Exception as e:
+    except Exception as e2:
         return {
             "category": "Dòng tiền tổ chức",
             "indicator": "COT — Commercial Net",
             "value": "N/A", "trend": "—", "trend_raw": None,
             "threshold": "Short > 70% đỉnh lịch sử",
             "status": "success", "statusLabel": "Bình thường",
-            "source": "CFTC (Traders in Financial Futures)",
+            "source": "CFTC / Nasdaq Data Link",
             "link": "https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm",
-            "note": f"Không lấy được dữ liệu COT: {e}",
+            "note": f"Cả 2 nguồn đều lỗi: {e2}",
             "_meta": {"net_k": None, "short_ratio": None}
         }
+
+
+def _build_cot_result(net_k, short_k, report_date, trend_str, trend_raw, source_label):
+    """Helper: lưu history, tính shortRatio, trả về dict chuẩn."""
+    _save_cot_history(net_k, short_k)
+    hist_max    = _get_historical_max_short()
+    short_ratio = round(abs(net_k) / hist_max, 3) if (net_k < 0 and hist_max > 0) else 0.0
+    status, label = evaluate("cot_net", short_ratio)
+    ratio_pct   = f"{short_ratio*100:.0f}% của đỉnh lịch sử ({hist_max:.0f}K)"
+    value_str   = f"{net_k:+.1f}K contracts — {ratio_pct} ({report_date})"
+    return {
+        "category":    "Dòng tiền tổ chức",
+        "indicator":   "COT — Commercial Net",
+        "value":       value_str,
+        "trend":       trend_str,
+        "trend_raw":   trend_raw,
+        "threshold":   "Short > 70% đỉnh lịch sử",
+        "status":      status,
+        "statusLabel": label,
+        "source":      source_label,
+        "link":        "https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm",
+        "note":        "Commercial net = long − short. shortRatio = |net| / rolling-max-short (104 tuần).",
+        "_meta":       {"net_k": net_k, "short_ratio": short_ratio}
+    }
 
 
 def _load_etf_history():
