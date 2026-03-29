@@ -2,7 +2,9 @@ name: Cập nhật dữ liệu thị trường
 
 on:
   schedule:
+    # Chạy mỗi giờ (UTC) — tương đương mỗi giờ giờ Việt Nam
     - cron: '0 * * * *'
+  # Cho phép chạy thủ công từ tab Actions trên GitHub
   workflow_dispatch:
 
 jobs:
@@ -34,5 +36,6 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data.json pc_history.json risk_history.json cot_history.json aaii_history.json naaim_history.json hormuz_cache.json etf_history.json
+          # Chỉ commit nếu có thay đổi thực sự
           git diff --staged --quiet || git commit -m "chore: cập nhật dữ liệu thị trường $(date +'%Y-%m-%d %H:%M') UTC"
           git push
