@@ -1,5 +1,5 @@
 {
-  "last_updated": "12:55 Sunday, 29/03/2026 (GMT+7)",
+  "last_updated": "13:24 Sunday, 29/03/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
@@ -25,64 +25,64 @@
       "statusLabel": "CẢNH GIÁC",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 05:55 UTC: 48 tin <24h / 72 tổng (reuters.com: lỗi, bbci.co.uk: 23/47 tin mới, aljazeera.com: 25/25 tin mới) | 1 tin đề cập Hormuz/Strait trong 24h | Mới nhất: \"Pakistan secures iran deal to send 20 ships through strait of hormuz...\" (21:56 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 06:24 UTC: 46 tin <24h / 72 tổng (reuters.com: lỗi, bbci.co.uk: 21/47 tin mới, aljazeera.com: 25/25 tin mới) | 1 tin đề cập Hormuz/Strait trong 24h | Mới nhất: \"Pakistan secures iran deal to send 20 ships through strait of hormuz...\" (21:56 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "tension",
         "hormuz_count": 1,
-        "fresh_total": 48,
-        "scanned_at": "2026-03-29T05:55:08Z"
+        "fresh_total": 46,
+        "scanned_at": "2026-03-29T06:24:32Z"
       }
     },
     {
       "category": "Dòng tiền tổ chức",
       "indicator": "COT — Commercial Net",
-      "value": "+0.0K contracts — 0% của đỉnh lịch sử (350K) (2026-03-24)",
-      "trend": "+0.0K → (WoW)",
-      "trend_raw": 0.0,
+      "value": "-671.3K contracts — 192% của đỉnh lịch sử (350K) (2026-03-24)",
+      "trend": "—",
+      "trend_raw": null,
       "threshold": "Short > 70% đỉnh lịch sử",
-      "status": "success",
-      "statusLabel": "Bình thường",
-      "source": "CFTC (Legacy COT, Financial Futures)",
-      "link": "https://www.cftc.gov/dea/options/financial_lof.htm",
-      "note": "Commercial net = long − short S&P 500 E-mini. shortRatio = |net| / rolling-max-short (104 tuần). Cao = tổ chức hedge mạnh.",
+      "status": "danger",
+      "statusLabel": "CẢNH BÁO",
+      "source": "CFTC FinFutWk.txt (Dealers proxy)",
+      "link": "https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm",
+      "note": "Commercial net = long − short. shortRatio = |net| / rolling-max-short (104 tuần).",
       "_meta": {
-        "net_k": 0.0,
-        "short_ratio": 0.0
+        "net_k": -671.3,
+        "short_ratio": 1.918
       }
     },
     {
       "category": "",
       "indicator": "ETF Flows (SPY+QQQ)",
-      "value": "-429.59B USD/5d (SPY: -213.39B, QQQ: -216.20B)",
-      "trend": "-429.59B ↓",
-      "trend_raw": -429.59,
+      "value": "Đang tích lũy (~5 ngày để có baseline)",
+      "trend": "N/A",
+      "trend_raw": null,
       "threshold": "Outflow > −2B USD/7d",
-      "status": "danger",
-      "statusLabel": "CẢNH BÁO",
-      "source": "Yahoo Finance (volume proxy)",
+      "status": "success",
+      "statusLabel": "Bình thường",
+      "source": "Yahoo Finance (shares outstanding)",
       "link": "https://etf.com/etfanalytics/etf-fund-flows-tool",
-      "note": "Net flow proxy: Σ(volume × price × sign(close−open)) 5 phiên. Outflow liên tục >$5B/tuần = cảnh báo.",
+      "note": "Net flow = Δshares_outstanding × price. Cần ~5 ngày tích lũy snapshot để có số ổn định.",
       "_meta": {
-        "flow_b": -429.59
+        "flow_b": null
       }
     },
     {
       "category": "",
       "indicator": "Sentiment (NAAIM vs AAII)",
-      "value": "N/A",
-      "trend": "—",
-      "trend_raw": null,
+      "value": "Retail 50% / Inst 68% → diff -18pp",
+      "trend": "-18pp ↓",
+      "trend_raw": -18.5,
       "threshold": "Retail − Inst > +25pp",
       "status": "success",
       "statusLabel": "Bình thường",
       "source": "NAAIM Exposure Index · AAII Sentiment Survey",
       "link": "https://www.naaim.org/resources/naaim-exposure-index/",
-      "note": "Không lấy được dữ liệu: NAAIM: Không parse được NAAIM exposure từ HTML/CSV; AAII: Không lấy được AAII data từ tất cả nguồn",
+      "note": "Diff = retailBull% − instBull%. Dương cao = retail quá lạc quan vs tổ chức → contrarian bearish signal.",
       "_meta": {
-        "naaim": null,
-        "inst_bull": null,
-        "aaii_bull": null,
-        "aaii_bear": null
+        "naaim": 68.52,
+        "inst_bull": 68.5,
+        "aaii_bull": 50.0,
+        "aaii_bear": 25.0
       }
     },
     {
@@ -181,26 +181,26 @@
     }
   ],
   "risk": {
-    "score": 47,
-    "base_score": 43,
-    "multiplier": 1.1,
-    "level": "CẢNH GIÁC",
-    "color": "warning",
+    "score": 56,
+    "base_score": 45,
+    "multiplier": 1.25,
+    "level": "CẢNH BÁO CAO",
+    "color": "danger",
     "active_leads": [
-      "ETF outflow > $5B/7d"
+      "COT short ròng > 70% đỉnh lịch sử"
     ],
     "breakdown": {
       "geo": 64.0,
-      "inst": 36.0,
+      "inst": 46.0,
       "market": 48.0,
       "macro": 24.0
     },
     "indicator_scores": {
       "oil": 8,
       "hormuz": 4,
-      "cot": 0,
-      "etf_flow": 10,
-      "sentiment": 2,
+      "cot": 10,
+      "etf_flow": 2,
+      "sentiment": 0,
       "vix_curve": 5,
       "vix": 9,
       "put_call": 4,
