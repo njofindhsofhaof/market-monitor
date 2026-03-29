@@ -107,7 +107,11 @@ function renderRiskScore(risk) {
   const leadsList = document.getElementById('risk-leads-list');
   if (leadsWrap && leadsList) {
     if (leads.length > 0) {
-      leadsList.innerHTML = leads.map(l => `<li>${escapeHtml(l)}</li>`).join('');
+      const L = I18N[currentLang] || I18N['vi'];
+      leadsList.innerHTML = leads.map(l => {
+        const translated = (currentLang === 'en' && L.leads?.[l]) ? L.leads[l] : l;
+        return `<li>${escapeHtml(translated)}</li>`;
+      }).join('');
       leadsWrap.style.display = 'block';
     } else {
       leadsWrap.style.display = 'none';
