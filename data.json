@@ -1,5 +1,5 @@
 {
-  "last_updated": "12:23 Sunday, 29/03/2026 (GMT+7)",
+  "last_updated": "12:31 Sunday, 29/03/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
@@ -25,12 +25,12 @@
       "statusLabel": "CẢNH GIÁC",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 05:23 UTC: 48 tin <24h / 72 tổng (reuters.com: lỗi, bbci.co.uk: 23/47 tin mới, aljazeera.com: 25/25 tin mới) | 1 tin đề cập Hormuz/Strait trong 24h | Mới nhất: \"Pakistan secures iran deal to send 20 ships through strait of hormuz...\" (21:56 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 05:31 UTC: 48 tin <24h / 72 tổng (reuters.com: lỗi, bbci.co.uk: 23/47 tin mới, aljazeera.com: 25/25 tin mới) | 1 tin đề cập Hormuz/Strait trong 24h | Mới nhất: \"Pakistan secures iran deal to send 20 ships through strait of hormuz...\" (21:56 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "tension",
         "hormuz_count": 1,
         "fresh_total": 48,
-        "scanned_at": "2026-03-29T05:23:55Z"
+        "scanned_at": "2026-03-29T05:31:52Z"
       }
     },
     {
@@ -53,17 +53,17 @@
     {
       "category": "",
       "indicator": "ETF Flows (SPY+QQQ)",
-      "value": "Đang theo dõi",
-      "trend": "N/A",
-      "trend_raw": null,
+      "value": "-429.59B USD/5d (SPY: -213.39B, QQQ: -216.20B)",
+      "trend": "-429.59B ↓",
+      "trend_raw": -429.59,
       "threshold": "Outflow > −2B USD/7d",
-      "status": "success",
-      "statusLabel": "Bình thường",
-      "source": "Yahoo Finance (shares proxy)",
+      "status": "danger",
+      "statusLabel": "CẢNH BÁO",
+      "source": "Yahoo Finance (volume proxy)",
       "link": "https://etf.com/etfanalytics/etf-fund-flows-tool",
-      "note": "Ước tính net flow SPY+QQQ từ Δshares_outstanding × NAV. Outflow liên tục >$5B/tuần = cảnh báo.",
+      "note": "Net flow proxy: Σ(volume × price × sign(close−open)) 5 phiên. Outflow liên tục >$5B/tuần = cảnh báo.",
       "_meta": {
-        "flow_b": null
+        "flow_b": -429.59
       }
     },
     {
@@ -77,7 +77,7 @@
       "statusLabel": "Bình thường",
       "source": "NAAIM Exposure Index · AAII Sentiment Survey",
       "link": "https://www.naaim.org/resources/naaim-exposure-index/",
-      "note": "Không lấy được dữ liệu: NAAIM: Không parse được NAAIM exposure từ HTML; AAII: 403 Client Error: Forbidden for url: https://www.aaii.com/files/surveys/sentiment.xls",
+      "note": "Không lấy được dữ liệu: NAAIM: Không parse được NAAIM exposure từ HTML/CSV; AAII: Không lấy được AAII data từ tất cả nguồn",
       "_meta": {
         "naaim": null,
         "inst_bull": null,
@@ -181,15 +181,17 @@
     }
   ],
   "risk": {
-    "score": 37,
-    "base_score": 37,
-    "multiplier": 1.0,
+    "score": 47,
+    "base_score": 43,
+    "multiplier": 1.1,
     "level": "CẢNH GIÁC",
     "color": "warning",
-    "active_leads": [],
+    "active_leads": [
+      "ETF outflow > $5B/7d"
+    ],
     "breakdown": {
       "geo": 64.0,
-      "inst": 12.0,
+      "inst": 36.0,
       "market": 48.0,
       "macro": 24.0
     },
@@ -197,7 +199,7 @@
       "oil": 8,
       "hormuz": 4,
       "cot": 0,
-      "etf_flow": 2,
+      "etf_flow": 10,
       "sentiment": 2,
       "vix_curve": 5,
       "vix": 9,
