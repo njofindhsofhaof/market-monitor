@@ -38,6 +38,7 @@ async function fetchData(forceRefresh = false) {
 // ===== RENDER ALL =====
 function renderAll(data) {
   if (!data || !data.indicators) return;
+  window._lastData = data; // cache for language switch re-render
   renderTable(data.indicators);
   updateTimestamp(data.last_updated, data.cache_age_minutes);
   updateSummaryPills(data.indicators);
@@ -58,10 +59,11 @@ function renderRiskScore(risk) {
     scoreEl.className = `risk-score risk-color-${color}`;
   }
 
-  // Level badge
+  // Level badge (translated)
   const badgeEl = document.getElementById('risk-level-badge');
   if (badgeEl) {
-    badgeEl.textContent = level;
+    const L = I18N[currentLang] || I18N['vi'];
+    badgeEl.textContent = L.risk_levels?.[level] || level;
     badgeEl.className = `risk-level-badge risk-badge-${color}`;
   }
 
@@ -127,14 +129,20 @@ async function renderRiskHistory() {
 function renderTable(indicators) {
   const tbody = document.getElementById("table-body");
   let html = "";
+  const L = I18N[currentLang] || I18N["vi"];
 
   indicators.forEach((row, idx) => {
     const sm = STATUS_MAP[row.status] || STATUS_MAP.success;
     const isGroupStart = row.category !== "" && idx !== 0;
 
+    // Translate category and indicator name
+    const catName = L.categories?.[row.category] || row.category;
+    const indName = L.indicators?.[row.indicator] || row.indicator;
+    const statusLabel = L.status?.[row.statusLabel] || row.statusLabel;
+
     const categoryCell = row.category
       ? `<td class="td-category">
-           <span class="category-badge">${escapeHtml(row.category)}</span>
+           <span class="category-badge">${escapeHtml(catName)}</span>
          </td>`
       : `<td class="td-category" aria-hidden="true"></td>`;
 
@@ -159,7 +167,7 @@ function renderTable(indicators) {
       <tr class="${isGroupStart ? "group-start" : ""}">
         ${categoryCell}
         <td class="td-indicator">
-          <span class="indicator-name">${escapeHtml(row.indicator)}</span>
+          <span class="indicator-name">${escapeHtml(indName)}</span>
           ${sourceTag}
         </td>
         <td class="td-value">${escapeHtml(row.value)}</td>
@@ -168,7 +176,7 @@ function renderTable(indicators) {
         <td class="td-status">
           <span class="status-badge ${sm.cls}">
             <span class="status-dot ${sm.dot}" aria-hidden="true"></span>
-            ${escapeHtml(row.statusLabel)}
+            ${escapeHtml(statusLabel)}
           </span>
         </td>
       </tr>
@@ -195,9 +203,9 @@ function renderTable(indicators) {
 function updateSummaryPills(indicators) {
   const counts = { danger: 0, warning: 0, success: 0 };
   indicators.forEach(r => counts[r.status]++);
-  document.getElementById("count-canh-bao").textContent     = `${counts.danger} Cảnh báo`;
-  document.getElementById("count-canh-giac").textContent    = `${counts.warning} Cảnh giác`;
-  document.getElementById("count-binh-thuong").textContent  = `${counts.success} Bình thường`;
+  document.getElementById("count-canh-bao").textContent    = t("pill_danger",  counts.danger);
+  document.getElementById("count-canh-giac").textContent   = t("pill_warning", counts.warning);
+  document.getElementById("count-binh-thuong").textContent = t("pill_success", counts.success);
 }
 
 // ===== TIMESTAMP =====
@@ -275,6 +283,13 @@ function escapeHtml(str) {
 // ===== INIT =====
 document.addEventListener("DOMContentLoaded", () => {
   initTheme();
+
+  // Apply saved language and set up toggle
+  setLang(currentLang);
+  const langBtn = document.getElementById("lang-toggle");
+  langBtn && langBtn.addEventListener("click", () => {
+    setLang(currentLang === "vi" ? "en" : "vi");
+  });
 
   // Fetch data on load
   fetchData();
