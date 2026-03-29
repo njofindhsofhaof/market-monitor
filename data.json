@@ -1,5 +1,5 @@
 {
-  "last_updated": "17:05 Sunday, 29/03/2026 (GMT+7)",
+  "last_updated": "18:56 Sunday, 29/03/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
@@ -25,12 +25,12 @@
       "statusLabel": "CẢNH GIÁC",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 10:05 UTC: 43 tin <24h / 72 tổng (reuters.com: lỗi, bbci.co.uk: 18/47 tin mới, aljazeera.com: 25/25 tin mới) | 2 tin đề cập Hormuz/Strait trong 24h | Mới nhất: \"‘trump has to open the strait of hormuz’ with ground forces...\" (07:15 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 11:56 UTC: 43 tin <24h / 72 tổng (reuters.com: lỗi, bbci.co.uk: 18/47 tin mới, aljazeera.com: 25/25 tin mới) | 1 tin đề cập Hormuz/Strait trong 24h | Mới nhất: \"‘trump has to open the strait of hormuz’ with ground forces...\" (07:15 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "tension",
-        "hormuz_count": 2,
+        "hormuz_count": 1,
         "fresh_total": 43,
-        "scanned_at": "2026-03-29T10:05:17Z"
+        "scanned_at": "2026-03-29T11:56:11Z"
       }
     },
     {
