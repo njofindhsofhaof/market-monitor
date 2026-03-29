@@ -263,6 +263,7 @@ REASON: <lý do ngắn gọn, tối đa 15 từ tiếng Việt>
                     reason = line.split(":",1)[1].strip()
             return {"level": level, "value": value, "reason": reason}
         except Exception as e:
+            print(f"[Hormuz] Claude API error: {type(e).__name__}: {e}", flush=True)
             return None
 
     # Chuẩn bị headlines (tối đa 30 tin, ưu tiên tin đề cập Hormuz/Iran/Gulf)
@@ -283,6 +284,8 @@ REASON: <lý do ngắn gọn, tối đa 15 từ tiếng Việt>
     )
 
     # Thử Claude API trước
+    has_key = bool(ANTHROPIC_API_KEY)
+    print(f"[Hormuz] ANTHROPIC_API_KEY present: {has_key}, headlines: {len(top_headlines)}", flush=True)
     claude_result = classify_with_claude(headlines_text)
 
     if claude_result:
