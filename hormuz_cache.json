@@ -1,5 +1,5 @@
 {
-  "scanned_at": "2026-03-29T19:48:59.848988+00:00",
+  "scanned_at": "2026-03-29T21:03:45.709466+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
@@ -11,12 +11,12 @@
     "statusLabel": "CẢNH GIÁC",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 19:48 UTC: 44 tin <24h / 74 tổng (reuters.com: lỗi, bbci.co.uk: 19/49 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: Claude AI (30 headlines) | Lý do: Iran tấn công Mỹ, Mỹ điều quân, nhưng chưa có tấn công tàu thương mại Hormuz | Headline: \"Republican mace says congress must approve any us troop deployment to iran...\" (18:53 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 21:03 UTC: 44 tin <24h / 74 tổng (reuters.com: lỗi, bbci.co.uk: 19/49 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: Claude AI (30 headlines) | Lý do: Tấn công Iran-Mỹ tăng, nhưng chủ yếu ở Lebanon, Israel. Houthis mở mặt trận mới ở Biển Đỏ chứ không Hormuz. | Headline: \"Qatari tv station hit in iran...\" (20:11 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
     "_meta": {
       "status_key": "tension",
       "hormuz_count": 10,
       "fresh_total": 44,
-      "scanned_at": "2026-03-29T19:48:59Z",
+      "scanned_at": "2026-03-29T21:03:45Z",
       "classify_source": "Claude AI (30 headlines)"
     }
   }
