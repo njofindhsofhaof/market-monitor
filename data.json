@@ -1,5 +1,5 @@
 {
-  "last_updated": "14:15 Sunday, 29/03/2026 (GMT+7)",
+  "last_updated": "14:21 Sunday, 29/03/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
@@ -25,12 +25,12 @@
       "statusLabel": "CẢNH GIÁC",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 07:15 UTC: 44 tin <24h / 72 tổng (reuters.com: lỗi, bbci.co.uk: 19/47 tin mới, aljazeera.com: 25/25 tin mới) | 1 tin đề cập Hormuz/Strait trong 24h | Mới nhất: \"Pakistan secures iran deal to send 20 ships through strait of hormuz...\" (21:56 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 07:21 UTC: 44 tin <24h / 72 tổng (reuters.com: lỗi, bbci.co.uk: 19/47 tin mới, aljazeera.com: 25/25 tin mới) | 1 tin đề cập Hormuz/Strait trong 24h | Mới nhất: \"Pakistan secures iran deal to send 20 ships through strait of hormuz...\" (21:56 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "tension",
         "hormuz_count": 1,
         "fresh_total": 44,
-        "scanned_at": "2026-03-29T07:15:31Z"
+        "scanned_at": "2026-03-29T07:21:08Z"
       }
     },
     {
