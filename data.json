@@ -1,5 +1,5 @@
 {
-  "last_updated": "11:06 Sunday, 29/03/2026 (GMT+7)",
+  "last_updated": "12:23 Sunday, 29/03/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
@@ -12,36 +12,43 @@
       "statusLabel": "CẢNH BÁO",
       "source": "Yahoo Finance (CL=F)",
       "link": "https://finance.yahoo.com/quote/CL=F/",
-      "note": "Giá dầu thô WTI giao ngay (futures front-month)",
-      "_meta": {}
+      "note": "Giá dầu thô WTI giao ngay (futures front-month)"
     },
     {
       "category": "",
       "indicator": "Xung đột Hormuz",
-      "value": "Chưa phong tỏa",
+      "value": "Căng thẳng leo thang",
       "trend": "—",
       "trend_raw": null,
       "threshold": "Có phong tỏa",
-      "status": "success",
-      "statusLabel": "Bình thường",
-      "source": "Reuters (thủ công)",
+      "status": "warning",
+      "statusLabel": "CẢNH GIÁC",
+      "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "Cập nhật thủ công — bấm link để xem tin mới nhất từ Reuters",
-      "_meta": {}
+      "note": "RSS scan 05:23 UTC: 48 tin <24h / 72 tổng (reuters.com: lỗi, bbci.co.uk: 23/47 tin mới, aljazeera.com: 25/25 tin mới) | 1 tin đề cập Hormuz/Strait trong 24h | Mới nhất: \"Pakistan secures iran deal to send 20 ships through strait of hormuz...\" (21:56 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "_meta": {
+        "status_key": "tension",
+        "hormuz_count": 1,
+        "fresh_total": 48,
+        "scanned_at": "2026-03-29T05:23:55Z"
+      }
     },
     {
       "category": "Dòng tiền tổ chức",
       "indicator": "COT — Commercial Net",
-      "value": "N/A",
-      "trend": "—",
-      "trend_raw": null,
+      "value": "+0.0K contracts — 0% của đỉnh lịch sử (350K) (2026-03-24)",
+      "trend": "+0.0K → (WoW)",
+      "trend_raw": 0.0,
       "threshold": "Short > 70% đỉnh lịch sử",
       "status": "success",
       "statusLabel": "Bình thường",
       "source": "CFTC (Legacy COT, Financial Futures)",
       "link": "https://www.cftc.gov/dea/options/financial_lof.htm",
-      "note": "Commercial net = long − short S&P 500 E-mini. shortRatio = |net| / rolling-max-short (104 tuần).",
-      "_meta": {"net_k": null, "short_ratio": null}
+      "note": "Commercial net = long − short S&P 500 E-mini. shortRatio = |net| / rolling-max-short (104 tuần). Cao = tổ chức hedge mạnh.",
+      "_meta": {
+        "net_k": 0.0,
+        "short_ratio": 0.0
+      }
     },
     {
       "category": "",
@@ -54,8 +61,10 @@
       "statusLabel": "Bình thường",
       "source": "Yahoo Finance (shares proxy)",
       "link": "https://etf.com/etfanalytics/etf-fund-flows-tool",
-      "note": "Ước tính net flow SPY+QQQ từ Δshares_outstanding × NAV.",
-      "_meta": {"flow_b": null}
+      "note": "Ước tính net flow SPY+QQQ từ Δshares_outstanding × NAV. Outflow liên tục >$5B/tuần = cảnh báo.",
+      "_meta": {
+        "flow_b": null
+      }
     },
     {
       "category": "",
@@ -68,8 +77,13 @@
       "statusLabel": "Bình thường",
       "source": "NAAIM Exposure Index · AAII Sentiment Survey",
       "link": "https://www.naaim.org/resources/naaim-exposure-index/",
-      "note": "Diff = retailBull% − instBull%. Dương cao = retail quá lạc quan so với tổ chức.",
-      "_meta": {"naaim": null, "inst_bull": null, "aaii_bull": null, "aaii_bear": null}
+      "note": "Không lấy được dữ liệu: NAAIM: Không parse được NAAIM exposure từ HTML; AAII: 403 Client Error: Forbidden for url: https://www.aaii.com/files/surveys/sentiment.xls",
+      "_meta": {
+        "naaim": null,
+        "inst_bull": null,
+        "aaii_bull": null,
+        "aaii_bear": null
+      }
     },
     {
       "category": "Thị trường",
@@ -121,7 +135,7 @@
       "statusLabel": "Bình thường",
       "source": "Yahoo Finance (SPY options)",
       "link": "https://finance.yahoo.com/quote/SPY/options/",
-      "note": "SPY options — tỷ lệ put/call đo mức phòng thủ nhà đầu tư"
+      "note": "SPY options exp 2026-03-30 — tỷ lệ put/call đo mức phòng thủ nhà đầu tư"
     },
     {
       "category": "Vĩ mô",
@@ -152,36 +166,46 @@
     {
       "category": "",
       "indicator": "DXY (USD Index)",
-      "value": "104.20",
-      "trend": "+0.3% ↑",
-      "trend_raw": 0.31,
+      "value": "100.19",
+      "trend": "+0.5% ↑",
+      "trend_raw": 0.5,
       "threshold": ">107",
       "status": "success",
       "statusLabel": "Bình thường",
       "source": "Yahoo Finance (DX-Y.NYB)",
       "link": "https://finance.yahoo.com/quote/DX-Y.NYB/",
-      "note": "US Dollar Index — DXY tăng mạnh >107 = USD siết chặt thanh khoản.",
-      "_meta": {"dxy": 104.20}
+      "note": "US Dollar Index — DXY tăng mạnh >107 = USD siết chặt thanh khoản, rủi ro tài sản rủi ro tăng.",
+      "_meta": {
+        "dxy": 100.193
+      }
     }
   ],
   "risk": {
-    "score": 42,
-    "base_score": 33,
-    "multiplier": 1.25,
+    "score": 37,
+    "base_score": 37,
+    "multiplier": 1.0,
     "level": "CẢNH GIÁC",
     "color": "warning",
-    "active_leads": ["Dầu WTI > $100/thùng"],
+    "active_leads": [],
     "breakdown": {
-      "geo": 48.0,
-      "inst": 20.0,
-      "market": 42.0,
-      "macro": 22.0
+      "geo": 64.0,
+      "inst": 12.0,
+      "market": 48.0,
+      "macro": 24.0
     },
     "indicator_scores": {
-      "oil": 8, "hormuz": 0,
-      "cot": 2, "etf_flow": 2, "sentiment": 2,
-      "vix_curve": 4, "vix": 9, "put_call": 4, "hyg_tlt": 0,
-      "spread": 0, "dxy": 4, "yield_10y": 6
+      "oil": 8,
+      "hormuz": 4,
+      "cot": 0,
+      "etf_flow": 2,
+      "sentiment": 2,
+      "vix_curve": 5,
+      "vix": 9,
+      "put_call": 4,
+      "hyg_tlt": 0,
+      "spread": 0,
+      "dxy": 2,
+      "yield_10y": 6
     }
   }
 }
