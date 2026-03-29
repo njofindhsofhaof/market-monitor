@@ -163,6 +163,19 @@ function renderTable(indicators) {
     const indName = L.indicators?.[row.indicator] || row.indicator;
     const statusLabel = L.status?.[row.statusLabel] || row.statusLabel;
 
+    // Translate value and threshold (EN only — apply substring replacements)
+    let displayValue     = row.value     || "";
+    let displayThreshold = row.threshold || "";
+    if (currentLang === "en" && L.value_replace) {
+      for (const [vi, en] of L.value_replace) {
+        displayValue     = displayValue.replace(vi, en);
+        displayThreshold = displayThreshold.replace(vi, en);
+      }
+    }
+    if (currentLang === "en" && L.thresholds) {
+      displayThreshold = L.thresholds[row.threshold] || displayThreshold;
+    }
+
     const categoryCell = row.category
       ? `<td class="td-category">
            <span class="category-badge">${escapeHtml(catName)}</span>
@@ -193,9 +206,9 @@ function renderTable(indicators) {
           <span class="indicator-name">${escapeHtml(indName)}</span>
           ${sourceTag}
         </td>
-        <td class="td-value">${escapeHtml(row.value)}</td>
+        <td class="td-value">${escapeHtml(displayValue)}</td>
         <td class="td-trend"><span class="${trendClass}">${escapeHtml(trend)}</span></td>
-        <td class="td-threshold">${escapeHtml(row.threshold)}</td>
+        <td class="td-threshold">${escapeHtml(displayThreshold)}</td>
         <td class="td-status">
           <span class="status-badge ${sm.cls}">
             <span class="status-dot ${sm.dot}" aria-hidden="true"></span>
