@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bảng Tổng Hợp Theo Dõi Hàng Ngày</title>
+  <title>Tổng hợp thị trường hàng ngày</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -19,7 +19,7 @@
           <circle cx="22" cy="10" r="2.5" fill="var(--color-primary)"/>
         </svg>
         <div>
-          <h1 class="page-title" id="page-title">Bảng Tổng Hợp Theo Dõi Hàng Ngày</h1>
+          <h1 class="page-title" id="page-title">Tổng hợp thị trường hàng ngày</h1>
           <p class="page-subtitle">
             <span id="page-subtitle-pre">Cập nhật lần cuối:</span> <span id="last-updated">Đang tải...</span>
             &nbsp;·&nbsp;
@@ -69,29 +69,42 @@
             <div class="risk-bar-wrap">
               <div class="risk-bar-track">
                 <div class="risk-bar-fill" id="risk-bar-fill"></div>
-                <div class="risk-zone-marker" style="left:30%"></div>
-                <div class="risk-zone-marker" style="left:50%"></div>
-                <div class="risk-zone-marker" style="left:70%"></div>
+                <div class="risk-zone-marker" style="left:35%"></div>
+                <div class="risk-zone-marker" style="left:55%"></div>
+                <div class="risk-zone-marker" style="left:75%"></div>
               </div>
               <div class="risk-bar-labels">
-                <span>0</span><span>30</span><span>50</span><span>70</span><span>100</span>
+                <span>0</span><span>35</span><span>55</span><span>75</span><span>100</span>
               </div>
             </div>
           </div>
 
           <div class="risk-breakdown" id="risk-breakdown">
             <div class="breakdown-item">
-              <span class="breakdown-label" id="bd-geo-label">Địa chính trị <small>(30%)</small></span>
+              <span class="breakdown-label" id="bd-geo-label">Địa chính trị <small>(15%)</small></span>
               <span class="breakdown-score" id="bd-geo">--</span>
             </div>
             <div class="breakdown-item">
-              <span class="breakdown-label" id="bd-market-label">Thị trường <small>(50%)</small></span>
+              <span class="breakdown-label" id="bd-inst-label">Dòng tiền tổ chức <small>(25%)</small></span>
+              <span class="breakdown-score" id="bd-inst">--</span>
+            </div>
+            <div class="breakdown-item">
+              <span class="breakdown-label" id="bd-market-label">Thị trường <small>(40%)</small></span>
               <span class="breakdown-score" id="bd-market">--</span>
             </div>
             <div class="breakdown-item">
               <span class="breakdown-label" id="bd-macro-label">Vĩ mô <small>(20%)</small></span>
               <span class="breakdown-score" id="bd-macro">--</span>
             </div>
+            <div class="breakdown-item breakdown-item--multiplier">
+              <span class="breakdown-label" id="bd-mult-label">Hệ số khuếch đại</span>
+              <span class="breakdown-score" id="bd-multiplier">×--</span>
+            </div>
+          </div>
+
+          <div class="risk-leads-wrap" id="risk-leads-wrap" style="display:none">
+            <div class="risk-leads-label" id="risk-leads-label">⚡ Lead indicators kích hoạt:</div>
+            <ul class="risk-leads-list" id="risk-leads-list"></ul>
           </div>
 
           <div class="risk-history-wrap">
@@ -110,10 +123,10 @@
               </tr>
             </thead>
             <tbody>
-              <tr><td class="rz rz-success">0–30</td>   <td><b id="risk-row-level-0">BÌNH THƯỜNG</b></td>    <td id="risk-row-action-0">Duy trì tỷ trọng, theo dõi định kỳ</td></tr>
-              <tr><td class="rz rz-warning">31–50</td>   <td><b id="risk-row-level-1">CẢNH GIÁC</b></td>      <td id="risk-row-action-1">Giảm đòn bẩy, chuẩn bị phòng vệ</td></tr>
-              <tr><td class="rz rz-danger">51–70</td>    <td><b id="risk-row-level-2">CẢNH BÁO CAO</b></td>   <td id="risk-row-action-2">Giảm tỷ trọng rủi ro, tăng tiền mặt &amp; hedge</td></tr>
-              <tr><td class="rz rz-critical">71–100</td> <td><b id="risk-row-level-3">RỦI RO HỆ THỐNG</b></td><td id="risk-row-action-3">Hedge mạnh, chuyển danh mục phòng thủ toàn phần</td></tr>
+              <tr><td class="rz rz-success">0–35</td>   <td><b id="risk-row-level-0">BÌNH THƯỜNG</b></td>    <td id="risk-row-action-0">Duy trì tỷ trọng, theo dõi định kỳ</td></tr>
+              <tr><td class="rz rz-warning">36–55</td>   <td><b id="risk-row-level-1">CẢNH GIÁC</b></td>      <td id="risk-row-action-1">Giảm đòn bẩy, chuẩn bị phòng vệ</td></tr>
+              <tr><td class="rz rz-danger">56–75</td>    <td><b id="risk-row-level-2">CẢNH BÁO CAO</b></td>   <td id="risk-row-action-2">Giảm tỷ trọng rủi ro, tăng tiền mặt &amp; hedge</td></tr>
+              <tr><td class="rz rz-critical">76–100</td> <td><b id="risk-row-level-3">RỦI RO HỆ THỐNG</b></td><td id="risk-row-action-3">Hedge mạnh, chuyển danh mục phòng thủ toàn phần</td></tr>
             </tbody>
           </table>
         </div>
@@ -169,7 +182,7 @@
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-top:3px;flex-shrink:0;color:var(--color-text-faint)"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
             <div>
               <strong id="source-label">Nguồn dữ liệu</strong>
-              <p id="source-desc">Yahoo Finance (WTI, VIX, HYG, TLT, TNX, SPY options) · FRED St. Louis Fed (DGS2, DGS10) · Xung đột Hormuz cập nhật thủ công.</p>
+              <p id="source-desc">Yahoo Finance (WTI, VIX, HYG, TLT, TNX, SPY options, ETF shares, DXY) · CFTC Legacy COT (S&amp;P 500 E-mini) · NAAIM Exposure Index · AAII Sentiment Survey · Xung đột Hormuz cập nhật thủ công.</p>
             </div>
           </div>
           <div class="legend-item legend-item--contact">

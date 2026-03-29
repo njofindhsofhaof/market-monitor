@@ -12,7 +12,8 @@
       "statusLabel": "CẢNH BÁO",
       "source": "Yahoo Finance (CL=F)",
       "link": "https://finance.yahoo.com/quote/CL=F/",
-      "note": "Giá dầu thô WTI giao ngay (futures front-month)"
+      "note": "Giá dầu thô WTI giao ngay (futures front-month)",
+      "_meta": {}
     },
     {
       "category": "",
@@ -25,7 +26,50 @@
       "statusLabel": "Bình thường",
       "source": "Reuters (thủ công)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "Cập nhật thủ công — bấm link để xem tin mới nhất từ Reuters"
+      "note": "Cập nhật thủ công — bấm link để xem tin mới nhất từ Reuters",
+      "_meta": {}
+    },
+    {
+      "category": "Dòng tiền tổ chức",
+      "indicator": "COT — Commercial Net",
+      "value": "N/A",
+      "trend": "—",
+      "trend_raw": null,
+      "threshold": "Short > 70% đỉnh lịch sử",
+      "status": "success",
+      "statusLabel": "Bình thường",
+      "source": "CFTC (Legacy COT, Financial Futures)",
+      "link": "https://www.cftc.gov/dea/options/financial_lof.htm",
+      "note": "Commercial net = long − short S&P 500 E-mini. shortRatio = |net| / rolling-max-short (104 tuần).",
+      "_meta": {"net_k": null, "short_ratio": null}
+    },
+    {
+      "category": "",
+      "indicator": "ETF Flows (SPY+QQQ)",
+      "value": "Đang theo dõi",
+      "trend": "N/A",
+      "trend_raw": null,
+      "threshold": "Outflow > −2B USD/7d",
+      "status": "success",
+      "statusLabel": "Bình thường",
+      "source": "Yahoo Finance (shares proxy)",
+      "link": "https://etf.com/etfanalytics/etf-fund-flows-tool",
+      "note": "Ước tính net flow SPY+QQQ từ Δshares_outstanding × NAV.",
+      "_meta": {"flow_b": null}
+    },
+    {
+      "category": "",
+      "indicator": "Sentiment (NAAIM vs AAII)",
+      "value": "N/A",
+      "trend": "—",
+      "trend_raw": null,
+      "threshold": "Retail − Inst > +25pp",
+      "status": "success",
+      "statusLabel": "Bình thường",
+      "source": "NAAIM Exposure Index · AAII Sentiment Survey",
+      "link": "https://www.naaim.org/resources/naaim-exposure-index/",
+      "note": "Diff = retailBull% − instBull%. Dương cao = retail quá lạc quan so với tổ chức.",
+      "_meta": {"naaim": null, "inst_bull": null, "aaii_bull": null, "aaii_bear": null}
     },
     {
       "category": "Thị trường",
@@ -77,7 +121,7 @@
       "statusLabel": "Bình thường",
       "source": "Yahoo Finance (SPY options)",
       "link": "https://finance.yahoo.com/quote/SPY/options/",
-      "note": "SPY options exp 2026-03-30 — tỷ lệ put/call đo mức phòng thủ nhà đầu tư"
+      "note": "SPY options — tỷ lệ put/call đo mức phòng thủ nhà đầu tư"
     },
     {
       "category": "Vĩ mô",
@@ -104,26 +148,40 @@
       "source": "Yahoo Finance (2YY=F, ^TNX)",
       "link": "https://finance.yahoo.com/quote/%5ETNX/",
       "note": "Hiệu lợi suất 10Y – 2Y: âm = đường cong đảo ngược, tín hiệu suy thoái"
+    },
+    {
+      "category": "",
+      "indicator": "DXY (USD Index)",
+      "value": "104.20",
+      "trend": "+0.3% ↑",
+      "trend_raw": 0.31,
+      "threshold": ">107",
+      "status": "success",
+      "statusLabel": "Bình thường",
+      "source": "Yahoo Finance (DX-Y.NYB)",
+      "link": "https://finance.yahoo.com/quote/DX-Y.NYB/",
+      "note": "US Dollar Index — DXY tăng mạnh >107 = USD siết chặt thanh khoản.",
+      "_meta": {"dxy": 104.20}
     }
   ],
   "risk": {
-    "score": 41,
+    "score": 42,
+    "base_score": 33,
+    "multiplier": 1.25,
     "level": "CẢNH GIÁC",
     "color": "warning",
+    "active_leads": ["Dầu WTI > $100/thùng"],
     "breakdown": {
-      "geo": 40.0,
-      "market": 45.0,
-      "macro": 30.0
+      "geo": 48.0,
+      "inst": 20.0,
+      "market": 42.0,
+      "macro": 22.0
     },
     "indicator_scores": {
-      "oil": 8,
-      "hormuz": 0,
-      "vix": 9,
-      "vix_curve": 5,
-      "hyg_tlt": 0,
-      "put_call": 4,
-      "yield_10y": 6,
-      "spread": 0
+      "oil": 8, "hormuz": 0,
+      "cot": 2, "etf_flow": 2, "sentiment": 2,
+      "vix_curve": 4, "vix": 9, "put_call": 4, "hyg_tlt": 0,
+      "spread": 0, "dxy": 4, "yield_10y": 6
     }
   }
 }

@@ -4,7 +4,7 @@
 const I18N = {
   vi: {
     // Header
-    page_title:       "Bảng Tổng Hợp Theo Dõi Hàng Ngày",
+    page_title:       "Tổng hợp thị trường hàng ngày",
     page_subtitle_pre: "Cập nhật lần cuối:",
     page_source:      "Nguồn: Yahoo Finance · FRED",
     btn_refresh:      "Refresh",
@@ -18,10 +18,14 @@ const I18N = {
     risk_title:       "TỔNG ĐIỂM RỦI RO",
     risk_history_label: "Lịch sử điểm (30 ngày gần nhất)",
     bd_geo:    "Địa chính trị",
+    bd_inst:   "Dòng tiền tổ chức",
     bd_market: "Thị trường",
     bd_macro:  "Vĩ mô",
-    bd_geo_w:    "(30%)",
-    bd_market_w: "(50%)",
+    bd_mult:   "Hệ số khuếch đại",
+    bd_leads_title: "Lead indicators kích hoạt:",
+    bd_geo_w:    "(15%)",
+    bd_inst_w:   "(25%)",
+    bd_market_w: "(40%)",
     bd_macro_w:  "(20%)",
 
     // Risk table
@@ -29,10 +33,10 @@ const I18N = {
     risk_th_meaning:"Ý nghĩa",
     risk_th_action: "Hành động",
     risk_rows: [
-      { range: "0–30",   level: "BÌNH THƯỜNG",     action: "Duy trì tỷ trọng, theo dõi định kỳ" },
-      { range: "31–50",  level: "CẢNH GIÁC",        action: "Giảm đòn bẩy, chuẩn bị phòng vệ" },
-      { range: "51–70",  level: "CẢNH BÁO CAO",     action: "Giảm tỷ trọng rủi ro, tăng tiền mặt & hedge" },
-      { range: "71–100", level: "RỦI RO HỆ THỐNG",  action: "Hedge mạnh, chuyển danh mục phòng thủ toàn phần" },
+      { range: "0–35",   level: "BÌNH THƯỜNG",     action: "Duy trì tỷ trọng, theo dõi định kỳ" },
+      { range: "36–55",  level: "CẢNH GIÁC",        action: "Giảm đòn bẩy, chuẩn bị phòng vệ" },
+      { range: "56–75",  level: "CẢNH BÁO CAO",     action: "Giảm tỷ trọng rủi ro, tăng tiền mặt & hedge" },
+      { range: "76–100", level: "RỦI RO HỆ THỐNG",  action: "Hedge mạnh, chuyển danh mục phòng thủ toàn phần" },
     ],
 
     // Table headers
@@ -55,7 +59,7 @@ const I18N = {
       { label: "BÌNH THƯỜNG", desc: "Chỉ số trong vùng an toàn. Tiếp tục quan sát định kỳ." },
     ],
     source_label: "Nguồn dữ liệu",
-    source_desc:  "Yahoo Finance (WTI, VIX, HYG, TLT, TNX, SPY options) · FRED St. Louis Fed (DGS2, DGS10) · Xung đột Hormuz cập nhật thủ công.",
+    source_desc:  "Yahoo Finance (WTI, VIX, HYG, TLT, TNX, SPY options, ETF shares, DXY) · CFTC Legacy COT (S&P 500 E-mini) · NAAIM Exposure Index · AAII Sentiment Survey · Xung đột Hormuz cập nhật thủ công.",
     contact_text: "Mọi ý kiến đóng góp xin liên hệ:",
     contact_thanks: ", cảm ơn bạn.",
 
@@ -74,19 +78,24 @@ const I18N = {
 
     // Indicator names
     indicators: {
-      "Dầu WTI":           "Dầu WTI",
-      "Xung đột Hormuz":   "Xung đột Hormuz",
-      "VIX":               "VIX",
-      "VIX futures curve": "VIX futures curve",
-      "HYG/TLT ratio":     "HYG/TLT ratio",
-      "Put/Call ratio":    "Put/Call ratio",
-      "10-year yield":     "10-year yield",
-      "2s10s spread":      "2s10s spread",
+      "Dầu WTI":                    "Dầu WTI",
+      "Xung đột Hormuz":            "Xung đột Hormuz",
+      "COT — Commercial Net":       "COT — Commercial Net",
+      "ETF Flows (SPY+QQQ)":        "ETF Flows (SPY+QQQ)",
+      "Sentiment (NAAIM vs AAII)":  "Sentiment (NAAIM vs AAII)",
+      "VIX":                        "VIX",
+      "VIX futures curve":          "VIX futures curve",
+      "HYG/TLT ratio":              "HYG/TLT ratio",
+      "Put/Call ratio":             "Put/Call ratio",
+      "10-year yield":              "10-year yield",
+      "2s10s spread":               "2s10s spread",
+      "DXY (USD Index)":            "DXY (USD Index)",
     },
     categories: {
-      "Địa chính trị": "Địa chính trị",
-      "Thị trường":    "Thị trường",
-      "Vĩ mô":         "Vĩ mô",
+      "Địa chính trị":       "Địa chính trị",
+      "Dòng tiền tổ chức":   "Dòng tiền tổ chức",
+      "Thị trường":          "Thị trường",
+      "Vĩ mô":               "Vĩ mô",
     },
   },
 
@@ -106,10 +115,14 @@ const I18N = {
     risk_title:       "TOTAL RISK SCORE",
     risk_history_label: "Score history (last 30 days)",
     bd_geo:    "Geopolitical",
+    bd_inst:   "Institutional Flow",
     bd_market: "Market",
     bd_macro:  "Macro",
-    bd_geo_w:    "(30%)",
-    bd_market_w: "(50%)",
+    bd_mult:   "Amplifier",
+    bd_leads_title: "Active lead indicators:",
+    bd_geo_w:    "(15%)",
+    bd_inst_w:   "(25%)",
+    bd_market_w: "(40%)",
     bd_macro_w:  "(20%)",
 
     // Risk table
@@ -117,10 +130,10 @@ const I18N = {
     risk_th_meaning:"Meaning",
     risk_th_action: "Action",
     risk_rows: [
-      { range: "0–30",   level: "NORMAL",          action: "Maintain allocation, monitor regularly" },
-      { range: "31–50",  level: "CAUTION",          action: "Reduce leverage, prepare hedges" },
-      { range: "51–70",  level: "HIGH ALERT",       action: "Reduce risk exposure, increase cash & hedge" },
-      { range: "71–100", level: "SYSTEMIC RISK",    action: "Activate full hedge, shift to defensive portfolio" },
+      { range: "0–35",   level: "NORMAL",          action: "Maintain allocation, monitor regularly" },
+      { range: "36–55",  level: "CAUTION",          action: "Reduce leverage, prepare hedges" },
+      { range: "56–75",  level: "HIGH ALERT",       action: "Reduce risk exposure, increase cash & hedge" },
+      { range: "76–100", level: "SYSTEMIC RISK",    action: "Activate full hedge, shift to defensive portfolio" },
     ],
 
     // Table headers
@@ -143,7 +156,7 @@ const I18N = {
       { label: "NORMAL",  desc: "Indicator is within the safe zone. Continue periodic monitoring." },
     ],
     source_label: "Data sources",
-    source_desc:  "Yahoo Finance (WTI, VIX, HYG, TLT, TNX, SPY options) · FRED St. Louis Fed (DGS2, DGS10) · Strait of Hormuz updated manually.",
+    source_desc:  "Yahoo Finance (WTI, VIX, HYG, TLT, TNX, SPY options, ETF shares, DXY) · CFTC Legacy COT (S&P 500 E-mini) · NAAIM Exposure Index · AAII Investor Sentiment Survey · Strait of Hormuz updated manually.",
     contact_text: "Feedback & suggestions:",
     contact_thanks: ", thank you.",
 
@@ -162,19 +175,24 @@ const I18N = {
 
     // Indicator names
     indicators: {
-      "Dầu WTI":           "WTI Crude Oil",
-      "Xung đột Hormuz":   "Hormuz Conflict",
-      "VIX":               "VIX",
-      "VIX futures curve": "VIX futures curve",
-      "HYG/TLT ratio":     "HYG/TLT ratio",
-      "Put/Call ratio":    "Put/Call ratio",
-      "10-year yield":     "10-year yield",
-      "2s10s spread":      "2s10s spread",
+      "Dầu WTI":                   "WTI Crude Oil",
+      "Xung đột Hormuz":           "Hormuz Conflict",
+      "COT — Commercial Net":      "COT — Commercial Net",
+      "ETF Flows (SPY+QQQ)":       "ETF Flows (SPY+QQQ)",
+      "Sentiment (NAAIM vs AAII)": "Sentiment (NAAIM vs AAII)",
+      "VIX":                       "VIX",
+      "VIX futures curve":         "VIX futures curve",
+      "HYG/TLT ratio":             "HYG/TLT ratio",
+      "Put/Call ratio":            "Put/Call ratio",
+      "10-year yield":             "10-year yield",
+      "2s10s spread":              "2s10s spread",
+      "DXY (USD Index)":           "DXY (USD Index)",
     },
     categories: {
-      "Địa chính trị": "Geopolitical",
-      "Thị trường":    "Market",
-      "Vĩ mô":         "Macro",
+      "Địa chính trị":     "Geopolitical",
+      "Dòng tiền tổ chức": "Institutional Flow",
+      "Thị trường":        "Market",
+      "Vĩ mô":             "Macro",
     },
   },
 };
@@ -214,8 +232,11 @@ function applyLang() {
   // Use innerHTML for labels with <small>
   const setInner = (id, html) => { const el = document.getElementById(id); if (el) el.innerHTML = html; };
   setInner("bd-geo-label",    `${L.bd_geo} <small>${L.bd_geo_w}</small>`);
+  setInner("bd-inst-label",   `${L.bd_inst} <small>${L.bd_inst_w}</small>`);
   setInner("bd-market-label", `${L.bd_market} <small>${L.bd_market_w}</small>`);
   setInner("bd-macro-label",  `${L.bd_macro} <small>${L.bd_macro_w}</small>`);
+  set("bd-mult-label",        L.bd_mult);
+  set("risk-leads-label",     `⚡ ${L.bd_leads_title || 'Lead indicators kích hoạt:'}`);
 
   // Table headers
   set("th-category",  L.th_category);

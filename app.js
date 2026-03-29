@@ -47,10 +47,12 @@ function renderAll(data) {
 
 // ===== RENDER RISK SCORE =====
 function renderRiskScore(risk) {
-  const score   = risk.score;
-  const level   = risk.level;
-  const color   = risk.color;
-  const bd      = risk.breakdown || {};
+  const score  = risk.score;
+  const level  = risk.level;
+  const color  = risk.color;
+  const bd     = risk.breakdown || {};
+  const mult   = risk.multiplier;
+  const leads  = risk.active_leads || [];
 
   // Score number
   const scoreEl = document.getElementById('risk-score');
@@ -83,7 +85,7 @@ function renderRiskScore(risk) {
     if (val >= 30) return 'var(--color-text)';
     return 'var(--color-success)';
   };
-  ['geo','market','macro'].forEach(key => {
+  ['geo','inst','market','macro'].forEach(key => {
     const el = document.getElementById(`bd-${key}`);
     if (el && bd[key] !== undefined) {
       el.textContent = bd[key].toFixed(1) + '/100';
@@ -91,9 +93,30 @@ function renderRiskScore(risk) {
     }
   });
 
-  // Highlight active row in risk table
+  // Multiplier
+  const multEl = document.getElementById('bd-multiplier');
+  if (multEl && mult !== undefined) {
+    multEl.textContent = `×${mult.toFixed(2)}`;
+    multEl.style.color = mult > 1.3 ? 'var(--color-danger)'
+                       : mult > 1.1 ? 'var(--color-warning)'
+                       : 'var(--color-success)';
+  }
+
+  // Active leads
+  const leadsWrap = document.getElementById('risk-leads-wrap');
+  const leadsList = document.getElementById('risk-leads-list');
+  if (leadsWrap && leadsList) {
+    if (leads.length > 0) {
+      leadsList.innerHTML = leads.map(l => `<li>${escapeHtml(l)}</li>`).join('');
+      leadsWrap.style.display = 'block';
+    } else {
+      leadsWrap.style.display = 'none';
+    }
+  }
+
+  // Highlight active row in risk table (new thresholds: 35/55/75)
   document.querySelectorAll('.risk-table tbody tr').forEach((tr, i) => {
-    const ranges = [[0,30],[31,50],[51,70],[71,100]];
+    const ranges = [[0,35],[36,55],[56,75],[76,100]];
     const [lo, hi] = ranges[i];
     tr.classList.toggle('risk-row-active', score >= lo && score <= hi);
   });
