@@ -12,6 +12,7 @@ RISK_HISTORY  = os.path.join(os.path.dirname(__file__), "risk_history.json")
 COT_HISTORY   = os.path.join(os.path.dirname(__file__), "cot_history.json")
 AAII_HISTORY  = os.path.join(os.path.dirname(__file__), "aaii_history.json")
 NAAIM_HISTORY = os.path.join(os.path.dirname(__file__), "naaim_history.json")
+ETF_HISTORY   = os.path.join(os.path.dirname(__file__), "etf_history.json")
 HORMUZ_CACHE  = os.path.join(os.path.dirname(__file__), "hormuz_cache.json")
 
 # ===== HELPERS =====
@@ -327,53 +328,74 @@ def _get_historical_max_short():
 
 def fetch_cot():
     """
-    COT Report — Commercial net positioning trên S&P 500 futures.
-    Dùng CFTC Socrata API (miễn phí, cập nhật thứ 6 hàng tuần).
-    shortRatio = |commercialNet| / historicalMaxShort (rolling max từ lịch sử).
+    COT Report — Dealer/Intermediary net positioning trên S&P 500 Consolidated futures.
+    Nguồn: CFTC static TXT file (Traders in Financial Futures, Futures-Only).
+    URL: https://www.cftc.gov/dea/newcot/FinFutWk.txt
+    File này không bị block từ GitHub Actions (khác với Socrata API).
+
+    TFF format (no header row), columns:
+    0:  Market name
+    1:  Report_Date_as_YYMMDD
+    2:  Report_Date_as_YYYY-MM-DD
+    7:  Open_Interest_All
+    8:  Dealer_Positions_Long_All
+    9:  Dealer_Positions_Short_All
+    12: Asset_Mgr_Positions_Long_All
+    13: Asset_Mgr_Positions_Short_All
+
+    Dùng "Dealer/Intermediary" làm proxy cho Commercial (tương đương trong TFF report).
+    shortRatio = |dealer_net| / historicalMaxShort (rolling max từ lịch sử).
     """
     try:
-        url = "https://publicreporting.cftc.gov/resource/gpe5-46if.json"
-        params = {
-            "$where": "market_and_exchange_names like '%S&P 500%'",
-            "$order": "report_date_as_yyyy_mm_dd DESC",
-            "$limit": 2,
-        }
-        resp = requests.get(url, params=params, timeout=20)
+        url = "https://www.cftc.gov/dea/newcot/FinFutWk.txt"
+        resp = requests.get(url, timeout=25,
+                            headers={"User-Agent": "Mozilla/5.0",
+                                     "Accept": "text/plain,*/*"})
         resp.raise_for_status()
-        rows = resp.json()
+
+        # Parse CSV — tìm dòng S&P 500 Consolidated
+        import csv, io
+        reader = csv.reader(io.StringIO(resp.text))
+        rows = [r for r in reader if r and "S&P 500 Consolidated" in r[0]]
+
         if not rows:
-            raise ValueError("Không có dữ liệu COT")
+            # Fallback: tìm bất kỳ dòng S&P 500 nào
+            reader2 = csv.reader(io.StringIO(resp.text))
+            rows = [r for r in reader2 if r and "S&P 500" in r[0] and "E-MINI" not in r[0].upper()]
+
+        if not rows:
+            raise ValueError("Không tìm thấy dòng S&P 500 trong FinFutWk.txt")
 
         row = rows[0]
-        report_date = row.get("report_date_as_yyyy_mm_dd", "")[:10]
-        comm_long  = int(float(row.get("comm_positions_long_all",  0)))
-        comm_short = int(float(row.get("comm_positions_short_all", 0)))
-        net   = comm_long - comm_short
-        net_k = round(net / 1000, 1)
-        short_k = round(comm_short / 1000, 1)  # lưu riêng để tính max
+        report_date = row[2].strip() if len(row) > 2 else "N/A"
 
-        # Xu hướng WoW
+        # Dealer long/short (col 8, 9)
+        dealer_long  = int(row[8].strip().replace(",",""))  if len(row) > 8  else 0
+        dealer_short = int(row[9].strip().replace(",",""))  if len(row) > 9  else 0
+        net   = dealer_long - dealer_short
+        net_k = round(net / 1000, 1)
+        short_k = round(dealer_short / 1000, 1)
+
+        # Xu hướng WoW từ history
+        _save_cot_history(net_k, short_k)
+        hist = _load_cot_history()
         trend_str, trend_raw = "—", None
-        if len(rows) >= 2:
-            prev = rows[1]
-            prev_net = int(float(prev.get("comm_positions_long_all", 0))) - \
-                       int(float(prev.get("comm_positions_short_all", 0)))
-            delta_k = round((net - prev_net) / 1000, 1)
-            arrow = "↑" if delta_k > 0 else ("↓" if delta_k < 0 else "→")
+        if len(hist) >= 2:
+            prev_net = hist[-2].get("net", net_k)
+            delta_k  = round(net_k - prev_net, 1)
+            arrow    = "↑" if delta_k > 0 else ("↓" if delta_k < 0 else "→")
             trend_str = f"{delta_k:+.1f}K {arrow} (WoW)"
             trend_raw = delta_k
 
-        _save_cot_history(net_k, short_k)
         hist_max = _get_historical_max_short()
 
-        # shortRatio: chỉ tính khi net âm (commercial đang short ròng)
+        # shortRatio
         if net_k < 0 and hist_max > 0:
             short_ratio = round(abs(net_k) / hist_max, 3)
         else:
             short_ratio = 0.0
 
         status, label = evaluate("cot_net", short_ratio)
-
         ratio_pct = f"{short_ratio*100:.0f}% của đỉnh lịch sử ({hist_max:.0f}K)"
         value_str = f"{net_k:+.1f}K contracts — {ratio_pct} ({report_date})"
 
@@ -386,9 +408,9 @@ def fetch_cot():
             "threshold": "Short > 70% đỉnh lịch sử",
             "status": status,
             "statusLabel": label,
-            "source": "CFTC (Legacy COT, Financial Futures)",
-            "link": "https://www.cftc.gov/dea/options/financial_lof.htm",
-            "note": "Commercial net = long − short S&P 500 E-mini. shortRatio = |net| / rolling-max-short (104 tuần). Cao = tổ chức hedge mạnh.",
+            "source": "CFTC (Traders in Financial Futures, FinFutWk.txt)",
+            "link": "https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm",
+            "note": "Dealer/Intermediary net = long − short S&P 500. shortRatio = |net| / rolling-max-short (104 tuần).",
             "_meta": {"net_k": net_k, "short_ratio": short_ratio}
         }
 
@@ -399,64 +421,86 @@ def fetch_cot():
             "value": "N/A", "trend": "—", "trend_raw": None,
             "threshold": "Short > 70% đỉnh lịch sử",
             "status": "success", "statusLabel": "Bình thường",
-            "source": "CFTC (Legacy COT)",
-            "link": "https://www.cftc.gov/dea/options/financial_lof.htm",
+            "source": "CFTC (Traders in Financial Futures)",
+            "link": "https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm",
             "note": f"Không lấy được dữ liệu COT: {e}",
             "_meta": {"net_k": None, "short_ratio": None}
         }
 
 
+def _load_etf_history():
+    if os.path.exists(ETF_HISTORY):
+        with open(ETF_HISTORY, encoding="utf-8") as f:
+            return json.load(f)
+    return {}
+
+def _save_etf_history(data):
+    with open(ETF_HISTORY, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+
 def fetch_etf_flows():
     """
-    ETF Flows — ước tính net flow SPY + QQQ 5 phiên gần nhất (tỷ USD).
-    
-    Proxy thực tế: yfinance không cung cấp daily shares outstanding,
-    nên dùng Volume × Price × sign(return) làm net flow proxy.
-    - Nếu giá tăng trong ngày: volume = inflow proxy
-    - Nếu giá giảm trong ngày: volume = outflow proxy
-    Tích lũy 5 phiên → estimate net flow 7 ngày.
+    ETF Flows — net creation/redemption SPY + QQQ.
+    Cơ chế đúng: Δshares_outstanding × price = net flow (tỷ USD).
+    Lưu snapshot shares mỗi giờ vào etf_history.json,
+    so sánh với snapshot cũ nhất (~5 ngày) để tính flow tuần.
     """
-    etfs = [("SPY", "S&P 500"), ("QQQ", "Nasdaq 100")]
-    total_b  = 0.0
-    parts    = []
-    any_data = False
+    today = datetime.datetime.now(
+        datetime.timezone(datetime.timedelta(hours=7))
+    ).strftime("%Y-%m-%d")
 
-    for sym, name in etfs:
+    hist    = _load_etf_history()
+    etfs    = [("SPY", "S&P 500"), ("QQQ", "Nasdaq 100")]
+    total_b = None
+    parts   = []
+
+    for sym, _ in etfs:
         try:
-            tk   = yf.Ticker(sym)
-            hist = tk.history(period="10d")
-            if hist is None or len(hist) < 2:
+            tk         = yf.Ticker(sym)
+            fi         = tk.fast_info
+            shares_now = fi.get("shares", None)
+            price_now  = fi.get("lastPrice", None)
+            if shares_now is None or price_now is None:
                 continue
 
-            # Lấy 5 phiên gần nhất
-            recent = hist.tail(5)
+            # Lưu snapshot hôm nay
+            entries = hist.get(sym, [])
+            if not isinstance(entries, list):
+                entries = []
+            if not entries or entries[-1].get("date") != today:
+                entries.append({"date": today, "shares": shares_now, "price": price_now})
+            else:
+                entries[-1] = {"date": today, "shares": shares_now, "price": price_now}
+            hist[sym] = entries[-10:]
 
-            # Net flow proxy mỗi phiên: volume × price × sign(close - open)
-            daily_flows = []
-            for _, row in recent.iterrows():
-                price_avg  = (row["Open"] + row["Close"]) / 2
-                direction  = 1 if row["Close"] >= row["Open"] else -1
-                flow_b_day = direction * row["Volume"] * price_avg / 1e9
-                daily_flows.append(flow_b_day)
+            # Cần ít nhất 2 ngày snapshot để tính delta
+            if len(entries) < 2:
+                continue
 
-            etf_flow_b = round(sum(daily_flows), 2)
-            total_b   += etf_flow_b
-            parts.append(f"{sym}: {etf_flow_b:+.2f}B")
-            any_data = True
+            old        = entries[0]
+            price_avg  = (price_now + old.get("price", price_now)) / 2
+            delta      = shares_now - old["shares"]
+            flow_b     = round(delta * price_avg / 1e9, 2)
+
+            if total_b is None:
+                total_b = 0.0
+            total_b += flow_b
+            days = len(entries) - 1
+            parts.append(f"{sym}: {flow_b:+.2f}B/{days}d")
+
         except Exception:
             continue
 
-    if not any_data:
-        total_b = None
+    _save_etf_history(hist)
 
     status, label = evaluate("etf_flow", total_b if total_b is not None else 0)
 
     if total_b is not None:
         arrow     = "↑" if total_b > 0 else ("↓" if total_b < 0 else "→")
-        value_str = f"{total_b:+.2f}B USD/5d ({', '.join(parts)})"
+        value_str = f"{total_b:+.2f}B USD ({', '.join(parts)})"
         trend_str = f"{total_b:+.2f}B {arrow}"
     else:
-        value_str = "Đang theo dõi"
+        value_str = "Đang tích lũy (~5 ngày để có baseline)"
         trend_str = "N/A"
 
     return {
@@ -468,9 +512,9 @@ def fetch_etf_flows():
         "threshold": "Outflow > −2B USD/7d",
         "status": status,
         "statusLabel": label,
-        "source": "Yahoo Finance (volume proxy)",
+        "source": "Yahoo Finance (shares outstanding)",
         "link": "https://etf.com/etfanalytics/etf-fund-flows-tool",
-        "note": "Net flow proxy: Σ(volume × price × sign(close−open)) 5 phiên. Outflow liên tục >$5B/tuần = cảnh báo.",
+        "note": "Net flow = Δshares_outstanding × price. Cần ~5 ngày tích lũy snapshot để có số ổn định.",
         "_meta": {"flow_b": total_b}
     }
 
@@ -494,146 +538,121 @@ def _save_naaim_history(exposure):
 
 def _fetch_naaim_exposure():
     """
-    NAAIM Exposure Index — fetch từ NAAIM data endpoint chính thức.
-    NAAIM publish weekly exposure qua endpoint JSON hoặc page HTML.
-    Thử nhiều nguồn theo thứ tự ưu tiên.
+    NAAIM Exposure Index.
+    Nguồn chính: Stooq weekly CSV (đáng tin, không bị block).
+    Fallback: scrape naaim.org với plain-text search.
     """
-    headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-        "Accept-Language": "en-US,en;q=0.5",
-    }
+    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+               "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"}
 
-    # Nguồn 1: NAAIM data page — parse số từ visible text
-    url = "https://www.naaim.org/resources/naaim-exposure-index/"
-    resp = requests.get(url, timeout=20, headers=headers)
-    resp.raise_for_status()
-    text = resp.text
-
-    # Pattern mở rộng — NAAIM hiển thị số dạng "XX.XX" trong nhiều format khác nhau
-    patterns = [
-        # Dạng "This Week: 72.45" hoặc "This week's number: 72.45"
-        r"[Tt]his\s+[Ww]eek[^<\d]{0,40}?([\d]{1,3}\.[\d]{1,2})",
-        # Dạng "Current Reading: 72.45"
-        r"[Cc]urrent\s+[Rr]eading[^<\d]{0,20}?([\d]{1,3}\.[\d]{1,2})",
-        # Dạng label "NAAIM Number" trong bảng
-        r"NAAIM\s+Number[^<\d]{0,30}?([\d]{1,3}\.[\d]{1,2})",
-        # Số trong <strong> hoặc <b> tag gần từ "exposure" hoặc "week"
-        r"<(?:strong|b)[^>]*>\s*([\d]{1,3}\.[\d]{2})\s*</(?:strong|b)>",
-        # JSON-like pattern trong script tags
-        r'"(?:exposure|naaim_number|current_reading|thisWeek)"\s*:\s*"?([\d]{1,3}\.[\d]{1,2})"?',
-        # Số standalone trong range hợp lý (0-200) sau keyword
-        r'(?:exposure|bull|index)[^<\d]{0,30}?(1?\d{2}\.\d{2})',
-    ]
-
-    for pat in patterns:
-        m = _re.search(pat, text, _re.IGNORECASE)
-        if m:
-            val = float(m.group(1))
-            if 0 <= val <= 200:   # sanity check range NAAIM
-                return val
-
-    # Nguồn 2: Stooq có NAAIM index historical data
+    # Nguồn 1: Stooq NAAIM weekly CSV — reliable, không cần parse HTML
     try:
-        stooq_url = "https://stooq.com/q/d/l/?s=naaim.w&i=w"
-        r2 = requests.get(stooq_url, timeout=15, headers=headers)
-        if r2.ok and len(r2.text) > 50:
-            lines = [l for l in r2.text.strip().split("\n") if l and not l.startswith("Date")]
+        r = requests.get("https://stooq.com/q/d/l/?s=naaim.w&i=w",
+                         timeout=15, headers=headers)
+        if r.ok and len(r.text) > 50:
+            lines = [l.strip() for l in r.text.strip().split("\n")
+                     if l.strip() and not l.startswith("Date")]
             if lines:
-                last = lines[-1].split(",")
-                if len(last) >= 5:
-                    return float(last[4])  # Close column
+                cols = lines[-1].split(",")
+                if len(cols) >= 5:
+                    val = float(cols[4])   # Close column
+                    if 0 <= val <= 200:
+                        return val
     except Exception:
         pass
 
-    raise ValueError("Không parse được NAAIM exposure từ HTML/CSV")
+    # Nguồn 2: naaim.org — strip HTML → plain text → tìm số
+    for url in [
+        "https://www.naaim.org/programs/naaim-exposure-index/",
+        "https://www.naaim.org/resources/naaim-exposure-index/",
+    ]:
+        try:
+            resp = requests.get(url, timeout=20, headers=headers)
+            if not resp.ok:
+                continue
+            # Strip tags → plain text
+            plain = _re.sub(r'<[^>]+>', ' ', resp.text)
+            plain = _re.sub(r'&[a-zA-Z]+;', ' ', plain)
+            plain = _re.sub(r'\s+', ' ', plain)
+
+            # Tìm "this week" → lấy số gần nhất
+            pos = plain.lower().find("this week")
+            if pos >= 0:
+                snippet = plain[pos:pos+300]
+                nums = _re.findall(r'\b(\d{1,3}\.\d{2})\b', snippet)
+                for n in nums:
+                    val = float(n)
+                    if 0 < val <= 200:
+                        return val
+
+            # Tìm bất kỳ số hợp lệ nào gần "exposure" hoặc "naaim"
+            pos2 = plain.lower().find("exposure index")
+            if pos2 >= 0:
+                snippet2 = plain[pos2:pos2+500]
+                nums2 = _re.findall(r'\b(\d{1,3}\.\d{2})\b', snippet2)
+                for n in nums2:
+                    val = float(n)
+                    if 0 < val <= 200:
+                        return val
+        except Exception:
+            continue
+
+    raise ValueError("Không parse được NAAIM từ Stooq hoặc naaim.org")
 
 def _fetch_aaii_bull():
     """
     AAII Sentiment Survey — Bull% và Bear%.
-    AAII block direct .xls download → dùng nhiều nguồn thay thế:
-    1. AAII JSON API endpoint (nếu có)
-    2. Parse từ trang HTML AAII
-    3. Stooq AAII historical CSV
+    Nguồn chính: Stooq weekly CSV (không bị block 403).
+    Fallback: scrape aaii.com sentimentsurvey page.
     """
-    import io
-    import pandas as pd
+    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+               "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"}
 
-    headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-        "Referer": "https://www.aaii.com/",
-    }
-
-    # Nguồn 1: AAII sentiment page — scrape số từ HTML
-    url_page = "https://www.aaii.com/sentimentsurvey"
+    # Nguồn 1: Stooq AAII bull + bear weekly — most reliable
     try:
-        resp = requests.get(url_page, timeout=20, headers=headers)
+        rb = requests.get("https://stooq.com/q/d/l/?s=aaiibull.w&i=w",
+                          timeout=15, headers=headers)
+        rr = requests.get("https://stooq.com/q/d/l/?s=aaiibear.w&i=w",
+                          timeout=15, headers=headers)
+        if rb.ok and rr.ok:
+            bull_lines = [l.strip() for l in rb.text.strip().split("\n")
+                          if l.strip() and not l.startswith("Date")]
+            bear_lines = [l.strip() for l in rr.text.strip().split("\n")
+                          if l.strip() and not l.startswith("Date")]
+            if bull_lines and bear_lines:
+                b  = bull_lines[-1].split(",")
+                br = bear_lines[-1].split(",")
+                if len(b) >= 5 and len(br) >= 5:
+                    bull = float(b[4])
+                    bear = float(br[4])
+                    if bull < 2:  bull *= 100
+                    if bear < 2: bear *= 100
+                    if 1 < bull < 100 and 1 < bear < 100:
+                        return round(bull, 1), round(bear, 1)
+    except Exception:
+        pass
+
+    # Nguồn 2: AAII sentimentsurvey page — strip HTML
+    try:
+        resp = requests.get(
+            "https://www.aaii.com/sentimentsurvey",
+            timeout=25,
+            headers={**headers,
+                     "Accept": "text/html,application/xhtml+xml,*/*",
+                     "Referer": "https://www.google.com/"}
+        )
         if resp.ok:
-            text = resp.text
-            # Tìm pattern "Bullish XX.X%" và "Bearish XX.X%"
-            bull_m = _re.search(r'[Bb]ullish[^<\d]{0,30}?([\d]{1,2}\.[\d]{1})\s*%', text)
-            bear_m = _re.search(r'[Bb]earish[^<\d]{0,30}?([\d]{1,2}\.[\d]{1})\s*%', text)
+            plain = _re.sub(r'<[^>]+>', ' ', resp.text)
+            plain = _re.sub(r'&[a-zA-Z]+;', ' ', plain)
+            plain = _re.sub(r'\s+', ' ', plain)
+            bull_m = _re.search(r'[Bb]ullish\W{0,20}?(\d{1,2}\.\d)\s*%', plain)
+            bear_m = _re.search(r'[Bb]earish\W{0,20}?(\d{1,2}\.\d)\s*%', plain)
             if bull_m and bear_m:
                 return round(float(bull_m.group(1)), 1), round(float(bear_m.group(1)), 1)
-
-            # Fallback: tìm JSON embedded trong page
-            json_m = _re.search(
-                r'"bullish"\s*:\s*"?([\d.]+)"?[^}]{0,50}"bearish"\s*:\s*"?([\d.]+)"?',
-                text, _re.IGNORECASE
-            )
-            if json_m:
-                bull = float(json_m.group(1))
-                bear = float(json_m.group(2))
-                if bull < 2: bull *= 100
-                if bear < 2: bear *= 100
-                return round(bull, 1), round(bear, 1)
     except Exception:
         pass
 
-    # Nguồn 2: Stooq AAII bull/bear weekly data
-    try:
-        # Bull index
-        r_bull = requests.get("https://stooq.com/q/d/l/?s=aaiibull.w&i=w",
-                              timeout=15, headers=headers)
-        r_bear = requests.get("https://stooq.com/q/d/l/?s=aaiibear.w&i=w",
-                              timeout=15, headers=headers)
-        if r_bull.ok and r_bear.ok:
-            bull_lines = [l for l in r_bull.text.strip().split("\n") if l and not l.startswith("Date")]
-            bear_lines = [l for l in r_bear.text.strip().split("\n") if l and not l.startswith("Date")]
-            if bull_lines and bear_lines:
-                bull = float(bull_lines[-1].split(",")[4])
-                bear = float(bear_lines[-1].split(",")[4])
-                # Stooq trả dạng 0-100
-                if bull < 2: bull *= 100
-                if bear < 2: bear *= 100
-                return round(bull, 1), round(bear, 1)
-    except Exception:
-        pass
-
-    # Nguồn 3: AAII XLS với session cookie
-    try:
-        session = requests.Session()
-        session.get("https://www.aaii.com/", timeout=10, headers=headers)  # lấy cookie
-        resp_xls = session.get(
-            "https://www.aaii.com/files/surveys/sentiment.xls",
-            timeout=20,
-            headers={**headers, "Accept": "application/vnd.ms-excel,*/*"}
-        )
-        if resp_xls.ok and len(resp_xls.content) > 1000:
-            df = pd.read_excel(io.BytesIO(resp_xls.content), skiprows=3)
-            df.columns = [str(c).strip() for c in df.columns]
-            bull_col = next(c for c in df.columns if "bull" in c.lower())
-            bear_col = next(c for c in df.columns if "bear" in c.lower())
-            recent = df.dropna(subset=[bull_col, bear_col]).iloc[-1]
-            bull = float(recent[bull_col])
-            bear = float(recent[bear_col])
-            if bull < 2: bull *= 100; bear *= 100
-            return round(bull, 1), round(bear, 1)
-    except Exception:
-        pass
-
-    raise ValueError("Không lấy được AAII data từ tất cả nguồn")
+    raise ValueError("Không lấy được AAII data từ Stooq hoặc aaii.com")
 
 def fetch_sentiment():
     """
