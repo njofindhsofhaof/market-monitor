@@ -244,17 +244,10 @@ REASON: <lý do ngắn gọn, tối đa 15 từ tiếng Việt>
                     "content-type": "application/json",
                 },
                 json={
-    "model": "claude-haiku-4-5-20251001",
-    "max_tokens": 120,
-    "messages": [
-        {
-            "role": "user",
-            "content": [
-                {"type": "text", "text": prompt}
-            ]
-        }
-    ]
-},
+                    "model": "claude-haiku-4-5-20251001",
+                    "max_tokens": 120,
+                    "messages": [{"role": "user", "content": prompt}]
+                },
                 timeout=20
             )
             resp.raise_for_status()
