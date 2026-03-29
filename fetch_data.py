@@ -204,47 +204,135 @@ def fetch_hormuz():
             fetch_errors.append(f"{source_name}: {e}")
             feed_stats.append(f"{source_name}: lỗi")
 
-    # ── Classify chỉ trên fresh_items ─────────────────────────────
-    fresh_texts = " | ".join(t for t, _ in fresh_items)
+    # ── Classify bằng Claude API — hiểu ngữ cảnh, không phụ thuộc keyword ──────
+    # Lấy tất cả headlines trong 24h (không chỉ Hormuz keywords)
+    # Gửi cho Claude để đánh giá nguy cơ gián đoạn eo biển Hormuz
 
-    def any_match(keywords):
-        return any(kw in fresh_texts for kw in keywords)
+    ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
 
-    # Tìm headline Hormuz mới nhất (sort by pubDate desc)
+    def classify_with_claude(headlines_text):
+        """Dùng Claude để đánh giá nguy cơ Hormuz từ headlines. Trả về dict."""
+        if not ANTHROPIC_API_KEY or not headlines_text.strip():
+            return None
+        try:
+            prompt = f"""Bạn là chuyên gia phân tích địa chính trị Trung Đông.
+
+Dưới đây là các tin tức trong 24 giờ qua từ Reuters, BBC, Al Jazeera:
+
+{headlines_text}
+
+Hãy đánh giá mức độ rủi ro gián đoạn eo biển Hormuz dựa trên các tin này.
+Xem xét cả các tin gián tiếp như: xung đột Mỹ-Iran, tấn công tàu vùng Vịnh, căng thẳng quân sự,
+lính đổ bộ, phong tỏa, tập trận chiến tranh, đe dọa tên lửa, v.v.
+
+Trả lời ĐÚNG FORMAT sau, không thêm gì khác:
+LEVEL: <none|tension|partial_blockade|full_blockade>
+VALUE: <mô tả ngắn bằng tiếng Việt, tối đa 8 từ>
+REASON: <lý do ngắn gọn, tối đa 15 từ tiếng Việt>
+
+Định nghĩa mức:
+- none: Không có nguy cơ nào đáng kể với Hormuz
+- tension: Căng thẳng ngoại giao/quân sự có thể ảnh hưởng Hormuz
+- partial_blockade: Tàu bị tấn công/bắt giữ, hoặc leo thang nghiêm trọng
+- full_blockade: Eo biển bị phong tỏa thực sự"""
+
+            resp = requests.post(
+                "https://api.anthropic.com/v1/messages",
+                headers={
+                    "x-api-key": ANTHROPIC_API_KEY,
+                    "anthropic-version": "2023-06-01",
+                    "content-type": "application/json",
+                },
+                json={
+                    "model": "claude-haiku-3-20240307",
+                    "max_tokens": 120,
+                    "messages": [{"role": "user", "content": prompt}]
+                },
+                timeout=20
+            )
+            resp.raise_for_status()
+            text = resp.json()["content"][0]["text"].strip()
+
+            level, value, reason = "none", "Bình thường", ""
+            for line in text.splitlines():
+                if line.startswith("LEVEL:"):
+                    level = line.split(":",1)[1].strip().lower()
+                elif line.startswith("VALUE:"):
+                    value = line.split(":",1)[1].strip()
+                elif line.startswith("REASON:"):
+                    reason = line.split(":",1)[1].strip()
+            return {"level": level, "value": value, "reason": reason}
+        except Exception as e:
+            return None
+
+    # Chuẩn bị headlines (tối đa 30 tin, ưu tiên tin đề cập Hormuz/Iran/Gulf)
+    priority_kw = ["hormuz", "iran", "gulf", "strait", "persian", "tanker",
+                   "warship", "naval", "missile", "attack", "blockade",
+                   "us troops", "marines", "invasion", "escalat"]
+    sorted_fresh = sorted(
+        fresh_items,
+        key=lambda x: (
+            sum(1 for kw in priority_kw if kw in x[0]),
+            x[1] or datetime.datetime(1970,1,1,tzinfo=datetime.timezone.utc)
+        ),
+        reverse=True
+    )
+    top_headlines = sorted_fresh[:30]
+    headlines_text = "\n".join(
+        f"- {t[:200]}" for t, _ in top_headlines if t.strip()
+    )
+
+    # Thử Claude API trước
+    claude_result = classify_with_claude(headlines_text)
+
+    if claude_result:
+        level_key  = claude_result["level"]
+        value_str  = claude_result["value"]
+        ai_reason  = claude_result["reason"]
+        status_map = {
+            "full_blockade":    ("danger",  "CẢNH BÁO"),
+            "partial_blockade": ("danger",  "CẢNH BÁO"),
+            "tension":          ("warning", "CẢNH GIÁC"),
+            "none":             ("success", "Bình thường"),
+        }
+        status, label = status_map.get(level_key, ("success", "Bình thường"))
+        classify_source = f"Claude AI ({len(top_headlines)} headlines)"
+    else:
+        # Fallback: keyword matching nếu không có API key hoặc API lỗi
+        fresh_texts = " | ".join(t for t, _ in fresh_items)
+        def any_match(keywords):
+            return any(kw in fresh_texts for kw in keywords)
+
+        KEYWORDS_FULL    = ["hormuz blockade","strait of hormuz closed","hormuz closed","full blockade hormuz"]
+        KEYWORDS_PARTIAL = ["ship seized hormuz","tanker seized","vessel seized strait",
+                            "attack tanker hormuz","hormuz attack","tanker captured","partial blockade hormuz",
+                            "drone attack tanker","missile tanker","warship seized"]
+        KEYWORDS_TENSION = ["strait of hormuz","hormuz tension","hormuz standoff",
+                            "iran naval hormuz","iran blocks","iran threatens strait",
+                            "persian gulf standoff","gulf military escalation","hormuz warning"]
+        KEYWORDS_BROAD   = ["hormuz"]
+
+        if any_match(KEYWORDS_FULL):
+            level_key, value_str, status, label = "full_blockade", "Phong tỏa hoàn toàn", "danger", "CẢNH BÁO"
+        elif any_match(KEYWORDS_PARTIAL):
+            level_key, value_str, status, label = "partial_blockade", "Phong tỏa một phần / tàu bị tấn công", "danger", "CẢNH BÁO"
+        elif any_match(KEYWORDS_TENSION):
+            level_key, value_str, status, label = "tension", "Căng thẳng leo thang", "warning", "CẢNH GIÁC"
+        elif any_match(KEYWORDS_BROAD):
+            level_key, value_str, status, label = "tension", "Có đề cập — theo dõi thêm", "warning", "CẢNH GIÁC"
+        else:
+            level_key, value_str, status, label = "none", "Bình thường", "success", "Bình thường"
+        ai_reason = ""
+        classify_source = "keyword fallback"
+
+    # Tìm headline nổi bật nhất (Hormuz/Iran/Gulf)
     hormuz_fresh = sorted(
         [(t, dt) for t, dt in fresh_items
-         if "hormuz" in t or "strait" in t],
+         if any(kw in t for kw in ["hormuz","strait","iran","gulf","tanker","warship"])],
         key=lambda x: x[1] or datetime.datetime(1970, 1, 1, tzinfo=datetime.timezone.utc),
         reverse=True
     )
 
-    if any_match(KEYWORDS_FULL):
-        status_key = "full_blockade"
-        value_str  = "Phong tỏa hoàn toàn"
-        status     = "danger"
-        label      = "CẢNH BÁO"
-    elif any_match(KEYWORDS_PARTIAL):
-        status_key = "partial_blockade"
-        value_str  = "Phong tỏa một phần / tàu bị tấn công"
-        status     = "danger"
-        label      = "CẢNH BÁO"
-    elif any_match(KEYWORDS_TENSION):
-        status_key = "tension"
-        value_str  = "Căng thẳng leo thang"
-        status     = "warning"
-        label      = "CẢNH GIÁC"
-    elif any_match(KEYWORDS_TENSION_BROAD):
-        status_key = "tension"
-        value_str  = "Có đề cập — theo dõi thêm"
-        status     = "warning"
-        label      = "CẢNH GIÁC"
-    else:
-        status_key = "none"
-        value_str  = "Bình thường"
-        status     = "success"
-        label      = "Bình thường"
-
-    # Note: headline nổi bật nhất (mới nhất trong 24h)
     top_headline = ""
     if hormuz_fresh:
         raw = hormuz_fresh[0][0][:120].capitalize()
@@ -254,12 +342,13 @@ def fetch_hormuz():
 
     note_parts = [
         f"RSS scan {now_utc.strftime('%H:%M UTC')}: "
-        f"{len(fresh_items)} tin <24h / {len(all_items)} tổng ({', '.join(feed_stats)})"
+        f"{len(fresh_items)} tin <24h / {len(all_items)} tổng ({', '.join(feed_stats)})",
+        f"Phân tích: {classify_source}",
     ]
-    if len(hormuz_fresh):
-        note_parts.append(f"{len(hormuz_fresh)} tin đề cập Hormuz/Strait trong 24h")
+    if ai_reason:
+        note_parts.append(f"Lý do: {ai_reason}")
     if top_headline:
-        note_parts.append(f"Mới nhất: {top_headline}")
+        note_parts.append(f"Headline: {top_headline}")
     if fetch_errors:
         note_parts.append(f"Lỗi feed: {'; '.join(fetch_errors)}")
 
@@ -276,10 +365,11 @@ def fetch_hormuz():
         "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
         "note": " | ".join(note_parts),
         "_meta": {
-            "status_key":      status_key,
+            "status_key":      level_key,
             "hormuz_count":    len(hormuz_fresh),
             "fresh_total":     len(fresh_items),
             "scanned_at":      now_utc.strftime("%Y-%m-%dT%H:%M:%SZ"),
+            "classify_source": classify_source,
         }
     }
 
