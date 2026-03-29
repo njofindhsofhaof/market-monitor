@@ -57,7 +57,11 @@ function renderGauge(risk) {
   const scoreEl = document.getElementById('risk-score');
   if (scoreEl) {
     scoreEl.textContent = score;
-    scoreEl.className = `gauge-score risk-color-${color}`;
+    // Score là SVG text — set fill color
+    const stroke = score <= 35 ? '#22c55e'
+                 : score <= 55 ? '#f59e0b'
+                 : score <= 75 ? '#ef4444' : '#a78bfa';
+    scoreEl.setAttribute('fill', stroke);
   }
 
   const badgeEl = document.getElementById('risk-level-badge');
