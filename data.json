@@ -1,5 +1,5 @@
 {
-  "last_updated": "00:43 Monday, 30/03/2026 (GMT+7)",
+  "last_updated": "00:50 Monday, 30/03/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
@@ -25,12 +25,12 @@
       "statusLabel": "Bình thường",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 17:43 UTC: 46 tin <24h / 73 tổng (reuters.com: lỗi, bbci.co.uk: 21/48 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran hits industrial zone in southern israel...\" (16:06 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 17:50 UTC: 46 tin <24h / 73 tổng (reuters.com: lỗi, bbci.co.uk: 21/48 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran hits industrial zone in southern israel...\" (16:06 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "none",
         "hormuz_count": 12,
         "fresh_total": 46,
-        "scanned_at": "2026-03-29T17:43:31Z",
+        "scanned_at": "2026-03-29T17:50:10Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -128,9 +128,9 @@
     {
       "category": "",
       "indicator": "Put/Call ratio",
-      "value": "0.917",
-      "trend": "+0.0% (1ngày)",
-      "trend_raw": 0.0,
+      "value": "0.899",
+      "trend": "-2.0% (1ngày)",
+      "trend_raw": -1.96,
       "threshold": ">1.1",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -182,8 +182,8 @@
     }
   ],
   "risk": {
-    "score": 53,
-    "base_score": 43,
+    "score": 51,
+    "base_score": 41,
     "multiplier": 1.25,
     "level": "CẢNH GIÁC",
     "color": "warning",
@@ -193,7 +193,7 @@
     "breakdown": {
       "geo": 48.0,
       "inst": 46.0,
-      "market": 48.0,
+      "market": 44.0,
       "macro": 24.0
     },
     "indicator_scores": {
@@ -204,7 +204,7 @@
       "sentiment": 0,
       "vix_curve": 5,
       "vix": 9,
-      "put_call": 4,
+      "put_call": 2,
       "hyg_tlt": 0,
       "spread": 0,
       "dxy": 2,
