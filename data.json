@@ -1,5 +1,5 @@
 {
-  "last_updated": "23:48 Sunday, 29/03/2026 (GMT+7)",
+  "last_updated": "00:13 Monday, 30/03/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
@@ -25,12 +25,13 @@
       "statusLabel": "Bình thường",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 16:48 UTC: 46 tin <24h / 73 tổng (reuters.com: lỗi, bbci.co.uk: 21/48 tin mới, aljazeera.com: 25/25 tin mới) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 17:13 UTC: 46 tin <24h / 73 tổng (reuters.com: lỗi, bbci.co.uk: 21/48 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran hits industrial zone in southern israel...\" (16:06 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "none",
-        "hormuz_count": 0,
+        "hormuz_count": 13,
         "fresh_total": 46,
-        "scanned_at": "2026-03-29T16:48:43Z"
+        "scanned_at": "2026-03-29T17:13:06Z",
+        "classify_source": "keyword fallback"
       }
     },
     {
@@ -128,8 +129,8 @@
       "category": "",
       "indicator": "Put/Call ratio",
       "value": "0.917",
-      "trend": "—",
-      "trend_raw": null,
+      "trend": "+0.0% (1ngày)",
+      "trend_raw": 0.0,
       "threshold": ">1.1",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -166,7 +167,7 @@
     {
       "category": "",
       "indicator": "DXY (USD Index)",
-      "value": "100.19",
+      "value": "100.15",
       "trend": "+0.5% ↑",
       "trend_raw": 0.5,
       "threshold": ">107",
@@ -176,7 +177,7 @@
       "link": "https://finance.yahoo.com/quote/DX-Y.NYB/",
       "note": "US Dollar Index — DXY tăng mạnh >107 = USD siết chặt thanh khoản, rủi ro tài sản rủi ro tăng.",
       "_meta": {
-        "dxy": 100.193
+        "dxy": 100.151
       }
     }
   ],
