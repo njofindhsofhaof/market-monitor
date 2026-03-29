@@ -2,36 +2,37 @@ name: Cập nhật dữ liệu thị trường
 
 on:
   schedule:
-    # Chạy mỗi giờ (UTC) — tương đương mỗi giờ giờ Việt Nam
     - cron: '0 * * * *'
-  # Cho phép chạy thủ công từ tab Actions trên GitHub
   workflow_dispatch:
 
 jobs:
   fetch-data:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v5
+        uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Python
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
       - name: Cài đặt thư viện
-        run: pip install yfinance requests pandas
+        run: pip install yfinance requests pandas openpyxl xlrd
 
       - name: Fetch dữ liệu thị trường
+        env:
+          NASDAQ_API_KEY: ${{ secrets.NASDAQ_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python fetch_data.py
 
-      - name: Commit và push data.json + pc_history.json
+      - name: Commit và push data.json + history files
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data.json pc_history.json risk_history.json
-          # Chỉ commit nếu có thay đổi thực sự
+          git add data.json pc_history.json risk_history.json cot_history.json aaii_history.json naaim_history.json hormuz_cache.json etf_history.json
           git diff --staged --quiet || git commit -m "chore: cập nhật dữ liệu thị trường $(date +'%Y-%m-%d %H:%M') UTC"
           git push
