@@ -1,5 +1,5 @@
 {
-  "last_updated": "23:03 Sunday, 29/03/2026 (GMT+7)",
+  "last_updated": "23:48 Sunday, 29/03/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
@@ -17,20 +17,20 @@
     {
       "category": "",
       "indicator": "Xung đột Hormuz",
-      "value": "Căng thẳng leo thang",
+      "value": "Bình thường",
       "trend": "—",
       "trend_raw": null,
       "threshold": "Có phong tỏa",
-      "status": "warning",
-      "statusLabel": "CẢNH GIÁC",
+      "status": "success",
+      "statusLabel": "Bình thường",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 16:03 UTC: 44 tin <24h / 71 tổng (reuters.com: lỗi, bbci.co.uk: 19/46 tin mới, aljazeera.com: 25/25 tin mới) | 1 tin đề cập Hormuz/Strait trong 24h | Mới nhất: \"‘trump has to open the strait of hormuz’ with ground forces...\" (07:15 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 16:48 UTC: 46 tin <24h / 73 tổng (reuters.com: lỗi, bbci.co.uk: 21/48 tin mới, aljazeera.com: 25/25 tin mới) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
-        "status_key": "tension",
-        "hormuz_count": 1,
-        "fresh_total": 44,
-        "scanned_at": "2026-03-29T16:03:44Z"
+        "status_key": "none",
+        "hormuz_count": 0,
+        "fresh_total": 46,
+        "scanned_at": "2026-03-29T16:48:43Z"
       }
     },
     {
@@ -181,23 +181,23 @@
     }
   ],
   "risk": {
-    "score": 56,
-    "base_score": 45,
+    "score": 53,
+    "base_score": 43,
     "multiplier": 1.25,
-    "level": "CẢNH BÁO CAO",
-    "color": "danger",
+    "level": "CẢNH GIÁC",
+    "color": "warning",
     "active_leads": [
       "COT short ròng > 70% đỉnh lịch sử"
     ],
     "breakdown": {
-      "geo": 64.0,
+      "geo": 48.0,
       "inst": 46.0,
       "market": 48.0,
       "macro": 24.0
     },
     "indicator_scores": {
       "oil": 8,
-      "hormuz": 4,
+      "hormuz": 0,
       "cot": 10,
       "etf_flow": 2,
       "sentiment": 0,
