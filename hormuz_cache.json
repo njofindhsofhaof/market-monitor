@@ -1,5 +1,5 @@
 {
-  "scanned_at": "2026-03-29T17:39:57.972981+00:00",
+  "scanned_at": "2026-03-29T17:43:31.385262+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
@@ -11,12 +11,12 @@
     "statusLabel": "Bình thường",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 17:39 UTC: 46 tin <24h / 73 tổng (reuters.com: lỗi, bbci.co.uk: 21/48 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran hits industrial zone in southern israel...\" (16:06 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 17:43 UTC: 46 tin <24h / 73 tổng (reuters.com: lỗi, bbci.co.uk: 21/48 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran hits industrial zone in southern israel...\" (16:06 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
     "_meta": {
       "status_key": "none",
       "hormuz_count": 12,
       "fresh_total": 46,
-      "scanned_at": "2026-03-29T17:39:57Z",
+      "scanned_at": "2026-03-29T17:43:31Z",
       "classify_source": "keyword fallback"
     }
   }
