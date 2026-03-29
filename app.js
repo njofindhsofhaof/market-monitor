@@ -1,18 +1,13 @@
 // ===== CONFIG =====
-const API_URL     = "./data.json";
-const REFRESH_URL = "./data.json";
-
-// ===== STATE =====
+const API_URL = "./data.json";
 let isLoading = false;
 let riskChartInstance = null;
 
-// ===== STATUS MAP =====
 const STATUS_MAP = {
   danger:  { cls: "status-badge--danger",  dot: "dot--danger"  },
   warning: { cls: "status-badge--warning", dot: "dot--warning" },
   success: { cls: "status-badge--success", dot: "dot--success" }
 };
-
 const CAT_CLASS = {
   "Địa chính trị":     "cat-geo",
   "Dòng tiền tổ chức": "cat-flow",
@@ -26,7 +21,7 @@ async function fetchData(forceRefresh = false) {
   isLoading = true;
   setLoadingState(true);
   try {
-    const resp = await fetch(forceRefresh ? REFRESH_URL + "?t=" + Date.now() : API_URL);
+    const resp = await fetch(API_URL + (forceRefresh ? "?t=" + Date.now() : ""));
     if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
     const json = await resp.json();
     renderAll(json);
@@ -40,7 +35,6 @@ async function fetchData(forceRefresh = false) {
   }
 }
 
-// ===== RENDER ALL =====
 function renderAll(data) {
   if (!data || !data.indicators) return;
   window._lastData = data;
@@ -60,32 +54,29 @@ function renderGauge(risk) {
   const color = risk.color;
   const L = I18N[currentLang] || I18N['vi'];
 
-  // Score number
   const scoreEl = document.getElementById('risk-score');
   if (scoreEl) {
     scoreEl.textContent = score;
     scoreEl.className = `gauge-score risk-color-${color}`;
   }
 
-  // Badge
   const badgeEl = document.getElementById('risk-level-badge');
   if (badgeEl) {
     badgeEl.textContent = L.risk_levels?.[risk.level] || risk.level;
     badgeEl.className = `risk-level-badge risk-badge-${color}`;
   }
 
-  // Gauge arc fill — semicircle = 283px dasharray
+  // Gauge arc: total arc = 390px dasharray
   const fill = document.getElementById('gauge-fill');
   if (fill) {
     const pct = Math.min(score / 100, 1);
-    const dashoffset = 283 * (1 - pct);
-    // Color by zone
-    const strokeColor = score <= 35 ? '#22c55e'
-                      : score <= 55 ? '#f59e0b'
-                      : score <= 75 ? '#ef4444' : '#a78bfa';
+    const offset = 390 * (1 - pct);
+    const stroke = score <= 35 ? '#22c55e'
+                 : score <= 55 ? '#f59e0b'
+                 : score <= 75 ? '#ef4444' : '#a78bfa';
     requestAnimationFrame(() => {
-      fill.style.strokeDashoffset = dashoffset;
-      fill.style.stroke = strokeColor;
+      fill.style.strokeDashoffset = offset;
+      fill.style.stroke = stroke;
     });
   }
 
@@ -93,12 +84,12 @@ function renderGauge(risk) {
   const multRow = document.getElementById('gauge-mult-row');
   const multEl  = document.getElementById('gauge-mult');
   if (multRow && multEl && risk.multiplier !== undefined) {
-    const mult = risk.multiplier;
-    multEl.textContent = `×${mult.toFixed(2)}`;
-    multEl.style.color = mult > 1.3 ? 'var(--color-danger)'
-                       : mult > 1.1 ? 'var(--color-warning)'
+    const m = risk.multiplier;
+    multEl.textContent = `×${m.toFixed(2)}`;
+    multEl.style.color = m > 1.3 ? 'var(--color-danger)'
+                       : m > 1.1 ? 'var(--color-warning)'
                        : 'var(--color-success)';
-    multRow.style.display = mult !== 1.0 ? 'block' : 'none';
+    multRow.style.display = 'block';
   }
 
   // Leads
@@ -107,9 +98,10 @@ function renderGauge(risk) {
   if (leadsWrap && leadsList) {
     const leads = risk.active_leads || [];
     if (leads.length > 0) {
+      const L2 = I18N[currentLang] || I18N['vi'];
       leadsList.innerHTML = leads.map(l => {
-        const translated = (currentLang === 'en' && L.leads?.[l]) ? L.leads[l] : l;
-        return `<li>${escapeHtml(translated)}</li>`;
+        const t = (currentLang === 'en' && L2.leads?.[l]) ? L2.leads[l] : l;
+        return `<li>${escapeHtml(t)}</li>`;
       }).join('');
       leadsWrap.style.display = 'block';
     } else {
@@ -128,28 +120,23 @@ function renderGauge(risk) {
 // ===== CATEGORY CARDS =====
 function renderCategoryCards(risk) {
   const bd = risk.breakdown || {};
-  const keys = ['geo','inst','market','macro'];
-  const scoreColor = (val) => {
-    if (val >= 70) return { text: 'var(--color-danger)',  bar: 'danger' };
-    if (val >= 50) return { text: 'var(--color-warning)', bar: 'warning' };
-    if (val >= 30) return { text: 'var(--color-warning)', bar: 'warning' };
-    return { text: 'var(--color-success)', bar: 'success' };
-  };
+  const scoreColor = v =>
+    v >= 70 ? {text:'var(--color-danger)',cls:'danger'}
+    : v >= 50 ? {text:'var(--color-warning)',cls:'warning'}
+    : v >= 30 ? {text:'var(--color-warning)',cls:'warning'}
+    : {text:'var(--color-success)',cls:'success'};
 
-  keys.forEach(key => {
+  ['geo','inst','market','macro'].forEach(key => {
     const val = bd[key];
     if (val === undefined) return;
     const el  = document.getElementById(`bd-${key}`);
     const bar = document.getElementById(`bar-${key}`);
     const c   = scoreColor(val);
-    if (el) {
-      el.textContent = val.toFixed(1);
-      el.style.color = c.text;
-    }
+    if (el) { el.textContent = val.toFixed(1); el.style.color = c.text; }
     if (bar) {
       requestAnimationFrame(() => {
         bar.style.width = val + '%';
-        bar.className = `cat-bar-fill ${c.bar}`;
+        bar.className = `cat-bar-fill ${c.cls}`;
       });
     }
   });
@@ -162,7 +149,6 @@ async function renderRiskChart() {
     if (!resp.ok) return;
     const hist = await resp.json();
     if (!hist.length) return;
-
     const canvas = document.getElementById('risk-chart');
     if (!canvas) return;
 
@@ -171,16 +157,18 @@ async function renderRiskChart() {
       return `${String(d.getDate()).padStart(2,'0')}/${String(d.getMonth()+1).padStart(2,'0')}`;
     });
     const scores = hist.map(e => e.score);
-
-    const pointColors = scores.map(s =>
-      s <= 35 ? '#22c55e' : s <= 55 ? '#f59e0b' : s <= 75 ? '#ef4444' : '#a78bfa'
-    );
+    const ptColors = scores.map(s =>
+      s<=35?'#22c55e':s<=55?'#f59e0b':s<=75?'#ef4444':'#a78bfa');
 
     const isDark = document.documentElement.getAttribute('data-theme') !== 'light';
-    const gridColor  = isDark ? 'rgba(255,255,255,.05)' : 'rgba(0,0,0,.06)';
+    const gridColor  = isDark ? 'rgba(255,255,255,.04)' : 'rgba(0,0,0,.06)';
     const labelColor = isDark ? '#555' : '#aaa';
 
     if (riskChartInstance) riskChartInstance.destroy();
+
+    // Line color based on latest score
+    const latestScore = scores[scores.length - 1] || 0;
+    const lineColor = latestScore<=35?'#22c55e':latestScore<=55?'#f59e0b':latestScore<=75?'#ef4444':'#a78bfa';
 
     riskChartInstance = new Chart(canvas, {
       type: 'line',
@@ -188,17 +176,20 @@ async function renderRiskChart() {
         labels,
         datasets: [{
           data: scores,
-          borderColor: '#f59e0b',
+          borderColor: lineColor,
           borderWidth: 2,
-          pointBackgroundColor: pointColors,
-          pointBorderColor: pointColors,
+          pointBackgroundColor: ptColors,
+          pointBorderColor: ptColors,
           pointRadius: 4,
           pointHoverRadius: 6,
           fill: true,
           backgroundColor: (ctx) => {
-            const g = ctx.chart.ctx.createLinearGradient(0, 0, 0, ctx.chart.height);
-            g.addColorStop(0, 'rgba(245,158,11,.18)');
-            g.addColorStop(1, 'rgba(245,158,11,.01)');
+            const g = ctx.chart.ctx.createLinearGradient(0,0,0,ctx.chart.height);
+            g.addColorStop(0, lineColor.replace(')',', .2)').replace('rgb','rgba'));
+            g.addColorStop(1, lineColor.replace(')',', .01)').replace('rgb','rgba'));
+            // Fallback gradient
+            g.addColorStop(0, 'rgba(239,68,68,.2)');
+            g.addColorStop(1, 'rgba(239,68,68,.01)');
             return g;
           },
           tension: 0.35,
@@ -211,49 +202,36 @@ async function renderRiskChart() {
           legend: { display: false },
           tooltip: {
             backgroundColor: isDark ? '#1a1a1a' : '#fff',
-            borderColor: isDark ? '#2e2e2e' : '#e5e5e5',
+            borderColor:     isDark ? '#2e2e2e' : '#e5e5e5',
             borderWidth: 1,
             titleColor: isDark ? '#888' : '#666',
-            bodyColor: isDark ? '#e8e8e8' : '#111',
-            callbacks: {
-              label: ctx => ` ${ctx.raw}/100 — ${hist[ctx.dataIndex]?.level || ''}`,
-            }
+            bodyColor:  isDark ? '#e8e8e8' : '#111',
+            callbacks: { label: ctx => ` ${ctx.raw}/100 — ${hist[ctx.dataIndex]?.level || ''}` }
           }
         },
         scales: {
-          x: {
-            grid: { color: gridColor },
-            ticks: { color: labelColor, font: { family: 'IBM Plex Mono', size: 10 }, maxRotation: 0, maxTicksLimit: 10 }
-          },
-          y: {
-            min: 0, max: 100,
-            grid: { color: gridColor },
-            ticks: { color: labelColor, font: { family: 'IBM Plex Mono', size: 10 }, stepSize: 25 },
-            afterDataLimits: (axis) => { axis.min = 0; axis.max = 100; }
-          }
+          x: { grid:{color:gridColor}, ticks:{color:labelColor,font:{family:'IBM Plex Mono',size:10},maxRotation:0,maxTicksLimit:12} },
+          y: { min:0,max:100, grid:{color:gridColor}, ticks:{color:labelColor,font:{family:'IBM Plex Mono',size:10},stepSize:25} }
         }
       }
     });
-  } catch (e) {
-    console.warn('Chart error:', e);
-  }
+  } catch(e) { console.warn('Chart error:', e); }
 }
 
 // ===== TABLE =====
 function renderTable(indicators) {
   const tbody = document.getElementById("table-body");
-  let html = "";
   const L = I18N[currentLang] || I18N["vi"];
+  let html = "";
 
   indicators.forEach((row, idx) => {
     const sm = STATUS_MAP[row.status] || STATUS_MAP.success;
     const isGroupStart = row.category !== "" && idx !== 0;
-    const catName = L.categories?.[row.category] || row.category;
-    const indName = L.indicators?.[row.indicator] || row.indicator;
-    const statusLabel = L.status?.[row.statusLabel] || row.statusLabel;
-    const catCls = CAT_CLASS[row.category] || '';
+    const catName     = L.categories?.[row.category] || row.category;
+    const indName     = L.indicators?.[row.indicator] || row.indicator;
+    const statusLabel = L.status?.[row.statusLabel]   || row.statusLabel;
+    const catCls      = CAT_CLASS[row.category] || '';
 
-    // Value + threshold translation
     let displayValue     = row.value     || "";
     let displayThreshold = row.threshold || "";
     if (currentLang === "en" && L.value_replace) {
@@ -269,19 +247,18 @@ function renderTable(indicators) {
     const categoryCell = row.category
       ? `<td><span class="category-badge ${catCls}">${escapeHtml(catName)}</span></td>`
       : `<td></td>`;
-
     const sourceTag = row.link
-      ? `<a href="${escapeHtml(row.link)}" target="_blank" rel="noopener" class="source-link">${escapeHtml(row.source || '')}</a>`
+      ? `<a href="${escapeHtml(row.link)}" target="_blank" rel="noopener" class="source-link">${escapeHtml(row.source||'')}</a>`
       : row.source ? `<span class="source-link">${escapeHtml(row.source)}</span>` : '';
 
-    const trend = row.trend || "—";
+    const trend    = row.trend || "—";
     const trendRaw = row.trend_raw;
     let trendClass = "trend-na";
     if (trend !== "—" && trend !== "N/A" && trendRaw !== null && trendRaw !== undefined) {
       trendClass = trendRaw > 0.05 ? "trend-up" : trendRaw < -0.05 ? "trend-down" : "trend-flat";
     }
 
-    html += `<tr class="${isGroupStart ? 'group-start' : ''}" style="--i:${idx}">
+    html += `<tr class="${isGroupStart?'group-start':''}" style="--i:${idx}">
       ${categoryCell}
       <td><span class="indicator-name">${escapeHtml(indName)}</span>${sourceTag}</td>
       <td class="td-value">${escapeHtml(displayValue)}</td>
@@ -294,16 +271,15 @@ function renderTable(indicators) {
   tbody.innerHTML = html;
 }
 
-// ===== SUMMARY PILLS =====
+// ===== PILLS =====
 function updateSummaryPills(indicators) {
-  const counts = { danger: 0, warning: 0, success: 0 };
+  const counts = {danger:0,warning:0,success:0};
   indicators.forEach(r => counts[r.status]++);
   document.getElementById("count-canh-bao").textContent    = t("pill_danger",  counts.danger);
   document.getElementById("count-canh-giac").textContent   = t("pill_warning", counts.warning);
   document.getElementById("count-binh-thuong").textContent = t("pill_success", counts.success);
 }
 
-// ===== TIMESTAMP =====
 function updateTimestamp(lastUpdated) {
   const el = document.getElementById("last-updated");
   if (el) el.textContent = lastUpdated || "N/A";
@@ -311,31 +287,29 @@ function updateTimestamp(lastUpdated) {
 
 // ===== LOADING =====
 function setLoadingState(loading) {
-  const btn = document.getElementById("refresh-btn");
+  const btn     = document.getElementById("refresh-btn");
   const spinner = document.getElementById("refresh-spinner");
   if (btn) btn.disabled = loading;
   if (spinner) spinner.style.display = loading ? "inline-block" : "none";
   if (loading) {
-    document.querySelectorAll(".td-value, .td-threshold").forEach(td => td.classList.add("skeleton"));
+    document.querySelectorAll(".td-value,.td-threshold").forEach(td=>td.classList.add("skeleton"));
   } else {
-    document.querySelectorAll(".skeleton").forEach(el => el.classList.remove("skeleton"));
+    document.querySelectorAll(".skeleton").forEach(el=>el.classList.remove("skeleton"));
   }
 }
 
-// ===== ERROR =====
 function setError(msg) {
   const el = document.getElementById("error-banner");
   if (!el) return;
   if (msg) { el.textContent = "⚠ " + msg; el.style.display = "block"; }
-  else { el.style.display = "none"; }
+  else      { el.style.display = "none"; }
 }
 
 // ===== THEME =====
 function initTheme() {
   const toggle = document.querySelector("[data-theme-toggle]");
   const root   = document.documentElement;
-  let isDark   = true; // default dark
-
+  let isDark   = true;
   function setTheme(dark) {
     isDark = dark;
     root.setAttribute("data-theme", dark ? "dark" : "light");
@@ -344,20 +318,16 @@ function initTheme() {
         ? `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>`
         : `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>`;
     }
-    // Redraw chart with new theme colors
     if (riskChartInstance) renderRiskChart();
   }
-
   setTheme(isDark);
-  toggle && toggle.addEventListener("click", () => setTheme(!isDark));
+  toggle && toggle.addEventListener("click", ()=>setTheme(!isDark));
 }
 
 // ===== UTILS =====
 function escapeHtml(str) {
-  if (str === null || str === undefined) return "N/A";
-  return String(str)
-    .replace(/&/g,"&amp;").replace(/</g,"&lt;")
-    .replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+  if (str===null||str===undefined) return "N/A";
+  return String(str).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
 }
 
 // ===== INIT =====
@@ -365,8 +335,8 @@ document.addEventListener("DOMContentLoaded", () => {
   initTheme();
   setLang(currentLang);
   const langBtn = document.getElementById("lang-toggle");
-  langBtn && langBtn.addEventListener("click", () => setLang(currentLang === "vi" ? "en" : "vi"));
+  langBtn && langBtn.addEventListener("click", ()=>setLang(currentLang==="vi"?"en":"vi"));
   fetchData();
   const refreshBtn = document.getElementById("refresh-btn");
-  refreshBtn && refreshBtn.addEventListener("click", () => fetchData(true));
+  refreshBtn && refreshBtn.addEventListener("click", ()=>fetchData(true));
 });
