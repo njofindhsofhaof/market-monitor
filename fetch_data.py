@@ -408,31 +408,40 @@ def fetch_cot():
 
 def fetch_etf_flows():
     """
-    ETF Flows — ước tính dòng tiền vào/ra SPY + QQQ (7 ngày, tỷ USD).
-    Proxy: Δshares_outstanding × NAV. yfinance trả shares hiện tại qua fast_info;
-    so sánh với shares từ info (snapshot snapshot gần nhất) để estimate delta.
+    ETF Flows — ước tính net flow SPY + QQQ 5 phiên gần nhất (tỷ USD).
+    
+    Proxy thực tế: yfinance không cung cấp daily shares outstanding,
+    nên dùng Volume × Price × sign(return) làm net flow proxy.
+    - Nếu giá tăng trong ngày: volume = inflow proxy
+    - Nếu giá giảm trong ngày: volume = outflow proxy
+    Tích lũy 5 phiên → estimate net flow 7 ngày.
     """
     etfs = [("SPY", "S&P 500"), ("QQQ", "Nasdaq 100")]
-    total_b = 0.0   # tỷ USD
-    parts   = []
+    total_b  = 0.0
+    parts    = []
     any_data = False
 
     for sym, name in etfs:
         try:
-            tk = yf.Ticker(sym)
-            fi = tk.fast_info
-            shares_now = fi.get("shares", None)
-            price      = fi.get("lastPrice", None)
-            if shares_now is None or price is None:
+            tk   = yf.Ticker(sym)
+            hist = tk.history(period="10d")
+            if hist is None or len(hist) < 2:
                 continue
 
-            info = tk.info
-            shares_prev = info.get("sharesOutstanding", shares_now)
-            delta_shares = shares_now - shares_prev
-            flow_b = round(delta_shares * price / 1e9, 2)  # tỷ USD
+            # Lấy 5 phiên gần nhất
+            recent = hist.tail(5)
 
-            total_b  += flow_b
-            parts.append(f"{sym}: {flow_b:+.2f}B")
+            # Net flow proxy mỗi phiên: volume × price × sign(close - open)
+            daily_flows = []
+            for _, row in recent.iterrows():
+                price_avg  = (row["Open"] + row["Close"]) / 2
+                direction  = 1 if row["Close"] >= row["Open"] else -1
+                flow_b_day = direction * row["Volume"] * price_avg / 1e9
+                daily_flows.append(flow_b_day)
+
+            etf_flow_b = round(sum(daily_flows), 2)
+            total_b   += etf_flow_b
+            parts.append(f"{sym}: {etf_flow_b:+.2f}B")
             any_data = True
         except Exception:
             continue
@@ -440,12 +449,11 @@ def fetch_etf_flows():
     if not any_data:
         total_b = None
 
-    # Đổi sang tỷ USD cho evaluate/score
     status, label = evaluate("etf_flow", total_b if total_b is not None else 0)
 
     if total_b is not None:
-        arrow = "↑" if total_b > 0 else ("↓" if total_b < 0 else "→")
-        value_str = f"{total_b:+.2f}B USD/7d ({', '.join(parts)})"
+        arrow     = "↑" if total_b > 0 else ("↓" if total_b < 0 else "→")
+        value_str = f"{total_b:+.2f}B USD/5d ({', '.join(parts)})"
         trend_str = f"{total_b:+.2f}B {arrow}"
     else:
         value_str = "Đang theo dõi"
@@ -460,9 +468,9 @@ def fetch_etf_flows():
         "threshold": "Outflow > −2B USD/7d",
         "status": status,
         "statusLabel": label,
-        "source": "Yahoo Finance (shares proxy)",
+        "source": "Yahoo Finance (volume proxy)",
         "link": "https://etf.com/etfanalytics/etf-fund-flows-tool",
-        "note": "Ước tính net flow SPY+QQQ từ Δshares_outstanding × NAV. Outflow liên tục >$5B/tuần = cảnh báo.",
+        "note": "Net flow proxy: Σ(volume × price × sign(close−open)) 5 phiên. Outflow liên tục >$5B/tuần = cảnh báo.",
         "_meta": {"flow_b": total_b}
     }
 
@@ -486,58 +494,146 @@ def _save_naaim_history(exposure):
 
 def _fetch_naaim_exposure():
     """
-    NAAIM Exposure Index — mức độ phơi nhiễm cổ phiếu của active fund managers.
-    Scrape từ naaim.org/resources/naaim-exposure-index/ (weekly, thứ 4).
-    Returns: float 0–200 (leveraged), None nếu fail.
+    NAAIM Exposure Index — fetch từ NAAIM data endpoint chính thức.
+    NAAIM publish weekly exposure qua endpoint JSON hoặc page HTML.
+    Thử nhiều nguồn theo thứ tự ưu tiên.
     """
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+        "Accept-Language": "en-US,en;q=0.5",
+    }
+
+    # Nguồn 1: NAAIM data page — parse số từ visible text
     url = "https://www.naaim.org/resources/naaim-exposure-index/"
-    resp = requests.get(url, timeout=20, headers={"User-Agent": "Mozilla/5.0"})
+    resp = requests.get(url, timeout=20, headers=headers)
     resp.raise_for_status()
-
-    # Tìm số exposure trong HTML — NAAIM hiển thị dạng "This week: XX.XX"
     text = resp.text
-    # Pattern: "This Week" hoặc "Current" kèm số thập phân
+
+    # Pattern mở rộng — NAAIM hiển thị số dạng "XX.XX" trong nhiều format khác nhau
     patterns = [
-        r"[Tt]his\s+[Ww]eek[^\d]{0,20}([\d]{1,3}\.[\d]{1,2})",
-        r"[Cc]urrent[^\d]{0,20}([\d]{1,3}\.[\d]{1,2})",
-        r"NAAIM Number[^\d]{0,30}([\d]{1,3}\.[\d]{1,2})",
+        # Dạng "This Week: 72.45" hoặc "This week's number: 72.45"
+        r"[Tt]his\s+[Ww]eek[^<\d]{0,40}?([\d]{1,3}\.[\d]{1,2})",
+        # Dạng "Current Reading: 72.45"
+        r"[Cc]urrent\s+[Rr]eading[^<\d]{0,20}?([\d]{1,3}\.[\d]{1,2})",
+        # Dạng label "NAAIM Number" trong bảng
+        r"NAAIM\s+Number[^<\d]{0,30}?([\d]{1,3}\.[\d]{1,2})",
+        # Số trong <strong> hoặc <b> tag gần từ "exposure" hoặc "week"
+        r"<(?:strong|b)[^>]*>\s*([\d]{1,3}\.[\d]{2})\s*</(?:strong|b)>",
+        # JSON-like pattern trong script tags
+        r'"(?:exposure|naaim_number|current_reading|thisWeek)"\s*:\s*"?([\d]{1,3}\.[\d]{1,2})"?',
+        # Số standalone trong range hợp lý (0-200) sau keyword
+        r'(?:exposure|bull|index)[^<\d]{0,30}?(1?\d{2}\.\d{2})',
     ]
+
     for pat in patterns:
-        m = _re.search(pat, text)
+        m = _re.search(pat, text, _re.IGNORECASE)
         if m:
-            return float(m.group(1))
+            val = float(m.group(1))
+            if 0 <= val <= 200:   # sanity check range NAAIM
+                return val
 
-    # Fallback: tìm số trong tag có class liên quan
-    m = _re.search(r'class="[^"]*(?:exposure|naaim-number|current)[^"]*"[^>]*>[\s]*([\d]{2,3}\.[\d]{1,2})', text)
-    if m:
-        return float(m.group(1))
+    # Nguồn 2: Stooq có NAAIM index historical data
+    try:
+        stooq_url = "https://stooq.com/q/d/l/?s=naaim.w&i=w"
+        r2 = requests.get(stooq_url, timeout=15, headers=headers)
+        if r2.ok and len(r2.text) > 50:
+            lines = [l for l in r2.text.strip().split("\n") if l and not l.startswith("Date")]
+            if lines:
+                last = lines[-1].split(",")
+                if len(last) >= 5:
+                    return float(last[4])  # Close column
+    except Exception:
+        pass
 
-    raise ValueError("Không parse được NAAIM exposure từ HTML")
+    raise ValueError("Không parse được NAAIM exposure từ HTML/CSV")
 
 def _fetch_aaii_bull():
     """
-    AAII Sentiment Survey — trả về bull% (retail investors).
-    Parse từ XLS của AAII.
+    AAII Sentiment Survey — Bull% và Bear%.
+    AAII block direct .xls download → dùng nhiều nguồn thay thế:
+    1. AAII JSON API endpoint (nếu có)
+    2. Parse từ trang HTML AAII
+    3. Stooq AAII historical CSV
     """
     import io
     import pandas as pd
-    url = "https://www.aaii.com/files/surveys/sentiment.xls"
-    resp = requests.get(url, timeout=20, headers={"User-Agent": "Mozilla/5.0"})
-    resp.raise_for_status()
 
-    df = pd.read_excel(io.BytesIO(resp.content), skiprows=3)
-    df.columns = [str(c).strip() for c in df.columns]
-    bull_col = next(c for c in df.columns if "bull" in c.lower())
-    bear_col = next(c for c in df.columns if "bear" in c.lower())
-    recent = df.dropna(subset=[bull_col, bear_col]).iloc[-1]
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+        "Referer": "https://www.aaii.com/",
+    }
 
-    bull = float(recent[bull_col])
-    bear = float(recent[bear_col])
-    # Nếu dạng thập phân (0.45) → nhân 100
-    if bull < 2:
-        bull *= 100
-        bear *= 100
-    return round(bull, 1), round(bear, 1)
+    # Nguồn 1: AAII sentiment page — scrape số từ HTML
+    url_page = "https://www.aaii.com/sentimentsurvey"
+    try:
+        resp = requests.get(url_page, timeout=20, headers=headers)
+        if resp.ok:
+            text = resp.text
+            # Tìm pattern "Bullish XX.X%" và "Bearish XX.X%"
+            bull_m = _re.search(r'[Bb]ullish[^<\d]{0,30}?([\d]{1,2}\.[\d]{1})\s*%', text)
+            bear_m = _re.search(r'[Bb]earish[^<\d]{0,30}?([\d]{1,2}\.[\d]{1})\s*%', text)
+            if bull_m and bear_m:
+                return round(float(bull_m.group(1)), 1), round(float(bear_m.group(1)), 1)
+
+            # Fallback: tìm JSON embedded trong page
+            json_m = _re.search(
+                r'"bullish"\s*:\s*"?([\d.]+)"?[^}]{0,50}"bearish"\s*:\s*"?([\d.]+)"?',
+                text, _re.IGNORECASE
+            )
+            if json_m:
+                bull = float(json_m.group(1))
+                bear = float(json_m.group(2))
+                if bull < 2: bull *= 100
+                if bear < 2: bear *= 100
+                return round(bull, 1), round(bear, 1)
+    except Exception:
+        pass
+
+    # Nguồn 2: Stooq AAII bull/bear weekly data
+    try:
+        # Bull index
+        r_bull = requests.get("https://stooq.com/q/d/l/?s=aaiibull.w&i=w",
+                              timeout=15, headers=headers)
+        r_bear = requests.get("https://stooq.com/q/d/l/?s=aaiibear.w&i=w",
+                              timeout=15, headers=headers)
+        if r_bull.ok and r_bear.ok:
+            bull_lines = [l for l in r_bull.text.strip().split("\n") if l and not l.startswith("Date")]
+            bear_lines = [l for l in r_bear.text.strip().split("\n") if l and not l.startswith("Date")]
+            if bull_lines and bear_lines:
+                bull = float(bull_lines[-1].split(",")[4])
+                bear = float(bear_lines[-1].split(",")[4])
+                # Stooq trả dạng 0-100
+                if bull < 2: bull *= 100
+                if bear < 2: bear *= 100
+                return round(bull, 1), round(bear, 1)
+    except Exception:
+        pass
+
+    # Nguồn 3: AAII XLS với session cookie
+    try:
+        session = requests.Session()
+        session.get("https://www.aaii.com/", timeout=10, headers=headers)  # lấy cookie
+        resp_xls = session.get(
+            "https://www.aaii.com/files/surveys/sentiment.xls",
+            timeout=20,
+            headers={**headers, "Accept": "application/vnd.ms-excel,*/*"}
+        )
+        if resp_xls.ok and len(resp_xls.content) > 1000:
+            df = pd.read_excel(io.BytesIO(resp_xls.content), skiprows=3)
+            df.columns = [str(c).strip() for c in df.columns]
+            bull_col = next(c for c in df.columns if "bull" in c.lower())
+            bear_col = next(c for c in df.columns if "bear" in c.lower())
+            recent = df.dropna(subset=[bull_col, bear_col]).iloc[-1]
+            bull = float(recent[bull_col])
+            bear = float(recent[bear_col])
+            if bull < 2: bull *= 100; bear *= 100
+            return round(bull, 1), round(bear, 1)
+    except Exception:
+        pass
+
+    raise ValueError("Không lấy được AAII data từ tất cả nguồn")
 
 def fetch_sentiment():
     """
