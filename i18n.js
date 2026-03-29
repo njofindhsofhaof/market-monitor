@@ -16,7 +16,12 @@ const I18N = {
 
     // Risk card
     risk_title:       "TỔNG ĐIỂM RỦI RO",
-    risk_history_label: "Lịch sử điểm (30 ngày gần nhất)",
+    risk_history_label: "Lịch sử điểm rủi ro 30 ngày",
+    table_title:      "Chi tiết các chỉ báo rủi ro",
+    gl_0: "0–35 An toàn",
+    gl_1: "36–55 Thận trọng",
+    gl_2: "56–75 Cảnh báo",
+    gl_3: "76–100 Nguy hiểm",
     bd_geo:    "Địa chính trị",
     bd_inst:   "Dòng tiền tổ chức",
     bd_market: "Thị trường",
@@ -113,7 +118,12 @@ const I18N = {
 
     // Risk card
     risk_title:       "TOTAL RISK SCORE",
-    risk_history_label: "Score history (last 30 days)",
+    risk_history_label: "30-day Risk Score History",
+    table_title:      "Risk Indicator Details",
+    gl_0: "0–35 Safe",
+    gl_1: "36–55 Caution",
+    gl_2: "56–75 Alert",
+    gl_3: "76–100 Danger",
     bd_geo:    "Geopolitical",
     bd_inst:   "Institutional Flow",
     bd_market: "Market",
@@ -271,6 +281,13 @@ function applyLang() {
   set("page-source-note",  L.page_source);
   set("risk-title",        L.risk_title);
   set("risk-history-label",L.risk_history_label);
+  set("table-title",       L.table_title);
+
+  // Gauge legend
+  if (L.gl_0) set("gl-0", L.gl_0);
+  if (L.gl_1) set("gl-1", L.gl_1);
+  if (L.gl_2) set("gl-2", L.gl_2);
+  if (L.gl_3) set("gl-3", L.gl_3);
   set("bd-geo-label",      `${L.bd_geo} <small>${L.bd_geo_w}</small>`);
   set("bd-market-label",   `${L.bd_market} <small>${L.bd_market_w}</small>`);
   set("bd-macro-label",    `${L.bd_macro} <small>${L.bd_macro_w}</small>`);

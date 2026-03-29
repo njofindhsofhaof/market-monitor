@@ -1,200 +1,151 @@
 <!DOCTYPE html>
-<html lang="vi" data-theme="light">
+<html lang="vi" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tổng hợp thị trường hàng ngày</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="page">
-    <header class="page-header">
-      <div class="header-left">
-        <svg class="logo" width="32" height="32" viewBox="0 0 32 32" fill="none" aria-label="Market Monitor Logo">
-          <rect x="2" y="2" width="28" height="28" rx="6" fill="var(--color-primary)" opacity="0.12"/>
-          <polyline points="5,22 10,14 16,18 22,10 27,13" stroke="var(--color-primary)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-          <circle cx="22" cy="10" r="2.5" fill="var(--color-primary)"/>
+  <nav class="navbar">
+    <div class="navbar-left">
+      <div class="nav-logo">
+        <svg width="18" height="18" viewBox="0 0 32 32" fill="none">
+          <polyline points="4,22 10,13 16,18 22,9 28,12" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <circle cx="22" cy="9" r="2.5" fill="currentColor"/>
         </svg>
-        <div>
-          <h1 class="page-title" id="page-title">Tổng hợp thị trường hàng ngày</h1>
-          <p class="page-subtitle">
-            <span id="page-subtitle-pre">Cập nhật lần cuối:</span> <span id="last-updated">Đang tải...</span>
-            &nbsp;·&nbsp;
-            <span class="data-source-note" id="page-source-note">Nguồn: Yahoo Finance · FRED</span>
-          </p>
-        </div>
       </div>
-      <div class="header-right">
-        <div class="summary-pills">
-          <span class="pill pill--danger"  id="count-canh-bao">–</span>
-          <span class="pill pill--warning" id="count-canh-giac">–</span>
-          <span class="pill pill--success" id="count-binh-thuong">–</span>
-        </div>
-        <button id="refresh-btn" class="refresh-btn" title="Tải lại dữ liệu">
-          <span id="refresh-spinner" class="spinner" style="display:none"></span>
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/>
-            <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
-          </svg>
-          <span id="refresh-label">Refresh</span>
-        </button>
-        <!-- Language toggle -->
-        <button id="lang-toggle" class="lang-toggle" title="Switch to English">EN</button>
-        <!-- Theme toggle -->
-        <button class="theme-toggle" data-theme-toggle aria-label="Chuyển chế độ tối">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-          </svg>
-        </button>
-      </div>
-    </header>
+      <span class="nav-brand">Market Monitor</span>
+      <span class="nav-divider">|</span>
+      <span class="nav-subtitle" id="page-title">Tổng hợp thị trường hàng ngày</span>
+    </div>
+    <div class="navbar-center">
+      <span class="pill pill--danger"  id="count-canh-bao">–</span>
+      <span class="pill pill--warning" id="count-canh-giac">–</span>
+      <span class="pill pill--success" id="count-binh-thuong">–</span>
+    </div>
+    <div class="navbar-right">
+      <span class="nav-updated"><span id="page-subtitle-pre">Cập nhật lần cuối:</span> <span id="last-updated" class="nav-updated-time">Đang tải...</span></span>
+      <button id="refresh-btn" class="btn-icon" title="Làm mới">
+        <span id="refresh-spinner" class="spinner" style="display:none"></span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/>
+          <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
+        </svg>
+        <span id="refresh-label">Làm mới</span>
+      </button>
+      <button id="lang-toggle" class="btn-lang">EN</button>
+      <button class="btn-icon btn-icon--square" data-theme-toggle aria-label="Toggle theme">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
 
-    <!-- Error banner -->
-    <div id="error-banner" class="error-banner" style="display:none"></div>
+  <div id="error-banner" class="error-banner" style="display:none"></div>
 
-    <main>
-      <!-- Risk Score Card -->
-      <section class="risk-section" id="risk-section">
-        <div class="risk-card">
-          <div class="risk-left">
-            <div class="risk-label" id="risk-title">TỔNG ĐIỂM RỦI RO</div>
-            <div class="risk-score-row">
-              <span class="risk-score" id="risk-score">--</span>
-              <span class="risk-score-max">/100</span>
-              <span class="risk-level-badge" id="risk-level-badge">--</span>
-            </div>
-            <div class="risk-bar-wrap">
-              <div class="risk-bar-track">
-                <div class="risk-bar-fill" id="risk-bar-fill"></div>
-                <div class="risk-zone-marker" style="left:35%"></div>
-                <div class="risk-zone-marker" style="left:55%"></div>
-                <div class="risk-zone-marker" style="left:75%"></div>
-              </div>
-              <div class="risk-bar-labels">
-                <span>0</span><span>35</span><span>55</span><span>75</span><span>100</span>
+  <main class="main">
+
+    <!-- RISK SCORE -->
+    <section class="section">
+      <h2 class="section-title" id="risk-title">Tổng điểm rủi ro</h2>
+      <div class="risk-layout">
+        <div class="card gauge-card">
+          <div class="gauge-wrap">
+            <svg class="gauge-svg" viewBox="0 0 220 130" xmlns="http://www.w3.org/2000/svg">
+              <path d="M 20 115 A 90 90 0 0 1 200 115" fill="none" stroke="var(--c-track)" stroke-width="14" stroke-linecap="round"/>
+              <path id="gauge-fill" d="M 20 115 A 90 90 0 0 1 200 115" fill="none" stroke="var(--color-warning)" stroke-width="14" stroke-linecap="round"
+                    stroke-dasharray="283" stroke-dashoffset="283" style="transition:stroke-dashoffset 1.4s cubic-bezier(.16,1,.3,1),stroke .4s"/>
+            </svg>
+            <div class="gauge-center">
+              <div class="gauge-score" id="risk-score">--</div>
+              <div class="gauge-denom">/100</div>
+              <div class="risk-level-badge" id="risk-level-badge">--</div>
+              <div class="gauge-mult-row" id="gauge-mult-row" style="display:none">
+                <span class="gauge-mult" id="gauge-mult">×--</span>
               </div>
             </div>
           </div>
-
-          <div class="risk-breakdown" id="risk-breakdown">
-            <div class="breakdown-item">
-              <span class="breakdown-label" id="bd-geo-label">Địa chính trị <small>(15%)</small></span>
-              <span class="breakdown-score" id="bd-geo">--</span>
-            </div>
-            <div class="breakdown-item">
-              <span class="breakdown-label" id="bd-inst-label">Dòng tiền tổ chức <small>(25%)</small></span>
-              <span class="breakdown-score" id="bd-inst">--</span>
-            </div>
-            <div class="breakdown-item">
-              <span class="breakdown-label" id="bd-market-label">Thị trường <small>(40%)</small></span>
-              <span class="breakdown-score" id="bd-market">--</span>
-            </div>
-            <div class="breakdown-item">
-              <span class="breakdown-label" id="bd-macro-label">Vĩ mô <small>(20%)</small></span>
-              <span class="breakdown-score" id="bd-macro">--</span>
-            </div>
-            <div class="breakdown-item breakdown-item--multiplier">
-              <span class="breakdown-label" id="bd-mult-label">Hệ số khuếch đại</span>
-              <span class="breakdown-score" id="bd-multiplier">×--</span>
-            </div>
+          <div class="leads-wrap" id="risk-leads-wrap" style="display:none">
+            <div class="leads-label" id="risk-leads-label">⚡ Lead indicators kích hoạt:</div>
+            <ul class="leads-list" id="risk-leads-list"></ul>
           </div>
-
-          <div class="risk-leads-wrap" id="risk-leads-wrap" style="display:none">
-            <div class="risk-leads-label" id="risk-leads-label">⚡ Lead indicators kích hoạt:</div>
-            <ul class="risk-leads-list" id="risk-leads-list"></ul>
-          </div>
-
-          <div class="risk-history-wrap">
-            <div class="risk-history-label" id="risk-history-label">Lịch sử điểm (30 ngày gần nhất)</div>
-            <div class="risk-history-chart" id="risk-history-chart"></div>
+          <div class="gauge-legend">
+            <span class="gl-item"><span class="gl-dot" style="background:var(--color-success)"></span><span id="gl-0">0–35 An toàn</span></span>
+            <span class="gl-item"><span class="gl-dot" style="background:var(--color-warning)"></span><span id="gl-1">36–55 Thận trọng</span></span>
+            <span class="gl-item"><span class="gl-dot" style="background:var(--color-danger)"></span><span id="gl-2">56–75 Cảnh báo</span></span>
+            <span class="gl-item"><span class="gl-dot" style="background:#a78bfa"></span><span id="gl-3">76–100 Nguy hiểm</span></span>
           </div>
         </div>
 
-        <div class="risk-table-wrap">
-          <table class="risk-table">
-            <thead>
-              <tr>
-                <th id="risk-th-range">Mức điểm</th>
-                <th id="risk-th-meaning">Ý nghĩa</th>
-                <th id="risk-th-action">Hành động</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td class="rz rz-success">0–35</td>   <td><b id="risk-row-level-0">BÌNH THƯỜNG</b></td>    <td id="risk-row-action-0">Duy trì tỷ trọng, theo dõi định kỳ</td></tr>
-              <tr><td class="rz rz-warning">36–55</td>   <td><b id="risk-row-level-1">CẢNH GIÁC</b></td>      <td id="risk-row-action-1">Giảm đòn bẩy, chuẩn bị phòng vệ</td></tr>
-              <tr><td class="rz rz-danger">56–75</td>    <td><b id="risk-row-level-2">CẢNH BÁO CAO</b></td>   <td id="risk-row-action-2">Giảm tỷ trọng rủi ro, tăng tiền mặt &amp; hedge</td></tr>
-              <tr><td class="rz rz-critical">76–100</td> <td><b id="risk-row-level-3">RỦI RO HỆ THỐNG</b></td><td id="risk-row-action-3">Hedge mạnh, chuyển danh mục phòng thủ toàn phần</td></tr>
-            </tbody>
-          </table>
+        <div class="cat-cards">
+          <div class="cat-card"><div class="cat-top"><span class="cat-name" id="bd-geo-label">Địa chính trị</span><span class="cat-w">(15%)</span></div><div class="cat-score-row"><span id="bd-geo" class="cat-val">--</span><span class="cat-max">/100</span></div><div class="cat-bar-track"><div class="cat-bar-fill" id="bar-geo"></div></div><div class="cat-bar-ends"><span>0</span><span>100</span></div></div>
+          <div class="cat-card"><div class="cat-top"><span class="cat-name" id="bd-inst-label">Dòng tiền tổ chức</span><span class="cat-w">(25%)</span></div><div class="cat-score-row"><span id="bd-inst" class="cat-val">--</span><span class="cat-max">/100</span></div><div class="cat-bar-track"><div class="cat-bar-fill" id="bar-inst"></div></div><div class="cat-bar-ends"><span>0</span><span>100</span></div></div>
+          <div class="cat-card"><div class="cat-top"><span class="cat-name" id="bd-market-label">Thị trường</span><span class="cat-w">(40%)</span></div><div class="cat-score-row"><span id="bd-market" class="cat-val">--</span><span class="cat-max">/100</span></div><div class="cat-bar-track"><div class="cat-bar-fill" id="bar-market"></div></div><div class="cat-bar-ends"><span>0</span><span>100</span></div></div>
+          <div class="cat-card"><div class="cat-top"><span class="cat-name" id="bd-macro-label">Vĩ mô</span><span class="cat-w">(20%)</span></div><div class="cat-score-row"><span id="bd-macro" class="cat-val">--</span><span class="cat-max">/100</span></div><div class="cat-bar-track"><div class="cat-bar-fill" id="bar-macro"></div></div><div class="cat-bar-ends"><span>0</span><span>100</span></div></div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="table-section">
-        <div class="table-wrapper">
-          <table class="monitor-table" id="monitor-table">
-            <thead>
-              <tr>
-                <th class="col-category"  id="th-category">Hạng mục</th>
-                <th class="col-indicator" id="th-indicator">Chỉ báo</th>
-                <th class="col-value"     id="th-value">Giá trị hiện tại</th>
-                <th class="col-trend"     id="th-trend">Xu hướng 1 tuần</th>
-                <th class="col-threshold" id="th-threshold">Ngưỡng cảnh báo</th>
-                <th class="col-status"    id="th-status">Trạng thái</th>
-              </tr>
-            </thead>
-            <tbody id="table-body">
-              <tr><td colspan="6" class="loading-row">
-                <div class="loading-pulse" id="loading-text">Đang tải dữ liệu thị trường...</div>
-              </td></tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
+    <!-- INDICATOR TABLE -->
+    <section class="section">
+      <h2 class="section-title" id="table-title">Chi tiết các chỉ báo rủi ro</h2>
+      <div class="table-wrap">
+        <table class="data-table" id="monitor-table">
+          <thead>
+            <tr>
+              <th id="th-category">Hạng mục</th>
+              <th id="th-indicator">Chỉ báo</th>
+              <th id="th-value">Giá trị hiện tại</th>
+              <th id="th-trend">Xu hướng 1 tuần</th>
+              <th id="th-threshold">Ngưỡng cảnh báo</th>
+              <th id="th-status">Trạng thái</th>
+            </tr>
+          </thead>
+          <tbody id="table-body">
+            <tr><td colspan="6" class="loading-row"><div class="loading-pulse" id="loading-text">Đang tải dữ liệu thị trường...</div></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
 
-      <section class="legend-section">
-        <h2 class="legend-title" id="legend-title">CHÚ THÍCH TRẠNG THÁI</h2>
-        <div class="legend-grid">
-          <div class="legend-item">
-            <span class="status-dot dot--danger"></span>
-            <div>
-              <strong id="legend-label-0">CẢNH BÁO</strong>
-              <p id="legend-desc-0">Chỉ số đã vượt ngưỡng nguy hiểm. Cần theo dõi sát và cân nhắc điều chỉnh danh mục.</p>
-            </div>
-          </div>
-          <div class="legend-item">
-            <span class="status-dot dot--warning"></span>
-            <div>
-              <strong id="legend-label-1">CẢNH GIÁC</strong>
-              <p id="legend-desc-1">Chỉ số đang tiệm cận ngưỡng cảnh báo. Cần chú ý theo dõi thêm.</p>
-            </div>
-          </div>
-          <div class="legend-item">
-            <span class="status-dot dot--success"></span>
-            <div>
-              <strong id="legend-label-2">BÌNH THƯỜNG</strong>
-              <p id="legend-desc-2">Chỉ số trong vùng an toàn. Tiếp tục quan sát định kỳ.</p>
-            </div>
-          </div>
-          <div class="legend-item legend-item--source">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-top:3px;flex-shrink:0;color:var(--color-text-faint)"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-            <div>
-              <strong id="source-label">Nguồn dữ liệu</strong>
-              <p id="source-desc">Yahoo Finance (WTI, VIX, HYG, TLT, TNX, SPY options, ETF shares, DXY) · CFTC Legacy COT (S&amp;P 500 E-mini) · NAAIM Exposure Index · AAII Sentiment Survey · Xung đột Hormuz cập nhật thủ công.</p>
-            </div>
-          </div>
-          <div class="legend-item legend-item--contact">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-top:3px;flex-shrink:0;color:var(--color-text-faint)"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-            <div>
-              <p><span id="contact-text">Mọi ý kiến đóng góp xin liên hệ:</span> <a href="https://x.com/Hirohnguyen" target="_blank" rel="noopener">@Hirohnguyen</a> or <a href="https://t.me/oxhiroh" target="_blank" rel="noopener">t.me/oxhiroh</a><span id="contact-thanks">, cảm ơn bạn.</span></p>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-  </div>
+    <!-- HISTORY CHART -->
+    <section class="section">
+      <h2 class="section-title" id="risk-history-label">Lịch sử điểm rủi ro 30 ngày</h2>
+      <div class="card chart-card">
+        <canvas id="risk-chart"></canvas>
+      </div>
+      <div class="ref-table-wrap">
+        <table class="ref-table">
+          <thead>
+            <tr><th id="risk-th-range">Mức điểm</th><th id="risk-th-meaning">Ý nghĩa</th><th id="risk-th-action">Hành động</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="rz rz-success">0–35</span></td><td><b id="risk-row-level-0">BÌNH THƯỜNG</b></td><td id="risk-row-action-0">Duy trì tỷ trọng, theo dõi định kỳ</td></tr>
+            <tr><td><span class="rz rz-warning">36–55</span></td><td><b id="risk-row-level-1">CẢNH GIÁC</b></td><td id="risk-row-action-1">Giảm đòn bẩy, chuẩn bị phòng vệ</td></tr>
+            <tr><td><span class="rz rz-danger">56–75</span></td><td><b id="risk-row-level-2">CẢNH BÁO CAO</b></td><td id="risk-row-action-2">Giảm tỷ trọng rủi ro, tăng tiền mặt &amp; hedge</td></tr>
+            <tr><td><span class="rz rz-critical">76–100</span></td><td><b id="risk-row-level-3">RỦI RO HỆ THỐNG</b></td><td id="risk-row-action-3">Hedge mạnh, chuyển danh mục phòng thủ toàn phần</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- LEGEND -->
+    <section class="section legend-section">
+      <div class="legend-grid">
+        <div class="legend-item"><span class="legend-dot" style="background:var(--color-danger)"></span><div><strong id="legend-label-0">CẢNH BÁO</strong><p id="legend-desc-0">Chỉ số đã vượt ngưỡng nguy hiểm. Cần theo dõi sát và cân nhắc điều chỉnh danh mục.</p></div></div>
+        <div class="legend-item"><span class="legend-dot" style="background:var(--color-warning)"></span><div><strong id="legend-label-1">CẢNH GIÁC</strong><p id="legend-desc-1">Chỉ số đang tiệm cận ngưỡng cảnh báo. Cần chú ý theo dõi thêm.</p></div></div>
+        <div class="legend-item"><span class="legend-dot" style="background:var(--color-success)"></span><div><strong id="legend-label-2">BÌNH THƯỜNG</strong><p id="legend-desc-2">Chỉ số trong vùng an toàn. Tiếp tục quan sát định kỳ.</p></div></div>
+      </div>
+      <div class="source-row"><strong id="source-label">Nguồn dữ liệu:</strong> <span id="source-desc">Yahoo Finance · CFTC (FinFutWk.txt) · Nasdaq Data Link · NAAIM · AAII · Reuters/BBC/Al Jazeera RSS.</span></div>
+      <div class="contact-row"><span id="contact-text">Mọi ý kiến đóng góp xin liên hệ:</span> <a href="https://x.com/Hirohnguyen" target="_blank" rel="noopener">@Hirohnguyen</a> · <a href="https://t.me/oxhiroh" target="_blank" rel="noopener">t.me/oxhiroh</a><span id="contact-thanks">, cảm ơn bạn.</span></div>
+    </section>
+
+  </main>
 
   <script src="i18n.js"></script>
   <script src="app.js"></script>
