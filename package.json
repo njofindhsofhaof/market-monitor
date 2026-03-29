@@ -1,0 +1,22 @@
+{
+  "name": "market-monitor",
+  "version": "1.0.0",
+  "description": "Market monitoring dashboard with real-time risk analysis",
+  "private": true,
+  "scripts": {
+    "dev": "python -m http.server 8000",
+    "test": "echo \"No tests configured\" && exit 0"
+  },
+  "dependencies": {
+    "@vercel/analytics": "^1.4.1"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "market",
+    "monitoring",
+    "analytics",
+    "dashboard"
+  ],
+  "author": "",
+  "license": "MIT"
+}
