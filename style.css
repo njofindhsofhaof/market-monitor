@@ -684,8 +684,12 @@ tr.group-start td:first-child {
 .rz-success  { color: var(--color-success); }
 .rz-warning  { color: var(--color-warning); }
 .rz-danger   { color: var(--color-danger); }
-.rz-critical { color: #c2410c; }
-[data-theme="dark"] .rz-critical { color: #fb923c; }
+.rz-critical { color: #a78bfa; }
+[data-theme="dark"] .rz-critical { color: #a78bfa; }
+#risk-row-level-0 { color: var(--color-success); }
+#risk-row-level-1 { color: var(--color-warning); }
+#risk-row-level-2 { color: var(--color-danger); }
+#risk-row-level-3 { color: #a78bfa; }
 
 /* ===== TREND CELL ===== */
 .td-trend {
