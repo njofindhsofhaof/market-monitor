@@ -194,6 +194,42 @@ const I18N = {
       "Thị trường":        "Market",
       "Vĩ mô":             "Macro",
     },
+
+    // Translate value/threshold strings from Vietnamese → English
+    // Used for exact matches (thresholds) and substring replacement (values)
+    thresholds: {
+      ">95 USD/thùng":              ">95 USD/barrel",
+      "Có phong tỏa":               "Blockade detected",
+      "Short > 70% đỉnh lịch sử":  "Short > 70% of hist. peak",
+      "Outflow > −2B USD/7d":       "Outflow > −2B USD/7d",
+      "Retail − Inst > +25pp":      "Retail − Inst > +25pp",
+      ">30":                        ">30",
+      "Backwardation":              "Backwardation",
+      "Giảm >5%/tuần":              "Decline >5%/week",
+      ">1.1":                       ">1.1",
+      ">4.5%":                      ">4.5%",
+      "Đảo ngược âm":               "Negative inversion",
+      ">107":                       ">107",
+    },
+    // Substring replacements applied to value strings
+    value_replace: [
+      ["/thùng",           "/barrel"],
+      ["thùng",            "barrel"],
+      ["của đỉnh lịch sử", "of hist. peak"],
+      ["đỉnh lịch sử",     "hist. peak"],
+      ["Căng thẳng leo thang",      "Escalating tension"],
+      ["Phong tỏa hoàn toàn",       "Full blockade"],
+      ["Phong tỏa một phần / tàu bị tấn công", "Partial blockade / vessel attack"],
+      ["Có đề cập — theo dõi thêm", "Mentioned — monitor closely"],
+      ["Bình thường",               "Normal"],
+      ["Chưa phong tỏa",            "No blockade"],
+      ["Đang tích lũy (~5 ngày để có baseline)", "Accumulating (~5 days for baseline)"],
+      ["Đang theo dõi",             "Monitoring"],
+      ["Contango nhẹ",              "Light contango"],
+      ["Backwardation mạnh",        "Deep backwardation"],
+      ["Backwardation",             "Backwardation"],
+      ["Phẳng",                     "Flat"],
+    ],
   },
 };
 
