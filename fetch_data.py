@@ -244,7 +244,7 @@ REASON: <lý do ngắn gọn, tối đa 15 từ tiếng Việt>
                     "content-type": "application/json",
                 },
                 json={
-                    "model": "claude-haiku-4-5-20251001",
+                    "model": "claude-3-haiku-20240307",
                     "max_tokens": 120,
                     "messages": [{"role": "user", "content": prompt}]
                 },
@@ -1423,28 +1423,28 @@ def calc_risk_score(indicators):
 
 
 def update_risk_history(risk):
-    """Lưu điểm rủi ro vào risk_history.json (giữ 30 ngày)."""
+    """Lưu điểm rủi ro vào risk_history.json — mỗi giờ 1 điểm, giữ 720 điểm (30 ngày)."""
     hist = []
     if os.path.exists(RISK_HISTORY):
         with open(RISK_HISTORY, encoding="utf-8") as f:
             hist = json.load(f)
 
     now = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=7)))
-    today = now.strftime("%Y-%m-%d")
+    # Key theo giờ: YYYY-MM-DD HH
+    hour_key = now.strftime("%Y-%m-%d %H")
     entry = {
-        "date": today,
-        "time": now.strftime("%H:%M"),
+        "date":  now.strftime("%Y-%m-%dT%H:%M"),  # ISO-style, đủ để sort & filter
         "score": risk["score"],
         "level": risk["level"],
     }
 
-    # Cập nhật entry hôm nay nếu đã có
-    if hist and hist[-1]["date"] == today:
+    # Nếu đã có entry trong giờ này → overwrite (tránh duplicate)
+    if hist and hist[-1]["date"][:13] == hour_key:
         hist[-1] = entry
     else:
         hist.append(entry)
 
-    hist = hist[-30:]  # giữ 30 ngày gần nhất
+    hist = hist[-720:]  # giữ 30 ngày × 24h = 720 điểm
     with open(RISK_HISTORY, "w", encoding="utf-8") as f:
         json.dump(hist, f, ensure_ascii=False, indent=2)
     return hist
