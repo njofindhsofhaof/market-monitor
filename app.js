@@ -170,7 +170,22 @@ async function renderRiskChart(period) {
     }[_chartPeriod] || new Date(0);
 
     const hist = _fullHist.filter(e => new Date(e.date) >= cutoff);
-    const displayHist = hist.length ? hist : _fullHist; // fallback nếu quá ít data
+    const displayHist = (() => {
+      if (!hist.length) return _fullHist.slice(-24); // fallback
+      if (_chartPeriod === '24h') {
+        // 1 điểm/giờ — lấy 24 điểm cuối
+        return hist.slice(-24);
+      } else {
+        // 7d / 30d: 1 điểm/ngày — lấy điểm cuối cùng của mỗi ngày
+        const byDay = {};
+        hist.forEach(e => {
+          const day = e.date.slice(0, 10); // "2026-03-30"
+          byDay[day] = e; // overwrite → giữ điểm mới nhất của ngày
+        });
+        const days = Object.values(byDay);
+        return _chartPeriod === '7d' ? days.slice(-7) : days.slice(-30);
+      }
+    })();
 
     const canvas = document.getElementById('risk-chart');
     if (!canvas) return;
@@ -178,7 +193,7 @@ async function renderRiskChart(period) {
     const labels = displayHist.map(e => {
       const d = new Date(e.date);
       if (_chartPeriod === '24h') {
-        return `${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`;
+        return `${String(d.getHours()).padStart(2,'0')}:00`;
       }
       return `${String(d.getDate()).padStart(2,'0')}/${String(d.getMonth()+1).padStart(2,'0')}`;
     });
