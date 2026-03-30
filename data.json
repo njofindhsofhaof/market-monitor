@@ -1,12 +1,12 @@
 {
-  "last_updated": "04:12 Tuesday, 31/03/2026 (GMT+7)",
+  "last_updated": "06:54 Tuesday, 31/03/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
       "indicator": "Dầu WTI",
-      "value": "$105.01/thùng",
-      "trend": "+19.1% ↑",
-      "trend_raw": 19.15,
+      "value": "$106.37/thùng",
+      "trend": "+20.7% ↑",
+      "trend_raw": 20.7,
       "threshold": ">95 USD/thùng",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -25,12 +25,12 @@
       "statusLabel": "CẢNH GIÁC",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 21:11 UTC: 51 tin <24h / 58 tổng (reuters.com: lỗi, bbci.co.uk: 26/33 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Rubio says nato must be re-examined after spain blocks us operation on iran...\" (20:32 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 23:53 UTC: 52 tin <24h / 63 tổng (reuters.com: lỗi, bbci.co.uk: 27/38 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran’s foreign ministry rejects us ceasefire demands...\" (23:12 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "tension",
-        "hormuz_count": 9,
-        "fresh_total": 51,
-        "scanned_at": "2026-03-30T21:11:54Z",
+        "hormuz_count": 8,
+        "fresh_total": 52,
+        "scanned_at": "2026-03-30T23:53:57Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -167,9 +167,9 @@
     {
       "category": "",
       "indicator": "DXY (USD Index)",
-      "value": "100.47",
-      "trend": "+1.5% ↑",
-      "trend_raw": 1.54,
+      "value": "100.58",
+      "trend": "+1.6% ↑",
+      "trend_raw": 1.65,
       "threshold": ">107",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -177,7 +177,7 @@
       "link": "https://finance.yahoo.com/quote/DX-Y.NYB/",
       "note": "US Dollar Index — DXY tăng mạnh >107 = USD siết chặt thanh khoản, rủi ro tài sản rủi ro tăng.",
       "_meta": {
-        "dxy": 100.473
+        "dxy": 100.585
       }
     }
   ],
