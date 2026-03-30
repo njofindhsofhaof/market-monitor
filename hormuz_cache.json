@@ -1,9 +1,9 @@
 {
-  "scanned_at": "2026-03-30T06:25:42.872968+00:00",
+  "scanned_at": "2026-03-30T10:49:13.927940+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
-    "value": "Tàu tắc nghẽn, Iran-Mỹ leo thang quân sự nguy hiểm",
+    "value": "Tàu bị tắc nghẽn, xung đột leo thang nghiêm trọng",
     "trend": "—",
     "trend_raw": null,
     "threshold": "Có phong tỏa",
@@ -11,12 +11,12 @@
     "statusLabel": "CẢNH BÁO",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 06:25 UTC: 36 tin <24h / 74 tổng (reuters.com: lỗi, bbci.co.uk: 11/49 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: Claude AI (30 headlines) | Lý do: Tàu đông đúc Hormuz, Iran tấn công Kuwait, Mỹ-Israel gia tăng bombardment, đe dọa xâm lược mặt đất | Headline: \"‘we’re killing them, bro’: israelis correct iranian online streamer...\" (05:54 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 10:49 UTC: 47 tin <24h / 72 tổng (reuters.com: lỗi, bbci.co.uk: 22/47 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: Claude AI (30 headlines) | Lý do: Xung đột Mỹ-Iran ngày 31, Iran tấn công các nước Vùng Vịnh, tàu tắc ở Hormuz, căng thẳng quân sự leo thang | Headline: \"Iraq risks arab ties as iran-aligned groups strike gulf nations...\" (09:57 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
     "_meta": {
       "status_key": "partial_blockade",
-      "hormuz_count": 11,
-      "fresh_total": 36,
-      "scanned_at": "2026-03-30T06:25:42Z",
+      "hormuz_count": 9,
+      "fresh_total": 47,
+      "scanned_at": "2026-03-30T10:49:13Z",
       "classify_source": "Claude AI (30 headlines)"
     }
   }
