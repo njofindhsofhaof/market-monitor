@@ -1,22 +1,22 @@
 {
-  "scanned_at": "2026-03-30T14:55:19.590166+00:00",
+  "scanned_at": "2026-03-30T16:28:17.647782+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
-    "value": "Căng thẳng quân sự Mỹ-Iran leo thang nguy hiểm",
+    "value": "Căng thẳng quân sự Mỹ-Iran gia tăng đáng kể",
     "trend": "—",
     "trend_raw": null,
     "threshold": "Có phong tỏa",
-    "status": "danger",
-    "statusLabel": "CẢNH BÁO",
+    "status": "warning",
+    "statusLabel": "CẢNH GIÁC",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 14:55 UTC: 46 tin <24h / 51 tổng (reuters.com: lỗi, bbci.co.uk: 21/26 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: Claude AI (30 headlines) | Lý do: Tấn công tên lửa Iran, không kích Mỹ-Israel, đe dọa kiểm soát dầu mỏ, gián đoạn thương mại châu Á | Headline: \"Rubio tells al jazeera strait of hormuz will reopen ‘one way or another’...\" (14:21 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 16:28 UTC: 48 tin <24h / 54 tổng (reuters.com: lỗi, bbci.co.uk: 23/29 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: Claude AI (30 headlines) | Lý do: Tấn công tên lửa Iran, đe dọa Mỹ, thảo luận xâm lược mặt đất, nhưng chưa tấn công trực tiếp Hormuz | Headline: \"Egypt’s president urges trump to stop war on iran...\" (16:01 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
     "_meta": {
-      "status_key": "partial_blockade",
-      "hormuz_count": 11,
-      "fresh_total": 46,
-      "scanned_at": "2026-03-30T14:55:19Z",
+      "status_key": "tension",
+      "hormuz_count": 14,
+      "fresh_total": 48,
+      "scanned_at": "2026-03-30T16:28:17Z",
       "classify_source": "Claude AI (30 headlines)"
     }
   }
