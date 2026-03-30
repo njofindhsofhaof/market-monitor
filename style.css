@@ -169,7 +169,17 @@ a:hover{text-decoration:underline}
 .spinner{width:12px;height:12px;border:2px solid var(--border);border-top-color:var(--text2);border-radius:50%;animation:spin .7s linear infinite;display:inline-block}
 @keyframes spin{to{transform:rotate(360deg)}}
 
-/* ── CHART ── */
+/* ── CHART PERIOD TOGGLE ── */
+.chart-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.chart-header .section-title{margin-bottom:0}
+.chart-period-toggle{display:flex;gap:4px;background:var(--bg-card2);border:1px solid var(--border);border-radius:8px;padding:3px}
+.chart-period-btn{
+  background:transparent;border:none;color:var(--text3);
+  padding:4px 12px;border-radius:5px;font-size:11.5px;font-weight:600;
+  cursor:pointer;font-family:var(--font-body);transition:all .15s;white-space:nowrap;
+}
+.chart-period-btn:hover{color:var(--text2);background:var(--bg-hover)}
+.chart-period-btn.active{background:var(--bg-card);color:var(--text);box-shadow:var(--shadow);border:1px solid var(--border)}
 .chart-card{padding:22px 22px 16px;margin-bottom:14px}
 #risk-chart{max-height:190px}
 
