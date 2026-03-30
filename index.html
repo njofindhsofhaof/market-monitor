@@ -176,7 +176,14 @@
 
     <!-- SECTION 3: HISTORY -->
     <section class="section">
-      <h2 class="section-title" id="risk-history-label">Lịch sử điểm rủi ro 30 ngày</h2>
+      <div class="chart-header">
+        <h2 class="section-title" id="risk-history-label">Lịch sử điểm rủi ro 30 ngày</h2>
+        <div class="chart-period-toggle">
+          <button class="chart-period-btn active" data-period="24h">24H</button>
+          <button class="chart-period-btn" data-period="7d">7 ngày</button>
+          <button class="chart-period-btn" data-period="30d">30 ngày</button>
+        </div>
+      </div>
       <div class="card chart-card">
         <canvas id="risk-chart"></canvas>
       </div>
