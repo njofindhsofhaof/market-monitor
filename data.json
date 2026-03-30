@@ -1,12 +1,12 @@
 {
-  "last_updated": "23:28 Monday, 30/03/2026 (GMT+7)",
+  "last_updated": "23:41 Monday, 30/03/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
       "indicator": "Dầu WTI",
-      "value": "$103.37/thùng",
-      "trend": "+17.3% ↑",
-      "trend_raw": 17.29,
+      "value": "$102.92/thùng",
+      "trend": "+16.8% ↑",
+      "trend_raw": 16.77,
       "threshold": ">95 USD/thùng",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -17,7 +17,7 @@
     {
       "category": "",
       "indicator": "Xung đột Hormuz",
-      "value": "Căng thẳng quân sự Mỹ-Iran gia tăng đáng kể",
+      "value": "Căng thẳng Mỹ-Iran leo thang, chưa ảnh hưởng trực tiếp Hormuz",
       "trend": "—",
       "trend_raw": null,
       "threshold": "Có phong tỏa",
@@ -25,12 +25,12 @@
       "statusLabel": "CẢNH GIÁC",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 16:28 UTC: 48 tin <24h / 54 tổng (reuters.com: lỗi, bbci.co.uk: 23/29 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: Claude AI (30 headlines) | Lý do: Tấn công tên lửa Iran, đe dọa Mỹ, thảo luận xâm lược mặt đất, nhưng chưa tấn công trực tiếp Hormuz | Headline: \"Egypt’s president urges trump to stop war on iran...\" (16:01 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 16:41 UTC: 48 tin <24h / 54 tổng (reuters.com: lỗi, bbci.co.uk: 23/29 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: Claude AI (30 headlines) | Lý do: Đe dọa quân sự tăng, nhưng Rubio khẳng định ưu tiên ngoại giao, chưa có tấn công tàu thương mại | Headline: \"Egypt’s president urges trump to stop war on iran...\" (16:01 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "tension",
         "hormuz_count": 14,
         "fresh_total": 48,
-        "scanned_at": "2026-03-30T16:28:17Z",
+        "scanned_at": "2026-03-30T16:41:42Z",
         "classify_source": "Claude AI (30 headlines)"
       }
     },
@@ -89,12 +89,12 @@
     {
       "category": "Thị trường",
       "indicator": "VIX",
-      "value": "29.95",
-      "trend": "+14.5% ↑",
-      "trend_raw": 14.53,
+      "value": "30.37",
+      "trend": "+16.1% ↑",
+      "trend_raw": 16.14,
       "threshold": ">30",
-      "status": "warning",
-      "statusLabel": "CẢNH GIÁC",
+      "status": "danger",
+      "statusLabel": "CẢNH BÁO",
       "source": "Yahoo Finance (^VIX)",
       "link": "https://finance.yahoo.com/quote/%5EVIX/",
       "note": "CBOE Volatility Index — chỉ số sợ hãi thị trường"
@@ -102,12 +102,12 @@
     {
       "category": "",
       "indicator": "VIX futures curve",
-      "value": "Contango nhẹ (spot 29.9 → M1~373)",
-      "trend": "+12.6% ↑",
-      "trend_raw": 12.63,
+      "value": "Contango nhẹ (spot 30.4 → M1~373)",
+      "trend": "+12.5% ↑",
+      "trend_raw": 12.49,
       "threshold": "Backwardation",
-      "status": "success",
-      "statusLabel": "Bình thường",
+      "status": "warning",
+      "statusLabel": "CẢNH GIÁC",
       "source": "Yahoo Finance (^VIX, VIXY)",
       "link": "https://finance.yahoo.com/quote/VIXY/",
       "note": "So sánh VIX spot vs VIXY ETF (proxy M1 futures)"
@@ -115,9 +115,9 @@
     {
       "category": "",
       "indicator": "HYG/TLT ratio",
-      "value": "0.9104",
+      "value": "0.9107",
       "trend": "-1.0% ↓",
-      "trend_raw": -0.99,
+      "trend_raw": -0.96,
       "threshold": "Giảm >5%/tuần",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -128,9 +128,9 @@
     {
       "category": "",
       "indicator": "Put/Call ratio",
-      "value": "1.474",
-      "trend": "+60.7% (1ngày)",
-      "trend_raw": 60.74,
+      "value": "1.498",
+      "trend": "+63.4% (1ngày)",
+      "trend_raw": 63.36,
       "threshold": ">1.1",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -142,8 +142,8 @@
       "category": "Vĩ mô",
       "indicator": "10-year yield",
       "value": "4.33%",
-      "trend": "+0.0% →",
-      "trend_raw": 0.0,
+      "trend": "-0.1% ↓",
+      "trend_raw": -0.09,
       "threshold": ">4.5%",
       "status": "warning",
       "statusLabel": "CẢNH GIÁC",
@@ -154,9 +154,9 @@
     {
       "category": "",
       "indicator": "2s10s spread",
-      "value": "+0.54% (3.80% vs 4.33%)",
-      "trend": "+0.00pp →",
-      "trend_raw": 0.0,
+      "value": "+0.53% (3.80% vs 4.33%)",
+      "trend": "-0.00pp ↓",
+      "trend_raw": -0.004,
       "threshold": "Đảo ngược âm",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -169,7 +169,7 @@
       "indicator": "DXY (USD Index)",
       "value": "100.54",
       "trend": "+1.6% ↑",
-      "trend_raw": 1.6,
+      "trend_raw": 1.61,
       "threshold": ">107",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -177,13 +177,13 @@
       "link": "https://finance.yahoo.com/quote/DX-Y.NYB/",
       "note": "US Dollar Index — DXY tăng mạnh >107 = USD siết chặt thanh khoản, rủi ro tài sản rủi ro tăng.",
       "_meta": {
-        "dxy": 100.538
+        "dxy": 100.541
       }
     }
   ],
   "risk": {
-    "score": 69,
-    "base_score": 50,
+    "score": 72,
+    "base_score": 52,
     "multiplier": 1.4,
     "level": "CẢNH BÁO CAO",
     "color": "danger",
@@ -194,7 +194,7 @@
     "breakdown": {
       "geo": 70.0,
       "inst": 46.0,
-      "market": 55.0,
+      "market": 60.0,
       "macro": 28.0
     },
     "indicator_scores": {
@@ -204,7 +204,7 @@
       "etf_flow": 2,
       "sentiment": 0,
       "vix_curve": 5,
-      "vix": 7,
+      "vix": 9,
       "put_call": 10,
       "hyg_tlt": 0,
       "spread": 1,
