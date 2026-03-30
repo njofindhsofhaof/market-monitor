@@ -161,12 +161,12 @@ async function renderRiskChart(period) {
     }
     if (!_fullHist.length) return;
 
-    // Filter theo period
-    const now = new Date();
+    // Dùng timestamp của data mới nhất làm gốc, không phải Date.now()
+    const latestDate = new Date(_fullHist[_fullHist.length - 1].date);
     const cutoff = {
-      '24h':  new Date(now - 24 * 60 * 60 * 1000),
-      '7d':   new Date(now - 7  * 24 * 60 * 60 * 1000),
-      '30d':  new Date(now - 30 * 24 * 60 * 60 * 1000),
+      '24h':  new Date(latestDate - 24 * 60 * 60 * 1000),
+      '7d':   new Date(latestDate - 7  * 24 * 60 * 60 * 1000),
+      '30d':  new Date(latestDate - 30 * 24 * 60 * 60 * 1000),
     }[_chartPeriod] || new Date(0);
 
     const hist = _fullHist.filter(e => new Date(e.date) >= cutoff);
