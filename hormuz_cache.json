@@ -1,9 +1,9 @@
 {
-  "scanned_at": "2026-03-30T16:41:42.227069+00:00",
+  "scanned_at": "2026-03-30T16:55:07.399876+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
-    "value": "Căng thẳng Mỹ-Iran leo thang, chưa ảnh hưởng trực tiếp Hormuz",
+    "value": "Căng thẳng leo thang",
     "trend": "—",
     "trend_raw": null,
     "threshold": "Có phong tỏa",
@@ -11,13 +11,13 @@
     "statusLabel": "CẢNH GIÁC",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 16:41 UTC: 48 tin <24h / 54 tổng (reuters.com: lỗi, bbci.co.uk: 23/29 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: Claude AI (30 headlines) | Lý do: Đe dọa quân sự tăng, nhưng Rubio khẳng định ưu tiên ngoại giao, chưa có tấn công tàu thương mại | Headline: \"Egypt’s president urges trump to stop war on iran...\" (16:01 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 16:55 UTC: 48 tin <24h / 54 tổng (reuters.com: lỗi, bbci.co.uk: 23/29 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Egypt’s president urges trump to stop war on iran...\" (16:01 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
     "_meta": {
       "status_key": "tension",
       "hormuz_count": 14,
       "fresh_total": 48,
-      "scanned_at": "2026-03-30T16:41:42Z",
-      "classify_source": "Claude AI (30 headlines)"
+      "scanned_at": "2026-03-30T16:55:07Z",
+      "classify_source": "keyword fallback"
     }
   }
 }

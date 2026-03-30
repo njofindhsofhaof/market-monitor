@@ -1,12 +1,12 @@
 {
-  "last_updated": "23:41 Monday, 30/03/2026 (GMT+7)",
+  "last_updated": "23:55 Monday, 30/03/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
       "indicator": "Dầu WTI",
-      "value": "$102.92/thùng",
-      "trend": "+16.8% ↑",
-      "trend_raw": 16.77,
+      "value": "$102.65/thùng",
+      "trend": "+16.5% ↑",
+      "trend_raw": 16.48,
       "threshold": ">95 USD/thùng",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -17,7 +17,7 @@
     {
       "category": "",
       "indicator": "Xung đột Hormuz",
-      "value": "Căng thẳng Mỹ-Iran leo thang, chưa ảnh hưởng trực tiếp Hormuz",
+      "value": "Căng thẳng leo thang",
       "trend": "—",
       "trend_raw": null,
       "threshold": "Có phong tỏa",
@@ -25,13 +25,13 @@
       "statusLabel": "CẢNH GIÁC",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 16:41 UTC: 48 tin <24h / 54 tổng (reuters.com: lỗi, bbci.co.uk: 23/29 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: Claude AI (30 headlines) | Lý do: Đe dọa quân sự tăng, nhưng Rubio khẳng định ưu tiên ngoại giao, chưa có tấn công tàu thương mại | Headline: \"Egypt’s president urges trump to stop war on iran...\" (16:01 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 16:55 UTC: 48 tin <24h / 54 tổng (reuters.com: lỗi, bbci.co.uk: 23/29 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Egypt’s president urges trump to stop war on iran...\" (16:01 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "tension",
         "hormuz_count": 14,
         "fresh_total": 48,
-        "scanned_at": "2026-03-30T16:41:42Z",
-        "classify_source": "Claude AI (30 headlines)"
+        "scanned_at": "2026-03-30T16:55:07Z",
+        "classify_source": "keyword fallback"
       }
     },
     {
@@ -89,9 +89,9 @@
     {
       "category": "Thị trường",
       "indicator": "VIX",
-      "value": "30.37",
-      "trend": "+16.1% ↑",
-      "trend_raw": 16.14,
+      "value": "30.23",
+      "trend": "+15.6% ↑",
+      "trend_raw": 15.6,
       "threshold": ">30",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -102,9 +102,9 @@
     {
       "category": "",
       "indicator": "VIX futures curve",
-      "value": "Contango nhẹ (spot 30.4 → M1~373)",
-      "trend": "+12.5% ↑",
-      "trend_raw": 12.49,
+      "value": "Contango nhẹ (spot 30.2 → M1~375)",
+      "trend": "+13.2% ↑",
+      "trend_raw": 13.17,
       "threshold": "Backwardation",
       "status": "warning",
       "statusLabel": "CẢNH GIÁC",
@@ -115,9 +115,9 @@
     {
       "category": "",
       "indicator": "HYG/TLT ratio",
-      "value": "0.9107",
-      "trend": "-1.0% ↓",
-      "trend_raw": -0.96,
+      "value": "0.9087",
+      "trend": "-1.2% ↓",
+      "trend_raw": -1.18,
       "threshold": "Giảm >5%/tuần",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -128,9 +128,9 @@
     {
       "category": "",
       "indicator": "Put/Call ratio",
-      "value": "1.498",
-      "trend": "+63.4% (1ngày)",
-      "trend_raw": 63.36,
+      "value": "1.496",
+      "trend": "+63.1% (1ngày)",
+      "trend_raw": 63.14,
       "threshold": ">1.1",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -167,9 +167,9 @@
     {
       "category": "",
       "indicator": "DXY (USD Index)",
-      "value": "100.54",
+      "value": "100.50",
       "trend": "+1.6% ↑",
-      "trend_raw": 1.61,
+      "trend_raw": 1.57,
       "threshold": ">107",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -177,7 +177,7 @@
       "link": "https://finance.yahoo.com/quote/DX-Y.NYB/",
       "note": "US Dollar Index — DXY tăng mạnh >107 = USD siết chặt thanh khoản, rủi ro tài sản rủi ro tăng.",
       "_meta": {
-        "dxy": 100.541
+        "dxy": 100.504
       }
     }
   ],
