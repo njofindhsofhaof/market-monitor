@@ -57,7 +57,7 @@ function renderGauge(risk) {
   const scoreEl = document.getElementById('risk-score');
   if (scoreEl) {
     scoreEl.textContent = score;
-    // Score là SVG text — set fill color
+    // Score la SVG text -- set fill color
     const stroke = score <= 35 ? '#22c55e'
                  : score <= 55 ? '#f59e0b'
                  : score <= 75 ? '#ef4444' : '#a78bfa';
@@ -147,32 +147,56 @@ function renderCategoryCards(risk) {
 }
 
 // ===== LINE CHART =====
-async function renderRiskChart() {
+let _fullHist = [];         // cache full history
+let _chartPeriod = '24h';   // current period
+
+async function renderRiskChart(period) {
+  if (period) _chartPeriod = period;
   try {
-    const resp = await fetch('./risk_history.json?t=' + Date.now());
-    if (!resp.ok) return;
-    const hist = await resp.json();
-    if (!hist.length) return;
+    // Fetch history nếu chưa có cache
+    if (!_fullHist.length) {
+      const resp = await fetch('./risk_history.json?t=' + Date.now());
+      if (!resp.ok) return;
+      _fullHist = await resp.json();
+    }
+    if (!_fullHist.length) return;
+
+    // Filter theo period
+    const now = new Date();
+    const cutoff = {
+      '24h':  new Date(now - 24 * 60 * 60 * 1000),
+      '7d':   new Date(now - 7  * 24 * 60 * 60 * 1000),
+      '30d':  new Date(now - 30 * 24 * 60 * 60 * 1000),
+    }[_chartPeriod] || new Date(0);
+
+    const hist = _fullHist.filter(e => new Date(e.date) >= cutoff);
+    const displayHist = hist.length ? hist : _fullHist; // fallback nếu quá ít data
+
     const canvas = document.getElementById('risk-chart');
     if (!canvas) return;
 
-    const labels = hist.map(e => {
+    const labels = displayHist.map(e => {
       const d = new Date(e.date);
+      if (_chartPeriod === '24h') {
+        return `${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`;
+      }
       return `${String(d.getDate()).padStart(2,'0')}/${String(d.getMonth()+1).padStart(2,'0')}`;
     });
-    const scores = hist.map(e => e.score);
-    const ptColors = scores.map(s =>
-      s<=35?'#22c55e':s<=55?'#f59e0b':s<=75?'#ef4444':'#a78bfa');
+    const scores    = displayHist.map(e => e.score);
+    const ptColors  = scores.map(s => s<=35?'#22c55e':s<=55?'#f59e0b':s<=75?'#ef4444':'#a78bfa');
 
-    const isDark = document.documentElement.getAttribute('data-theme') !== 'light';
-    const gridColor  = isDark ? 'rgba(255,255,255,.04)' : 'rgba(0,0,0,.06)';
-    const labelColor = isDark ? '#555' : '#aaa';
+    const isDark    = document.documentElement.getAttribute('data-theme') !== 'light';
+    const gridColor = isDark ? 'rgba(255,255,255,.04)' : 'rgba(0,0,0,.06)';
+    const labelColor= isDark ? '#555' : '#aaa';
 
     if (riskChartInstance) riskChartInstance.destroy();
 
-    // Line color based on latest score
     const latestScore = scores[scores.length - 1] || 0;
-    const lineColor = latestScore<=35?'#22c55e':latestScore<=55?'#f59e0b':latestScore<=75?'#ef4444':'#a78bfa';
+    const lineColor   = latestScore<=35?'#22c55e':latestScore<=55?'#f59e0b':latestScore<=75?'#ef4444':'#a78bfa';
+
+    const r = parseInt(lineColor.slice(1,3),16)||239,
+          g = parseInt(lineColor.slice(3,5),16)||68,
+          b = parseInt(lineColor.slice(5,7),16)||68;
 
     riskChartInstance = new Chart(canvas, {
       type: 'line',
@@ -184,17 +208,14 @@ async function renderRiskChart() {
           borderWidth: 2,
           pointBackgroundColor: ptColors,
           pointBorderColor: ptColors,
-          pointRadius: 4,
+          pointRadius: scores.length > 48 ? 2 : 4,
           pointHoverRadius: 6,
           fill: true,
           backgroundColor: (ctx) => {
-            const g = ctx.chart.ctx.createLinearGradient(0,0,0,ctx.chart.height);
-            g.addColorStop(0, lineColor.replace(')',', .2)').replace('rgb','rgba'));
-            g.addColorStop(1, lineColor.replace(')',', .01)').replace('rgb','rgba'));
-            // Fallback gradient
-            g.addColorStop(0, 'rgba(239,68,68,.2)');
-            g.addColorStop(1, 'rgba(239,68,68,.01)');
-            return g;
+            const grad = ctx.chart.ctx.createLinearGradient(0,0,0,ctx.chart.height);
+            grad.addColorStop(0, `rgba(${r},${g},${b},.2)`);
+            grad.addColorStop(1, `rgba(${r},${g},${b},.01)`);
+            return grad;
           },
           tension: 0.35,
         }]
@@ -210,16 +231,28 @@ async function renderRiskChart() {
             borderWidth: 1,
             titleColor: isDark ? '#888' : '#666',
             bodyColor:  isDark ? '#e8e8e8' : '#111',
-            callbacks: { label: ctx => ` ${ctx.raw}/100 — ${hist[ctx.dataIndex]?.level || ''}` }
+            callbacks: { label: ctx => ` ${ctx.raw}/100 — ${displayHist[ctx.dataIndex]?.level || ''}` }
           }
         },
         scales: {
-          x: { grid:{color:gridColor}, ticks:{color:labelColor,font:{family:'IBM Plex Mono',size:10},maxRotation:0,maxTicksLimit:12} },
+          x: { grid:{color:gridColor}, ticks:{color:labelColor,font:{family:'IBM Plex Mono',size:10},maxRotation:0,maxTicksLimit:10} },
           y: { min:0,max:100, grid:{color:gridColor}, ticks:{color:labelColor,font:{family:'IBM Plex Mono',size:10},stepSize:25} }
         }
       }
     });
   } catch(e) { console.warn('Chart error:', e); }
+}
+
+// ===== CHART PERIOD TOGGLE =====
+function initChartToggle() {
+  document.querySelectorAll('.chart-period-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.chart-period-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      _fullHist = []; // force refetch khi đổi period
+      renderRiskChart(btn.dataset.period);
+    });
+  });
 }
 
 // ===== TABLE =====
@@ -338,6 +371,7 @@ function escapeHtml(str) {
 document.addEventListener("DOMContentLoaded", () => {
   initTheme();
   setLang(currentLang);
+  initChartToggle();
   const langBtn = document.getElementById("lang-toggle");
   langBtn && langBtn.addEventListener("click", ()=>setLang(currentLang==="vi"?"en":"vi"));
   fetchData();
