@@ -1,22 +1,22 @@
 {
-  "scanned_at": "2026-03-31T05:58:17.848785+00:00",
+  "scanned_at": "2026-03-31T09:47:00.826368+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
-    "value": "Bình thường",
+    "value": "Căng thẳng leo thang",
     "trend": "—",
     "trend_raw": null,
     "threshold": "Có phong tỏa",
-    "status": "success",
-    "statusLabel": "Bình thường",
+    "status": "warning",
+    "statusLabel": "CẢNH GIÁC",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 05:58 UTC: 53 tin <24h / 67 tổng (reuters.com: lỗi, bbci.co.uk: 28/42 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Spain closes airspace to us warplanes involved in war on iran...\" (04:40 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 09:47 UTC: 50 tin <24h / 63 tổng (reuters.com: lỗi, bbci.co.uk: 25/38 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran war wipes $120bn off dubai, abu dhabi stock markets...\" (07:57 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
     "_meta": {
-      "status_key": "none",
-      "hormuz_count": 11,
-      "fresh_total": 53,
-      "scanned_at": "2026-03-31T05:58:17Z",
+      "status_key": "tension",
+      "hormuz_count": 8,
+      "fresh_total": 50,
+      "scanned_at": "2026-03-31T09:47:00Z",
       "classify_source": "keyword fallback"
     }
   }

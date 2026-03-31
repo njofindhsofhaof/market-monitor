@@ -1,12 +1,12 @@
 {
-  "last_updated": "12:58 Tuesday, 31/03/2026 (GMT+7)",
+  "last_updated": "16:47 Tuesday, 31/03/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
       "indicator": "Dầu WTI",
-      "value": "$102.56/thùng",
-      "trend": "+11.1% ↑",
-      "trend_raw": 11.06,
+      "value": "$102.70/thùng",
+      "trend": "+11.2% ↑",
+      "trend_raw": 11.21,
       "threshold": ">95 USD/thùng",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -17,20 +17,20 @@
     {
       "category": "",
       "indicator": "Xung đột Hormuz",
-      "value": "Bình thường",
+      "value": "Căng thẳng leo thang",
       "trend": "—",
       "trend_raw": null,
       "threshold": "Có phong tỏa",
-      "status": "success",
-      "statusLabel": "Bình thường",
+      "status": "warning",
+      "statusLabel": "CẢNH GIÁC",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 05:58 UTC: 53 tin <24h / 67 tổng (reuters.com: lỗi, bbci.co.uk: 28/42 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Spain closes airspace to us warplanes involved in war on iran...\" (04:40 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 09:47 UTC: 50 tin <24h / 63 tổng (reuters.com: lỗi, bbci.co.uk: 25/38 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran war wipes $120bn off dubai, abu dhabi stock markets...\" (07:57 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
-        "status_key": "none",
-        "hormuz_count": 11,
-        "fresh_total": 53,
-        "scanned_at": "2026-03-31T05:58:17Z",
+        "status_key": "tension",
+        "hormuz_count": 8,
+        "fresh_total": 50,
+        "scanned_at": "2026-03-31T09:47:00Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -70,31 +70,31 @@
     {
       "category": "",
       "indicator": "Sentiment (NAAIM vs AAII)",
-      "value": "N/A",
-      "trend": "—",
-      "trend_raw": null,
+      "value": "Retail 50% / Inst 68% → diff -18pp",
+      "trend": "-18pp ↓",
+      "trend_raw": -18.5,
       "threshold": "Retail − Inst > +25pp",
       "status": "success",
       "statusLabel": "Bình thường",
       "source": "NAAIM Exposure Index · AAII Sentiment Survey",
       "link": "https://www.naaim.org/resources/naaim-exposure-index/",
-      "note": "Không lấy được dữ liệu: AAII: Không lấy được AAII data từ Stooq hoặc aaii.com",
+      "note": "Diff = retailBull% − instBull%. Dương cao = retail quá lạc quan vs tổ chức → contrarian bearish signal.",
       "_meta": {
         "naaim": 68.52,
         "inst_bull": 68.5,
-        "aaii_bull": null,
-        "aaii_bear": null
+        "aaii_bull": 50.0,
+        "aaii_bear": 25.0
       }
     },
     {
       "category": "Thị trường",
       "indicator": "VIX",
-      "value": "30.61",
-      "trend": "+17.1% ↑",
-      "trend_raw": 17.06,
+      "value": "28.99",
+      "trend": "+7.6% ↑",
+      "trend_raw": 7.57,
       "threshold": ">30",
-      "status": "danger",
-      "statusLabel": "CẢNH BÁO",
+      "status": "warning",
+      "statusLabel": "CẢNH GIÁC",
       "source": "Yahoo Finance (^VIX)",
       "link": "https://finance.yahoo.com/quote/%5EVIX/",
       "note": "CBOE Volatility Index — chỉ số sợ hãi thị trường"
@@ -102,12 +102,12 @@
     {
       "category": "",
       "indicator": "VIX futures curve",
-      "value": "Contango nhẹ (spot 30.6 → M1~379)",
+      "value": "Contango nhẹ (spot 29.0 → M1~379)",
       "trend": "+14.3% ↑",
       "trend_raw": 14.3,
       "threshold": "Backwardation",
-      "status": "warning",
-      "statusLabel": "CẢNH GIÁC",
+      "status": "success",
+      "statusLabel": "Bình thường",
       "source": "Yahoo Finance (^VIX, VIXY)",
       "link": "https://finance.yahoo.com/quote/VIXY/",
       "note": "So sánh VIX spot vs VIXY ETF (proxy M1 futures)"
@@ -154,7 +154,7 @@
     {
       "category": "",
       "indicator": "2s10s spread",
-      "value": "+0.55% (3.80% vs 4.34%)",
+      "value": "+0.62% (3.72% vs 4.34%)",
       "trend": "+0.01pp ↑",
       "trend_raw": 0.008,
       "threshold": "Đảo ngược âm",
@@ -167,9 +167,9 @@
     {
       "category": "",
       "indicator": "DXY (USD Index)",
-      "value": "100.44",
+      "value": "100.45",
       "trend": "+1.0% ↑",
-      "trend_raw": 1.02,
+      "trend_raw": 1.03,
       "threshold": ">107",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -177,13 +177,13 @@
       "link": "https://finance.yahoo.com/quote/DX-Y.NYB/",
       "note": "US Dollar Index — DXY tăng mạnh >107 = USD siết chặt thanh khoản, rủi ro tài sản rủi ro tăng.",
       "_meta": {
-        "dxy": 100.443
+        "dxy": 100.453
       }
     }
   ],
   "risk": {
-    "score": 66,
-    "base_score": 48,
+    "score": 64,
+    "base_score": 46,
     "multiplier": 1.4,
     "level": "CẢNH BÁO CAO",
     "color": "danger",
@@ -192,19 +192,19 @@
       "Dầu WTI > $100/thùng"
     ],
     "breakdown": {
-      "geo": 54.0,
-      "inst": 52.0,
-      "market": 54.0,
+      "geo": 70.0,
+      "inst": 46.0,
+      "market": 47.8,
       "macro": 24.0
     },
     "indicator_scores": {
       "oil": 9,
-      "hormuz": 0,
+      "hormuz": 4,
       "cot": 10,
       "etf_flow": 2,
-      "sentiment": 2,
+      "sentiment": 0,
       "vix_curve": 5,
-      "vix": 9,
+      "vix": 6.5,
       "put_call": 7,
       "hyg_tlt": 0,
       "spread": 0,
