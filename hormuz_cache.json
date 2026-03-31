@@ -1,5 +1,5 @@
 {
-  "scanned_at": "2026-03-31T09:47:00.826368+00:00",
+  "scanned_at": "2026-03-31T12:07:20.263742+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
@@ -11,12 +11,12 @@
     "statusLabel": "CẢNH GIÁC",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 09:47 UTC: 50 tin <24h / 63 tổng (reuters.com: lỗi, bbci.co.uk: 25/38 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran war wipes $120bn off dubai, abu dhabi stock markets...\" (07:57 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 12:07 UTC: 51 tin <24h / 64 tổng (reuters.com: lỗi, bbci.co.uk: 26/39 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"‘ai helped pick the first thousand targets in iran’...\" (11:15 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
     "_meta": {
       "status_key": "tension",
       "hormuz_count": 8,
-      "fresh_total": 50,
-      "scanned_at": "2026-03-31T09:47:00Z",
+      "fresh_total": 51,
+      "scanned_at": "2026-03-31T12:07:20Z",
       "classify_source": "keyword fallback"
     }
   }
