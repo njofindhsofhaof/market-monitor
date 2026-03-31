@@ -1,22 +1,22 @@
 {
-  "scanned_at": "2026-03-30T23:53:57.867425+00:00",
+  "scanned_at": "2026-03-31T05:58:17.848785+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
-    "value": "Căng thẳng leo thang",
+    "value": "Bình thường",
     "trend": "—",
     "trend_raw": null,
     "threshold": "Có phong tỏa",
-    "status": "warning",
-    "statusLabel": "CẢNH GIÁC",
+    "status": "success",
+    "statusLabel": "Bình thường",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 23:53 UTC: 52 tin <24h / 63 tổng (reuters.com: lỗi, bbci.co.uk: 27/38 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran’s foreign ministry rejects us ceasefire demands...\" (23:12 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 05:58 UTC: 53 tin <24h / 67 tổng (reuters.com: lỗi, bbci.co.uk: 28/42 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Spain closes airspace to us warplanes involved in war on iran...\" (04:40 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
     "_meta": {
-      "status_key": "tension",
-      "hormuz_count": 8,
-      "fresh_total": 52,
-      "scanned_at": "2026-03-30T23:53:57Z",
+      "status_key": "none",
+      "hormuz_count": 11,
+      "fresh_total": 53,
+      "scanned_at": "2026-03-31T05:58:17Z",
       "classify_source": "keyword fallback"
     }
   }
