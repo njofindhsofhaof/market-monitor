@@ -1,12 +1,12 @@
 {
-  "last_updated": "07:04 Wednesday, 01/04/2026 (GMT+7)",
+  "last_updated": "13:19 Wednesday, 01/04/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
       "indicator": "Dầu WTI",
-      "value": "$102.15/thùng",
-      "trend": "+10.6% ↑",
-      "trend_raw": 10.61,
+      "value": "$100.89/thùng",
+      "trend": "+11.7% ↑",
+      "trend_raw": 11.7,
       "threshold": ">95 USD/thùng",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -25,12 +25,12 @@
       "statusLabel": "CẢNH GIÁC",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 00:04 UTC: 46 tin <24h / 62 tổng (reuters.com: lỗi, bbci.co.uk: 21/37 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Trump says us will be leaving iran in two to three weeks...\" (23:47 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 06:19 UTC: 46 tin <24h / 66 tổng (reuters.com: lỗi, bbci.co.uk: 21/41 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Al-sharaa says syria to stay out of war on iran unless attacked...\" (02:07 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "tension",
         "hormuz_count": 10,
         "fresh_total": 46,
-        "scanned_at": "2026-04-01T00:04:26Z",
+        "scanned_at": "2026-04-01T06:19:09Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -156,7 +156,7 @@
       "indicator": "2s10s spread",
       "value": "+0.59% (3.72% vs 4.31%)",
       "trend": "-0.08pp ↓",
-      "trend_raw": -0.081,
+      "trend_raw": -0.08,
       "threshold": "Đảo ngược âm",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -167,9 +167,9 @@
     {
       "category": "",
       "indicator": "DXY (USD Index)",
-      "value": "99.76",
-      "trend": "+0.3% ↑",
-      "trend_raw": 0.33,
+      "value": "99.75",
+      "trend": "+0.1% ↑",
+      "trend_raw": 0.15,
       "threshold": ">107",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -177,7 +177,7 @@
       "link": "https://finance.yahoo.com/quote/DX-Y.NYB/",
       "note": "US Dollar Index — DXY tăng mạnh >107 = USD siết chặt thanh khoản, rủi ro tài sản rủi ro tăng.",
       "_meta": {
-        "dxy": 99.762
+        "dxy": 99.753
       }
     }
   ],
