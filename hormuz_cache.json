@@ -1,5 +1,5 @@
 {
-  "scanned_at": "2026-04-01T10:37:22.259040+00:00",
+  "scanned_at": "2026-04-01T14:56:07.822849+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
@@ -11,12 +11,12 @@
     "statusLabel": "Bình thường",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 10:37 UTC: 49 tin <24h / 67 tổng (reuters.com: lỗi, bbci.co.uk: 24/42 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Houthis claim joint missile attack on israel with iran and hezbollah...\" (09:24 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 14:56 UTC: 48 tin <24h / 57 tổng (reuters.com: lỗi, bbci.co.uk: 23/32 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Russia imposing ban on all gasoline exports due to iran war...\" (13:24 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
     "_meta": {
       "status_key": "none",
-      "hormuz_count": 5,
-      "fresh_total": 49,
-      "scanned_at": "2026-04-01T10:37:22Z",
+      "hormuz_count": 7,
+      "fresh_total": 48,
+      "scanned_at": "2026-04-01T14:56:07Z",
       "classify_source": "keyword fallback"
     }
   }
