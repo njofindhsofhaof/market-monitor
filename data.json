@@ -1,12 +1,12 @@
 {
-  "last_updated": "04:11 Thursday, 02/04/2026 (GMT+7)",
+  "last_updated": "06:51 Thursday, 02/04/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
       "indicator": "Dầu WTI",
-      "value": "$98.91/thùng",
+      "value": "$98.86/thùng",
       "trend": "+9.5% ↑",
-      "trend_raw": 9.51,
+      "trend_raw": 9.46,
       "threshold": ">95 USD/thùng",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -17,20 +17,20 @@
     {
       "category": "",
       "indicator": "Xung đột Hormuz",
-      "value": "Căng thẳng leo thang",
+      "value": "Bình thường",
       "trend": "—",
       "trend_raw": null,
       "threshold": "Có phong tỏa",
-      "status": "warning",
-      "statusLabel": "CẢNH GIÁC",
+      "status": "success",
+      "statusLabel": "Bình thường",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 21:11 UTC: 50 tin <24h / 61 tổng (reuters.com: lỗi, bbci.co.uk: 25/36 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"‘which interests being served by war?’ iran’s pezeshkian asks us public...\" (20:40 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 23:51 UTC: 46 tin <24h / 60 tổng (reuters.com: lỗi, bbci.co.uk: 21/35 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Nasa moon mission a ‘contrast’ to us war on iran, says us senator...\" (21:20 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
-        "status_key": "tension",
-        "hormuz_count": 10,
-        "fresh_total": 50,
-        "scanned_at": "2026-04-01T21:11:15Z",
+        "status_key": "none",
+        "hormuz_count": 7,
+        "fresh_total": 46,
+        "scanned_at": "2026-04-01T23:51:28Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -70,9 +70,9 @@
     {
       "category": "",
       "indicator": "Sentiment (NAAIM vs AAII)",
-      "value": "Retail 50% / Inst 68% → diff -18pp",
-      "trend": "-18pp ↓",
-      "trend_raw": -18.5,
+      "value": "Retail 60% / Inst 68% → diff -8pp",
+      "trend": "-8pp ↓",
+      "trend_raw": -8.5,
       "threshold": "Retail − Inst > +25pp",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -82,8 +82,8 @@
       "_meta": {
         "naaim": 68.52,
         "inst_bull": 68.5,
-        "aaii_bull": 50.0,
-        "aaii_bear": 25.0
+        "aaii_bull": 60.0,
+        "aaii_bear": 20.0
       }
     },
     {
@@ -167,9 +167,9 @@
     {
       "category": "",
       "indicator": "DXY (USD Index)",
-      "value": "99.57",
-      "trend": "-0.0% ↓",
-      "trend_raw": -0.03,
+      "value": "99.55",
+      "trend": "-0.1% ↓",
+      "trend_raw": -0.05,
       "threshold": ">107",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -177,13 +177,13 @@
       "link": "https://finance.yahoo.com/quote/DX-Y.NYB/",
       "note": "US Dollar Index — DXY tăng mạnh >107 = USD siết chặt thanh khoản, rủi ro tài sản rủi ro tăng.",
       "_meta": {
-        "dxy": 99.569
+        "dxy": 99.552
       }
     }
   ],
   "risk": {
-    "score": 55,
-    "base_score": 44,
+    "score": 52,
+    "base_score": 42,
     "multiplier": 1.25,
     "level": "CẢNH GIÁC",
     "color": "warning",
@@ -191,14 +191,14 @@
       "COT short ròng > 70% đỉnh lịch sử"
     ],
     "breakdown": {
-      "geo": 70.0,
+      "geo": 54.0,
       "inst": 46.0,
       "market": 44.0,
       "macro": 22.0
     },
     "indicator_scores": {
       "oil": 9,
-      "hormuz": 4,
+      "hormuz": 0,
       "cot": 10,
       "etf_flow": 2,
       "sentiment": 0,
