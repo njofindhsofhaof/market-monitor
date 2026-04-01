@@ -1,5 +1,5 @@
 {
-  "scanned_at": "2026-04-01T18:01:24.362126+00:00",
+  "scanned_at": "2026-04-01T21:11:15.148480+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
@@ -11,12 +11,12 @@
     "statusLabel": "CẢNH GIÁC",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 18:01 UTC: 52 tin <24h / 61 tổng (reuters.com: lỗi, bbci.co.uk: 27/36 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran authorities await war ‘victory’ as supporters mark 1979 anniversary...\" (17:28 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 21:11 UTC: 50 tin <24h / 61 tổng (reuters.com: lỗi, bbci.co.uk: 25/36 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"‘which interests being served by war?’ iran’s pezeshkian asks us public...\" (20:40 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
     "_meta": {
       "status_key": "tension",
-      "hormuz_count": 11,
-      "fresh_total": 52,
-      "scanned_at": "2026-04-01T18:01:24Z",
+      "hormuz_count": 10,
+      "fresh_total": 50,
+      "scanned_at": "2026-04-01T21:11:15Z",
       "classify_source": "keyword fallback"
     }
   }
