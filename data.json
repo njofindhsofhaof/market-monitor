@@ -1,12 +1,12 @@
 {
-  "last_updated": "06:51 Thursday, 02/04/2026 (GMT+7)",
+  "last_updated": "10:02 Thursday, 02/04/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
       "indicator": "Dầu WTI",
-      "value": "$98.86/thùng",
-      "trend": "+9.5% ↑",
-      "trend_raw": 9.46,
+      "value": "$103.88/thùng",
+      "trend": "+15.0% ↑",
+      "trend_raw": 15.01,
       "threshold": ">95 USD/thùng",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -25,12 +25,12 @@
       "statusLabel": "Bình thường",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 23:51 UTC: 46 tin <24h / 60 tổng (reuters.com: lỗi, bbci.co.uk: 21/35 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Nasa moon mission a ‘contrast’ to us war on iran, says us senator...\" (21:20 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 03:01 UTC: 46 tin <24h / 63 tổng (reuters.com: lỗi, bbci.co.uk: 21/38 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran war live: trump claims goals nearing completion, vows to ‘finish job’...\" (00:00 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "none",
         "hormuz_count": 7,
         "fresh_total": 46,
-        "scanned_at": "2026-04-01T23:51:28Z",
+        "scanned_at": "2026-04-02T03:01:59Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -128,15 +128,15 @@
     {
       "category": "",
       "indicator": "Put/Call ratio",
-      "value": "1.372",
-      "trend": "+49.6% ↑",
-      "trend_raw": 49.62,
+      "value": "1.524",
+      "trend": "+66.2% ↑",
+      "trend_raw": 66.19,
       "threshold": ">1.1",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
       "source": "Yahoo Finance (SPY options)",
       "link": "https://finance.yahoo.com/quote/SPY/options/",
-      "note": "SPY options exp 2026-04-01 — tỷ lệ put/call đo mức phòng thủ nhà đầu tư"
+      "note": "SPY options exp 2026-04-02 — tỷ lệ put/call đo mức phòng thủ nhà đầu tư"
     },
     {
       "category": "Vĩ mô",
@@ -154,9 +154,9 @@
     {
       "category": "",
       "indicator": "2s10s spread",
-      "value": "+0.60% (3.72% vs 4.32%)",
-      "trend": "-0.01pp ↓",
-      "trend_raw": -0.008,
+      "value": "+0.51% (3.81% vs 4.32%)",
+      "trend": "-0.02pp ↓",
+      "trend_raw": -0.019,
       "threshold": "Đảo ngược âm",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -167,9 +167,9 @@
     {
       "category": "",
       "indicator": "DXY (USD Index)",
-      "value": "99.55",
-      "trend": "-0.1% ↓",
-      "trend_raw": -0.05,
+      "value": "99.94",
+      "trend": "+0.3% ↑",
+      "trend_raw": 0.34,
       "threshold": ">107",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -177,18 +177,19 @@
       "link": "https://finance.yahoo.com/quote/DX-Y.NYB/",
       "note": "US Dollar Index — DXY tăng mạnh >107 = USD siết chặt thanh khoản, rủi ro tài sản rủi ro tăng.",
       "_meta": {
-        "dxy": 99.552
+        "dxy": 99.936
       }
     }
   ],
   "risk": {
-    "score": 52,
+    "score": 58,
     "base_score": 42,
-    "multiplier": 1.25,
-    "level": "CẢNH GIÁC",
-    "color": "warning",
+    "multiplier": 1.4,
+    "level": "CẢNH BÁO CAO",
+    "color": "danger",
     "active_leads": [
-      "COT short ròng > 70% đỉnh lịch sử"
+      "COT short ròng > 70% đỉnh lịch sử",
+      "Dầu WTI > $100/thùng"
     ],
     "breakdown": {
       "geo": 54.0,
