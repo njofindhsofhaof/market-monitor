@@ -1,12 +1,12 @@
 {
-  "last_updated": "12:52 Thursday, 02/04/2026 (GMT+7)",
+  "last_updated": "16:41 Thursday, 02/04/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
       "indicator": "Dầu WTI",
-      "value": "$105.14/thùng",
-      "trend": "+11.3% ↑",
-      "trend_raw": 11.28,
+      "value": "$107.42/thùng",
+      "trend": "+13.7% ↑",
+      "trend_raw": 13.7,
       "threshold": ">95 USD/thùng",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -25,12 +25,12 @@
       "statusLabel": "Bình thường",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 05:52 UTC: 47 tin <24h / 65 tổng (reuters.com: lỗi, bbci.co.uk: 22/40 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Trump’s primetime speech on iran war: key takeaways...\" (05:15 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 09:41 UTC: 44 tin <24h / 65 tổng (reuters.com: lỗi, bbci.co.uk: 19/40 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"How israel is expanding its use of ai warfare in iran and lebanon...\" (09:20 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "none",
-        "hormuz_count": 9,
-        "fresh_total": 47,
-        "scanned_at": "2026-04-02T05:52:33Z",
+        "hormuz_count": 12,
+        "fresh_total": 44,
+        "scanned_at": "2026-04-02T09:41:42Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -89,9 +89,9 @@
     {
       "category": "Thị trường",
       "indicator": "VIX",
-      "value": "24.54",
-      "trend": "-3.1% ↓",
-      "trend_raw": -3.12,
+      "value": "26.40",
+      "trend": "-3.8% ↓",
+      "trend_raw": -3.79,
       "threshold": ">30",
       "status": "warning",
       "statusLabel": "CẢNH GIÁC",
@@ -102,7 +102,7 @@
     {
       "category": "",
       "indicator": "VIX futures curve",
-      "value": "Contango nhẹ (spot 24.5 → M1~336)",
+      "value": "Contango nhẹ (spot 26.4 → M1~336)",
       "trend": "+1.1% ↑",
       "trend_raw": 1.08,
       "threshold": "Backwardation",
@@ -167,9 +167,9 @@
     {
       "category": "",
       "indicator": "DXY (USD Index)",
-      "value": "100.04",
-      "trend": "+0.1% ↑",
-      "trend_raw": 0.14,
+      "value": "100.11",
+      "trend": "+0.2% ↑",
+      "trend_raw": 0.21,
       "threshold": ">107",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -177,13 +177,13 @@
       "link": "https://finance.yahoo.com/quote/DX-Y.NYB/",
       "note": "US Dollar Index — DXY tăng mạnh >107 = USD siết chặt thanh khoản, rủi ro tài sản rủi ro tăng.",
       "_meta": {
-        "dxy": 100.043
+        "dxy": 100.113
       }
     }
   ],
   "risk": {
-    "score": 61,
-    "base_score": 44,
+    "score": 64,
+    "base_score": 46,
     "multiplier": 1.4,
     "level": "CẢNH BÁO CAO",
     "color": "danger",
@@ -194,7 +194,7 @@
     "breakdown": {
       "geo": 60.0,
       "inst": 46.0,
-      "market": 44.0,
+      "market": 49.0,
       "macro": 28.0
     },
     "indicator_scores": {
@@ -204,7 +204,7 @@
       "etf_flow": 2,
       "sentiment": 0,
       "vix_curve": 4,
-      "vix": 4,
+      "vix": 6,
       "put_call": 10,
       "hyg_tlt": 0,
       "spread": 1,
