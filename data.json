@@ -1,5 +1,5 @@
 {
-  "last_updated": "04:55 Friday, 03/04/2026 (GMT+7)",
+  "last_updated": "06:05 Friday, 03/04/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
@@ -25,12 +25,12 @@
       "statusLabel": "Bình thường",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 21:55 UTC: 51 tin <24h / 54 tổng (reuters.com: lỗi, bbci.co.uk: 26/29 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Oil shock triggers global price spikes as iran war drags on...\" (21:04 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 23:05 UTC: 50 tin <24h / 56 tổng (reuters.com: lỗi, bbci.co.uk: 25/31 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Oil shock triggers global price spikes as iran war drags on...\" (21:04 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "none",
         "hormuz_count": 9,
-        "fresh_total": 51,
-        "scanned_at": "2026-04-02T21:55:05Z",
+        "fresh_total": 50,
+        "scanned_at": "2026-04-02T23:05:45Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -167,9 +167,9 @@
     {
       "category": "",
       "indicator": "DXY (USD Index)",
-      "value": "100.01",
+      "value": "100.02",
       "trend": "+0.1% ↑",
-      "trend_raw": 0.11,
+      "trend_raw": 0.12,
       "threshold": ">107",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -177,7 +177,7 @@
       "link": "https://finance.yahoo.com/quote/DX-Y.NYB/",
       "note": "US Dollar Index — DXY tăng mạnh >107 = USD siết chặt thanh khoản, rủi ro tài sản rủi ro tăng.",
       "_meta": {
-        "dxy": 100.01
+        "dxy": 100.017
       }
     }
   ],
