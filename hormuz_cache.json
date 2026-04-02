@@ -1,22 +1,22 @@
 {
-  "scanned_at": "2026-04-02T19:39:06.904224+00:00",
+  "scanned_at": "2026-04-02T21:55:05.682028+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
-    "value": "Căng thẳng leo thang",
+    "value": "Bình thường",
     "trend": "—",
     "trend_raw": null,
     "threshold": "Có phong tỏa",
-    "status": "warning",
-    "statusLabel": "CẢNH GIÁC",
+    "status": "success",
+    "statusLabel": "Bình thường",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 19:39 UTC: 48 tin <24h / 51 tổng (reuters.com: lỗi, bbci.co.uk: 23/26 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Gcc chief urges un to halt iranian attacks, protect gulf waterways...\" (18:40 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 21:55 UTC: 51 tin <24h / 54 tổng (reuters.com: lỗi, bbci.co.uk: 26/29 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Oil shock triggers global price spikes as iran war drags on...\" (21:04 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
     "_meta": {
-      "status_key": "tension",
-      "hormuz_count": 10,
-      "fresh_total": 48,
-      "scanned_at": "2026-04-02T19:39:06Z",
+      "status_key": "none",
+      "hormuz_count": 9,
+      "fresh_total": 51,
+      "scanned_at": "2026-04-02T21:55:05Z",
       "classify_source": "keyword fallback"
     }
   }
