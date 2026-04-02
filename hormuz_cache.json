@@ -1,22 +1,22 @@
 {
-  "scanned_at": "2026-04-02T12:07:37.250046+00:00",
+  "scanned_at": "2026-04-02T16:14:37.851276+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
-    "value": "Bình thường",
+    "value": "Căng thẳng leo thang",
     "trend": "—",
     "trend_raw": null,
     "threshold": "Có phong tỏa",
-    "status": "success",
-    "statusLabel": "Bình thường",
+    "status": "warning",
+    "statusLabel": "CẢNH GIÁC",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 12:07 UTC: 43 tin <24h / 47 tổng (reuters.com: lỗi, bbci.co.uk: 18/22 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Yemen’s houthis coordinate with iran, but retain independence, despite war...\" (10:36 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 16:14 UTC: 46 tin <24h / 49 tổng (reuters.com: lỗi, bbci.co.uk: 21/24 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Us reinforcements are coming to the gulf – but what does victory look like?...\" (15:22 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
     "_meta": {
-      "status_key": "none",
-      "hormuz_count": 12,
-      "fresh_total": 43,
-      "scanned_at": "2026-04-02T12:07:37Z",
+      "status_key": "tension",
+      "hormuz_count": 11,
+      "fresh_total": 46,
+      "scanned_at": "2026-04-02T16:14:37Z",
       "classify_source": "keyword fallback"
     }
   }
