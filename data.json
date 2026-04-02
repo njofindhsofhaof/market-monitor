@@ -1,12 +1,12 @@
 {
-  "last_updated": "10:02 Thursday, 02/04/2026 (GMT+7)",
+  "last_updated": "12:52 Thursday, 02/04/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
       "indicator": "Dầu WTI",
-      "value": "$103.88/thùng",
-      "trend": "+15.0% ↑",
-      "trend_raw": 15.01,
+      "value": "$105.14/thùng",
+      "trend": "+11.3% ↑",
+      "trend_raw": 11.28,
       "threshold": ">95 USD/thùng",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -25,12 +25,12 @@
       "statusLabel": "Bình thường",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 03:01 UTC: 46 tin <24h / 63 tổng (reuters.com: lỗi, bbci.co.uk: 21/38 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran war live: trump claims goals nearing completion, vows to ‘finish job’...\" (00:00 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 05:52 UTC: 47 tin <24h / 65 tổng (reuters.com: lỗi, bbci.co.uk: 22/40 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Trump’s primetime speech on iran war: key takeaways...\" (05:15 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "none",
-        "hormuz_count": 7,
-        "fresh_total": 46,
-        "scanned_at": "2026-04-02T03:01:59Z",
+        "hormuz_count": 9,
+        "fresh_total": 47,
+        "scanned_at": "2026-04-02T05:52:33Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -116,8 +116,8 @@
       "category": "",
       "indicator": "HYG/TLT ratio",
       "value": "0.9201",
-      "trend": "+0.6% ↑",
-      "trend_raw": 0.61,
+      "trend": "+0.7% ↑",
+      "trend_raw": 0.69,
       "threshold": "Giảm >5%/tuần",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -154,7 +154,7 @@
     {
       "category": "",
       "indicator": "2s10s spread",
-      "value": "+0.51% (3.81% vs 4.32%)",
+      "value": "+0.60% (3.72% vs 4.32%)",
       "trend": "-0.02pp ↓",
       "trend_raw": -0.019,
       "threshold": "Đảo ngược âm",
@@ -167,9 +167,9 @@
     {
       "category": "",
       "indicator": "DXY (USD Index)",
-      "value": "99.94",
-      "trend": "+0.3% ↑",
-      "trend_raw": 0.34,
+      "value": "100.04",
+      "trend": "+0.1% ↑",
+      "trend_raw": 0.14,
       "threshold": ">107",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -177,13 +177,13 @@
       "link": "https://finance.yahoo.com/quote/DX-Y.NYB/",
       "note": "US Dollar Index — DXY tăng mạnh >107 = USD siết chặt thanh khoản, rủi ro tài sản rủi ro tăng.",
       "_meta": {
-        "dxy": 99.936
+        "dxy": 100.043
       }
     }
   ],
   "risk": {
-    "score": 58,
-    "base_score": 42,
+    "score": 61,
+    "base_score": 44,
     "multiplier": 1.4,
     "level": "CẢNH BÁO CAO",
     "color": "danger",
@@ -192,13 +192,13 @@
       "Dầu WTI > $100/thùng"
     ],
     "breakdown": {
-      "geo": 54.0,
+      "geo": 60.0,
       "inst": 46.0,
       "market": 44.0,
-      "macro": 22.0
+      "macro": 28.0
     },
     "indicator_scores": {
-      "oil": 9,
+      "oil": 10,
       "hormuz": 0,
       "cot": 10,
       "etf_flow": 2,
@@ -208,7 +208,7 @@
       "put_call": 10,
       "hyg_tlt": 0,
       "spread": 1,
-      "dxy": 0,
+      "dxy": 2,
       "yield_10y": 6
     }
   }
