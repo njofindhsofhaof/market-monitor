@@ -1450,6 +1450,148 @@ def update_risk_history(risk):
     return hist
 
 
+# ===== EMAIL REPORT =====
+
+def send_email_report(result, risk):
+    """
+    Gửi báo cáo rủi ro qua email sau mỗi lần cập nhật data.
+    Dùng Resend API (resend.com) — miễn phí 100 email/ngày.
+    Env vars cần thiết:
+      RESEND_API_KEY : API key từ resend.com
+      REPORT_EMAIL   : địa chỉ email nhận báo cáo
+    """
+    RESEND_KEY   = os.environ.get("RESEND_API_KEY", "")
+    REPORT_EMAIL = os.environ.get("REPORT_EMAIL", "")
+
+    if not RESEND_KEY or not REPORT_EMAIL:
+        return  # Skip nếu chưa config
+
+    score    = risk["score"]
+    level    = risk["level"]
+    mult     = risk["multiplier"]
+    bd       = risk["breakdown"]
+    leads    = risk.get("active_leads", [])
+    updated  = result["last_updated"]
+
+    # Màu badge theo mức độ
+    color_map = {
+        "BÌNH THƯỜNG":    "#22c55e",
+        "CẢNH GIÁC":      "#f59e0b",
+        "CẢNH BÁO CAO":   "#ef4444",
+        "RỦI RO HỆ THỐNG":"#a78bfa",
+    }
+    badge_color = color_map.get(level, "#888")
+
+    # Bảng chỉ báo HTML
+    rows_html = ""
+    status_color = {"danger":"#ef4444","warning":"#f59e0b","success":"#22c55e"}
+    for ind in result["indicators"]:
+        sc = status_color.get(ind["status"], "#888")
+        rows_html += f"""
+        <tr>
+          <td style="padding:8px 12px;border-bottom:1px solid #2a2a2a;color:#888;font-size:12px">{ind['indicator']}</td>
+          <td style="padding:8px 12px;border-bottom:1px solid #2a2a2a;font-family:monospace;font-size:12px">{ind['value'][:60]}</td>
+          <td style="padding:8px 12px;border-bottom:1px solid #2a2a2a;text-align:center">
+            <span style="background:{sc}22;color:{sc};padding:2px 8px;border-radius:4px;font-size:11px;font-weight:700">{ind['statusLabel']}</span>
+          </td>
+        </tr>"""
+
+    leads_html = ""
+    if leads:
+        leads_html = "<br>".join(f"⚡ {l}" for l in leads)
+    else:
+        leads_html = "<span style='color:#555'>Không có lead indicator kích hoạt</span>"
+
+    html = f"""<!DOCTYPE html>
+<html><body style="background:#0a0a0a;color:#e8e8e8;font-family:'Segoe UI',sans-serif;margin:0;padding:0">
+<div style="max-width:680px;margin:0 auto;padding:24px">
+
+  <!-- Header -->
+  <div style="background:#141414;border:1px solid #242424;border-radius:12px;padding:24px;margin-bottom:16px;text-align:center">
+    <div style="font-size:13px;color:#888;margin-bottom:8px">📊 Market Monitor · {updated}</div>
+    <div style="font-size:64px;font-weight:800;color:{badge_color};line-height:1">{score}</div>
+    <div style="font-size:13px;color:#555;margin-bottom:12px">/100</div>
+    <div style="display:inline-block;background:{badge_color}22;color:{badge_color};padding:6px 20px;border-radius:6px;font-weight:700;font-size:14px;border:1px solid {badge_color}55">{level}</div>
+    <div style="margin-top:10px;color:#888;font-size:12px">Hệ số khuếch đại: ×{mult}</div>
+  </div>
+
+  <!-- Breakdown -->
+  <div style="background:#141414;border:1px solid #242424;border-radius:12px;padding:20px;margin-bottom:16px">
+    <div style="font-size:12px;color:#555;text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px">Phân loại rủi ro</div>
+    <table style="width:100%;border-collapse:collapse">
+      <tr>
+        <td style="padding:6px 0;color:#888;font-size:13px">Địa chính trị (15%)</td>
+        <td style="text-align:right;font-weight:700;color:{'#ef4444' if bd['geo']>=70 else '#f59e0b' if bd['geo']>=50 else '#22c55e'}">{bd['geo']}/100</td>
+      </tr>
+      <tr>
+        <td style="padding:6px 0;color:#888;font-size:13px">Dòng tiền tổ chức (25%)</td>
+        <td style="text-align:right;font-weight:700;color:{'#ef4444' if bd['inst']>=70 else '#f59e0b' if bd['inst']>=50 else '#22c55e'}">{bd['inst']}/100</td>
+      </tr>
+      <tr>
+        <td style="padding:6px 0;color:#888;font-size:13px">Thị trường (40%)</td>
+        <td style="text-align:right;font-weight:700;color:{'#ef4444' if bd['market']>=70 else '#f59e0b' if bd['market']>=50 else '#22c55e'}">{bd['market']}/100</td>
+      </tr>
+      <tr>
+        <td style="padding:6px 0;color:#888;font-size:13px">Vĩ mô (20%)</td>
+        <td style="text-align:right;font-weight:700;color:{'#ef4444' if bd['macro']>=70 else '#f59e0b' if bd['macro']>=50 else '#22c55e'}">{bd['macro']}/100</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Lead indicators -->
+  <div style="background:#1a1200;border:1px solid #f59e0b33;border-radius:12px;padding:16px;margin-bottom:16px;font-size:13px;color:#f59e0b">
+    {leads_html}
+  </div>
+
+  <!-- Indicators table -->
+  <div style="background:#141414;border:1px solid #242424;border-radius:12px;overflow:hidden;margin-bottom:16px">
+    <table style="width:100%;border-collapse:collapse">
+      <thead>
+        <tr style="background:#1a1a1a">
+          <th style="padding:10px 12px;text-align:left;font-size:10px;color:#555;text-transform:uppercase;letter-spacing:.08em">Chỉ báo</th>
+          <th style="padding:10px 12px;text-align:left;font-size:10px;color:#555;text-transform:uppercase;letter-spacing:.08em">Giá trị</th>
+          <th style="padding:10px 12px;text-align:center;font-size:10px;color:#555;text-transform:uppercase;letter-spacing:.08em">Trạng thái</th>
+        </tr>
+      </thead>
+      <tbody>{rows_html}</tbody>
+    </table>
+  </div>
+
+  <!-- Footer -->
+  <div style="text-align:center;font-size:11px;color:#444;padding-top:8px">
+    <a href="https://market-monitor-kappa.vercel.app/" style="color:#60a5fa;text-decoration:none">Xem dashboard →</a>
+    &nbsp;·&nbsp; Market Monitor by @Hirohnguyen
+  </div>
+
+</div>
+</body></html>"""
+
+    subject_icon = "🟢" if score<=35 else "🟡" if score<=55 else "🔴" if score<=75 else "🟣"
+    subject = f"{subject_icon} Market Monitor: {score}/100 — {level} ({updated[:5]})"
+
+    try:
+        resp = requests.post(
+            "https://api.resend.com/emails",
+            headers={
+                "Authorization": f"Bearer {RESEND_KEY}",
+                "Content-Type":  "application/json",
+            },
+            json={
+                "from":    "Market Monitor <onboarding@resend.dev>",
+                "to":      [REPORT_EMAIL],
+                "subject": subject,
+                "html":    html,
+            },
+            timeout=15,
+        )
+        if resp.status_code == 200:
+            print(f"[Email] Sent to {REPORT_EMAIL} — {subject}")
+        else:
+            print(f"[Email] Error {resp.status_code}: {resp.text[:200]}")
+    except Exception as e:
+        print(f"[Email] Exception: {e}")
+
+
 # ===== MAIN =====
 
 def main():
@@ -1507,6 +1649,8 @@ def main():
             elif "naaim" in m and m["naaim"] is not None:
                 meta_str = f" [NAAIM={m['naaim']:.1f}]"
         print(f"  [{ind['status']:7}] {ind['indicator']:<32} = {ind['value'][:40]:<40}{meta_str}")
+
+    send_email_report(result, risk)
 
 if __name__ == "__main__":
     main()
