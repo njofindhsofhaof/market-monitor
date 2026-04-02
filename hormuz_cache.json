@@ -1,5 +1,5 @@
 {
-  "scanned_at": "2026-04-02T09:41:42.022623+00:00",
+  "scanned_at": "2026-04-02T12:07:37.250046+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
@@ -11,12 +11,12 @@
     "statusLabel": "Bình thường",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 09:41 UTC: 44 tin <24h / 65 tổng (reuters.com: lỗi, bbci.co.uk: 19/40 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"How israel is expanding its use of ai warfare in iran and lebanon...\" (09:20 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 12:07 UTC: 43 tin <24h / 47 tổng (reuters.com: lỗi, bbci.co.uk: 18/22 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Yemen’s houthis coordinate with iran, but retain independence, despite war...\" (10:36 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
     "_meta": {
       "status_key": "none",
       "hormuz_count": 12,
-      "fresh_total": 44,
-      "scanned_at": "2026-04-02T09:41:42Z",
+      "fresh_total": 43,
+      "scanned_at": "2026-04-02T12:07:37Z",
       "classify_source": "keyword fallback"
     }
   }
