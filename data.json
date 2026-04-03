@@ -1,5 +1,5 @@
 {
-  "last_updated": "00:02 Saturday, 04/04/2026 (GMT+7)",
+  "last_updated": "02:56 Saturday, 04/04/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
@@ -25,21 +25,21 @@
       "statusLabel": "CẢNH GIÁC",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 17:02 UTC: 52 tin <24h / 54 tổng (reuters.com: lỗi, bbci.co.uk: 27/29 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"French-owned container ship transits hormuz strait in first since iran war...\" (16:24 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 19:56 UTC: 51 tin <24h / 56 tổng (reuters.com: lỗi, bbci.co.uk: 26/31 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"More than 20 attacks on iranian healthcare facilities since march 1: who...\" (19:16 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "tension",
-        "hormuz_count": 8,
-        "fresh_total": 52,
-        "scanned_at": "2026-04-03T17:02:14Z",
+        "hormuz_count": 10,
+        "fresh_total": 51,
+        "scanned_at": "2026-04-03T19:56:04Z",
         "classify_source": "keyword fallback"
       }
     },
     {
       "category": "Dòng tiền tổ chức",
       "indicator": "COT — Commercial Net",
-      "value": "-671.3K contracts — 192% của đỉnh lịch sử (350K) (2026-03-24)",
-      "trend": "+0.0K → (WoW)",
-      "trend_raw": 0.0,
+      "value": "-819.7K contracts — 234% của đỉnh lịch sử (350K) (2026-03-31)",
+      "trend": "-148.4K ↓ (WoW)",
+      "trend_raw": -148.4,
       "threshold": "Short > 70% đỉnh lịch sử",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -47,8 +47,8 @@
       "link": "https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm",
       "note": "Commercial net = long − short. shortRatio = |net| / rolling-max-short (104 tuần).",
       "_meta": {
-        "net_k": -671.3,
-        "short_ratio": 1.918
+        "net_k": -819.7,
+        "short_ratio": 2.342
       }
     },
     {
@@ -167,9 +167,9 @@
     {
       "category": "",
       "indicator": "DXY (USD Index)",
-      "value": "100.17",
-      "trend": "+0.0% ↑",
-      "trend_raw": 0.02,
+      "value": "100.22",
+      "trend": "+0.1% ↑",
+      "trend_raw": 0.07,
       "threshold": ">107",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -177,7 +177,7 @@
       "link": "https://finance.yahoo.com/quote/DX-Y.NYB/",
       "note": "US Dollar Index — DXY tăng mạnh >107 = USD siết chặt thanh khoản, rủi ro tài sản rủi ro tăng.",
       "_meta": {
-        "dxy": 100.17
+        "dxy": 100.222
       }
     }
   ],
