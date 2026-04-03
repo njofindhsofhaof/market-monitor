@@ -1,5 +1,5 @@
 {
-  "last_updated": "21:29 Friday, 03/04/2026 (GMT+7)",
+  "last_updated": "00:02 Saturday, 04/04/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
@@ -17,20 +17,20 @@
     {
       "category": "",
       "indicator": "Xung đột Hormuz",
-      "value": "Bình thường",
+      "value": "Có đề cập — theo dõi thêm",
       "trend": "—",
       "trend_raw": null,
       "threshold": "Có phong tỏa",
-      "status": "success",
-      "statusLabel": "Bình thường",
+      "status": "warning",
+      "statusLabel": "CẢNH GIÁC",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 14:29 UTC: 49 tin <24h / 51 tổng (reuters.com: lỗi, bbci.co.uk: 24/26 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"How the us and israel are waging war on iran’s medicines, vaccines...\" (12:46 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 17:02 UTC: 52 tin <24h / 54 tổng (reuters.com: lỗi, bbci.co.uk: 27/29 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"French-owned container ship transits hormuz strait in first since iran war...\" (16:24 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
-        "status_key": "none",
+        "status_key": "tension",
         "hormuz_count": 8,
-        "fresh_total": 49,
-        "scanned_at": "2026-04-03T14:29:45Z",
+        "fresh_total": 52,
+        "scanned_at": "2026-04-03T17:02:14Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -167,9 +167,9 @@
     {
       "category": "",
       "indicator": "DXY (USD Index)",
-      "value": "100.11",
-      "trend": "-0.0% ↓",
-      "trend_raw": -0.03,
+      "value": "100.17",
+      "trend": "+0.0% ↑",
+      "trend_raw": 0.02,
       "threshold": ">107",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -177,13 +177,13 @@
       "link": "https://finance.yahoo.com/quote/DX-Y.NYB/",
       "note": "US Dollar Index — DXY tăng mạnh >107 = USD siết chặt thanh khoản, rủi ro tài sản rủi ro tăng.",
       "_meta": {
-        "dxy": 100.115
+        "dxy": 100.17
       }
     }
   ],
   "risk": {
-    "score": 61,
-    "base_score": 44,
+    "score": 65,
+    "base_score": 46,
     "multiplier": 1.4,
     "level": "CẢNH BÁO CAO",
     "color": "danger",
@@ -192,14 +192,14 @@
       "Dầu WTI > $100/thùng"
     ],
     "breakdown": {
-      "geo": 60.0,
+      "geo": 76.0,
       "inst": 46.0,
       "market": 44.0,
       "macro": 28.0
     },
     "indicator_scores": {
       "oil": 10,
-      "hormuz": 0,
+      "hormuz": 4,
       "cot": 10,
       "etf_flow": 2,
       "sentiment": 0,

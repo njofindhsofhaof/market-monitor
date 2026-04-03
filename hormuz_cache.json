@@ -1,22 +1,22 @@
 {
-  "scanned_at": "2026-04-03T14:29:45.739564+00:00",
+  "scanned_at": "2026-04-03T17:02:14.794313+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
-    "value": "Bình thường",
+    "value": "Có đề cập — theo dõi thêm",
     "trend": "—",
     "trend_raw": null,
     "threshold": "Có phong tỏa",
-    "status": "success",
-    "statusLabel": "Bình thường",
+    "status": "warning",
+    "statusLabel": "CẢNH GIÁC",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 14:29 UTC: 49 tin <24h / 51 tổng (reuters.com: lỗi, bbci.co.uk: 24/26 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"How the us and israel are waging war on iran’s medicines, vaccines...\" (12:46 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 17:02 UTC: 52 tin <24h / 54 tổng (reuters.com: lỗi, bbci.co.uk: 27/29 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"French-owned container ship transits hormuz strait in first since iran war...\" (16:24 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
     "_meta": {
-      "status_key": "none",
+      "status_key": "tension",
       "hormuz_count": 8,
-      "fresh_total": 49,
-      "scanned_at": "2026-04-03T14:29:45Z",
+      "fresh_total": 52,
+      "scanned_at": "2026-04-03T17:02:14Z",
       "classify_source": "keyword fallback"
     }
   }
