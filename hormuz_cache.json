@@ -1,9 +1,9 @@
 {
-  "scanned_at": "2026-04-03T19:56:04.700054+00:00",
+  "scanned_at": "2026-04-03T21:51:00.851499+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
-    "value": "Có đề cập — theo dõi thêm",
+    "value": "Căng thẳng leo thang",
     "trend": "—",
     "trend_raw": null,
     "threshold": "Có phong tỏa",
@@ -11,12 +11,12 @@
     "statusLabel": "CẢNH GIÁC",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 19:56 UTC: 51 tin <24h / 56 tổng (reuters.com: lỗi, bbci.co.uk: 26/31 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"More than 20 attacks on iranian healthcare facilities since march 1: who...\" (19:16 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 21:51 UTC: 47 tin <24h / 53 tổng (reuters.com: lỗi, bbci.co.uk: 22/28 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Will force be used to reopen strait of hormuz?...\" (20:55 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
     "_meta": {
       "status_key": "tension",
-      "hormuz_count": 10,
-      "fresh_total": 51,
-      "scanned_at": "2026-04-03T19:56:04Z",
+      "hormuz_count": 11,
+      "fresh_total": 47,
+      "scanned_at": "2026-04-03T21:51:00Z",
       "classify_source": "keyword fallback"
     }
   }
