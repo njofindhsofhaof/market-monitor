@@ -1,5 +1,5 @@
 {
-  "last_updated": "12:52 Friday, 03/04/2026 (GMT+7)",
+  "last_updated": "15:36 Friday, 03/04/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
@@ -25,12 +25,12 @@
       "statusLabel": "Bình thường",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 05:52 UTC: 50 tin <24h / 60 tổng (reuters.com: lỗi, bbci.co.uk: 25/35 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran war live: trump warns assault on infrastructure ‘hasn’t even started’...\" (05:00 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 08:36 UTC: 49 tin <24h / 60 tổng (reuters.com: lỗi, bbci.co.uk: 24/35 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran condemns us-israeli ‘moral collapse’ after attacks on civilian sites...\" (08:03 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "none",
         "hormuz_count": 10,
-        "fresh_total": 50,
-        "scanned_at": "2026-04-03T05:52:29Z",
+        "fresh_total": 49,
+        "scanned_at": "2026-04-03T08:36:30Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -167,9 +167,9 @@
     {
       "category": "",
       "indicator": "DXY (USD Index)",
-      "value": "100.05",
+      "value": "100.00",
       "trend": "-0.1% ↓",
-      "trend_raw": -0.1,
+      "trend_raw": -0.15,
       "threshold": ">107",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -177,13 +177,13 @@
       "link": "https://finance.yahoo.com/quote/DX-Y.NYB/",
       "note": "US Dollar Index — DXY tăng mạnh >107 = USD siết chặt thanh khoản, rủi ro tài sản rủi ro tăng.",
       "_meta": {
-        "dxy": 100.054
+        "dxy": 99.995
       }
     }
   ],
   "risk": {
-    "score": 61,
-    "base_score": 44,
+    "score": 59,
+    "base_score": 42,
     "multiplier": 1.4,
     "level": "CẢNH BÁO CAO",
     "color": "danger",
@@ -195,7 +195,7 @@
       "geo": 60.0,
       "inst": 46.0,
       "market": 44.0,
-      "macro": 28.0
+      "macro": 22.0
     },
     "indicator_scores": {
       "oil": 10,
@@ -208,7 +208,7 @@
       "put_call": 10,
       "hyg_tlt": 0,
       "spread": 1,
-      "dxy": 2,
+      "dxy": 0,
       "yield_10y": 6
     }
   }
