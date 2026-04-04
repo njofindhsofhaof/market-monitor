@@ -1,5 +1,5 @@
 {
-  "scanned_at": "2026-04-04T11:55:42.681801+00:00",
+  "scanned_at": "2026-04-04T14:04:39.278964+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
@@ -11,12 +11,12 @@
     "statusLabel": "CẢNH GIÁC",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 11:55 UTC: 49 tin <24h / 58 tổng (reuters.com: lỗi, bbci.co.uk: 24/33 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran executes two convicted members of banned opposition group...\" (08:22 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 14:04 UTC: 45 tin <24h / 58 tổng (reuters.com: lỗi, bbci.co.uk: 20/33 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Projectile hits near iran’s bushehr nuclear plant, killing one: iaea...\" (12:19 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
     "_meta": {
       "status_key": "tension",
-      "hormuz_count": 7,
-      "fresh_total": 49,
-      "scanned_at": "2026-04-04T11:55:42Z",
+      "hormuz_count": 8,
+      "fresh_total": 45,
+      "scanned_at": "2026-04-04T14:04:39Z",
       "classify_source": "keyword fallback"
     }
   }
