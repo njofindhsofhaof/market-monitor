@@ -1,5 +1,5 @@
 {
-  "last_updated": "21:04 Saturday, 04/04/2026 (GMT+7)",
+  "last_updated": "22:59 Saturday, 04/04/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
@@ -25,12 +25,12 @@
       "statusLabel": "CẢNH GIÁC",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 14:04 UTC: 45 tin <24h / 58 tổng (reuters.com: lỗi, bbci.co.uk: 20/33 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Projectile hits near iran’s bushehr nuclear plant, killing one: iaea...\" (12:19 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 15:59 UTC: 45 tin <24h / 60 tổng (reuters.com: lỗi, bbci.co.uk: 20/35 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Vehicles burn in israel after being hit with iranian projectile debris...\" (14:40 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "tension",
         "hormuz_count": 8,
         "fresh_total": 45,
-        "scanned_at": "2026-04-04T14:04:39Z",
+        "scanned_at": "2026-04-04T15:59:53Z",
         "classify_source": "keyword fallback"
       }
     },
