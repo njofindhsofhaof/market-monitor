@@ -1,5 +1,5 @@
 {
-  "last_updated": "00:50 Sunday, 05/04/2026 (GMT+7)",
+  "last_updated": "02:46 Sunday, 05/04/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
@@ -17,20 +17,20 @@
     {
       "category": "",
       "indicator": "Xung đột Hormuz",
-      "value": "Có đề cập — theo dõi thêm",
+      "value": "Bình thường",
       "trend": "—",
       "trend_raw": null,
       "threshold": "Có phong tỏa",
-      "status": "warning",
-      "statusLabel": "CẢNH GIÁC",
+      "status": "success",
+      "statusLabel": "Bình thường",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 17:50 UTC: 44 tin <24h / 62 tổng (reuters.com: lỗi, bbci.co.uk: 19/37 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Italy’s meloni meets qatar emir to discuss energy issues amid iran war...\" (17:39 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 19:46 UTC: 45 tin <24h / 62 tổng (reuters.com: lỗi, bbci.co.uk: 20/37 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Universities hit as us, israel ramp up attacks on iran’s infrastructure...\" (19:17 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
-        "status_key": "tension",
-        "hormuz_count": 11,
-        "fresh_total": 44,
-        "scanned_at": "2026-04-04T17:50:51Z",
+        "status_key": "none",
+        "hormuz_count": 13,
+        "fresh_total": 45,
+        "scanned_at": "2026-04-04T19:46:39Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -38,8 +38,8 @@
       "category": "Dòng tiền tổ chức",
       "indicator": "COT — Commercial Net",
       "value": "-819.7K contracts — 234% của đỉnh lịch sử (350K) (2026-03-31)",
-      "trend": "-148.4K ↓ (WoW)",
-      "trend_raw": -148.4,
+      "trend": "+0.0K → (WoW)",
+      "trend_raw": 0.0,
       "threshold": "Short > 70% đỉnh lịch sử",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -182,8 +182,8 @@
     }
   ],
   "risk": {
-    "score": 65,
-    "base_score": 46,
+    "score": 61,
+    "base_score": 44,
     "multiplier": 1.4,
     "level": "CẢNH BÁO CAO",
     "color": "danger",
@@ -192,14 +192,14 @@
       "Dầu WTI > $100/thùng"
     ],
     "breakdown": {
-      "geo": 76.0,
+      "geo": 60.0,
       "inst": 46.0,
       "market": 44.0,
       "macro": 28.0
     },
     "indicator_scores": {
       "oil": 10,
-      "hormuz": 4,
+      "hormuz": 0,
       "cot": 10,
       "etf_flow": 2,
       "sentiment": 0,
