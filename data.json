@@ -1,5 +1,5 @@
 {
-  "last_updated": "17:06 Saturday, 04/04/2026 (GMT+7)",
+  "last_updated": "18:55 Saturday, 04/04/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
@@ -25,12 +25,12 @@
       "statusLabel": "CẢNH GIÁC",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 10:06 UTC: 50 tin <24h / 59 tổng (reuters.com: lỗi, bbci.co.uk: 25/34 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran executes two convicted members of banned opposition group...\" (08:22 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 11:55 UTC: 49 tin <24h / 58 tổng (reuters.com: lỗi, bbci.co.uk: 24/33 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran executes two convicted members of banned opposition group...\" (08:22 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "tension",
         "hormuz_count": 7,
-        "fresh_total": 50,
-        "scanned_at": "2026-04-04T10:06:13Z",
+        "fresh_total": 49,
+        "scanned_at": "2026-04-04T11:55:42Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -154,9 +154,9 @@
     {
       "category": "",
       "indicator": "2s10s spread",
-      "value": "N/A",
-      "trend": "N/A",
-      "trend_raw": null,
+      "value": "+0.51% (3.81% vs 4.31%)",
+      "trend": "-0.11pp ↓",
+      "trend_raw": -0.113,
       "threshold": "Đảo ngược âm",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -182,8 +182,8 @@
     }
   ],
   "risk": {
-    "score": 63,
-    "base_score": 45,
+    "score": 65,
+    "base_score": 46,
     "multiplier": 1.4,
     "level": "CẢNH BÁO CAO",
     "color": "danger",
@@ -195,7 +195,7 @@
       "geo": 76.0,
       "inst": 46.0,
       "market": 44.0,
-      "macro": 24.0
+      "macro": 28.0
     },
     "indicator_scores": {
       "oil": 10,
@@ -207,7 +207,7 @@
       "vix": 4,
       "put_call": 10,
       "hyg_tlt": 0,
-      "spread": 0,
+      "spread": 1,
       "dxy": 2,
       "yield_10y": 6
     }
