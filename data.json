@@ -1,5 +1,5 @@
 {
-  "last_updated": "01:02 Monday, 06/04/2026 (GMT+7)",
+  "last_updated": "02:59 Monday, 06/04/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
@@ -25,12 +25,12 @@
       "statusLabel": "CẢNH GIÁC",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 18:02 UTC: 40 tin <24h / 52 tổng (reuters.com: lỗi, bbci.co.uk: 15/27 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iranian missile strikes industrial area in southern israel...\" (16:06 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 19:59 UTC: 38 tin <24h / 52 tổng (reuters.com: lỗi, bbci.co.uk: 13/27 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Trump threatens iran in expletive-filled social media post...\" (19:07 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "tension",
-        "hormuz_count": 12,
-        "fresh_total": 40,
-        "scanned_at": "2026-04-05T18:02:27Z",
+        "hormuz_count": 13,
+        "fresh_total": 38,
+        "scanned_at": "2026-04-05T19:59:11Z",
         "classify_source": "keyword fallback"
       }
     },
