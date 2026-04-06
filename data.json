@@ -1,12 +1,12 @@
 {
-  "last_updated": "13:19 Monday, 06/04/2026 (GMT+7)",
+  "last_updated": "17:40 Monday, 06/04/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
       "indicator": "Dầu WTI",
-      "value": "$111.22/thùng",
-      "trend": "+11.6% ↑",
-      "trend_raw": 11.62,
+      "value": "$110.46/thùng",
+      "trend": "+10.9% ↑",
+      "trend_raw": 10.86,
       "threshold": ">95 USD/thùng",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -25,12 +25,12 @@
       "statusLabel": "CẢNH GIÁC",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 06:19 UTC: 31 tin <24h / 52 tổng (reuters.com: lỗi, bbci.co.uk: 6/27 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"A new regional order for the strait of hormuz...\" (05:40 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 10:40 UTC: 35 tin <24h / 56 tổng (reuters.com: lỗi, bbci.co.uk: 10/31 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Yemen’s civilians fear fallout after houthis enter iran war...\" (09:10 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "tension",
-        "hormuz_count": 8,
-        "fresh_total": 31,
-        "scanned_at": "2026-04-06T06:19:11Z",
+        "hormuz_count": 7,
+        "fresh_total": 35,
+        "scanned_at": "2026-04-06T10:40:47Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -89,9 +89,9 @@
     {
       "category": "Thị trường",
       "indicator": "VIX",
-      "value": "23.87",
-      "trend": "-13.0% ↓",
-      "trend_raw": -13.01,
+      "value": "24.83",
+      "trend": "-20.0% ↓",
+      "trend_raw": -20.03,
       "threshold": ">30",
       "status": "warning",
       "statusLabel": "CẢNH GIÁC",
@@ -102,7 +102,7 @@
     {
       "category": "",
       "indicator": "VIX futures curve",
-      "value": "Contango nhẹ (spot 23.9 → M1~335)",
+      "value": "Contango nhẹ (spot 24.8 → M1~335)",
       "trend": "-5.5% ↓",
       "trend_raw": -5.52,
       "threshold": "Backwardation",
@@ -167,9 +167,9 @@
     {
       "category": "",
       "indicator": "DXY (USD Index)",
-      "value": "100.11",
-      "trend": "-0.0% ↓",
-      "trend_raw": -0.04,
+      "value": "99.93",
+      "trend": "-0.2% ↓",
+      "trend_raw": -0.22,
       "threshold": ">107",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -177,13 +177,13 @@
       "link": "https://finance.yahoo.com/quote/DX-Y.NYB/",
       "note": "US Dollar Index — DXY tăng mạnh >107 = USD siết chặt thanh khoản, rủi ro tài sản rủi ro tăng.",
       "_meta": {
-        "dxy": 100.106
+        "dxy": 99.93
       }
     }
   ],
   "risk": {
-    "score": 65,
-    "base_score": 46,
+    "score": 63,
+    "base_score": 45,
     "multiplier": 1.4,
     "level": "CẢNH BÁO CAO",
     "color": "danger",
@@ -195,7 +195,7 @@
       "geo": 76.0,
       "inst": 46.0,
       "market": 44.0,
-      "macro": 28.0
+      "macro": 22.0
     },
     "indicator_scores": {
       "oil": 10,
@@ -208,7 +208,7 @@
       "put_call": 10,
       "hyg_tlt": 0,
       "spread": 1,
-      "dxy": 2,
+      "dxy": 0,
       "yield_10y": 6
     }
   }
