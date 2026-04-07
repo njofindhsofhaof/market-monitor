@@ -588,8 +588,8 @@ def fetch_etf_flows():
         try:
             tk         = yf.Ticker(sym)
             fi         = tk.fast_info
-            shares_now = fi.get("shares", None)
-            price_now  = fi.get("lastPrice", None)
+            shares_now = tk.info.get("sharesOutstanding", None)
+            price_now  = fi.last_price
             if shares_now is None or price_now is None:
                 continue
 
