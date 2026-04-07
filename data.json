@@ -1,12 +1,12 @@
 {
-  "last_updated": "19:09 Tuesday, 07/04/2026 (GMT+7)",
+  "last_updated": "23:36 Tuesday, 07/04/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
       "indicator": "Dầu WTI",
-      "value": "$115.64/thùng",
-      "trend": "+12.4% ↑",
-      "trend_raw": 12.4,
+      "value": "$115.19/thùng",
+      "trend": "+12.0% ↑",
+      "trend_raw": 11.97,
       "threshold": ">95 USD/thùng",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -25,12 +25,12 @@
       "statusLabel": "Bình thường",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 12:09 UTC: 45 tin <24h / 51 tổng (reuters.com: lỗi, bbci.co.uk: 20/26 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Us-israeli attacks on iran are ‘clear and obvious war crimes’...\" (11:26 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 16:36 UTC: 46 tin <24h / 52 tổng (reuters.com: lỗi, bbci.co.uk: 21/27 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Trump threatens iran: ‘a whole civilisation will die tonight’...\" (15:23 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "none",
-        "hormuz_count": 10,
-        "fresh_total": 45,
-        "scanned_at": "2026-04-07T12:09:30Z",
+        "hormuz_count": 8,
+        "fresh_total": 46,
+        "scanned_at": "2026-04-07T16:36:24Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -89,9 +89,9 @@
     {
       "category": "Thị trường",
       "indicator": "VIX",
-      "value": "25.52",
-      "trend": "-16.6% ↓",
-      "trend_raw": -16.63,
+      "value": "26.43",
+      "trend": "-13.7% ↓",
+      "trend_raw": -13.66,
       "threshold": ">30",
       "status": "warning",
       "statusLabel": "CẢNH GIÁC",
@@ -102,9 +102,9 @@
     {
       "category": "",
       "indicator": "VIX futures curve",
-      "value": "Contango nhẹ (spot 25.5 → M1~327)",
-      "trend": "-14.4% ↓",
-      "trend_raw": -14.44,
+      "value": "Contango nhẹ (spot 26.4 → M1~341)",
+      "trend": "-9.9% ↓",
+      "trend_raw": -9.9,
       "threshold": "Backwardation",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -115,9 +115,9 @@
     {
       "category": "",
       "indicator": "HYG/TLT ratio",
-      "value": "0.9198",
-      "trend": "+0.1% ↑",
-      "trend_raw": 0.15,
+      "value": "0.9220",
+      "trend": "+1.6% ↑",
+      "trend_raw": 1.61,
       "threshold": "Giảm >5%/tuần",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -128,9 +128,9 @@
     {
       "category": "",
       "indicator": "Put/Call ratio",
-      "value": "1.307",
-      "trend": "+42.5% ↑",
-      "trend_raw": 42.53,
+      "value": "1.383",
+      "trend": "+50.8% ↑",
+      "trend_raw": 50.82,
       "threshold": ">1.1",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -141,9 +141,9 @@
     {
       "category": "Vĩ mô",
       "indicator": "10-year yield",
-      "value": "4.33%",
-      "trend": "-2.4% ↓",
-      "trend_raw": -2.36,
+      "value": "4.35%",
+      "trend": "+0.3% ↑",
+      "trend_raw": 0.28,
       "threshold": ">4.5%",
       "status": "warning",
       "statusLabel": "CẢNH GIÁC",
@@ -154,9 +154,9 @@
     {
       "category": "",
       "indicator": "2s10s spread",
-      "value": "+0.61% (3.72% vs 4.33%)",
-      "trend": "-0.12pp ↓",
-      "trend_raw": -0.115,
+      "value": "+0.63% (3.72% vs 4.35%)",
+      "trend": "+0.00pp ↑",
+      "trend_raw": 0.002,
       "threshold": "Đảo ngược âm",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -167,9 +167,9 @@
     {
       "category": "",
       "indicator": "DXY (USD Index)",
-      "value": "99.94",
+      "value": "99.88",
       "trend": "-0.6% ↓",
-      "trend_raw": -0.56,
+      "trend_raw": -0.62,
       "threshold": ">107",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -177,12 +177,12 @@
       "link": "https://finance.yahoo.com/quote/DX-Y.NYB/",
       "note": "US Dollar Index — DXY tăng mạnh >107 = USD siết chặt thanh khoản, rủi ro tài sản rủi ro tăng.",
       "_meta": {
-        "dxy": 99.942
+        "dxy": 99.882
       }
     }
   ],
   "risk": {
-    "score": 62,
+    "score": 61,
     "base_score": 44,
     "multiplier": 1.4,
     "level": "CẢNH BÁO CAO",
@@ -195,7 +195,7 @@
       "geo": 60.0,
       "inst": 46.0,
       "market": 49.0,
-      "macro": 22.0
+      "macro": 18.0
     },
     "indicator_scores": {
       "oil": 10,
@@ -207,7 +207,7 @@
       "vix": 6,
       "put_call": 10,
       "hyg_tlt": 0,
-      "spread": 1,
+      "spread": 0,
       "dxy": 0,
       "yield_10y": 6
     }

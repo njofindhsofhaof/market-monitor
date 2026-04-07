@@ -1,5 +1,5 @@
 {
-  "scanned_at": "2026-04-07T12:09:30.871938+00:00",
+  "scanned_at": "2026-04-07T16:36:24.801482+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
@@ -11,12 +11,12 @@
     "statusLabel": "Bình thường",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 12:09 UTC: 45 tin <24h / 51 tổng (reuters.com: lỗi, bbci.co.uk: 20/26 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Us-israeli attacks on iran are ‘clear and obvious war crimes’...\" (11:26 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 16:36 UTC: 46 tin <24h / 52 tổng (reuters.com: lỗi, bbci.co.uk: 21/27 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Trump threatens iran: ‘a whole civilisation will die tonight’...\" (15:23 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
     "_meta": {
       "status_key": "none",
-      "hormuz_count": 10,
-      "fresh_total": 45,
-      "scanned_at": "2026-04-07T12:09:30Z",
+      "hormuz_count": 8,
+      "fresh_total": 46,
+      "scanned_at": "2026-04-07T16:36:24Z",
       "classify_source": "keyword fallback"
     }
   }
