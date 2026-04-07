@@ -1,22 +1,22 @@
 {
-  "scanned_at": "2026-04-07T20:00:34.818473+00:00",
+  "scanned_at": "2026-04-07T23:07:25.940571+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
-    "value": "Bình thường",
+    "value": "Căng thẳng leo thang",
     "trend": "—",
     "trend_raw": null,
     "threshold": "Có phong tỏa",
-    "status": "success",
-    "statusLabel": "Bình thường",
+    "status": "warning",
+    "statusLabel": "CẢNH GIÁC",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 20:00 UTC: 46 tin <24h / 52 tổng (reuters.com: lỗi, bbci.co.uk: 21/27 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iranians form human chains across bridges, at power plants...\" (19:37 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 23:07 UTC: 46 tin <24h / 52 tổng (reuters.com: lỗi, bbci.co.uk: 21/27 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"What we know about pakistan’s proposed iran war pause...\" (22:24 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
     "_meta": {
-      "status_key": "none",
-      "hormuz_count": 10,
+      "status_key": "tension",
+      "hormuz_count": 13,
       "fresh_total": 46,
-      "scanned_at": "2026-04-07T20:00:34Z",
+      "scanned_at": "2026-04-07T23:07:25Z",
       "classify_source": "keyword fallback"
     }
   }

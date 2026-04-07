@@ -1,12 +1,12 @@
 {
-  "last_updated": "03:00 Wednesday, 08/04/2026 (GMT+7)",
+  "last_updated": "06:07 Wednesday, 08/04/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
       "indicator": "Dầu WTI",
-      "value": "$112.06/thùng",
-      "trend": "+8.9% ↑",
-      "trend_raw": 8.92,
+      "value": "$98.69/thùng",
+      "trend": "-4.1% ↓",
+      "trend_raw": -4.07,
       "threshold": ">95 USD/thùng",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -17,20 +17,20 @@
     {
       "category": "",
       "indicator": "Xung đột Hormuz",
-      "value": "Bình thường",
+      "value": "Căng thẳng leo thang",
       "trend": "—",
       "trend_raw": null,
       "threshold": "Có phong tỏa",
-      "status": "success",
-      "statusLabel": "Bình thường",
+      "status": "warning",
+      "statusLabel": "CẢNH GIÁC",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 20:00 UTC: 46 tin <24h / 52 tổng (reuters.com: lỗi, bbci.co.uk: 21/27 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iranians form human chains across bridges, at power plants...\" (19:37 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 23:07 UTC: 46 tin <24h / 52 tổng (reuters.com: lỗi, bbci.co.uk: 21/27 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"What we know about pakistan’s proposed iran war pause...\" (22:24 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
-        "status_key": "none",
-        "hormuz_count": 10,
+        "status_key": "tension",
+        "hormuz_count": 13,
         "fresh_total": 46,
-        "scanned_at": "2026-04-07T20:00:34Z",
+        "scanned_at": "2026-04-07T23:07:25Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -89,9 +89,9 @@
     {
       "category": "Thị trường",
       "indicator": "VIX",
-      "value": "26.99",
-      "trend": "-11.8% ↓",
-      "trend_raw": -11.83,
+      "value": "25.78",
+      "trend": "-15.8% ↓",
+      "trend_raw": -15.78,
       "threshold": ">30",
       "status": "warning",
       "statusLabel": "CẢNH GIÁC",
@@ -102,9 +102,9 @@
     {
       "category": "",
       "indicator": "VIX futures curve",
-      "value": "Contango nhẹ (spot 27.0 → M1~339)",
+      "value": "Contango nhẹ (spot 25.8 → M1~339)",
       "trend": "-10.6% ↓",
-      "trend_raw": -10.59,
+      "trend_raw": -10.61,
       "threshold": "Backwardation",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -128,9 +128,9 @@
     {
       "category": "",
       "indicator": "Put/Call ratio",
-      "value": "1.338",
-      "trend": "-10.6% ↓",
-      "trend_raw": -10.56,
+      "value": "1.288",
+      "trend": "-13.9% ↓",
+      "trend_raw": -13.9,
       "threshold": ">1.1",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -167,9 +167,9 @@
     {
       "category": "",
       "indicator": "DXY (USD Index)",
-      "value": "99.67",
-      "trend": "-0.8% ↓",
-      "trend_raw": -0.83,
+      "value": "99.52",
+      "trend": "-1.0% ↓",
+      "trend_raw": -0.99,
       "threshold": ">107",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -177,35 +177,34 @@
       "link": "https://finance.yahoo.com/quote/DX-Y.NYB/",
       "note": "US Dollar Index — DXY tăng mạnh >107 = USD siết chặt thanh khoản, rủi ro tài sản rủi ro tăng.",
       "_meta": {
-        "dxy": 99.675
+        "dxy": 99.517
       }
     }
   ],
   "risk": {
-    "score": 63,
-    "base_score": 45,
-    "multiplier": 1.4,
-    "level": "CẢNH BÁO CAO",
-    "color": "danger",
+    "score": 54,
+    "base_score": 43,
+    "multiplier": 1.25,
+    "level": "CẢNH GIÁC",
+    "color": "warning",
     "active_leads": [
-      "COT short ròng > 70% đỉnh lịch sử",
-      "Dầu WTI > $100/thùng"
+      "COT short ròng > 70% đỉnh lịch sử"
     ],
     "breakdown": {
-      "geo": 60.0,
+      "geo": 64.0,
       "inst": 49.0,
-      "market": 49.0,
+      "market": 43.0,
       "macro": 22.0
     },
     "indicator_scores": {
-      "oil": 10,
-      "hormuz": 0,
+      "oil": 8,
+      "hormuz": 4,
       "cot": 10,
       "etf_flow": 3,
       "sentiment": 0,
       "vix_curve": 4,
       "vix": 6,
-      "put_call": 10,
+      "put_call": 7,
       "hyg_tlt": 0,
       "spread": 1,
       "dxy": 0,
