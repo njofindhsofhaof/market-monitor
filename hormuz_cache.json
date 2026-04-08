@@ -1,22 +1,22 @@
 {
-  "scanned_at": "2026-04-08T15:00:04.572718+00:00",
+  "scanned_at": "2026-04-08T18:57:52.324350+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
-    "value": "Bình thường",
+    "value": "Căng thẳng leo thang",
     "trend": "—",
     "trend_raw": null,
     "threshold": "Có phong tỏa",
-    "status": "success",
-    "statusLabel": "Bình thường",
+    "status": "warning",
+    "statusLabel": "CẢNH GIÁC",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 15:00 UTC: 49 tin <24h / 56 tổng (reuters.com: lỗi, bbci.co.uk: 24/31 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Israeli attacks across lebanon kill dozens hours after iran-us ceasefire...\" (14:39 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 18:57 UTC: 51 tin <24h / 60 tổng (reuters.com: lỗi, bbci.co.uk: 26/35 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"How trump’s promise to ‘wipe out’ iran could backfire on us power...\" (18:24 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
     "_meta": {
-      "status_key": "none",
-      "hormuz_count": 9,
-      "fresh_total": 49,
-      "scanned_at": "2026-04-08T15:00:04Z",
+      "status_key": "tension",
+      "hormuz_count": 12,
+      "fresh_total": 51,
+      "scanned_at": "2026-04-08T18:57:52Z",
       "classify_source": "keyword fallback"
     }
   }
