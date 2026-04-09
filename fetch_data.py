@@ -568,49 +568,147 @@ def _save_etf_history(data):
     with open(ETF_HISTORY, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
+def _get_spy_implied_shares(spy_price: float):
+    """
+    Tính implied shares của SPY từ SPDR daily holdings xlsx.
+    AUM = median(shares_held_i × close_price_i / weight_i%) cho top 5 holdings.
+    implied_shares = AUM / spy_price
+    """
+    try:
+        import io, statistics
+        url = ("https://www.ssga.com/us/en/intermediary/etfs/library-content"
+               "/products/fund-data/etfs/us/holdings-daily-us-en-spy.xlsx")
+        resp = requests.get(url, headers={"User-Agent": "Mozilla/5.0"}, timeout=15)
+        if resp.status_code != 200:
+            return None
+
+        import openpyxl
+        wb = openpyxl.load_workbook(io.BytesIO(resp.content))
+        ws = wb.active
+        rows = list(ws.iter_rows(values_only=True))
+
+        # Tìm ngày holdings từ row "As of DD-Mon-YYYY"
+        holdings_date = None
+        data_start = 5  # mặc định
+        for i, row in enumerate(rows[:8]):
+            if row and isinstance(row[1], str) and "As of" in str(row[1]):
+                # parse "As of 07-Apr-2026" → "2026-04-07"
+                try:
+                    import datetime as _dt
+                    date_part = str(row[1]).replace("As of ", "").strip()
+                    holdings_date = _dt.datetime.strptime(date_part, "%d-%b-%Y").strftime("%Y-%m-%d")
+                except Exception:
+                    pass
+            # Header row chứa "Name", "Ticker", "Weight"
+            if row and row[0] == "Name":
+                data_start = i + 1
+                break
+
+        # Lấy top 5 holdings (ticker, weight%, shares_held)
+        holdings = []
+        for row in rows[data_start:data_start + 5]:
+            if not row or row[0] is None:
+                break
+            ticker  = row[1]   # e.g. "NVDA"
+            weight  = row[4]   # e.g. 7.635363
+            shares  = row[6]   # e.g. 283679859.0
+            if ticker and weight and shares and weight > 0:
+                holdings.append((str(ticker), float(weight), float(shares)))
+
+        if not holdings:
+            return None
+
+        # Lấy giá đóng cửa của từng holding vào ngày holdings_date
+        tickers_str = " ".join(h[0] for h in holdings)
+        period = "5d"
+        aum_estimates = []
+        for ticker, weight_pct, shares_held in holdings:
+            try:
+                hist = yf.Ticker(ticker).history(period=period)["Close"]
+                if hist.empty:
+                    continue
+                if holdings_date:
+                    # Tìm close price gần nhất với holdings_date
+                    dates_str = [str(d)[:10] for d in hist.index]
+                    if holdings_date in dates_str:
+                        idx = dates_str.index(holdings_date)
+                        close = float(hist.iloc[idx])
+                    else:
+                        close = float(hist.iloc[-1])
+                else:
+                    close = float(hist.iloc[-1])
+                aum_est = shares_held * close / (weight_pct / 100)
+                aum_estimates.append(aum_est)
+            except Exception:
+                continue
+
+        if not aum_estimates:
+            return None
+
+        aum = statistics.median(aum_estimates)
+        return aum / spy_price if spy_price > 0 else None
+
+    except Exception:
+        return None
+
+
 def fetch_etf_flows():
     """
     ETF Flows — net creation/redemption SPY + QQQ.
-    Cơ chế đúng: Δshares_outstanding × price = net flow (tỷ USD).
-    Lưu snapshot shares mỗi giờ vào etf_history.json,
-    so sánh với snapshot cũ nhất (~5 ngày) để tính flow tuần.
+    SPY: implied shares từ SPDR daily holdings xlsx (State Street).
+    QQQ: implied shares = totalAssets / last_price (yfinance).
+    Lưu snapshot hàng ngày, tính Δimplied_shares × price = flow (tỷ USD).
     """
     today = datetime.datetime.now(
         datetime.timezone(datetime.timedelta(hours=7))
     ).strftime("%Y-%m-%d")
 
     hist    = _load_etf_history()
-    etfs    = [("SPY", "S&P 500"), ("QQQ", "Nasdaq 100")]
     total_b = None
     parts   = []
 
-    for sym, _ in etfs:
+    etf_configs = [
+        ("SPY", "spdr_xlsx"),
+        ("QQQ", "total_assets"),
+    ]
+
+    for sym, method in etf_configs:
         try:
-            tk         = yf.Ticker(sym)
-            fi         = tk.fast_info
-            shares_now = tk.info.get("sharesOutstanding", None)
-            price_now  = fi.last_price
-            if shares_now is None or price_now is None:
+            tk    = yf.Ticker(sym)
+            fi    = tk.fast_info
+            price = fi.last_price
+            if not price:
+                continue
+
+            # Lấy implied shares theo từng phương pháp
+            if method == "spdr_xlsx":
+                implied = _get_spy_implied_shares(price)
+            else:  # total_assets
+                total_assets = tk.info.get("totalAssets")
+                implied = (total_assets / price) if total_assets else None
+
+            if implied is None:
                 continue
 
             # Lưu snapshot hôm nay
             entries = hist.get(sym, [])
             if not isinstance(entries, list):
                 entries = []
+            snapshot = {"date": today, "implied_shares": implied, "price": price}
             if not entries or entries[-1].get("date") != today:
-                entries.append({"date": today, "shares": shares_now, "price": price_now})
+                entries.append(snapshot)
             else:
-                entries[-1] = {"date": today, "shares": shares_now, "price": price_now}
+                entries[-1] = snapshot
             hist[sym] = entries[-10:]
 
-            # Cần ít nhất 2 ngày snapshot để tính delta
+            # Cần ít nhất 2 ngày để tính delta
             if len(entries) < 2:
                 continue
 
-            old        = entries[0]
-            price_avg  = (price_now + old.get("price", price_now)) / 2
-            delta      = shares_now - old["shares"]
-            flow_b     = round(delta * price_avg / 1e9, 2)
+            old       = entries[0]
+            price_avg = (price + old.get("price", price)) / 2
+            delta     = implied - old["implied_shares"]
+            flow_b    = round(delta * price_avg / 1e9, 2)
 
             if total_b is None:
                 total_b = 0.0
@@ -630,7 +728,7 @@ def fetch_etf_flows():
         value_str = f"{total_b:+.2f}B USD ({', '.join(parts)})"
         trend_str = f"{total_b:+.2f}B {arrow}"
     else:
-        value_str = "Đang tích lũy (~5 ngày để có baseline)"
+        value_str = "Đang tích lũy (~2 ngày để có baseline)"
         trend_str = "N/A"
 
     return {
@@ -642,9 +740,9 @@ def fetch_etf_flows():
         "threshold": "Outflow > −2B USD/7d",
         "status": status,
         "statusLabel": label,
-        "source": "Yahoo Finance (shares outstanding)",
+        "source": "SPDR holdings xlsx (SPY) + Yahoo Finance (QQQ)",
         "link": "https://etf.com/etfanalytics/etf-fund-flows-tool",
-        "note": "Net flow = Δshares_outstanding × price. Cần ~5 ngày tích lũy snapshot để có số ổn định.",
+        "note": "SPY: implied shares từ SPDR daily holdings. QQQ: totalAssets/price. Cần 2+ ngày snapshot.",
         "_meta": {"flow_b": total_b}
     }
 
