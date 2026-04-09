@@ -1,22 +1,22 @@
 {
-  "scanned_at": "2026-04-09T06:06:16.547423+00:00",
+  "scanned_at": "2026-04-09T10:45:33.301537+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
-    "value": "Bình thường",
+    "value": "Có đề cập — theo dõi thêm",
     "trend": "—",
     "trend_raw": null,
     "threshold": "Có phong tỏa",
-    "status": "success",
-    "statusLabel": "Bình thường",
+    "status": "warning",
+    "statusLabel": "CẢNH GIÁC",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 06:06 UTC: 46 tin <24h / 62 tổng (reuters.com: lỗi, bbci.co.uk: 21/37 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Trump slams nato over iran after meeting rutte, renews greenland threat...\" (04:46 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 10:45 UTC: 46 tin <24h / 62 tổng (reuters.com: lỗi, bbci.co.uk: 21/37 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"The war on iran: nobody won, everyone paid...\" (09:27 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
     "_meta": {
-      "status_key": "none",
-      "hormuz_count": 13,
+      "status_key": "tension",
+      "hormuz_count": 9,
       "fresh_total": 46,
-      "scanned_at": "2026-04-09T06:06:16Z",
+      "scanned_at": "2026-04-09T10:45:33Z",
       "classify_source": "keyword fallback"
     }
   }
