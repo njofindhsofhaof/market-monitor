@@ -1726,8 +1726,19 @@ def main():
     update_risk_history(risk)
     result["risk"] = risk
 
+    def _sanitize(obj):
+        """Đệ quy thay NaN/Inf → None để đảm bảo JSON hợp lệ."""
+        import math
+        if isinstance(obj, float) and (math.isnan(obj) or math.isinf(obj)):
+            return None
+        if isinstance(obj, dict):
+            return {k: _sanitize(v) for k, v in obj.items()}
+        if isinstance(obj, list):
+            return [_sanitize(v) for v in obj]
+        return obj
+
     with open(OUTPUT, "w", encoding="utf-8") as f:
-        json.dump(result, f, ensure_ascii=False, indent=2)
+        json.dump(_sanitize(result), f, ensure_ascii=False, indent=2)
 
     bd = risk["breakdown"]
     print(f"Saved → {OUTPUT}")
