@@ -1,12 +1,12 @@
 {
-  "last_updated": "06:25 Friday, 10/04/2026 (GMT+7)",
+  "last_updated": "13:19 Friday, 10/04/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
       "indicator": "Dầu WTI",
-      "value": "$98.41/thùng",
-      "trend": "-1.7% ↓",
-      "trend_raw": -1.71,
+      "value": "$98.37/thùng",
+      "trend": "-11.8% ↓",
+      "trend_raw": -11.81,
       "threshold": ">95 USD/thùng",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -25,12 +25,12 @@
       "statusLabel": "CẢNH GIÁC",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 23:25 UTC: 49 tin <24h / 61 tổng (reuters.com: lỗi, bbci.co.uk: 24/36 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Us-iran ceasefire: uncertainty over what’s next...\" (22:48 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 06:19 UTC: 51 tin <24h / 62 tổng (reuters.com: lỗi, bbci.co.uk: 26/37 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Kuwait blames iran for drone strike, iran denies responsibility...\" (04:57 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "tension",
-        "hormuz_count": 6,
-        "fresh_total": 49,
-        "scanned_at": "2026-04-09T23:25:47Z",
+        "hormuz_count": 8,
+        "fresh_total": 51,
+        "scanned_at": "2026-04-10T06:19:24Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -128,15 +128,15 @@
     {
       "category": "",
       "indicator": "Put/Call ratio",
-      "value": "1.246",
-      "trend": "-2.0% ↓",
-      "trend_raw": -1.97,
+      "value": "1.639",
+      "trend": "+28.9% ↑",
+      "trend_raw": 28.95,
       "threshold": ">1.1",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
       "source": "Yahoo Finance (SPY options)",
       "link": "https://finance.yahoo.com/quote/SPY/options/",
-      "note": "SPY options exp 2026-04-09 — tỷ lệ put/call đo mức phòng thủ nhà đầu tư"
+      "note": "SPY options exp 2026-04-10 — tỷ lệ put/call đo mức phòng thủ nhà đầu tư"
     },
     {
       "category": "Vĩ mô",
@@ -167,9 +167,9 @@
     {
       "category": "",
       "indicator": "DXY (USD Index)",
-      "value": "99.13",
-      "trend": "-0.8% ↓",
-      "trend_raw": -0.83,
+      "value": "98.92",
+      "trend": "-1.1% ↓",
+      "trend_raw": -1.11,
       "threshold": ">107",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -177,13 +177,13 @@
       "link": "https://finance.yahoo.com/quote/DX-Y.NYB/",
       "note": "US Dollar Index — DXY tăng mạnh >107 = USD siết chặt thanh khoản, rủi ro tài sản rủi ro tăng.",
       "_meta": {
-        "dxy": 99.13
+        "dxy": 98.92
       }
     }
   ],
   "risk": {
-    "score": 50,
-    "base_score": 40,
+    "score": 53,
+    "base_score": 42,
     "multiplier": 1.25,
     "level": "CẢNH GIÁC",
     "color": "warning",
@@ -193,7 +193,7 @@
     "breakdown": {
       "geo": 64.0,
       "inst": 49.0,
-      "market": 33.0,
+      "market": 39.0,
       "macro": 24.0
     },
     "indicator_scores": {
@@ -204,7 +204,7 @@
       "sentiment": 0,
       "vix_curve": 4,
       "vix": 2,
-      "put_call": 7,
+      "put_call": 10,
       "hyg_tlt": 0,
       "spread": 3,
       "dxy": 0,
