@@ -1,12 +1,12 @@
 {
-  "last_updated": "21:36 Friday, 10/04/2026 (GMT+7)",
+  "last_updated": "00:38 Saturday, 11/04/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
       "indicator": "Dầu WTI",
-      "value": "$97.34/thùng",
-      "trend": "-12.7% ↓",
-      "trend_raw": -12.73,
+      "value": "$98.31/thùng",
+      "trend": "-11.8% ↓",
+      "trend_raw": -11.85,
       "threshold": ">95 USD/thùng",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -17,20 +17,20 @@
     {
       "category": "",
       "indicator": "Xung đột Hormuz",
-      "value": "Bình thường",
+      "value": "Phong tỏa hoàn toàn",
       "trend": "—",
       "trend_raw": null,
       "threshold": "Có phong tỏa",
-      "status": "success",
-      "statusLabel": "Bình thường",
+      "status": "danger",
+      "statusLabel": "CẢNH BÁO",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 14:36 UTC: 40 tin <24h / 49 tổng (reuters.com: lỗi, bbci.co.uk: 15/24 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Vance expects ‘positive’ iran talks as he heads to islamabad...\" (14:07 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 17:38 UTC: 44 tin <24h / 53 tổng (reuters.com: lỗi, bbci.co.uk: 19/28 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Starmer and trump talked military options to reopen strait of hormuz...\" (17:03 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
-        "status_key": "none",
-        "hormuz_count": 3,
-        "fresh_total": 40,
-        "scanned_at": "2026-04-10T14:36:00Z",
+        "status_key": "full_blockade",
+        "hormuz_count": 7,
+        "fresh_total": 44,
+        "scanned_at": "2026-04-10T17:38:02Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -54,9 +54,9 @@
     {
       "category": "",
       "indicator": "ETF Flows (SPY+QQQ)",
-      "value": "+0.87B USD (SPY: +2.79B/1d, QQQ: -1.92B/1d)",
-      "trend": "+0.87B ↑",
-      "trend_raw": 0.8700000000000001,
+      "value": "+5.51B USD (SPY: +5.64B/2d, QQQ: -0.13B/2d)",
+      "trend": "+5.51B ↑",
+      "trend_raw": 5.51,
       "threshold": "Outflow > −2B USD/7d",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -64,7 +64,7 @@
       "link": "https://etf.com/etfanalytics/etf-fund-flows-tool",
       "note": "SPY: implied shares từ SPDR daily holdings. QQQ: totalAssets/price. Cần 2+ ngày snapshot.",
       "_meta": {
-        "flow_b": 0.8700000000000001
+        "flow_b": 5.51
       }
     },
     {
@@ -89,9 +89,9 @@
     {
       "category": "Thị trường",
       "indicator": "VIX",
-      "value": "18.93",
-      "trend": "-20.7% ↓",
-      "trend_raw": -20.7,
+      "value": "20.22",
+      "trend": "-15.3% ↓",
+      "trend_raw": -15.29,
       "threshold": ">30",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -102,9 +102,9 @@
     {
       "category": "",
       "indicator": "VIX futures curve",
-      "value": "Contango nhẹ (spot 18.9 → M1~292)",
-      "trend": "-13.1% ↓",
-      "trend_raw": -13.05,
+      "value": "Contango nhẹ (spot 20.2 → M1~299)",
+      "trend": "-10.7% ↓",
+      "trend_raw": -10.71,
       "threshold": "Backwardation",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -115,9 +115,9 @@
     {
       "category": "",
       "indicator": "HYG/TLT ratio",
-      "value": "0.9265",
-      "trend": "+1.1% ↑",
-      "trend_raw": 1.07,
+      "value": "0.9261",
+      "trend": "+1.0% ↑",
+      "trend_raw": 1.02,
       "threshold": "Giảm >5%/tuần",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -128,9 +128,9 @@
     {
       "category": "",
       "indicator": "Put/Call ratio",
-      "value": "1.450",
-      "trend": "+14.1% ↑",
-      "trend_raw": 14.08,
+      "value": "1.263",
+      "trend": "-9.7% ↓",
+      "trend_raw": -9.72,
       "threshold": ">1.1",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -141,9 +141,9 @@
     {
       "category": "Vĩ mô",
       "indicator": "10-year yield",
-      "value": "4.31%",
-      "trend": "-0.1% ↓",
-      "trend_raw": -0.14,
+      "value": "4.32%",
+      "trend": "+0.2% ↑",
+      "trend_raw": 0.19,
       "threshold": ">4.5%",
       "status": "warning",
       "statusLabel": "CẢNH GIÁC",
@@ -154,9 +154,9 @@
     {
       "category": "",
       "indicator": "2s10s spread",
-      "value": "+0.50% (3.81% vs 4.31%)",
-      "trend": "-0.01pp ↓",
-      "trend_raw": -0.006,
+      "value": "+0.52% (3.81% vs 4.32%)",
+      "trend": "+0.01pp ↑",
+      "trend_raw": 0.008,
       "threshold": "Đảo ngược âm",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -167,9 +167,9 @@
     {
       "category": "",
       "indicator": "DXY (USD Index)",
-      "value": "98.54",
-      "trend": "-1.5% ↓",
-      "trend_raw": -1.49,
+      "value": "98.71",
+      "trend": "-1.3% ↓",
+      "trend_raw": -1.32,
       "threshold": ">107",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -177,13 +177,13 @@
       "link": "https://finance.yahoo.com/quote/DX-Y.NYB/",
       "note": "US Dollar Index — DXY tăng mạnh >107 = USD siết chặt thanh khoản, rủi ro tài sản rủi ro tăng.",
       "_meta": {
-        "dxy": 98.543
+        "dxy": 98.709
       }
     }
   ],
   "risk": {
-    "score": 49,
-    "base_score": 40,
+    "score": 52,
+    "base_score": 42,
     "multiplier": 1.25,
     "level": "CẢNH GIÁC",
     "color": "warning",
@@ -191,22 +191,22 @@
       "COT short ròng > 70% đỉnh lịch sử"
     ],
     "breakdown": {
-      "geo": 48.0,
-      "inst": 43.0,
-      "market": 39.0,
-      "macro": 30.0
+      "geo": 88.0,
+      "inst": 40.0,
+      "market": 38.0,
+      "macro": 18.0
     },
     "indicator_scores": {
       "oil": 8,
-      "hormuz": 0,
+      "hormuz": 10,
       "cot": 10,
-      "etf_flow": 1,
+      "etf_flow": 0,
       "sentiment": 0,
       "vix_curve": 4,
-      "vix": 2,
-      "put_call": 10,
+      "vix": 4,
+      "put_call": 7,
       "hyg_tlt": 0,
-      "spread": 3,
+      "spread": 0,
       "dxy": 0,
       "yield_10y": 6
     }
