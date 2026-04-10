@@ -1,22 +1,22 @@
 {
-  "scanned_at": "2026-04-10T10:35:48.086945+00:00",
+  "scanned_at": "2026-04-10T14:36:00.002189+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
-    "value": "Căng thẳng leo thang",
+    "value": "Bình thường",
     "trend": "—",
     "trend_raw": null,
     "threshold": "Có phong tỏa",
-    "status": "warning",
-    "statusLabel": "CẢNH GIÁC",
+    "status": "success",
+    "statusLabel": "Bình thường",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 10:35 UTC: 43 tin <24h / 49 tổng (reuters.com: lỗi, bbci.co.uk: 18/24 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran ceasefire: not an off-ramp for the us but a life-saving ejection seat...\" (08:27 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 14:36 UTC: 40 tin <24h / 49 tổng (reuters.com: lỗi, bbci.co.uk: 15/24 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Vance expects ‘positive’ iran talks as he heads to islamabad...\" (14:07 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
     "_meta": {
-      "status_key": "tension",
-      "hormuz_count": 8,
-      "fresh_total": 43,
-      "scanned_at": "2026-04-10T10:35:48Z",
+      "status_key": "none",
+      "hormuz_count": 3,
+      "fresh_total": 40,
+      "scanned_at": "2026-04-10T14:36:00Z",
       "classify_source": "keyword fallback"
     }
   }
