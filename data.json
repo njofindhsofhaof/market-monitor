@@ -1,5 +1,5 @@
 {
-  "last_updated": "04:58 Saturday, 11/04/2026 (GMT+7)",
+  "last_updated": "06:54 Saturday, 11/04/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
@@ -17,20 +17,20 @@
     {
       "category": "",
       "indicator": "Xung đột Hormuz",
-      "value": "Phong tỏa hoàn toàn",
+      "value": "Căng thẳng leo thang",
       "trend": "—",
       "trend_raw": null,
       "threshold": "Có phong tỏa",
-      "status": "danger",
-      "statusLabel": "CẢNH BÁO",
+      "status": "warning",
+      "statusLabel": "CẢNH GIÁC",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 21:58 UTC: 47 tin <24h / 57 tổng (reuters.com: lỗi, bbci.co.uk: 22/32 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Us-iran negotiations in islamabad: what to expect?...\" (20:19 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 23:54 UTC: 44 tin <24h / 53 tổng (reuters.com: lỗi, bbci.co.uk: 19/28 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iranian delegation arrives in islamabad for talks with us...\" (21:59 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
-        "status_key": "full_blockade",
+        "status_key": "tension",
         "hormuz_count": 9,
-        "fresh_total": 47,
-        "scanned_at": "2026-04-10T21:58:25Z",
+        "fresh_total": 44,
+        "scanned_at": "2026-04-10T23:54:46Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -182,8 +182,8 @@
     }
   ],
   "risk": {
-    "score": 51,
-    "base_score": 41,
+    "score": 46,
+    "base_score": 37,
     "multiplier": 1.25,
     "level": "CẢNH GIÁC",
     "color": "warning",
@@ -191,14 +191,14 @@
       "COT short ròng > 70% đỉnh lịch sử"
     ],
     "breakdown": {
-      "geo": 88.0,
+      "geo": 64.0,
       "inst": 43.0,
       "market": 33.0,
       "macro": 18.0
     },
     "indicator_scores": {
       "oil": 8,
-      "hormuz": 10,
+      "hormuz": 4,
       "cot": 10,
       "etf_flow": 1,
       "sentiment": 0,
