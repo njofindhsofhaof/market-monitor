@@ -1,5 +1,5 @@
 {
-  "last_updated": "23:01 Saturday, 11/04/2026 (GMT+7)",
+  "last_updated": "01:02 Sunday, 12/04/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
@@ -25,12 +25,12 @@
       "statusLabel": "CẢNH GIÁC",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 16:01 UTC: 51 tin <24h / 55 tổng (reuters.com: lỗi, bbci.co.uk: 26/30 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Us-iran ceasefire: can pressure, incentives, and risks deliver a final deal...\" (14:39 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 18:02 UTC: 48 tin <24h / 55 tổng (reuters.com: lỗi, bbci.co.uk: 23/30 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Ceasefire brings some relief for iranians but economic outlook remains grim...\" (17:29 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "tension",
-        "hormuz_count": 7,
-        "fresh_total": 51,
-        "scanned_at": "2026-04-11T16:01:51Z",
+        "hormuz_count": 8,
+        "fresh_total": 48,
+        "scanned_at": "2026-04-11T18:02:12Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -54,7 +54,7 @@
     {
       "category": "",
       "indicator": "ETF Flows (SPY+QQQ)",
-      "value": "+4.01B USD (SPY: +4.93B/2d, QQQ: -0.92B/2d)",
+      "value": "+4.01B USD (SPY: +4.93B/3d, QQQ: -0.92B/3d)",
       "trend": "+4.01B ↑",
       "trend_raw": 4.01,
       "threshold": "Outflow > −2B USD/7d",
@@ -129,8 +129,8 @@
       "category": "",
       "indicator": "Put/Call ratio",
       "value": "1.987",
-      "trend": "+42.0% ↑",
-      "trend_raw": 42.03,
+      "trend": "+28.4% ↑",
+      "trend_raw": 28.44,
       "threshold": ">1.1",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
