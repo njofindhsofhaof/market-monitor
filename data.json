@@ -1,5 +1,5 @@
 {
-  "last_updated": "04:50 Sunday, 12/04/2026 (GMT+7)",
+  "last_updated": "06:05 Sunday, 12/04/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
@@ -25,12 +25,12 @@
       "statusLabel": "CẢNH GIÁC",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 21:49 UTC: 48 tin <24h / 56 tổng (reuters.com: lỗi, bbci.co.uk: 23/31 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran’s deputy fm says tehran has ‘upper hand’ in talks with us...\" (19:46 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 23:05 UTC: 49 tin <24h / 52 tổng (reuters.com: lỗi, bbci.co.uk: 24/27 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Us president trump says us ‘wins’ regardless of how iran talks go...\" (22:09 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "tension",
-        "hormuz_count": 6,
-        "fresh_total": 48,
-        "scanned_at": "2026-04-11T21:49:57Z",
+        "hormuz_count": 7,
+        "fresh_total": 49,
+        "scanned_at": "2026-04-11T23:05:28Z",
         "classify_source": "keyword fallback"
       }
     },
