@@ -1,5 +1,5 @@
 {
-  "scanned_at": "2026-04-11T11:58:11.296155+00:00",
+  "scanned_at": "2026-04-11T14:07:20.885851+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
@@ -11,12 +11,12 @@
     "statusLabel": "CẢNH GIÁC",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 11:58 UTC: 50 tin <24h / 54 tổng (reuters.com: lỗi, bbci.co.uk: 25/29 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"We need a regional agreement for the strait of hormuz...\" (10:56 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 14:07 UTC: 50 tin <24h / 53 tổng (reuters.com: lỗi, bbci.co.uk: 25/28 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Us-iran talks on ending war begin in pakistan...\" (13:26 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
     "_meta": {
       "status_key": "tension",
-      "hormuz_count": 8,
+      "hormuz_count": 9,
       "fresh_total": 50,
-      "scanned_at": "2026-04-11T11:58:11Z",
+      "scanned_at": "2026-04-11T14:07:20Z",
       "classify_source": "keyword fallback"
     }
   }
