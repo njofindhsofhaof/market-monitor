@@ -1,5 +1,5 @@
 {
-  "last_updated": "21:10 Sunday, 12/04/2026 (GMT+7)",
+  "last_updated": "00:04 Monday, 13/04/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
@@ -17,20 +17,20 @@
     {
       "category": "",
       "indicator": "Xung đột Hormuz",
-      "value": "Căng thẳng leo thang",
+      "value": "Phong tỏa hoàn toàn",
       "trend": "—",
       "trend_raw": null,
       "threshold": "Có phong tỏa",
-      "status": "warning",
-      "statusLabel": "CẢNH GIÁC",
+      "status": "danger",
+      "statusLabel": "CẢNH BÁO",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 14:10 UTC: 45 tin <24h / 54 tổng (reuters.com: lỗi, bbci.co.uk: 20/29 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Lessons from the iran war...\" (13:10 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 17:04 UTC: 42 tin <24h / 54 tổng (reuters.com: lỗi, bbci.co.uk: 17/29 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iranian authorities remain defiant, urge supporters to stay in streets...\" (16:51 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
-        "status_key": "tension",
-        "hormuz_count": 8,
-        "fresh_total": 45,
-        "scanned_at": "2026-04-12T14:10:44Z",
+        "status_key": "full_blockade",
+        "hormuz_count": 6,
+        "fresh_total": 42,
+        "scanned_at": "2026-04-12T17:04:12Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -54,7 +54,7 @@
     {
       "category": "",
       "indicator": "ETF Flows (SPY+QQQ)",
-      "value": "+4.01B USD (SPY: +4.93B/3d, QQQ: -0.92B/3d)",
+      "value": "+4.01B USD (SPY: +4.93B/4d, QQQ: -0.92B/4d)",
       "trend": "+4.01B ↑",
       "trend_raw": 4.01,
       "threshold": "Outflow > −2B USD/7d",
@@ -182,8 +182,8 @@
     }
   ],
   "risk": {
-    "score": 49,
-    "base_score": 40,
+    "score": 54,
+    "base_score": 43,
     "multiplier": 1.25,
     "level": "CẢNH GIÁC",
     "color": "warning",
@@ -191,14 +191,14 @@
       "COT short ròng > 70% đỉnh lịch sử"
     ],
     "breakdown": {
-      "geo": 64.0,
+      "geo": 88.0,
       "inst": 43.0,
       "market": 39.0,
       "macro": 18.0
     },
     "indicator_scores": {
       "oil": 8,
-      "hormuz": 4,
+      "hormuz": 10,
       "cot": 10,
       "etf_flow": 1,
       "sentiment": 0,
