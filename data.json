@@ -1,12 +1,12 @@
 {
-  "last_updated": "06:54 Monday, 13/04/2026 (GMT+7)",
+  "last_updated": "14:27 Monday, 13/04/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
       "indicator": "Dầu WTI",
-      "value": "$105.29/thùng",
-      "trend": "-6.3% ↓",
-      "trend_raw": -6.33,
+      "value": "$103.63/thùng",
+      "trend": "-7.8% ↓",
+      "trend_raw": -7.81,
       "threshold": ">95 USD/thùng",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -17,20 +17,20 @@
     {
       "category": "",
       "indicator": "Xung đột Hormuz",
-      "value": "Phong tỏa hoàn toàn",
+      "value": "Có đề cập — theo dõi thêm",
       "trend": "—",
       "trend_raw": null,
       "threshold": "Có phong tỏa",
-      "status": "danger",
-      "statusLabel": "CẢNH BÁO",
+      "status": "warning",
+      "statusLabel": "CẢNH GIÁC",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 23:54 UTC: 42 tin <24h / 58 tổng (reuters.com: lỗi, bbci.co.uk: 17/33 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Could the iran war pose lasting risks to global food security?...\" (20:44 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 07:27 UTC: 42 tin <24h / 49 tổng (reuters.com: lỗi, bbci.co.uk: 17/24 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Oil prices surge past $103 a barrel after us announces blockade of iran...\" (01:30 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
-        "status_key": "full_blockade",
+        "status_key": "tension",
         "hormuz_count": 6,
         "fresh_total": 42,
-        "scanned_at": "2026-04-12T23:54:32Z",
+        "scanned_at": "2026-04-13T07:27:18Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -167,9 +167,9 @@
     {
       "category": "",
       "indicator": "DXY (USD Index)",
-      "value": "99.13",
-      "trend": "-0.8% ↓",
-      "trend_raw": -0.85,
+      "value": "98.98",
+      "trend": "-1.0% ↓",
+      "trend_raw": -1.0,
       "threshold": ">107",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -177,29 +177,29 @@
       "link": "https://finance.yahoo.com/quote/DX-Y.NYB/",
       "note": "US Dollar Index — DXY tăng mạnh >107 = USD siết chặt thanh khoản, rủi ro tài sản rủi ro tăng.",
       "_meta": {
-        "dxy": 99.134
+        "dxy": 98.984
       }
     }
   ],
   "risk": {
-    "score": 63,
-    "base_score": 45,
+    "score": 55,
+    "base_score": 40,
     "multiplier": 1.4,
-    "level": "CẢNH BÁO CAO",
-    "color": "danger",
+    "level": "CẢNH GIÁC",
+    "color": "warning",
     "active_leads": [
       "COT short ròng > 70% đỉnh lịch sử",
       "Dầu WTI > $100/thùng"
     ],
     "breakdown": {
-      "geo": 100.0,
+      "geo": 64.0,
       "inst": 43.0,
       "market": 39.0,
       "macro": 18.0
     },
     "indicator_scores": {
-      "oil": 10,
-      "hormuz": 10,
+      "oil": 8,
+      "hormuz": 4,
       "cot": 10,
       "etf_flow": 1,
       "sentiment": 0,
