@@ -1,5 +1,5 @@
 {
-  "scanned_at": "2026-04-13T11:57:13.012594+00:00",
+  "scanned_at": "2026-04-13T16:40:55.415878+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
@@ -11,12 +11,12 @@
     "statusLabel": "CẢNH GIÁC",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 11:57 UTC: 44 tin <24h / 51 tổng (reuters.com: lỗi, bbci.co.uk: 19/26 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"How the us-iran talks in islamabad unfolded...\" (11:21 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 16:40 UTC: 48 tin <24h / 55 tổng (reuters.com: lỗi, bbci.co.uk: 23/30 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"What do we know about sea mines in and around the strait of hormuz?...\" (15:12 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
     "_meta": {
       "status_key": "tension",
-      "hormuz_count": 8,
-      "fresh_total": 44,
-      "scanned_at": "2026-04-13T11:57:13Z",
+      "hormuz_count": 9,
+      "fresh_total": 48,
+      "scanned_at": "2026-04-13T16:40:55Z",
       "classify_source": "keyword fallback"
     }
   }
