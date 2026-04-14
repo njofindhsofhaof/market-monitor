@@ -1,12 +1,12 @@
 {
-  "last_updated": "06:29 Tuesday, 14/04/2026 (GMT+7)",
+  "last_updated": "13:19 Tuesday, 14/04/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
       "indicator": "Dầu WTI",
-      "value": "$96.64/thùng",
-      "trend": "-14.0% ↓",
-      "trend_raw": -14.03,
+      "value": "$97.26/thùng",
+      "trend": "-13.9% ↓",
+      "trend_raw": -13.89,
       "threshold": ">95 USD/thùng",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -25,12 +25,12 @@
       "statusLabel": "CẢNH GIÁC",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 23:29 UTC: 48 tin <24h / 56 tổng (reuters.com: lỗi, bbci.co.uk: 23/31 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Un urges ‘all parties’ to respect navigation in strait of hormuz...\" (22:33 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 06:19 UTC: 53 tin <24h / 62 tổng (reuters.com: lỗi, bbci.co.uk: 28/37 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Asia’s stock markets surge, oil falls on hopes for us-iran talks...\" (05:47 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "tension",
         "hormuz_count": 3,
-        "fresh_total": 48,
-        "scanned_at": "2026-04-13T23:29:42Z",
+        "fresh_total": 53,
+        "scanned_at": "2026-04-14T06:19:29Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -70,9 +70,9 @@
     {
       "category": "",
       "indicator": "Sentiment (NAAIM vs AAII)",
-      "value": "Retail 67% / Inst 69% → diff -3pp",
-      "trend": "-3pp ↓",
-      "trend_raw": -2.7,
+      "value": "Retail 60% / Inst 69% → diff -9pp",
+      "trend": "-9pp ↓",
+      "trend_raw": -9.4,
       "threshold": "Retail − Inst > +25pp",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -82,8 +82,8 @@
       "_meta": {
         "naaim": 69.38,
         "inst_bull": 69.4,
-        "aaii_bull": 66.7,
-        "aaii_bear": 16.7
+        "aaii_bull": 60.0,
+        "aaii_bear": 20.0
       }
     },
     {
@@ -128,15 +128,15 @@
     {
       "category": "",
       "indicator": "Put/Call ratio",
-      "value": "1.255",
-      "trend": "-18.9% ↓",
-      "trend_raw": -18.88,
+      "value": "1.333",
+      "trend": "-13.8% ↓",
+      "trend_raw": -13.83,
       "threshold": ">1.1",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
       "source": "Yahoo Finance (SPY options)",
       "link": "https://finance.yahoo.com/quote/SPY/options/",
-      "note": "SPY options exp 2026-04-13 — tỷ lệ put/call đo mức phòng thủ nhà đầu tư"
+      "note": "SPY options exp 2026-04-14 — tỷ lệ put/call đo mức phòng thủ nhà đầu tư"
     },
     {
       "category": "Vĩ mô",
@@ -167,9 +167,9 @@
     {
       "category": "",
       "indicator": "DXY (USD Index)",
-      "value": "98.37",
-      "trend": "-1.6% ↓",
-      "trend_raw": -1.61,
+      "value": "98.34",
+      "trend": "-1.3% ↓",
+      "trend_raw": -1.3,
       "threshold": ">107",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -177,13 +177,13 @@
       "link": "https://finance.yahoo.com/quote/DX-Y.NYB/",
       "note": "US Dollar Index — DXY tăng mạnh >107 = USD siết chặt thanh khoản, rủi ro tài sản rủi ro tăng.",
       "_meta": {
-        "dxy": 98.374
+        "dxy": 98.344
       }
     }
   ],
   "risk": {
-    "score": 60,
-    "base_score": 45,
+    "score": 64,
+    "base_score": 47,
     "multiplier": 1.35,
     "level": "CẢNH BÁO CAO",
     "color": "danger",
@@ -194,7 +194,7 @@
     "breakdown": {
       "geo": 64.0,
       "inst": 64.0,
-      "market": 33.0,
+      "market": 39.0,
       "macro": 30.0
     },
     "indicator_scores": {
@@ -205,7 +205,7 @@
       "sentiment": 0,
       "vix_curve": 4,
       "vix": 2,
-      "put_call": 7,
+      "put_call": 10,
       "hyg_tlt": 0,
       "spread": 3,
       "dxy": 0,
