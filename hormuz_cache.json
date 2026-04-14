@@ -1,22 +1,22 @@
 {
-  "scanned_at": "2026-04-14T06:19:29.746092+00:00",
+  "scanned_at": "2026-04-14T10:51:44.198258+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
-    "value": "Căng thẳng leo thang",
+    "value": "Phong tỏa hoàn toàn",
     "trend": "—",
     "trend_raw": null,
     "threshold": "Có phong tỏa",
-    "status": "warning",
-    "statusLabel": "CẢNH GIÁC",
+    "status": "danger",
+    "statusLabel": "CẢNH BÁO",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 06:19 UTC: 53 tin <24h / 62 tổng (reuters.com: lỗi, bbci.co.uk: 28/37 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Asia’s stock markets surge, oil falls on hopes for us-iran talks...\" (05:47 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 10:51 UTC: 53 tin <24h / 65 tổng (reuters.com: lỗi, bbci.co.uk: 28/40 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran slams youtube ban on pro-iranian group’s lego-style ai videos...\" (10:16 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
     "_meta": {
-      "status_key": "tension",
-      "hormuz_count": 3,
+      "status_key": "full_blockade",
+      "hormuz_count": 8,
       "fresh_total": 53,
-      "scanned_at": "2026-04-14T06:19:29Z",
+      "scanned_at": "2026-04-14T10:51:44Z",
       "classify_source": "keyword fallback"
     }
   }
