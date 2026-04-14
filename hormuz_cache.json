@@ -1,5 +1,5 @@
 {
-  "scanned_at": "2026-04-14T15:52:25.990893+00:00",
+  "scanned_at": "2026-04-14T19:55:44.086480+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
@@ -11,12 +11,12 @@
     "statusLabel": "CẢNH BÁO",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 15:52 UTC: 55 tin <24h / 69 tổng (reuters.com: lỗi, bbci.co.uk: 30/44 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Why are the us, iran arguing over duration of uranium enrichment ban?...\" (14:52 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 19:55 UTC: 49 tin <24h / 69 tổng (reuters.com: lỗi, bbci.co.uk: 24/44 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Pakistan pm headed to riyadh and ankara amid prospect of us-iran talks...\" (19:21 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
     "_meta": {
       "status_key": "full_blockade",
-      "hormuz_count": 9,
-      "fresh_total": 55,
-      "scanned_at": "2026-04-14T15:52:25Z",
+      "hormuz_count": 7,
+      "fresh_total": 49,
+      "scanned_at": "2026-04-14T19:55:44Z",
       "classify_source": "keyword fallback"
     }
   }
