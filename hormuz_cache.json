@@ -1,22 +1,22 @@
 {
-  "scanned_at": "2026-04-15T10:46:53.485742+00:00",
+  "scanned_at": "2026-04-15T14:58:01.125343+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
-    "value": "Phong tỏa hoàn toàn",
+    "value": "Bình thường",
     "trend": "—",
     "trend_raw": null,
     "threshold": "Có phong tỏa",
-    "status": "danger",
-    "statusLabel": "CẢNH BÁO",
+    "status": "success",
+    "statusLabel": "Bình thường",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 10:46 UTC: 53 tin <24h / 71 tổng (reuters.com: lỗi, bbci.co.uk: 28/46 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran citizen held in france over pro-palestine comments returns home...\" (09:16 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 14:58 UTC: 54 tin <24h / 67 tổng (reuters.com: lỗi, bbci.co.uk: 29/42 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Us-iran talks: what’s the latest on mediation efforts?...\" (13:55 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
     "_meta": {
-      "status_key": "full_blockade",
-      "hormuz_count": 6,
-      "fresh_total": 53,
-      "scanned_at": "2026-04-15T10:46:53Z",
+      "status_key": "none",
+      "hormuz_count": 8,
+      "fresh_total": 54,
+      "scanned_at": "2026-04-15T14:58:01Z",
       "classify_source": "keyword fallback"
     }
   }
