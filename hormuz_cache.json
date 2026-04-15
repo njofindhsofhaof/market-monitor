@@ -1,5 +1,5 @@
 {
-  "scanned_at": "2026-04-14T22:32:40.067411+00:00",
+  "scanned_at": "2026-04-15T06:13:08.862960+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
@@ -11,12 +11,12 @@
     "statusLabel": "CẢNH BÁO",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 22:32 UTC: 46 tin <24h / 69 tổng (reuters.com: lỗi, bbci.co.uk: 21/44 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"How us blockade on iran will worsen energy crisis...\" (20:10 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 06:13 UTC: 46 tin <24h / 71 tổng (reuters.com: lỗi, bbci.co.uk: 21/46 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Us military says blockade of iran ports ‘completely’ halts economic trade...\" (05:17 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
     "_meta": {
       "status_key": "full_blockade",
-      "hormuz_count": 7,
+      "hormuz_count": 4,
       "fresh_total": 46,
-      "scanned_at": "2026-04-14T22:32:40Z",
+      "scanned_at": "2026-04-15T06:13:08Z",
       "classify_source": "keyword fallback"
     }
   }
