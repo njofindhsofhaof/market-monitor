@@ -1,12 +1,12 @@
 {
-  "last_updated": "14:10 Thursday, 16/04/2026 (GMT+7)",
+  "last_updated": "18:40 Thursday, 16/04/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
       "indicator": "Dầu WTI",
-      "value": "$91.64/thùng",
-      "trend": "-6.4% ↓",
-      "trend_raw": -6.37,
+      "value": "$88.70/thùng",
+      "trend": "-9.4% ↓",
+      "trend_raw": -9.37,
       "threshold": ">95 USD/thùng",
       "status": "warning",
       "statusLabel": "CẢNH GIÁC",
@@ -25,12 +25,12 @@
       "statusLabel": "Bình thường",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 07:10 UTC: 50 tin <24h / 69 tổng (reuters.com: lỗi, bbci.co.uk: 25/44 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran war: what is happening on day 48 of the us-iran conflict?...\" (06:13 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 11:40 UTC: 45 tin <24h / 51 tổng (reuters.com: lỗi, bbci.co.uk: 20/26 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Is iran’s economy buckling under war pressure or holding up?...\" (10:19 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "none",
-        "hormuz_count": 5,
-        "fresh_total": 50,
-        "scanned_at": "2026-04-16T07:10:38Z",
+        "hormuz_count": 7,
+        "fresh_total": 45,
+        "scanned_at": "2026-04-16T11:40:25Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -54,9 +54,9 @@
     {
       "category": "",
       "indicator": "ETF Flows (SPY+QQQ)",
-      "value": "-19.21B USD (SPY: -2.57B/7d, QQQ: -16.64B/7d)",
-      "trend": "-19.21B ↓",
-      "trend_raw": -19.21,
+      "value": "-12.39B USD (SPY: +4.25B/7d, QQQ: -16.64B/7d)",
+      "trend": "-12.39B ↓",
+      "trend_raw": -12.39,
       "threshold": "Outflow > −2B USD/7d",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -64,7 +64,7 @@
       "link": "https://etf.com/etfanalytics/etf-fund-flows-tool",
       "note": "SPY: implied shares từ SPDR daily holdings. QQQ: totalAssets/price. Cần 2+ ngày snapshot.",
       "_meta": {
-        "flow_b": -19.21
+        "flow_b": -12.39
       }
     },
     {
@@ -89,9 +89,9 @@
     {
       "category": "Thị trường",
       "indicator": "VIX",
-      "value": "18.17",
-      "trend": "-13.6% ↓",
-      "trend_raw": -13.64,
+      "value": "18.25",
+      "trend": "-6.4% ↓",
+      "trend_raw": -6.36,
       "threshold": ">30",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -167,9 +167,9 @@
     {
       "category": "",
       "indicator": "DXY (USD Index)",
-      "value": "98.00",
-      "trend": "-0.8% ↓",
-      "trend_raw": -0.83,
+      "value": "98.16",
+      "trend": "-0.7% ↓",
+      "trend_raw": -0.67,
       "threshold": ">107",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -177,13 +177,13 @@
       "link": "https://finance.yahoo.com/quote/DX-Y.NYB/",
       "note": "US Dollar Index — DXY tăng mạnh >107 = USD siết chặt thanh khoản, rủi ro tài sản rủi ro tăng.",
       "_meta": {
-        "dxy": 98.001
+        "dxy": 98.16
       }
     }
   ],
   "risk": {
-    "score": 55,
-    "base_score": 41,
+    "score": 53,
+    "base_score": 39,
     "multiplier": 1.35,
     "level": "CẢNH GIÁC",
     "color": "warning",
@@ -192,13 +192,13 @@
       "ETF outflow > $5B/7d"
     ],
     "breakdown": {
-      "geo": 36.0,
+      "geo": 24.0,
       "inst": 79.0,
       "market": 27.0,
       "macro": 24.0
     },
     "indicator_scores": {
-      "oil": 6,
+      "oil": 4,
       "hormuz": 0,
       "cot": 10,
       "etf_flow": 10,
