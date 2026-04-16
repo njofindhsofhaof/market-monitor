@@ -1,9 +1,9 @@
 {
-  "scanned_at": "2026-04-16T16:56:52.436892+00:00",
+  "scanned_at": "2026-04-16T20:06:34.313693+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
-    "value": "Có đề cập — theo dõi thêm",
+    "value": "Căng thẳng leo thang",
     "trend": "—",
     "trend_raw": null,
     "threshold": "Có phong tỏa",
@@ -11,12 +11,12 @@
     "statusLabel": "CẢNH GIÁC",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 16:56 UTC: 47 tin <24h / 50 tổng (reuters.com: lỗi, bbci.co.uk: 22/25 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Jet fuel shortage: why iran war could ground flights in europe...\" (15:44 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 20:06 UTC: 50 tin <24h / 53 tổng (reuters.com: lỗi, bbci.co.uk: 25/28 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Us house votes down latest effort to curtail trump’s power to wage iran war...\" (18:51 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
     "_meta": {
       "status_key": "tension",
-      "hormuz_count": 5,
-      "fresh_total": 47,
-      "scanned_at": "2026-04-16T16:56:52Z",
+      "hormuz_count": 4,
+      "fresh_total": 50,
+      "scanned_at": "2026-04-16T20:06:34Z",
       "classify_source": "keyword fallback"
     }
   }
