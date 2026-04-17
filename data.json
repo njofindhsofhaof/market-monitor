@@ -1,12 +1,12 @@
 {
-  "last_updated": "21:44 Friday, 17/04/2026 (GMT+7)",
+  "last_updated": "00:37 Saturday, 18/04/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
       "indicator": "Dầu WTI",
-      "value": "$80.50/thùng",
-      "trend": "-16.7% ↓",
-      "trend_raw": -16.67,
+      "value": "$82.74/thùng",
+      "trend": "-14.3% ↓",
+      "trend_raw": -14.32,
       "threshold": ">95 USD/thùng",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -25,12 +25,12 @@
       "statusLabel": "CẢNH GIÁC",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 14:43 UTC: 48 tin <24h / 48 tổng (reuters.com: lỗi, bbci.co.uk: 23/23 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran foreign minister says strait of hormuz ‘completely open’...\" (13:37 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 17:37 UTC: 48 tin <24h / 51 tổng (reuters.com: lỗi, bbci.co.uk: 23/26 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Macron demands assurances after iran opens strait of hormuz...\" (16:14 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "tension",
         "hormuz_count": 7,
         "fresh_total": 48,
-        "scanned_at": "2026-04-17T14:43:50Z",
+        "scanned_at": "2026-04-17T17:37:06Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -54,9 +54,9 @@
     {
       "category": "",
       "indicator": "ETF Flows (SPY+QQQ)",
-      "value": "-24.80B USD (SPY: -1.67B/8d, QQQ: -23.13B/8d)",
-      "trend": "-24.80B ↓",
-      "trend_raw": -24.799999999999997,
+      "value": "-23.37B USD (SPY: -0.84B/9d, QQQ: -22.53B/9d)",
+      "trend": "-23.37B ↓",
+      "trend_raw": -23.37,
       "threshold": "Outflow > −2B USD/7d",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -64,7 +64,7 @@
       "link": "https://etf.com/etfanalytics/etf-fund-flows-tool",
       "note": "SPY: implied shares từ SPDR daily holdings. QQQ: totalAssets/price. Cần 2+ ngày snapshot.",
       "_meta": {
-        "flow_b": -24.799999999999997
+        "flow_b": -23.37
       }
     },
     {
@@ -89,9 +89,9 @@
     {
       "category": "Thị trường",
       "indicator": "VIX",
-      "value": "17.66",
-      "trend": "-8.2% ↓",
-      "trend_raw": -8.16,
+      "value": "17.43",
+      "trend": "-9.4% ↓",
+      "trend_raw": -9.36,
       "threshold": ">30",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -102,9 +102,9 @@
     {
       "category": "",
       "indicator": "VIX futures curve",
-      "value": "Contango nhẹ (spot 17.7 → M1~279)",
-      "trend": "-6.3% ↓",
-      "trend_raw": -6.27,
+      "value": "Contango nhẹ (spot 17.4 → M1~276)",
+      "trend": "-7.1% ↓",
+      "trend_raw": -7.06,
       "threshold": "Backwardation",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -115,9 +115,9 @@
     {
       "category": "",
       "indicator": "HYG/TLT ratio",
-      "value": "0.9265",
-      "trend": "+0.2% ↑",
-      "trend_raw": 0.21,
+      "value": "0.9271",
+      "trend": "+0.3% ↑",
+      "trend_raw": 0.28,
       "threshold": "Giảm >5%/tuần",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -128,9 +128,9 @@
     {
       "category": "",
       "indicator": "Put/Call ratio",
-      "value": "0.778",
-      "trend": "-47.2% ↓",
-      "trend_raw": -47.25,
+      "value": "0.919",
+      "trend": "-28.0% ↓",
+      "trend_raw": -28.03,
       "threshold": ">1.1",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -141,9 +141,9 @@
     {
       "category": "Vĩ mô",
       "indicator": "10-year yield",
-      "value": "4.23%",
-      "trend": "-1.9% ↓",
-      "trend_raw": -1.92,
+      "value": "4.24%",
+      "trend": "-1.7% ↓",
+      "trend_raw": -1.69,
       "threshold": ">4.5%",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -154,9 +154,9 @@
     {
       "category": "",
       "indicator": "2s10s spread",
-      "value": "+0.43% (3.81% vs 4.23%)",
-      "trend": "-0.08pp ↓",
-      "trend_raw": -0.083,
+      "value": "+0.44% (3.81% vs 4.24%)",
+      "trend": "-0.07pp ↓",
+      "trend_raw": -0.073,
       "threshold": "Đảo ngược âm",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -167,9 +167,9 @@
     {
       "category": "",
       "indicator": "DXY (USD Index)",
-      "value": "97.70",
-      "trend": "-1.0% ↓",
-      "trend_raw": -0.97,
+      "value": "98.03",
+      "trend": "-0.6% ↓",
+      "trend_raw": -0.63,
       "threshold": ">107",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -177,13 +177,13 @@
       "link": "https://finance.yahoo.com/quote/DX-Y.NYB/",
       "note": "US Dollar Index — DXY tăng mạnh >107 = USD siết chặt thanh khoản, rủi ro tài sản rủi ro tăng.",
       "_meta": {
-        "dxy": 97.698
+        "dxy": 98.025
       }
     }
   ],
   "risk": {
-    "score": 51,
-    "base_score": 38,
+    "score": 53,
+    "base_score": 39,
     "multiplier": 1.35,
     "level": "CẢNH GIÁC",
     "color": "warning",
@@ -194,7 +194,7 @@
     "breakdown": {
       "geo": 40.0,
       "inst": 70.0,
-      "market": 23.0,
+      "market": 27.0,
       "macro": 24.0
     },
     "indicator_scores": {
@@ -205,7 +205,7 @@
       "sentiment": 0,
       "vix_curve": 4,
       "vix": 2,
-      "put_call": 2,
+      "put_call": 4,
       "hyg_tlt": 0,
       "spread": 3,
       "dxy": 0,
