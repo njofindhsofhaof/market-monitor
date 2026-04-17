@@ -1,22 +1,22 @@
 {
-  "scanned_at": "2026-04-17T10:39:58.399296+00:00",
+  "scanned_at": "2026-04-17T14:43:50.010002+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
-    "value": "Bình thường",
+    "value": "Căng thẳng leo thang",
     "trend": "—",
     "trend_raw": null,
     "threshold": "Có phong tỏa",
-    "status": "success",
-    "statusLabel": "Bình thường",
+    "status": "warning",
+    "statusLabel": "CẢNH GIÁC",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 10:39 UTC: 50 tin <24h / 51 tổng (reuters.com: lỗi, bbci.co.uk: 25/26 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Australia scrambles to secure energy as war on iran fuels uncertainty...\" (10:09 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 14:43 UTC: 48 tin <24h / 48 tổng (reuters.com: lỗi, bbci.co.uk: 23/23 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran foreign minister says strait of hormuz ‘completely open’...\" (13:37 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
     "_meta": {
-      "status_key": "none",
+      "status_key": "tension",
       "hormuz_count": 7,
-      "fresh_total": 50,
-      "scanned_at": "2026-04-17T10:39:58Z",
+      "fresh_total": 48,
+      "scanned_at": "2026-04-17T14:43:50Z",
       "classify_source": "keyword fallback"
     }
   }
