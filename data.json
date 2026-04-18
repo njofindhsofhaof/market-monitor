@@ -1,5 +1,5 @@
 {
-  "last_updated": "00:03 Sunday, 19/04/2026 (GMT+7)",
+  "last_updated": "02:55 Sunday, 19/04/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
@@ -25,12 +25,12 @@
       "statusLabel": "CẢNH GIÁC",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 17:03 UTC: 46 tin <24h / 55 tổng (reuters.com: lỗi, bbci.co.uk: 21/30 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Trump claims on iranian concessions trigger questions, rejections in tehran...\" (13:03 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 19:55 UTC: 43 tin <24h / 57 tổng (reuters.com: lỗi, bbci.co.uk: 18/32 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Mazzucato on the iran war’s economic shock: who pays the price?...\" (19:29 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "tension",
-        "hormuz_count": 12,
-        "fresh_total": 46,
-        "scanned_at": "2026-04-18T17:03:39Z",
+        "hormuz_count": 11,
+        "fresh_total": 43,
+        "scanned_at": "2026-04-18T19:55:42Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -38,8 +38,8 @@
       "category": "Dòng tiền tổ chức",
       "indicator": "COT — Commercial Net",
       "value": "-696.7K contracts — 199% của đỉnh lịch sử (350K) (2026-04-14)",
-      "trend": "+113.0K ↑ (WoW)",
-      "trend_raw": 113.0,
+      "trend": "+0.0K → (WoW)",
+      "trend_raw": 0.0,
       "threshold": "Short > 70% đỉnh lịch sử",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -54,9 +54,9 @@
     {
       "category": "",
       "indicator": "ETF Flows (SPY+QQQ)",
-      "value": "-24.39B USD (SPY: -1.11B/10d, QQQ: -23.28B/10d)",
-      "trend": "-24.39B ↓",
-      "trend_raw": -24.39,
+      "value": "-25.31B USD (SPY: -3.96B/9d, QQQ: -21.35B/9d)",
+      "trend": "-25.31B ↓",
+      "trend_raw": -25.310000000000002,
       "threshold": "Outflow > −2B USD/7d",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -64,7 +64,7 @@
       "link": "https://etf.com/etfanalytics/etf-fund-flows-tool",
       "note": "SPY: implied shares từ SPDR daily holdings. QQQ: totalAssets/price. Cần 2+ ngày snapshot.",
       "_meta": {
-        "flow_b": -24.39
+        "flow_b": -25.310000000000002
       }
     },
     {
