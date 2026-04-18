@@ -1,5 +1,5 @@
 {
-  "last_updated": "15:08 Saturday, 18/04/2026 (GMT+7)",
+  "last_updated": "18:09 Saturday, 18/04/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
@@ -25,12 +25,12 @@
       "statusLabel": "CẢNH GIÁC",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 08:08 UTC: 44 tin <24h / 56 tổng (reuters.com: lỗi, bbci.co.uk: 19/31 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Trump says us will ‘start dropping bombs again’ if no iran deal is reached...\" (06:10 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 11:09 UTC: 43 tin <24h / 58 tổng (reuters.com: lỗi, bbci.co.uk: 18/33 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Hormuz: spin in the strait...\" (10:48 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "tension",
-        "hormuz_count": 6,
-        "fresh_total": 44,
-        "scanned_at": "2026-04-18T08:08:45Z",
+        "hormuz_count": 9,
+        "fresh_total": 43,
+        "scanned_at": "2026-04-18T11:09:45Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -54,9 +54,9 @@
     {
       "category": "",
       "indicator": "ETF Flows (SPY+QQQ)",
-      "value": "-24.39B USD (SPY: -1.11B/9d, QQQ: -23.28B/9d)",
-      "trend": "-24.39B ↓",
-      "trend_raw": -24.39,
+      "value": "-23.28B USD (QQQ: -23.28B/9d)",
+      "trend": "-23.28B ↓",
+      "trend_raw": -23.28,
       "threshold": "Outflow > −2B USD/7d",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -64,7 +64,7 @@
       "link": "https://etf.com/etfanalytics/etf-fund-flows-tool",
       "note": "SPY: implied shares từ SPDR daily holdings. QQQ: totalAssets/price. Cần 2+ ngày snapshot.",
       "_meta": {
-        "flow_b": -24.39
+        "flow_b": -23.28
       }
     },
     {
