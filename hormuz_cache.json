@@ -1,5 +1,5 @@
 {
-  "scanned_at": "2026-04-18T21:52:01.821967+00:00",
+  "scanned_at": "2026-04-18T23:54:25.267796+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
@@ -11,12 +11,12 @@
     "statusLabel": "CẢNH GIÁC",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 21:52 UTC: 44 tin <24h / 50 tổng (reuters.com: lỗi, bbci.co.uk: 19/25 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran military orders indian ship to abort strait of hormuz passage...\" (21:06 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 23:54 UTC: 42 tin <24h / 50 tổng (reuters.com: lỗi, bbci.co.uk: 17/25 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran reasserts control of hormuz strait as trump warns against ‘blackmail’...\" (21:41 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
     "_meta": {
       "status_key": "tension",
       "hormuz_count": 9,
-      "fresh_total": 44,
-      "scanned_at": "2026-04-18T21:52:01Z",
+      "fresh_total": 42,
+      "scanned_at": "2026-04-18T23:54:25Z",
       "classify_source": "keyword fallback"
     }
   }
