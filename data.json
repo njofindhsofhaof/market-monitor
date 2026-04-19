@@ -1,5 +1,5 @@
 {
-  "last_updated": "04:53 Monday, 20/04/2026 (GMT+7)",
+  "last_updated": "06:55 Monday, 20/04/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
@@ -17,20 +17,20 @@
     {
       "category": "",
       "indicator": "Xung đột Hormuz",
-      "value": "Phong tỏa hoàn toàn",
+      "value": "Căng thẳng leo thang",
       "trend": "—",
       "trend_raw": null,
       "threshold": "Có phong tỏa",
-      "status": "danger",
-      "statusLabel": "CẢNH BÁO",
+      "status": "warning",
+      "statusLabel": "CẢNH GIÁC",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 21:52 UTC: 48 tin <24h / 57 tổng (reuters.com: lỗi, bbci.co.uk: 23/32 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Argentina’s milei backs us-israel war on iran in jerusalem visit...\" (21:23 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 23:55 UTC: 48 tin <24h / 58 tổng (reuters.com: lỗi, bbci.co.uk: 23/33 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Us forces attack and seize iranian ship touska near strait of hormuz...\" (21:53 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
-        "status_key": "full_blockade",
+        "status_key": "tension",
         "hormuz_count": 10,
         "fresh_total": 48,
-        "scanned_at": "2026-04-19T21:52:51Z",
+        "scanned_at": "2026-04-19T23:55:37Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -167,9 +167,9 @@
     {
       "category": "",
       "indicator": "DXY (USD Index)",
-      "value": "98.23",
-      "trend": "-0.6% ↓",
-      "trend_raw": -0.56,
+      "value": "98.30",
+      "trend": "-0.1% ↓",
+      "trend_raw": -0.07,
       "threshold": ">107",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -177,29 +177,29 @@
       "link": "https://finance.yahoo.com/quote/DX-Y.NYB/",
       "note": "US Dollar Index — DXY tăng mạnh >107 = USD siết chặt thanh khoản, rủi ro tài sản rủi ro tăng.",
       "_meta": {
-        "dxy": 98.227
+        "dxy": 98.299
       }
     }
   ],
   "risk": {
-    "score": 58,
-    "base_score": 43,
+    "score": 53,
+    "base_score": 39,
     "multiplier": 1.35,
-    "level": "CẢNH BÁO CAO",
-    "color": "danger",
+    "level": "CẢNH GIÁC",
+    "color": "warning",
     "active_leads": [
       "COT short ròng > 70% đỉnh lịch sử",
       "ETF outflow > $5B/7d"
     ],
     "breakdown": {
-      "geo": 64.0,
+      "geo": 40.0,
       "inst": 70.0,
       "market": 27.0,
       "macro": 24.0
     },
     "indicator_scores": {
       "oil": 4,
-      "hormuz": 10,
+      "hormuz": 4,
       "cot": 10,
       "etf_flow": 10,
       "sentiment": 0,
