@@ -1,5 +1,5 @@
 {
-  "last_updated": "02:56 Monday, 20/04/2026 (GMT+7)",
+  "last_updated": "04:53 Monday, 20/04/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
@@ -17,20 +17,20 @@
     {
       "category": "",
       "indicator": "Xung đột Hormuz",
-      "value": "Căng thẳng leo thang",
+      "value": "Phong tỏa hoàn toàn",
       "trend": "—",
       "trend_raw": null,
       "threshold": "Có phong tỏa",
-      "status": "warning",
-      "statusLabel": "CẢNH GIÁC",
+      "status": "danger",
+      "statusLabel": "CẢNH BÁO",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 19:56 UTC: 46 tin <24h / 54 tổng (reuters.com: lỗi, bbci.co.uk: 21/29 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Did the us misjudge iran? a military strategist answers...\" (19:06 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 21:52 UTC: 48 tin <24h / 57 tổng (reuters.com: lỗi, bbci.co.uk: 23/32 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Argentina’s milei backs us-israel war on iran in jerusalem visit...\" (21:23 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
-        "status_key": "tension",
+        "status_key": "full_blockade",
         "hormuz_count": 10,
-        "fresh_total": 46,
-        "scanned_at": "2026-04-19T19:56:19Z",
+        "fresh_total": 48,
+        "scanned_at": "2026-04-19T21:52:51Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -182,24 +182,24 @@
     }
   ],
   "risk": {
-    "score": 53,
-    "base_score": 39,
+    "score": 58,
+    "base_score": 43,
     "multiplier": 1.35,
-    "level": "CẢNH GIÁC",
-    "color": "warning",
+    "level": "CẢNH BÁO CAO",
+    "color": "danger",
     "active_leads": [
       "COT short ròng > 70% đỉnh lịch sử",
       "ETF outflow > $5B/7d"
     ],
     "breakdown": {
-      "geo": 40.0,
+      "geo": 64.0,
       "inst": 70.0,
       "market": 27.0,
       "macro": 24.0
     },
     "indicator_scores": {
       "oil": 4,
-      "hormuz": 4,
+      "hormuz": 10,
       "cot": 10,
       "etf_flow": 10,
       "sentiment": 0,

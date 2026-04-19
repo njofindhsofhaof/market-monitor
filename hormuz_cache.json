@@ -1,22 +1,22 @@
 {
-  "scanned_at": "2026-04-19T19:56:19.242487+00:00",
+  "scanned_at": "2026-04-19T21:52:51.741100+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
-    "value": "Căng thẳng leo thang",
+    "value": "Phong tỏa hoàn toàn",
     "trend": "—",
     "trend_raw": null,
     "threshold": "Có phong tỏa",
-    "status": "warning",
-    "statusLabel": "CẢNH GIÁC",
+    "status": "danger",
+    "statusLabel": "CẢNH BÁO",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 19:56 UTC: 46 tin <24h / 54 tổng (reuters.com: lỗi, bbci.co.uk: 21/29 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Did the us misjudge iran? a military strategist answers...\" (19:06 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 21:52 UTC: 48 tin <24h / 57 tổng (reuters.com: lỗi, bbci.co.uk: 23/32 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Argentina’s milei backs us-israel war on iran in jerusalem visit...\" (21:23 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
     "_meta": {
-      "status_key": "tension",
+      "status_key": "full_blockade",
       "hormuz_count": 10,
-      "fresh_total": 46,
-      "scanned_at": "2026-04-19T19:56:19Z",
+      "fresh_total": 48,
+      "scanned_at": "2026-04-19T21:52:51Z",
       "classify_source": "keyword fallback"
     }
   }
