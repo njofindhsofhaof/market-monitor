@@ -1,5 +1,5 @@
 {
-  "last_updated": "00:04 Monday, 20/04/2026 (GMT+7)",
+  "last_updated": "02:56 Monday, 20/04/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
@@ -25,12 +25,12 @@
       "statusLabel": "CẢNH GIÁC",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 17:04 UTC: 47 tin <24h / 52 tổng (reuters.com: lỗi, bbci.co.uk: 22/27 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"What to know about us-iran standoff over the strait of hormuz...\" (14:08 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 19:56 UTC: 46 tin <24h / 54 tổng (reuters.com: lỗi, bbci.co.uk: 21/29 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Did the us misjudge iran? a military strategist answers...\" (19:06 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "tension",
-        "hormuz_count": 8,
-        "fresh_total": 47,
-        "scanned_at": "2026-04-19T17:04:04Z",
+        "hormuz_count": 10,
+        "fresh_total": 46,
+        "scanned_at": "2026-04-19T19:56:19Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -54,9 +54,9 @@
     {
       "category": "",
       "indicator": "ETF Flows (SPY+QQQ)",
-      "value": "-25.31B USD (SPY: -3.96B/10d, QQQ: -21.35B/10d)",
-      "trend": "-25.31B ↓",
-      "trend_raw": -25.310000000000002,
+      "value": "-28.51B USD (SPY: -6.15B/9d, QQQ: -22.36B/9d)",
+      "trend": "-28.51B ↓",
+      "trend_raw": -28.509999999999998,
       "threshold": "Outflow > −2B USD/7d",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -64,7 +64,7 @@
       "link": "https://etf.com/etfanalytics/etf-fund-flows-tool",
       "note": "SPY: implied shares từ SPDR daily holdings. QQQ: totalAssets/price. Cần 2+ ngày snapshot.",
       "_meta": {
-        "flow_b": -25.310000000000002
+        "flow_b": -28.509999999999998
       }
     },
     {
@@ -128,12 +128,12 @@
     {
       "category": "",
       "indicator": "Put/Call ratio",
-      "value": "1.375",
-      "trend": "-30.8% ↓",
-      "trend_raw": -30.8,
+      "value": "1.024",
+      "trend": "-48.5% ↓",
+      "trend_raw": -48.47,
       "threshold": ">1.1",
-      "status": "danger",
-      "statusLabel": "CẢNH BÁO",
+      "status": "warning",
+      "statusLabel": "CẢNH GIÁC",
       "source": "Yahoo Finance (SPY options)",
       "link": "https://finance.yahoo.com/quote/SPY/options/",
       "note": "SPY options exp 2026-04-20 — tỷ lệ put/call đo mức phòng thủ nhà đầu tư"
@@ -182,11 +182,11 @@
     }
   ],
   "risk": {
-    "score": 59,
-    "base_score": 44,
+    "score": 53,
+    "base_score": 39,
     "multiplier": 1.35,
-    "level": "CẢNH BÁO CAO",
-    "color": "danger",
+    "level": "CẢNH GIÁC",
+    "color": "warning",
     "active_leads": [
       "COT short ròng > 70% đỉnh lịch sử",
       "ETF outflow > $5B/7d"
@@ -194,7 +194,7 @@
     "breakdown": {
       "geo": 40.0,
       "inst": 70.0,
-      "market": 39.0,
+      "market": 27.0,
       "macro": 24.0
     },
     "indicator_scores": {
@@ -205,7 +205,7 @@
       "sentiment": 0,
       "vix_curve": 4,
       "vix": 2,
-      "put_call": 10,
+      "put_call": 4,
       "hyg_tlt": 0,
       "spread": 3,
       "dxy": 0,
