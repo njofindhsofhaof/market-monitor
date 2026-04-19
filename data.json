@@ -1,5 +1,5 @@
 {
-  "last_updated": "16:34 Sunday, 19/04/2026 (GMT+7)",
+  "last_updated": "18:53 Sunday, 19/04/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
@@ -25,12 +25,12 @@
       "statusLabel": "CẢNH GIÁC",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 09:34 UTC: 43 tin <24h / 48 tổng (reuters.com: lỗi, bbci.co.uk: 18/23 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran, us still ‘far’ from breakthrough amid strait of hormuz impasse...\" (08:49 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 11:53 UTC: 43 tin <24h / 49 tổng (reuters.com: lỗi, bbci.co.uk: 18/24 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran war: 10 frequently used words and their meanings...\" (11:40 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "tension",
-        "hormuz_count": 6,
+        "hormuz_count": 8,
         "fresh_total": 43,
-        "scanned_at": "2026-04-19T09:34:36Z",
+        "scanned_at": "2026-04-19T11:53:00Z",
         "classify_source": "keyword fallback"
       }
     },
