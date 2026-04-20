@@ -1,12 +1,12 @@
 {
-  "last_updated": "06:55 Monday, 20/04/2026 (GMT+7)",
+  "last_updated": "14:28 Monday, 20/04/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
       "indicator": "Dầu WTI",
       "value": "$82.59/thùng",
-      "trend": "-14.5% ↓",
-      "trend_raw": -14.48,
+      "trend": "-13.2% ↓",
+      "trend_raw": -13.17,
       "threshold": ">95 USD/thùng",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -25,12 +25,12 @@
       "statusLabel": "CẢNH GIÁC",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 23:55 UTC: 48 tin <24h / 58 tổng (reuters.com: lỗi, bbci.co.uk: 23/33 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Us forces attack and seize iranian ship touska near strait of hormuz...\" (21:53 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 07:28 UTC: 47 tin <24h / 57 tổng (reuters.com: lỗi, bbci.co.uk: 22/32 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Pakistan ready for multi-day us-iran talks, but tehran unsure about joining...\" (06:32 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "tension",
-        "hormuz_count": 10,
-        "fresh_total": 48,
-        "scanned_at": "2026-04-19T23:55:37Z",
+        "hormuz_count": 8,
+        "fresh_total": 47,
+        "scanned_at": "2026-04-20T07:28:23Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -177,7 +177,7 @@
       "link": "https://finance.yahoo.com/quote/DX-Y.NYB/",
       "note": "US Dollar Index — DXY tăng mạnh >107 = USD siết chặt thanh khoản, rủi ro tài sản rủi ro tăng.",
       "_meta": {
-        "dxy": 98.299
+        "dxy": 98.303
       }
     }
   ],
