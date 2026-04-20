@@ -1,22 +1,22 @@
 {
-  "scanned_at": "2026-04-20T07:28:23.322792+00:00",
+  "scanned_at": "2026-04-20T11:57:54.554496+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
-    "value": "Căng thẳng leo thang",
+    "value": "Bình thường",
     "trend": "—",
     "trend_raw": null,
     "threshold": "Có phong tỏa",
-    "status": "warning",
-    "statusLabel": "CẢNH GIÁC",
+    "status": "success",
+    "statusLabel": "Bình thường",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 07:28 UTC: 47 tin <24h / 57 tổng (reuters.com: lỗi, bbci.co.uk: 22/32 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Pakistan ready for multi-day us-iran talks, but tehran unsure about joining...\" (06:32 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 11:57 UTC: 47 tin <24h / 52 tổng (reuters.com: lỗi, bbci.co.uk: 22/27 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Second round in islamabad: who are the main us-iran negotiators?...\" (10:06 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
     "_meta": {
-      "status_key": "tension",
-      "hormuz_count": 8,
+      "status_key": "none",
+      "hormuz_count": 7,
       "fresh_total": 47,
-      "scanned_at": "2026-04-20T07:28:23Z",
+      "scanned_at": "2026-04-20T11:57:54Z",
       "classify_source": "keyword fallback"
     }
   }
