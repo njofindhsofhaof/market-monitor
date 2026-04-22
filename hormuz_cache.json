@@ -1,5 +1,5 @@
 {
-  "scanned_at": "2026-04-22T19:55:51.673288+00:00",
+  "scanned_at": "2026-04-22T22:34:13.622611+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
@@ -11,12 +11,12 @@
     "statusLabel": "Bình thường",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 19:55 UTC: 46 tin <24h / 57 tổng (reuters.com: lỗi, bbci.co.uk: 21/32 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran blames trump’s blockade for diplomatic impasse as fragile truce holds...\" (19:25 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 22:34 UTC: 43 tin <24h / 57 tổng (reuters.com: lỗi, bbci.co.uk: 18/32 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran blames trump’s blockade for diplomatic impasse as fragile truce holds...\" (19:25 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
     "_meta": {
       "status_key": "none",
-      "hormuz_count": 6,
-      "fresh_total": 46,
-      "scanned_at": "2026-04-22T19:55:51Z",
+      "hormuz_count": 2,
+      "fresh_total": 43,
+      "scanned_at": "2026-04-22T22:34:13Z",
       "classify_source": "keyword fallback"
     }
   }
