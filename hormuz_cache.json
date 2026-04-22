@@ -1,22 +1,22 @@
 {
-  "scanned_at": "2026-04-22T06:13:38.812728+00:00",
+  "scanned_at": "2026-04-22T10:52:42.429374+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
-    "value": "Bình thường",
+    "value": "Căng thẳng leo thang",
     "trend": "—",
     "trend_raw": null,
     "threshold": "Có phong tỏa",
-    "status": "success",
-    "statusLabel": "Bình thường",
+    "status": "warning",
+    "statusLabel": "CẢNH GIÁC",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 06:13 UTC: 45 tin <24h / 54 tổng (reuters.com: lỗi, bbci.co.uk: 20/29 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran war: what’s happening on day 54 as trump extends ceasefire?...\" (05:25 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 10:52 UTC: 47 tin <24h / 54 tổng (reuters.com: lỗi, bbci.co.uk: 22/29 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran’s gunboat fires on container ship off oman coast...\" (09:32 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
     "_meta": {
-      "status_key": "none",
-      "hormuz_count": 6,
-      "fresh_total": 45,
-      "scanned_at": "2026-04-22T06:13:38Z",
+      "status_key": "tension",
+      "hormuz_count": 7,
+      "fresh_total": 47,
+      "scanned_at": "2026-04-22T10:52:42Z",
       "classify_source": "keyword fallback"
     }
   }
