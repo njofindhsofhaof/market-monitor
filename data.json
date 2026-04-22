@@ -1,12 +1,12 @@
 {
-  "last_updated": "05:25 Wednesday, 22/04/2026 (GMT+7)",
+  "last_updated": "13:13 Wednesday, 22/04/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
       "indicator": "Dầu WTI",
-      "value": "$90.29/thùng",
-      "trend": "-1.1% ↓",
-      "trend_raw": -1.08,
+      "value": "$88.84/thùng",
+      "trend": "-2.7% ↓",
+      "trend_raw": -2.68,
       "threshold": ">95 USD/thùng",
       "status": "warning",
       "statusLabel": "CẢNH GIÁC",
@@ -25,12 +25,12 @@
       "statusLabel": "Bình thường",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 22:25 UTC: 41 tin <24h / 51 tổng (reuters.com: lỗi, bbci.co.uk: 16/26 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Us issues more iran sanctions on eve of possible talks in pakistan...\" (20:42 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 06:13 UTC: 45 tin <24h / 54 tổng (reuters.com: lỗi, bbci.co.uk: 20/29 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran war: what’s happening on day 54 as trump extends ceasefire?...\" (05:25 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "none",
-        "hormuz_count": 5,
-        "fresh_total": 41,
-        "scanned_at": "2026-04-21T22:25:43Z",
+        "hormuz_count": 6,
+        "fresh_total": 45,
+        "scanned_at": "2026-04-22T06:13:38Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -128,15 +128,15 @@
     {
       "category": "",
       "indicator": "Put/Call ratio",
-      "value": "1.080",
-      "trend": "-22.8% ↓",
-      "trend_raw": -22.75,
+      "value": "1.196",
+      "trend": "-14.4% ↓",
+      "trend_raw": -14.45,
       "threshold": ">1.1",
-      "status": "warning",
-      "statusLabel": "CẢNH GIÁC",
+      "status": "danger",
+      "statusLabel": "CẢNH BÁO",
       "source": "Yahoo Finance (SPY options)",
       "link": "https://finance.yahoo.com/quote/SPY/options/",
-      "note": "SPY options exp 2026-04-21 — tỷ lệ put/call đo mức phòng thủ nhà đầu tư"
+      "note": "SPY options exp 2026-04-22 — tỷ lệ put/call đo mức phòng thủ nhà đầu tư"
     },
     {
       "category": "Vĩ mô",
@@ -167,9 +167,9 @@
     {
       "category": "",
       "indicator": "DXY (USD Index)",
-      "value": "98.41",
-      "trend": "+0.3% ↑",
-      "trend_raw": 0.29,
+      "value": "98.31",
+      "trend": "+0.2% ↑",
+      "trend_raw": 0.25,
       "threshold": ">107",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -177,7 +177,7 @@
       "link": "https://finance.yahoo.com/quote/DX-Y.NYB/",
       "note": "US Dollar Index — DXY tăng mạnh >107 = USD siết chặt thanh khoản, rủi ro tài sản rủi ro tăng.",
       "_meta": {
-        "dxy": 98.408
+        "dxy": 98.31
       }
     }
   ],
@@ -192,20 +192,20 @@
       "ETF outflow > $5B/7d"
     ],
     "breakdown": {
-      "geo": 36.0,
+      "geo": 24.0,
       "inst": 64.0,
-      "market": 28.2,
+      "market": 34.2,
       "macro": 24.0
     },
     "indicator_scores": {
-      "oil": 6,
+      "oil": 4,
       "hormuz": 0,
       "cot": 10,
       "etf_flow": 8,
       "sentiment": 0,
       "vix_curve": 4,
       "vix": 2.5,
-      "put_call": 4,
+      "put_call": 7,
       "hyg_tlt": 0,
       "spread": 3,
       "dxy": 0,
