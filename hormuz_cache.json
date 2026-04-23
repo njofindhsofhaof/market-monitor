@@ -1,9 +1,9 @@
 {
-  "scanned_at": "2026-04-23T10:58:22.434283+00:00",
+  "scanned_at": "2026-04-23T16:55:03.326585+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
-    "value": "Căng thẳng leo thang",
+    "value": "Có đề cập — theo dõi thêm",
     "trend": "—",
     "trend_raw": null,
     "threshold": "Có phong tỏa",
@@ -11,12 +11,12 @@
     "statusLabel": "CẢNH GIÁC",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 10:58 UTC: 42 tin <24h / 64 tổng (reuters.com: lỗi, bbci.co.uk: 17/39 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Lufthansa cuts 20,000 flights as iran war causes jet fuel shortage...\" (10:29 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 16:55 UTC: 46 tin <24h / 64 tổng (reuters.com: lỗi, bbci.co.uk: 21/39 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Us-israeli war on iran will push 30 million back into poverty, un warns...\" (16:00 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
     "_meta": {
       "status_key": "tension",
       "hormuz_count": 7,
-      "fresh_total": 42,
-      "scanned_at": "2026-04-23T10:58:22Z",
+      "fresh_total": 46,
+      "scanned_at": "2026-04-23T16:55:03Z",
       "classify_source": "keyword fallback"
     }
   }
