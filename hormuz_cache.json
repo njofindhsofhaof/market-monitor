@@ -1,22 +1,22 @@
 {
-  "scanned_at": "2026-04-22T22:34:13.622611+00:00",
+  "scanned_at": "2026-04-23T06:20:16.737083+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
-    "value": "Bình thường",
+    "value": "Căng thẳng leo thang",
     "trend": "—",
     "trend_raw": null,
     "threshold": "Có phong tỏa",
-    "status": "success",
-    "statusLabel": "Bình thường",
+    "status": "warning",
+    "statusLabel": "CẢNH GIÁC",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 22:34 UTC: 43 tin <24h / 57 tổng (reuters.com: lỗi, bbci.co.uk: 18/32 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran blames trump’s blockade for diplomatic impasse as fragile truce holds...\" (19:25 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 06:20 UTC: 41 tin <24h / 60 tổng (reuters.com: lỗi, bbci.co.uk: 16/35 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Protesters stabbed at london rally against war on iran...\" (04:53 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
     "_meta": {
-      "status_key": "none",
-      "hormuz_count": 2,
-      "fresh_total": 43,
-      "scanned_at": "2026-04-22T22:34:13Z",
+      "status_key": "tension",
+      "hormuz_count": 5,
+      "fresh_total": 41,
+      "scanned_at": "2026-04-23T06:20:16Z",
       "classify_source": "keyword fallback"
     }
   }
