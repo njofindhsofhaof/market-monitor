@@ -1,12 +1,12 @@
 {
-  "last_updated": "13:20 Thursday, 23/04/2026 (GMT+7)",
+  "last_updated": "17:58 Thursday, 23/04/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
       "indicator": "Dầu WTI",
-      "value": "$93.74/thùng",
-      "trend": "+2.7% ↑",
-      "trend_raw": 2.68,
+      "value": "$94.51/thùng",
+      "trend": "-0.2% ↓",
+      "trend_raw": -0.19,
       "threshold": ">95 USD/thùng",
       "status": "warning",
       "statusLabel": "CẢNH GIÁC",
@@ -25,12 +25,12 @@
       "statusLabel": "CẢNH GIÁC",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 06:20 UTC: 41 tin <24h / 60 tổng (reuters.com: lỗi, bbci.co.uk: 16/35 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Protesters stabbed at london rally against war on iran...\" (04:53 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 10:58 UTC: 42 tin <24h / 64 tổng (reuters.com: lỗi, bbci.co.uk: 17/39 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Lufthansa cuts 20,000 flights as iran war causes jet fuel shortage...\" (10:29 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "tension",
-        "hormuz_count": 5,
-        "fresh_total": 41,
-        "scanned_at": "2026-04-23T06:20:16Z",
+        "hormuz_count": 7,
+        "fresh_total": 42,
+        "scanned_at": "2026-04-23T10:58:22Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -54,17 +54,17 @@
     {
       "category": "",
       "indicator": "ETF Flows (SPY+QQQ)",
-      "value": "-7.51B USD (SPY: +9.48B/9d, QQQ: -16.99B/9d)",
-      "trend": "-7.51B ↓",
-      "trend_raw": -7.509999999999998,
+      "value": "-2.93B USD (SPY: +14.06B/9d, QQQ: -16.99B/9d)",
+      "trend": "-2.93B ↓",
+      "trend_raw": -2.929999999999998,
       "threshold": "Outflow > −2B USD/7d",
-      "status": "danger",
-      "statusLabel": "CẢNH BÁO",
+      "status": "warning",
+      "statusLabel": "CẢNH GIÁC",
       "source": "SPDR holdings xlsx (SPY) + Yahoo Finance (QQQ)",
       "link": "https://etf.com/etfanalytics/etf-fund-flows-tool",
       "note": "SPY: implied shares từ SPDR daily holdings. QQQ: totalAssets/price. Cần 2+ ngày snapshot.",
       "_meta": {
-        "flow_b": -7.509999999999998
+        "flow_b": -2.929999999999998
       }
     },
     {
@@ -89,9 +89,9 @@
     {
       "category": "Thị trường",
       "indicator": "VIX",
-      "value": "18.92",
-      "trend": "+4.1% ↑",
-      "trend_raw": 4.13,
+      "value": "19.68",
+      "trend": "+9.7% ↑",
+      "trend_raw": 9.7,
       "threshold": ">30",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -102,7 +102,7 @@
     {
       "category": "",
       "indicator": "VIX futures curve",
-      "value": "Contango nhẹ (spot 18.9 → M1~285)",
+      "value": "Contango nhẹ (spot 19.7 → M1~285)",
       "trend": "+0.7% ↑",
       "trend_raw": 0.74,
       "threshold": "Backwardation",
@@ -167,9 +167,9 @@
     {
       "category": "",
       "indicator": "DXY (USD Index)",
-      "value": "98.63",
-      "trend": "+0.4% ↑",
-      "trend_raw": 0.42,
+      "value": "98.80",
+      "trend": "+0.6% ↑",
+      "trend_raw": 0.59,
       "threshold": ">107",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -177,34 +177,33 @@
       "link": "https://finance.yahoo.com/quote/DX-Y.NYB/",
       "note": "US Dollar Index — DXY tăng mạnh >107 = USD siết chặt thanh khoản, rủi ro tài sản rủi ro tăng.",
       "_meta": {
-        "dxy": 98.634
+        "dxy": 98.798
       }
     }
   ],
   "risk": {
-    "score": 57,
-    "base_score": 42,
-    "multiplier": 1.35,
-    "level": "CẢNH BÁO CAO",
-    "color": "danger",
+    "score": 51,
+    "base_score": 41,
+    "multiplier": 1.25,
+    "level": "CẢNH GIÁC",
+    "color": "warning",
     "active_leads": [
-      "COT short ròng > 70% đỉnh lịch sử",
-      "ETF outflow > $5B/7d"
+      "COT short ròng > 70% đỉnh lịch sử"
     ],
     "breakdown": {
-      "geo": 55.0,
-      "inst": 64.0,
-      "market": 33.0,
+      "geo": 52.0,
+      "inst": 58.0,
+      "market": 34.2,
       "macro": 24.0
     },
     "indicator_scores": {
-      "oil": 6.5,
+      "oil": 6,
       "hormuz": 4,
       "cot": 10,
-      "etf_flow": 8,
+      "etf_flow": 6,
       "sentiment": 0,
       "vix_curve": 4,
-      "vix": 2,
+      "vix": 2.5,
       "put_call": 7,
       "hyg_tlt": 0,
       "spread": 3,
