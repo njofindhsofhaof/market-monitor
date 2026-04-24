@@ -1,22 +1,22 @@
 {
-  "scanned_at": "2026-04-24T10:55:51.470749+00:00",
+  "scanned_at": "2026-04-24T14:58:54.636535+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
-    "value": "Căng thẳng leo thang",
+    "value": "Phong tỏa hoàn toàn",
     "trend": "—",
     "trend_raw": null,
     "threshold": "Có phong tỏa",
-    "status": "warning",
-    "statusLabel": "CẢNH GIÁC",
+    "status": "danger",
+    "statusLabel": "CẢNH BÁO",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 10:55 UTC: 56 tin <24h / 58 tổng (reuters.com: lỗi, bbci.co.uk: 31/33 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Us says iran can play at 2026 world cup but bars those with ‘irgc ties’...\" (08:00 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 14:58 UTC: 59 tin <24h / 61 tổng (reuters.com: lỗi, bbci.co.uk: 34/36 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iranians bring music to sites devastated by us-israeli attacks...\" (14:47 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
     "_meta": {
-      "status_key": "tension",
+      "status_key": "full_blockade",
       "hormuz_count": 6,
-      "fresh_total": 56,
-      "scanned_at": "2026-04-24T10:55:51Z",
+      "fresh_total": 59,
+      "scanned_at": "2026-04-24T14:58:54Z",
       "classify_source": "keyword fallback"
     }
   }
