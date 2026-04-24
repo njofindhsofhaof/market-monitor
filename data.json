@@ -1,12 +1,12 @@
 {
-  "last_updated": "06:32 Friday, 24/04/2026 (GMT+7)",
+  "last_updated": "13:29 Friday, 24/04/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
       "indicator": "Dầu WTI",
-      "value": "$97.05/thùng",
-      "trend": "+2.5% ↑",
-      "trend_raw": 2.49,
+      "value": "$95.73/thùng",
+      "trend": "+14.2% ↑",
+      "trend_raw": 14.17,
       "threshold": ">95 USD/thùng",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -25,12 +25,12 @@
       "statusLabel": "CẢNH BÁO",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 23:32 UTC: 43 tin <24h / 64 tổng (reuters.com: lỗi, bbci.co.uk: 18/39 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Trump says he is keeping strait of hormuz closed, not iran...\" (20:53 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 06:29 UTC: 53 tin <24h / 64 tổng (reuters.com: lỗi, bbci.co.uk: 28/39 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"How fake ai victims are being used to provide rationale for attacking iran...\" (05:44 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "full_blockade",
-        "hormuz_count": 4,
-        "fresh_total": 43,
-        "scanned_at": "2026-04-23T23:32:10Z",
+        "hormuz_count": 6,
+        "fresh_total": 53,
+        "scanned_at": "2026-04-24T06:29:46Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -128,15 +128,15 @@
     {
       "category": "",
       "indicator": "Put/Call ratio",
-      "value": "1.253",
-      "trend": "+98.9% ↑",
-      "trend_raw": 98.89,
+      "value": "1.428",
+      "trend": "+126.7% ↑",
+      "trend_raw": 126.67,
       "threshold": ">1.1",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
       "source": "Yahoo Finance (SPY options)",
       "link": "https://finance.yahoo.com/quote/SPY/options/",
-      "note": "SPY options exp 2026-04-23 — tỷ lệ put/call đo mức phòng thủ nhà đầu tư"
+      "note": "SPY options exp 2026-04-24 — tỷ lệ put/call đo mức phòng thủ nhà đầu tư"
     },
     {
       "category": "Vĩ mô",
@@ -167,9 +167,9 @@
     {
       "category": "",
       "indicator": "DXY (USD Index)",
-      "value": "98.80",
-      "trend": "+0.6% ↑",
-      "trend_raw": 0.59,
+      "value": "98.85",
+      "trend": "+0.8% ↑",
+      "trend_raw": 0.77,
       "threshold": ">107",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -177,34 +177,34 @@
       "link": "https://finance.yahoo.com/quote/DX-Y.NYB/",
       "note": "US Dollar Index — DXY tăng mạnh >107 = USD siết chặt thanh khoản, rủi ro tài sản rủi ro tăng.",
       "_meta": {
-        "dxy": 98.799
+        "dxy": 98.854
       }
     }
   ],
   "risk": {
-    "score": 52,
-    "base_score": 42,
+    "score": 56,
+    "base_score": 45,
     "multiplier": 1.25,
-    "level": "CẢNH GIÁC",
-    "color": "warning",
+    "level": "CẢNH BÁO CAO",
+    "color": "danger",
     "active_leads": [
       "COT short ròng > 70% đỉnh lịch sử"
     ],
     "breakdown": {
-      "geo": 91.0,
+      "geo": 94.0,
       "inst": 43.0,
-      "market": 34.2,
+      "market": 40.2,
       "macro": 18.0
     },
     "indicator_scores": {
-      "oil": 8.5,
+      "oil": 9,
       "hormuz": 10,
       "cot": 10,
       "etf_flow": 1,
       "sentiment": 0,
       "vix_curve": 4,
       "vix": 2.5,
-      "put_call": 7,
+      "put_call": 10,
       "hyg_tlt": 0,
       "spread": 0,
       "dxy": 0,
