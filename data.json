@@ -1,12 +1,12 @@
 {
-  "last_updated": "06:10 Saturday, 25/04/2026 (GMT+7)",
+  "last_updated": "13:06 Saturday, 25/04/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
       "indicator": "Dầu WTI",
-      "value": "$94.88/thùng",
-      "trend": "+13.2% ↑",
-      "trend_raw": 13.15,
+      "value": "$94.40/thùng",
+      "trend": "+12.6% ↑",
+      "trend_raw": 12.58,
       "threshold": ">95 USD/thùng",
       "status": "warning",
       "statusLabel": "CẢNH GIÁC",
@@ -25,12 +25,12 @@
       "statusLabel": "Bình thường",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 23:10 UTC: 51 tin <24h / 52 tổng (reuters.com: lỗi, bbci.co.uk: 26/27 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Us sending envoys to pakistan, raising hopes of talks with iran’s araghchi...\" (20:54 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 06:06 UTC: 58 tin <24h / 58 tổng (reuters.com: lỗi, bbci.co.uk: 33/33 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"What’s at stake for iran and the us in islamabad?...\" (04:30 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "none",
-        "hormuz_count": 3,
-        "fresh_total": 51,
-        "scanned_at": "2026-04-24T23:10:08Z",
+        "hormuz_count": 6,
+        "fresh_total": 58,
+        "scanned_at": "2026-04-25T06:06:38Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -128,15 +128,15 @@
     {
       "category": "",
       "indicator": "Put/Call ratio",
-      "value": "1.311",
-      "trend": "-15.4% ↓",
-      "trend_raw": -15.36,
+      "value": "1.141",
+      "trend": "-26.3% ↓",
+      "trend_raw": -26.34,
       "threshold": ">1.1",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
       "source": "Yahoo Finance (SPY options)",
       "link": "https://finance.yahoo.com/quote/SPY/options/",
-      "note": "SPY options exp 2026-04-24 — tỷ lệ put/call đo mức phòng thủ nhà đầu tư"
+      "note": "SPY options exp 2026-04-27 — tỷ lệ put/call đo mức phòng thủ nhà đầu tư"
     },
     {
       "category": "Vĩ mô",
@@ -182,8 +182,8 @@
     }
   ],
   "risk": {
-    "score": 62,
-    "base_score": 46,
+    "score": 59,
+    "base_score": 44,
     "multiplier": 1.35,
     "level": "CẢNH BÁO CAO",
     "color": "danger",
@@ -194,7 +194,7 @@
     "breakdown": {
       "geo": 42.0,
       "inst": 70.0,
-      "market": 40.2,
+      "market": 34.2,
       "macro": 30.0
     },
     "indicator_scores": {
@@ -205,7 +205,7 @@
       "sentiment": 0,
       "vix_curve": 4,
       "vix": 2.5,
-      "put_call": 10,
+      "put_call": 7,
       "hyg_tlt": 0,
       "spread": 3,
       "dxy": 0,
