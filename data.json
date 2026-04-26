@@ -1,5 +1,5 @@
 {
-  "last_updated": "21:10 Sunday, 26/04/2026 (GMT+7)",
+  "last_updated": "00:24 Monday, 27/04/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
@@ -25,12 +25,12 @@
       "statusLabel": "Bình thường",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 14:10 UTC: 37 tin <24h / 58 tổng (reuters.com: lỗi, bbci.co.uk: 12/33 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Us-iran conflict: what’s the latest as the islamabad talks stall?...\" (14:01 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 17:24 UTC: 35 tin <24h / 58 tổng (reuters.com: lỗi, bbci.co.uk: 10/33 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"War, the gulf   rethinking money in sport...\" (15:06 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "none",
         "hormuz_count": 3,
-        "fresh_total": 37,
-        "scanned_at": "2026-04-26T14:10:24Z",
+        "fresh_total": 35,
+        "scanned_at": "2026-04-26T17:24:35Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -54,7 +54,7 @@
     {
       "category": "",
       "indicator": "ETF Flows (SPY+QQQ)",
-      "value": "-3.30B USD (SPY: +5.38B/9d, QQQ: -8.68B/9d)",
+      "value": "-3.30B USD (SPY: +5.38B/10d, QQQ: -8.68B/10d)",
       "trend": "-3.30B ↓",
       "trend_raw": -3.3,
       "threshold": "Outflow > −2B USD/7d",
@@ -129,8 +129,8 @@
       "category": "",
       "indicator": "Put/Call ratio",
       "value": "1.141",
-      "trend": "+46.7% ↑",
-      "trend_raw": 46.66,
+      "trend": "-17.0% ↓",
+      "trend_raw": -17.02,
       "threshold": ">1.1",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
