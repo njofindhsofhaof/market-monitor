@@ -1,5 +1,5 @@
 {
-  "scanned_at": "2026-04-26T06:30:08.808668+00:00",
+  "scanned_at": "2026-04-26T10:06:39.708181+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
@@ -11,12 +11,12 @@
     "statusLabel": "Bình thường",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 06:30 UTC: 34 tin <24h / 63 tổng (reuters.com: lỗi, bbci.co.uk: 9/38 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Hundreds of israelis rally as us-iran peace talks stall...\" (02:00 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 10:06 UTC: 38 tin <24h / 58 tổng (reuters.com: lỗi, bbci.co.uk: 13/33 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran war: what’s happening on day 58 as tehran-washington talks stall?...\" (06:29 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
     "_meta": {
       "status_key": "none",
-      "hormuz_count": 5,
-      "fresh_total": 34,
-      "scanned_at": "2026-04-26T06:30:08Z",
+      "hormuz_count": 4,
+      "fresh_total": 38,
+      "scanned_at": "2026-04-26T10:06:39Z",
       "classify_source": "keyword fallback"
     }
   }
