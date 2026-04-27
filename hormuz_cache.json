@@ -1,22 +1,22 @@
 {
-  "scanned_at": "2026-04-27T00:00:59.126282+00:00",
+  "scanned_at": "2026-04-27T09:31:11.845223+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
-    "value": "Bình thường",
+    "value": "Căng thẳng leo thang",
     "trend": "—",
     "trend_raw": null,
     "threshold": "Có phong tỏa",
-    "status": "success",
-    "statusLabel": "Bình thường",
+    "status": "warning",
+    "statusLabel": "CẢNH GIÁC",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 00:00 UTC: 31 tin <24h / 59 tổng (reuters.com: lỗi, bbci.co.uk: 6/34 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran’s foreign minister leaves pakistan, heads to russia for more talks...\" (20:47 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 09:31 UTC: 41 tin <24h / 48 tổng (reuters.com: lỗi, bbci.co.uk: 16/23 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"The war on iran is eroding nuclear non-proliferation...\" (08:43 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
     "_meta": {
-      "status_key": "none",
-      "hormuz_count": 6,
-      "fresh_total": 31,
-      "scanned_at": "2026-04-27T00:00:59Z",
+      "status_key": "tension",
+      "hormuz_count": 8,
+      "fresh_total": 41,
+      "scanned_at": "2026-04-27T09:31:11Z",
       "classify_source": "keyword fallback"
     }
   }
