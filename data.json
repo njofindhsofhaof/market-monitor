@@ -1,15 +1,15 @@
 {
-  "last_updated": "04:57 Monday, 27/04/2026 (GMT+7)",
+  "last_updated": "07:01 Monday, 27/04/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
       "indicator": "Dầu WTI",
-      "value": "$94.40/thùng",
-      "trend": "+12.6% ↑",
-      "trend_raw": 12.58,
+      "value": "$96.18/thùng",
+      "trend": "+7.3% ↑",
+      "trend_raw": 7.33,
       "threshold": ">95 USD/thùng",
-      "status": "warning",
-      "statusLabel": "CẢNH GIÁC",
+      "status": "danger",
+      "statusLabel": "CẢNH BÁO",
       "source": "Yahoo Finance (CL=F)",
       "link": "https://finance.yahoo.com/quote/CL=F/",
       "note": "Giá dầu thô WTI giao ngay (futures front-month)"
@@ -25,12 +25,12 @@
       "statusLabel": "Bình thường",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 21:57 UTC: 32 tin <24h / 59 tổng (reuters.com: lỗi, bbci.co.uk: 7/34 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran’s foreign minister leaves pakistan, heads to russia for more talks...\" (20:47 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 00:00 UTC: 31 tin <24h / 59 tổng (reuters.com: lỗi, bbci.co.uk: 6/34 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran’s foreign minister leaves pakistan, heads to russia for more talks...\" (20:47 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "none",
         "hormuz_count": 6,
-        "fresh_total": 32,
-        "scanned_at": "2026-04-26T21:57:09Z",
+        "fresh_total": 31,
+        "scanned_at": "2026-04-27T00:00:59Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -167,9 +167,9 @@
     {
       "category": "",
       "indicator": "DXY (USD Index)",
-      "value": "98.51",
-      "trend": "+0.4% ↑",
-      "trend_raw": 0.42,
+      "value": "98.64",
+      "trend": "+0.6% ↑",
+      "trend_raw": 0.6,
       "threshold": ">107",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -177,13 +177,13 @@
       "link": "https://finance.yahoo.com/quote/DX-Y.NYB/",
       "note": "US Dollar Index — DXY tăng mạnh >107 = USD siết chặt thanh khoản, rủi ro tài sản rủi ro tăng.",
       "_meta": {
-        "dxy": 98.51
+        "dxy": 98.64
       }
     }
   ],
   "risk": {
-    "score": 51,
-    "base_score": 41,
+    "score": 53,
+    "base_score": 42,
     "multiplier": 1.25,
     "level": "CẢNH GIÁC",
     "color": "warning",
@@ -191,13 +191,13 @@
       "COT short ròng > 70% đỉnh lịch sử"
     ],
     "breakdown": {
-      "geo": 42.0,
+      "geo": 54.0,
       "inst": 58.0,
       "market": 34.2,
       "macro": 30.0
     },
     "indicator_scores": {
-      "oil": 7,
+      "oil": 9,
       "hormuz": 0,
       "cot": 10,
       "etf_flow": 6,
