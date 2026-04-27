@@ -1,9 +1,9 @@
 {
-  "scanned_at": "2026-04-27T09:31:11.845223+00:00",
+  "scanned_at": "2026-04-27T16:09:30.071433+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
-    "value": "Căng thẳng leo thang",
+    "value": "Có đề cập — theo dõi thêm",
     "trend": "—",
     "trend_raw": null,
     "threshold": "Có phong tỏa",
@@ -11,12 +11,12 @@
     "statusLabel": "CẢNH GIÁC",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 09:31 UTC: 41 tin <24h / 48 tổng (reuters.com: lỗi, bbci.co.uk: 16/23 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"The war on iran is eroding nuclear non-proliferation...\" (08:43 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 16:09 UTC: 47 tin <24h / 51 tổng (reuters.com: lỗi, bbci.co.uk: 22/26 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran offers hormuz deal without nuclear talks, as it seeks broader buy-in...\" (15:50 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
     "_meta": {
       "status_key": "tension",
-      "hormuz_count": 8,
-      "fresh_total": 41,
-      "scanned_at": "2026-04-27T09:31:11Z",
+      "hormuz_count": 7,
+      "fresh_total": 47,
+      "scanned_at": "2026-04-27T16:09:30Z",
       "classify_source": "keyword fallback"
     }
   }
