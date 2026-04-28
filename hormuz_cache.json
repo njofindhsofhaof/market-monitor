@@ -1,5 +1,5 @@
 {
-  "scanned_at": "2026-04-28T05:58:54.873585+00:00",
+  "scanned_at": "2026-04-28T08:37:26.322563+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
@@ -11,12 +11,12 @@
     "statusLabel": "CẢNH GIÁC",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 05:58 UTC: 50 tin <24h / 55 tổng (reuters.com: lỗi, bbci.co.uk: 25/30 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Oil prices rise despite iran’s proposal to reopen strait of hormuz...\" (05:13 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 08:37 UTC: 47 tin <24h / 54 tổng (reuters.com: lỗi, bbci.co.uk: 22/29 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Trump reviews iranian proposal aimed at reopening strait of hormuz...\" (07:55 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
     "_meta": {
       "status_key": "tension",
       "hormuz_count": 5,
-      "fresh_total": 50,
-      "scanned_at": "2026-04-28T05:58:54Z",
+      "fresh_total": 47,
+      "scanned_at": "2026-04-28T08:37:26Z",
       "classify_source": "keyword fallback"
     }
   }
