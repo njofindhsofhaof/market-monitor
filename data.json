@@ -1,12 +1,12 @@
 {
-  "last_updated": "09:48 Tuesday, 28/04/2026 (GMT+7)",
+  "last_updated": "12:59 Tuesday, 28/04/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
       "indicator": "Dầu WTI",
-      "value": "$97.42/thùng",
-      "trend": "+8.7% ↑",
-      "trend_raw": 8.72,
+      "value": "$98.49/thùng",
+      "trend": "+6.9% ↑",
+      "trend_raw": 6.9,
       "threshold": ">95 USD/thùng",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -17,7 +17,7 @@
     {
       "category": "",
       "indicator": "Xung đột Hormuz",
-      "value": "Có đề cập — theo dõi thêm",
+      "value": "Căng thẳng leo thang",
       "trend": "—",
       "trend_raw": null,
       "threshold": "Có phong tỏa",
@@ -25,12 +25,12 @@
       "statusLabel": "CẢNH GIÁC",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 02:48 UTC: 49 tin <24h / 55 tổng (reuters.com: lỗi, bbci.co.uk: 24/30 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran war live: trump reviews peace plan; un calls for hormuz to reopen...\" (00:00 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 05:58 UTC: 50 tin <24h / 55 tổng (reuters.com: lỗi, bbci.co.uk: 25/30 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Oil prices rise despite iran’s proposal to reopen strait of hormuz...\" (05:13 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "tension",
-        "hormuz_count": 4,
-        "fresh_total": 49,
-        "scanned_at": "2026-04-28T02:48:14Z",
+        "hormuz_count": 5,
+        "fresh_total": 50,
+        "scanned_at": "2026-04-28T05:58:54Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -70,18 +70,18 @@
     {
       "category": "",
       "indicator": "Sentiment (NAAIM vs AAII)",
-      "value": "Retail 67% / Inst 94% → diff -28pp",
-      "trend": "-28pp ↓",
-      "trend_raw": -27.5,
+      "value": "AAII Bull 67% / Bear 0% (NAAIM N/A)",
+      "trend": "—",
+      "trend_raw": null,
       "threshold": "Retail − Inst > +25pp",
-      "status": "success",
-      "statusLabel": "Bình thường",
+      "status": "danger",
+      "statusLabel": "CẢNH BÁO",
       "source": "NAAIM Exposure Index · AAII Sentiment Survey",
       "link": "https://www.naaim.org/resources/naaim-exposure-index/",
-      "note": "Diff = retailBull% − instBull%. Dương cao = retail quá lạc quan vs tổ chức → contrarian bearish signal.",
+      "note": "NAAIM không lấy được. Chỉ dùng AAII Bull−Bear spread làm proxy.",
       "_meta": {
-        "naaim": 94.15,
-        "inst_bull": 94.2,
+        "naaim": null,
+        "inst_bull": null,
         "aaii_bull": 66.7,
         "aaii_bear": 0.0
       }
@@ -167,9 +167,9 @@
     {
       "category": "",
       "indicator": "DXY (USD Index)",
-      "value": "98.58",
-      "trend": "+0.5% ↑",
-      "trend_raw": 0.54,
+      "value": "98.56",
+      "trend": "+0.1% ↑",
+      "trend_raw": 0.15,
       "threshold": ">107",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -177,13 +177,13 @@
       "link": "https://finance.yahoo.com/quote/DX-Y.NYB/",
       "note": "US Dollar Index — DXY tăng mạnh >107 = USD siết chặt thanh khoản, rủi ro tài sản rủi ro tăng.",
       "_meta": {
-        "dxy": 98.575
+        "dxy": 98.561
       }
     }
   ],
   "risk": {
-    "score": 52,
-    "base_score": 42,
+    "score": 54,
+    "base_score": 43,
     "multiplier": 1.25,
     "level": "CẢNH GIÁC",
     "color": "warning",
@@ -192,7 +192,7 @@
     ],
     "breakdown": {
       "geo": 70.0,
-      "inst": 58.0,
+      "inst": 64.0,
       "market": 33.0,
       "macro": 18.0
     },
@@ -201,7 +201,7 @@
       "hormuz": 4,
       "cot": 10,
       "etf_flow": 6,
-      "sentiment": 0,
+      "sentiment": 2,
       "vix_curve": 4,
       "vix": 2,
       "put_call": 7,
