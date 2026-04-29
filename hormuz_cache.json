@@ -1,5 +1,5 @@
 {
-  "scanned_at": "2026-04-29T13:53:45.384884+00:00",
+  "scanned_at": "2026-04-29T15:55:40.621909+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
@@ -11,12 +11,12 @@
     "statusLabel": "Bình thường",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 13:53 UTC: 58 tin <24h / 67 tổng (reuters.com: lỗi, bbci.co.uk: 33/42 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Is iran’s oil storage nearly full – and will it have to cut production?...\" (12:22 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 15:55 UTC: 60 tin <24h / 67 tổng (reuters.com: lỗi, bbci.co.uk: 35/42 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran’s currency falls to new low as us blockade, sanctions impact trade...\" (15:30 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
     "_meta": {
       "status_key": "none",
       "hormuz_count": 7,
-      "fresh_total": 58,
-      "scanned_at": "2026-04-29T13:53:45Z",
+      "fresh_total": 60,
+      "scanned_at": "2026-04-29T15:55:40Z",
       "classify_source": "keyword fallback"
     }
   }
