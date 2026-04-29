@@ -1,12 +1,12 @@
 {
-  "last_updated": "18:28 Wednesday, 29/04/2026 (GMT+7)",
+  "last_updated": "20:53 Wednesday, 29/04/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
       "indicator": "Dầu WTI",
-      "value": "$103.26/thùng",
-      "trend": "+11.1% ↑",
-      "trend_raw": 11.08,
+      "value": "$104.90/thùng",
+      "trend": "+12.8% ↑",
+      "trend_raw": 12.84,
       "threshold": ">95 USD/thùng",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -17,20 +17,20 @@
     {
       "category": "",
       "indicator": "Xung đột Hormuz",
-      "value": "Phong tỏa hoàn toàn",
+      "value": "Bình thường",
       "trend": "—",
       "trend_raw": null,
       "threshold": "Có phong tỏa",
-      "status": "danger",
-      "statusLabel": "CẢNH BÁO",
+      "status": "success",
+      "statusLabel": "Bình thường",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 11:28 UTC: 56 tin <24h / 65 tổng (reuters.com: lỗi, bbci.co.uk: 31/40 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"European commission president calls for diplomacy to end iran war...\" (10:20 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 13:53 UTC: 58 tin <24h / 67 tổng (reuters.com: lỗi, bbci.co.uk: 33/42 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Is iran’s oil storage nearly full – and will it have to cut production?...\" (12:22 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
-        "status_key": "full_blockade",
+        "status_key": "none",
         "hormuz_count": 7,
-        "fresh_total": 56,
-        "scanned_at": "2026-04-29T11:28:03Z",
+        "fresh_total": 58,
+        "scanned_at": "2026-04-29T13:53:45Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -54,9 +54,9 @@
     {
       "category": "",
       "indicator": "ETF Flows (SPY+QQQ)",
-      "value": "-6.18B USD (SPY: +0.86B/9d, QQQ: -7.04B/9d)",
-      "trend": "-6.18B ↓",
-      "trend_raw": -6.18,
+      "value": "-5.56B USD (SPY: +2.10B/9d, QQQ: -7.66B/9d)",
+      "trend": "-5.56B ↓",
+      "trend_raw": -5.5600000000000005,
       "threshold": "Outflow > −2B USD/7d",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -64,7 +64,7 @@
       "link": "https://etf.com/etfanalytics/etf-fund-flows-tool",
       "note": "SPY: implied shares từ SPDR daily holdings. QQQ: totalAssets/price. Cần 2+ ngày snapshot.",
       "_meta": {
-        "flow_b": -6.18
+        "flow_b": -5.5600000000000005
       }
     },
     {
@@ -89,9 +89,9 @@
     {
       "category": "Thị trường",
       "indicator": "VIX",
-      "value": "17.91",
-      "trend": "-5.3% ↓",
-      "trend_raw": -5.34,
+      "value": "18.28",
+      "trend": "-3.4% ↓",
+      "trend_raw": -3.38,
       "threshold": ">30",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -102,9 +102,9 @@
     {
       "category": "",
       "indicator": "VIX futures curve",
-      "value": "Contango nhẹ (spot 17.9 → M1~274)",
-      "trend": "-5.3% ↓",
-      "trend_raw": -5.26,
+      "value": "Contango nhẹ (spot 18.3 → M1~275)",
+      "trend": "-3.7% ↓",
+      "trend_raw": -3.71,
       "threshold": "Backwardation",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -115,9 +115,9 @@
     {
       "category": "",
       "indicator": "HYG/TLT ratio",
-      "value": "0.9309",
-      "trend": "+0.3% ↑",
-      "trend_raw": 0.27,
+      "value": "0.9355",
+      "trend": "+0.8% ↑",
+      "trend_raw": 0.8,
       "threshold": "Giảm >5%/tuần",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -141,9 +141,9 @@
     {
       "category": "Vĩ mô",
       "indicator": "10-year yield",
-      "value": "4.35%",
-      "trend": "+1.4% ↑",
-      "trend_raw": 1.44,
+      "value": "4.39%",
+      "trend": "+2.2% ↑",
+      "trend_raw": 2.24,
       "threshold": ">4.5%",
       "status": "warning",
       "statusLabel": "CẢNH GIÁC",
@@ -154,9 +154,9 @@
     {
       "category": "",
       "indicator": "2s10s spread",
-      "value": "+0.55% (3.81% vs 4.35%)",
-      "trend": "+0.06pp ↑",
-      "trend_raw": 0.062,
+      "value": "+0.58% (3.81% vs 4.39%)",
+      "trend": "+0.10pp ↑",
+      "trend_raw": 0.096,
       "threshold": "Đảo ngược âm",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -167,9 +167,9 @@
     {
       "category": "",
       "indicator": "DXY (USD Index)",
-      "value": "98.69",
-      "trend": "+0.1% ↑",
-      "trend_raw": 0.1,
+      "value": "98.86",
+      "trend": "+0.3% ↑",
+      "trend_raw": 0.27,
       "threshold": ">107",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -177,13 +177,13 @@
       "link": "https://finance.yahoo.com/quote/DX-Y.NYB/",
       "note": "US Dollar Index — DXY tăng mạnh >107 = USD siết chặt thanh khoản, rủi ro tài sản rủi ro tăng.",
       "_meta": {
-        "dxy": 98.687
+        "dxy": 98.857
       }
     }
   ],
   "risk": {
-    "score": 70,
-    "base_score": 47,
+    "score": 61,
+    "base_score": 41,
     "multiplier": 1.5,
     "level": "CẢNH BÁO CAO",
     "color": "danger",
@@ -193,14 +193,14 @@
       "ETF outflow > $5B/7d"
     ],
     "breakdown": {
-      "geo": 94.0,
+      "geo": 54.0,
       "inst": 64.0,
       "market": 33.0,
       "macro": 18.0
     },
     "indicator_scores": {
       "oil": 9,
-      "hormuz": 10,
+      "hormuz": 0,
       "cot": 10,
       "etf_flow": 8,
       "sentiment": 0,
