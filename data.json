@@ -1,12 +1,12 @@
 {
-  "last_updated": "16:09 Wednesday, 29/04/2026 (GMT+7)",
+  "last_updated": "18:28 Wednesday, 29/04/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
       "indicator": "Dầu WTI",
-      "value": "$103.55/thùng",
-      "trend": "+11.4% ↑",
-      "trend_raw": 11.38,
+      "value": "$103.26/thùng",
+      "trend": "+11.1% ↑",
+      "trend_raw": 11.08,
       "threshold": ">95 USD/thùng",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -25,12 +25,12 @@
       "statusLabel": "CẢNH BÁO",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 09:08 UTC: 58 tin <24h / 67 tổng (reuters.com: lỗi, bbci.co.uk: 33/42 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"‘particularly badly exposed’: how the iran war is hitting the uk...\" (08:25 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 11:28 UTC: 56 tin <24h / 65 tổng (reuters.com: lỗi, bbci.co.uk: 31/40 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"European commission president calls for diplomacy to end iran war...\" (10:20 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "full_blockade",
-        "hormuz_count": 9,
-        "fresh_total": 58,
-        "scanned_at": "2026-04-29T09:08:50Z",
+        "hormuz_count": 7,
+        "fresh_total": 56,
+        "scanned_at": "2026-04-29T11:28:03Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -54,9 +54,9 @@
     {
       "category": "",
       "indicator": "ETF Flows (SPY+QQQ)",
-      "value": "-7.00B USD (SPY: +0.04B/9d, QQQ: -7.04B/9d)",
-      "trend": "-7.00B ↓",
-      "trend_raw": -7.0,
+      "value": "-6.18B USD (SPY: +0.86B/9d, QQQ: -7.04B/9d)",
+      "trend": "-6.18B ↓",
+      "trend_raw": -6.18,
       "threshold": "Outflow > −2B USD/7d",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -64,7 +64,7 @@
       "link": "https://etf.com/etfanalytics/etf-fund-flows-tool",
       "note": "SPY: implied shares từ SPDR daily holdings. QQQ: totalAssets/price. Cần 2+ ngày snapshot.",
       "_meta": {
-        "flow_b": -7.0
+        "flow_b": -6.18
       }
     },
     {
@@ -89,9 +89,9 @@
     {
       "category": "Thị trường",
       "indicator": "VIX",
-      "value": "18.05",
-      "trend": "-4.6% ↓",
-      "trend_raw": -4.6,
+      "value": "17.91",
+      "trend": "-5.3% ↓",
+      "trend_raw": -5.34,
       "threshold": ">30",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -102,7 +102,7 @@
     {
       "category": "",
       "indicator": "VIX futures curve",
-      "value": "Contango nhẹ (spot 18.1 → M1~274)",
+      "value": "Contango nhẹ (spot 17.9 → M1~274)",
       "trend": "-5.3% ↓",
       "trend_raw": -5.26,
       "threshold": "Backwardation",
@@ -167,9 +167,9 @@
     {
       "category": "",
       "indicator": "DXY (USD Index)",
-      "value": "98.72",
+      "value": "98.69",
       "trend": "+0.1% ↑",
-      "trend_raw": 0.13,
+      "trend_raw": 0.1,
       "threshold": ">107",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -177,7 +177,7 @@
       "link": "https://finance.yahoo.com/quote/DX-Y.NYB/",
       "note": "US Dollar Index — DXY tăng mạnh >107 = USD siết chặt thanh khoản, rủi ro tài sản rủi ro tăng.",
       "_meta": {
-        "dxy": 98.72
+        "dxy": 98.687
       }
     }
   ],
