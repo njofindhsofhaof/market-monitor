@@ -1,5 +1,5 @@
 {
-  "scanned_at": "2026-04-30T22:03:29.206373+00:00",
+  "scanned_at": "2026-04-30T23:52:08.821771+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
@@ -11,12 +11,12 @@
     "statusLabel": "CẢNH GIÁC",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 22:03 UTC: 53 tin <24h / 56 tổng (reuters.com: lỗi, bbci.co.uk: 28/31 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Hegseth testifies on iran war before senate committee: key takeaways...\" (21:09 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 23:52 UTC: 49 tin <24h / 56 tổng (reuters.com: lỗi, bbci.co.uk: 24/31 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Us gas reaches $4.30 per gallon; trump says prices will drop after iran war...\" (21:31 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
     "_meta": {
       "status_key": "tension",
       "hormuz_count": 6,
-      "fresh_total": 53,
-      "scanned_at": "2026-04-30T22:03:29Z",
+      "fresh_total": 49,
+      "scanned_at": "2026-04-30T23:52:08Z",
       "classify_source": "keyword fallback"
     }
   }
