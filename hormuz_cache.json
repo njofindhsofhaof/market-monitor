@@ -1,5 +1,5 @@
 {
-  "scanned_at": "2026-04-30T15:09:25.364020+00:00",
+  "scanned_at": "2026-04-30T17:19:49.592802+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
@@ -11,12 +11,12 @@
     "statusLabel": "CẢNH GIÁC",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 15:09 UTC: 52 tin <24h / 53 tổng (reuters.com: lỗi, bbci.co.uk: 27/28 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran, protests, human rights – all to know about the 76th fifa congress...\" (14:56 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 17:19 UTC: 51 tin <24h / 52 tổng (reuters.com: lỗi, bbci.co.uk: 26/27 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran, protests, human rights – all to know about the 76th fifa congress...\" (14:56 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
     "_meta": {
       "status_key": "tension",
       "hormuz_count": 9,
-      "fresh_total": 52,
-      "scanned_at": "2026-04-30T15:09:25Z",
+      "fresh_total": 51,
+      "scanned_at": "2026-04-30T17:19:49Z",
       "classify_source": "keyword fallback"
     }
   }
