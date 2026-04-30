@@ -1,22 +1,22 @@
 {
-  "scanned_at": "2026-04-30T08:30:05.573381+00:00",
+  "scanned_at": "2026-04-30T10:54:52.196315+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
-    "value": "Bình thường",
+    "value": "Phong tỏa hoàn toàn",
     "trend": "—",
     "trend_raw": null,
     "threshold": "Có phong tỏa",
-    "status": "success",
-    "statusLabel": "Bình thường",
+    "status": "danger",
+    "statusLabel": "CẢNH BÁO",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 08:30 UTC: 63 tin <24h / 67 tổng (reuters.com: lỗi, bbci.co.uk: 38/42 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran war: what’s happening on day 62 as trump asks iran to ‘give up’?...\" (07:30 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 10:54 UTC: 52 tin <24h / 52 tổng (reuters.com: lỗi, bbci.co.uk: 27/27 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Pakistan opens up road trade routes into iran amid hormuz blockade...\" (08:44 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
     "_meta": {
-      "status_key": "none",
+      "status_key": "full_blockade",
       "hormuz_count": 6,
-      "fresh_total": 63,
-      "scanned_at": "2026-04-30T08:30:05Z",
+      "fresh_total": 52,
+      "scanned_at": "2026-04-30T10:54:52Z",
       "classify_source": "keyword fallback"
     }
   }
