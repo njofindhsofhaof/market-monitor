@@ -1,12 +1,12 @@
 {
-  "last_updated": "09:55 Friday, 01/05/2026 (GMT+7)",
+  "last_updated": "13:16 Friday, 01/05/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
       "indicator": "Dầu WTI",
-      "value": "$106.14/thùng",
-      "trend": "+10.7% ↑",
-      "trend_raw": 10.74,
+      "value": "$105.49/thùng",
+      "trend": "+11.8% ↑",
+      "trend_raw": 11.75,
       "threshold": ">95 USD/thùng",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -17,20 +17,20 @@
     {
       "category": "",
       "indicator": "Xung đột Hormuz",
-      "value": "Căng thẳng leo thang",
+      "value": "Bình thường",
       "trend": "—",
       "trend_raw": null,
       "threshold": "Có phong tỏa",
-      "status": "warning",
-      "statusLabel": "CẢNH GIÁC",
+      "status": "success",
+      "statusLabel": "Bình thường",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 02:55 UTC: 41 tin <24h / 50 tổng (reuters.com: lỗi, bbci.co.uk: 16/25 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran war live: tehran says us ports siege ‘intolerable’; trump mulls action...\" (00:00 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 06:16 UTC: 43 tin <24h / 50 tổng (reuters.com: lỗi, bbci.co.uk: 18/25 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran war: what’s happening on day 63 as trump signals possible attacks...\" (05:37 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
-        "status_key": "tension",
-        "hormuz_count": 7,
-        "fresh_total": 41,
-        "scanned_at": "2026-05-01T02:55:29Z",
+        "status_key": "none",
+        "hormuz_count": 8,
+        "fresh_total": 43,
+        "scanned_at": "2026-05-01T06:16:19Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -154,7 +154,7 @@
     {
       "category": "",
       "indicator": "2s10s spread",
-      "value": "+0.51% (3.88% vs 4.39%)",
+      "value": "+0.58% (3.81% vs 4.39%)",
       "trend": "-0.01pp ↓",
       "trend_raw": -0.01,
       "threshold": "Đảo ngược âm",
@@ -167,9 +167,9 @@
     {
       "category": "",
       "indicator": "DXY (USD Index)",
-      "value": "98.15",
-      "trend": "-0.7% ↓",
-      "trend_raw": -0.66,
+      "value": "98.22",
+      "trend": "-0.3% ↓",
+      "trend_raw": -0.29,
       "threshold": ">107",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -177,13 +177,13 @@
       "link": "https://finance.yahoo.com/quote/DX-Y.NYB/",
       "note": "US Dollar Index — DXY tăng mạnh >107 = USD siết chặt thanh khoản, rủi ro tài sản rủi ro tăng.",
       "_meta": {
-        "dxy": 98.15
+        "dxy": 98.223
       }
     }
   ],
   "risk": {
-    "score": 70,
-    "base_score": 46,
+    "score": 66,
+    "base_score": 44,
     "multiplier": 1.5,
     "level": "CẢNH BÁO CAO",
     "color": "danger",
@@ -193,14 +193,14 @@
       "ETF outflow > $5B/7d"
     ],
     "breakdown": {
-      "geo": 76.0,
+      "geo": 60.0,
       "inst": 70.0,
       "market": 33.0,
       "macro": 22.0
     },
     "indicator_scores": {
       "oil": 10,
-      "hormuz": 4,
+      "hormuz": 0,
       "cot": 10,
       "etf_flow": 10,
       "sentiment": 0,
