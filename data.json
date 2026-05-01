@@ -1,12 +1,12 @@
 {
-  "last_updated": "13:16 Friday, 01/05/2026 (GMT+7)",
+  "last_updated": "15:59 Friday, 01/05/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
       "indicator": "Dầu WTI",
-      "value": "$105.49/thùng",
-      "trend": "+11.8% ↑",
-      "trend_raw": 11.75,
+      "value": "$105.42/thùng",
+      "trend": "+11.7% ↑",
+      "trend_raw": 11.67,
       "threshold": ">95 USD/thùng",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -25,12 +25,12 @@
       "statusLabel": "Bình thường",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 06:16 UTC: 43 tin <24h / 50 tổng (reuters.com: lỗi, bbci.co.uk: 18/25 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran war: what’s happening on day 63 as trump signals possible attacks...\" (05:37 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 08:59 UTC: 48 tin <24h / 54 tổng (reuters.com: lỗi, bbci.co.uk: 23/29 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran vows ‘long, painful’ response if us renews attacks...\" (07:32 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "none",
         "hormuz_count": 8,
-        "fresh_total": 43,
-        "scanned_at": "2026-05-01T06:16:19Z",
+        "fresh_total": 48,
+        "scanned_at": "2026-05-01T08:59:51Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -70,28 +70,28 @@
     {
       "category": "",
       "indicator": "Sentiment (NAAIM vs AAII)",
-      "value": "Retail 67% / Inst 94% → diff -28pp",
-      "trend": "-28pp ↓",
-      "trend_raw": -27.5,
+      "value": "N/A",
+      "trend": "—",
+      "trend_raw": null,
       "threshold": "Retail − Inst > +25pp",
       "status": "success",
       "statusLabel": "Bình thường",
       "source": "NAAIM Exposure Index · AAII Sentiment Survey",
       "link": "https://www.naaim.org/resources/naaim-exposure-index/",
-      "note": "Diff = retailBull% − instBull%. Dương cao = retail quá lạc quan vs tổ chức → contrarian bearish signal.",
+      "note": "Không lấy được dữ liệu: AAII: Không lấy được AAII data từ Stooq hoặc aaii.com",
       "_meta": {
         "naaim": 94.15,
         "inst_bull": 94.2,
-        "aaii_bull": 66.7,
-        "aaii_bear": 0.0
+        "aaii_bull": null,
+        "aaii_bear": null
       }
     },
     {
       "category": "Thị trường",
       "indicator": "VIX",
-      "value": "16.89",
-      "trend": "-12.5% ↓",
-      "trend_raw": -12.53,
+      "value": "17.09",
+      "trend": "-8.7% ↓",
+      "trend_raw": -8.66,
       "threshold": ">30",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -102,7 +102,7 @@
     {
       "category": "",
       "indicator": "VIX futures curve",
-      "value": "Contango nhẹ (spot 16.9 → M1~272)",
+      "value": "Contango nhẹ (spot 17.1 → M1~272)",
       "trend": "-4.5% ↓",
       "trend_raw": -4.52,
       "threshold": "Backwardation",
@@ -167,9 +167,9 @@
     {
       "category": "",
       "indicator": "DXY (USD Index)",
-      "value": "98.22",
-      "trend": "-0.3% ↓",
-      "trend_raw": -0.29,
+      "value": "98.01",
+      "trend": "-0.5% ↓",
+      "trend_raw": -0.51,
       "threshold": ">107",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -177,13 +177,13 @@
       "link": "https://finance.yahoo.com/quote/DX-Y.NYB/",
       "note": "US Dollar Index — DXY tăng mạnh >107 = USD siết chặt thanh khoản, rủi ro tài sản rủi ro tăng.",
       "_meta": {
-        "dxy": 98.223
+        "dxy": 98.008
       }
     }
   ],
   "risk": {
-    "score": 66,
-    "base_score": 44,
+    "score": 68,
+    "base_score": 46,
     "multiplier": 1.5,
     "level": "CẢNH BÁO CAO",
     "color": "danger",
@@ -194,7 +194,7 @@
     ],
     "breakdown": {
       "geo": 60.0,
-      "inst": 70.0,
+      "inst": 76.0,
       "market": 33.0,
       "macro": 22.0
     },
@@ -203,7 +203,7 @@
       "hormuz": 0,
       "cot": 10,
       "etf_flow": 10,
-      "sentiment": 0,
+      "sentiment": 2,
       "vix_curve": 4,
       "vix": 2,
       "put_call": 7,
