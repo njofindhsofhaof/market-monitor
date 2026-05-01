@@ -1,5 +1,5 @@
 {
-  "scanned_at": "2026-05-01T13:45:56.075930+00:00",
+  "scanned_at": "2026-05-01T14:54:22.652289+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
@@ -11,12 +11,12 @@
     "statusLabel": "Bình thường",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 13:45 UTC: 53 tin <24h / 61 tổng (reuters.com: lỗi, bbci.co.uk: 28/36 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Has the us-iran ceasefire reset the clock on war powers act deadline?...\" (10:56 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 14:54 UTC: 52 tin <24h / 61 tổng (reuters.com: lỗi, bbci.co.uk: 27/36 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Has the us-iran ceasefire reset the clock on war powers act deadline?...\" (10:56 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
     "_meta": {
       "status_key": "none",
-      "hormuz_count": 8,
-      "fresh_total": 53,
-      "scanned_at": "2026-05-01T13:45:56Z",
+      "hormuz_count": 5,
+      "fresh_total": 52,
+      "scanned_at": "2026-05-01T14:54:22Z",
       "classify_source": "keyword fallback"
     }
   }

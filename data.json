@@ -1,12 +1,12 @@
 {
-  "last_updated": "20:46 Friday, 01/05/2026 (GMT+7)",
+  "last_updated": "21:54 Friday, 01/05/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
       "indicator": "Dầu WTI",
-      "value": "$101.96/thùng",
-      "trend": "+8.0% ↑",
-      "trend_raw": 8.01,
+      "value": "$101.28/thùng",
+      "trend": "+7.3% ↑",
+      "trend_raw": 7.29,
       "threshold": ">95 USD/thùng",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -25,12 +25,12 @@
       "statusLabel": "Bình thường",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 13:45 UTC: 53 tin <24h / 61 tổng (reuters.com: lỗi, bbci.co.uk: 28/36 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Has the us-iran ceasefire reset the clock on war powers act deadline?...\" (10:56 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 14:54 UTC: 52 tin <24h / 61 tổng (reuters.com: lỗi, bbci.co.uk: 27/36 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Has the us-iran ceasefire reset the clock on war powers act deadline?...\" (10:56 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "none",
-        "hormuz_count": 8,
-        "fresh_total": 53,
-        "scanned_at": "2026-05-01T13:45:56Z",
+        "hormuz_count": 5,
+        "fresh_total": 52,
+        "scanned_at": "2026-05-01T14:54:22Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -54,9 +54,9 @@
     {
       "category": "",
       "indicator": "ETF Flows (SPY+QQQ)",
-      "value": "-7.67B USD (SPY: +3.48B/9d, QQQ: -11.15B/9d)",
-      "trend": "-7.67B ↓",
-      "trend_raw": -7.67,
+      "value": "-9.45B USD (SPY: +2.55B/9d, QQQ: -12.00B/9d)",
+      "trend": "-9.45B ↓",
+      "trend_raw": -9.45,
       "threshold": "Outflow > −2B USD/7d",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -64,7 +64,7 @@
       "link": "https://etf.com/etfanalytics/etf-fund-flows-tool",
       "note": "SPY: implied shares từ SPDR daily holdings. QQQ: totalAssets/price. Cần 2+ ngày snapshot.",
       "_meta": {
-        "flow_b": -7.67
+        "flow_b": -9.45
       }
     },
     {
@@ -89,9 +89,9 @@
     {
       "category": "Thị trường",
       "indicator": "VIX",
-      "value": "16.81",
-      "trend": "-10.2% ↓",
-      "trend_raw": -10.15,
+      "value": "16.74",
+      "trend": "-10.5% ↓",
+      "trend_raw": -10.53,
       "threshold": ">30",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -102,9 +102,9 @@
     {
       "category": "",
       "indicator": "VIX futures curve",
-      "value": "Contango nhẹ (spot 16.8 → M1~269)",
+      "value": "Contango nhẹ (spot 16.7 → M1~269)",
       "trend": "-6.4% ↓",
-      "trend_raw": -6.36,
+      "trend_raw": -6.41,
       "threshold": "Backwardation",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -115,9 +115,9 @@
     {
       "category": "",
       "indicator": "HYG/TLT ratio",
-      "value": "0.9375",
-      "trend": "+1.0% ↑",
-      "trend_raw": 1.0,
+      "value": "0.9352",
+      "trend": "+0.8% ↑",
+      "trend_raw": 0.76,
       "threshold": "Giảm >5%/tuần",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -128,12 +128,12 @@
     {
       "category": "",
       "indicator": "Put/Call ratio",
-      "value": "1.172",
-      "trend": "+14.0% ↑",
-      "trend_raw": 14.01,
+      "value": "0.905",
+      "trend": "-12.0% ↓",
+      "trend_raw": -11.96,
       "threshold": ">1.1",
-      "status": "danger",
-      "statusLabel": "CẢNH BÁO",
+      "status": "success",
+      "statusLabel": "Bình thường",
       "source": "Yahoo Finance (SPY options)",
       "link": "https://finance.yahoo.com/quote/SPY/options/",
       "note": "SPY options exp 2026-05-01 — tỷ lệ put/call đo mức phòng thủ nhà đầu tư"
@@ -141,9 +141,9 @@
     {
       "category": "Vĩ mô",
       "indicator": "10-year yield",
-      "value": "4.40%",
-      "trend": "+2.0% ↑",
-      "trend_raw": 2.0,
+      "value": "4.36%",
+      "trend": "+1.2% ↑",
+      "trend_raw": 1.21,
       "threshold": ">4.5%",
       "status": "warning",
       "statusLabel": "CẢNH GIÁC",
@@ -154,9 +154,9 @@
     {
       "category": "",
       "indicator": "2s10s spread",
-      "value": "+0.59% (3.81% vs 4.40%)",
-      "trend": "+0.01pp ↑",
-      "trend_raw": 0.009,
+      "value": "+0.56% (3.81% vs 4.36%)",
+      "trend": "-0.03pp ↓",
+      "trend_raw": -0.025,
       "threshold": "Đảo ngược âm",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -167,9 +167,9 @@
     {
       "category": "",
       "indicator": "DXY (USD Index)",
-      "value": "97.92",
-      "trend": "-0.6% ↓",
-      "trend_raw": -0.6,
+      "value": "97.82",
+      "trend": "-0.7% ↓",
+      "trend_raw": -0.7,
       "threshold": ">107",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -177,13 +177,13 @@
       "link": "https://finance.yahoo.com/quote/DX-Y.NYB/",
       "note": "US Dollar Index — DXY tăng mạnh >107 = USD siết chặt thanh khoản, rủi ro tài sản rủi ro tăng.",
       "_meta": {
-        "dxy": 97.916
+        "dxy": 97.824
       }
     }
   ],
   "risk": {
-    "score": 61,
-    "base_score": 41,
+    "score": 59,
+    "base_score": 39,
     "multiplier": 1.5,
     "level": "CẢNH BÁO CAO",
     "color": "danger",
@@ -195,8 +195,8 @@
     "breakdown": {
       "geo": 54.0,
       "inst": 64.0,
-      "market": 33.0,
-      "macro": 18.0
+      "market": 27.0,
+      "macro": 22.0
     },
     "indicator_scores": {
       "oil": 9,
@@ -206,9 +206,9 @@
       "sentiment": 0,
       "vix_curve": 4,
       "vix": 2,
-      "put_call": 7,
+      "put_call": 4,
       "hyg_tlt": 0,
-      "spread": 0,
+      "spread": 1,
       "dxy": 0,
       "yield_10y": 6
     }
