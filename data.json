@@ -1,12 +1,12 @@
 {
-  "last_updated": "06:52 Friday, 01/05/2026 (GMT+7)",
+  "last_updated": "09:55 Friday, 01/05/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
       "indicator": "Dầu WTI",
-      "value": "$105.73/thùng",
-      "trend": "+10.3% ↑",
-      "trend_raw": 10.31,
+      "value": "$106.14/thùng",
+      "trend": "+10.7% ↑",
+      "trend_raw": 10.74,
       "threshold": ">95 USD/thùng",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -25,12 +25,12 @@
       "statusLabel": "CẢNH GIÁC",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 23:52 UTC: 49 tin <24h / 56 tổng (reuters.com: lỗi, bbci.co.uk: 24/31 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Us gas reaches $4.30 per gallon; trump says prices will drop after iran war...\" (21:31 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 02:55 UTC: 41 tin <24h / 50 tổng (reuters.com: lỗi, bbci.co.uk: 16/25 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran war live: tehran says us ports siege ‘intolerable’; trump mulls action...\" (00:00 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "tension",
-        "hormuz_count": 6,
-        "fresh_total": 49,
-        "scanned_at": "2026-04-30T23:52:08Z",
+        "hormuz_count": 7,
+        "fresh_total": 41,
+        "scanned_at": "2026-05-01T02:55:29Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -128,15 +128,15 @@
     {
       "category": "",
       "indicator": "Put/Call ratio",
-      "value": "1.101",
-      "trend": "+7.1% ↑",
-      "trend_raw": 7.1,
+      "value": "1.172",
+      "trend": "+14.0% ↑",
+      "trend_raw": 14.01,
       "threshold": ">1.1",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
       "source": "Yahoo Finance (SPY options)",
       "link": "https://finance.yahoo.com/quote/SPY/options/",
-      "note": "SPY options exp 2026-04-30 — tỷ lệ put/call đo mức phòng thủ nhà đầu tư"
+      "note": "SPY options exp 2026-05-01 — tỷ lệ put/call đo mức phòng thủ nhà đầu tư"
     },
     {
       "category": "Vĩ mô",
@@ -154,9 +154,9 @@
     {
       "category": "",
       "indicator": "2s10s spread",
-      "value": "+0.58% (3.81% vs 4.39%)",
-      "trend": "+0.07pp ↑",
-      "trend_raw": 0.067,
+      "value": "+0.51% (3.88% vs 4.39%)",
+      "trend": "-0.01pp ↓",
+      "trend_raw": -0.01,
       "threshold": "Đảo ngược âm",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -167,9 +167,9 @@
     {
       "category": "",
       "indicator": "DXY (USD Index)",
-      "value": "98.09",
+      "value": "98.15",
       "trend": "-0.7% ↓",
-      "trend_raw": -0.72,
+      "trend_raw": -0.66,
       "threshold": ">107",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -177,12 +177,12 @@
       "link": "https://finance.yahoo.com/quote/DX-Y.NYB/",
       "note": "US Dollar Index — DXY tăng mạnh >107 = USD siết chặt thanh khoản, rủi ro tài sản rủi ro tăng.",
       "_meta": {
-        "dxy": 98.091
+        "dxy": 98.15
       }
     }
   ],
   "risk": {
-    "score": 69,
+    "score": 70,
     "base_score": 46,
     "multiplier": 1.5,
     "level": "CẢNH BÁO CAO",
@@ -196,7 +196,7 @@
       "geo": 76.0,
       "inst": 70.0,
       "market": 33.0,
-      "macro": 18.0
+      "macro": 22.0
     },
     "indicator_scores": {
       "oil": 10,
@@ -208,7 +208,7 @@
       "vix": 2,
       "put_call": 7,
       "hyg_tlt": 0,
-      "spread": 0,
+      "spread": 1,
       "dxy": 0,
       "yield_10y": 6
     }
