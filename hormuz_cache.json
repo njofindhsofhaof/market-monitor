@@ -1,5 +1,5 @@
 {
-  "scanned_at": "2026-05-02T09:04:55.823114+00:00",
+  "scanned_at": "2026-05-02T10:50:55.229692+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
@@ -11,12 +11,12 @@
     "statusLabel": "CẢNH GIÁC",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 09:04 UTC: 45 tin <24h / 64 tổng (reuters.com: lỗi, bbci.co.uk: 20/39 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"China’s un envoy: hormuz closure will dominate trump-xi talks...\" (07:37 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 10:50 UTC: 45 tin <24h / 64 tổng (reuters.com: lỗi, bbci.co.uk: 20/39 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"China’s un envoy: hormuz closure will dominate trump-xi talks...\" (07:37 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
     "_meta": {
       "status_key": "tension",
       "hormuz_count": 8,
       "fresh_total": 45,
-      "scanned_at": "2026-05-02T09:04:55Z",
+      "scanned_at": "2026-05-02T10:50:55Z",
       "classify_source": "keyword fallback"
     }
   }

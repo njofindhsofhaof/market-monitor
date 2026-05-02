@@ -1,5 +1,5 @@
 {
-  "last_updated": "16:05 Saturday, 02/05/2026 (GMT+7)",
+  "last_updated": "17:51 Saturday, 02/05/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
@@ -25,12 +25,12 @@
       "statusLabel": "CẢNH GIÁC",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 09:04 UTC: 45 tin <24h / 64 tổng (reuters.com: lỗi, bbci.co.uk: 20/39 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"China’s un envoy: hormuz closure will dominate trump-xi talks...\" (07:37 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 10:50 UTC: 45 tin <24h / 64 tổng (reuters.com: lỗi, bbci.co.uk: 20/39 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"China’s un envoy: hormuz closure will dominate trump-xi talks...\" (07:37 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "tension",
         "hormuz_count": 8,
         "fresh_total": 45,
-        "scanned_at": "2026-05-02T09:04:55Z",
+        "scanned_at": "2026-05-02T10:50:55Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -70,20 +70,20 @@
     {
       "category": "",
       "indicator": "Sentiment (NAAIM vs AAII)",
-      "value": "N/A",
-      "trend": "—",
-      "trend_raw": null,
+      "value": "Retail 50% / Inst 94% → diff -44pp",
+      "trend": "-44pp ↓",
+      "trend_raw": -43.8,
       "threshold": "Retail − Inst > +25pp",
       "status": "success",
       "statusLabel": "Bình thường",
       "source": "NAAIM Exposure Index · AAII Sentiment Survey",
       "link": "https://www.naaim.org/resources/naaim-exposure-index/",
-      "note": "Không lấy được dữ liệu: AAII: Không lấy được AAII data từ Stooq hoặc aaii.com",
+      "note": "Diff = retailBull% − instBull%. Dương cao = retail quá lạc quan vs tổ chức → contrarian bearish signal.",
       "_meta": {
         "naaim": 93.79,
         "inst_bull": 93.8,
-        "aaii_bull": null,
-        "aaii_bear": null
+        "aaii_bull": 50.0,
+        "aaii_bear": 0.0
       }
     },
     {
@@ -182,8 +182,8 @@
     }
   ],
   "risk": {
-    "score": 67,
-    "base_score": 45,
+    "score": 65,
+    "base_score": 43,
     "multiplier": 1.5,
     "level": "CẢNH BÁO CAO",
     "color": "danger",
@@ -194,7 +194,7 @@
     ],
     "breakdown": {
       "geo": 70.0,
-      "inst": 70.0,
+      "inst": 64.0,
       "market": 33.0,
       "macro": 18.0
     },
@@ -203,7 +203,7 @@
       "hormuz": 4,
       "cot": 10,
       "etf_flow": 8,
-      "sentiment": 2,
+      "sentiment": 0,
       "vix_curve": 4,
       "vix": 2,
       "put_call": 7,
