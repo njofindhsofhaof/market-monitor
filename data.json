@@ -1,5 +1,5 @@
 {
-  "last_updated": "12:36 Saturday, 02/05/2026 (GMT+7)",
+  "last_updated": "14:42 Saturday, 02/05/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
@@ -17,20 +17,20 @@
     {
       "category": "",
       "indicator": "Xung đột Hormuz",
-      "value": "Căng thẳng leo thang",
+      "value": "Bình thường",
       "trend": "—",
       "trend_raw": null,
       "threshold": "Có phong tỏa",
-      "status": "warning",
-      "statusLabel": "CẢNH GIÁC",
+      "status": "success",
+      "statusLabel": "Bình thường",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 05:36 UTC: 47 tin <24h / 63 tổng (reuters.com: lỗi, bbci.co.uk: 22/38 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Trump says us forces are ‘like pirates’ taking iranian oil...\" (04:35 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 07:42 UTC: 47 tin <24h / 64 tổng (reuters.com: lỗi, bbci.co.uk: 22/39 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran war: what’s happening on day 64 as trump rejects tehran’s proposal...\" (06:27 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
-        "status_key": "tension",
-        "hormuz_count": 9,
+        "status_key": "none",
+        "hormuz_count": 8,
         "fresh_total": 47,
-        "scanned_at": "2026-05-02T05:36:02Z",
+        "scanned_at": "2026-05-02T07:42:29Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -182,8 +182,8 @@
     }
   ],
   "risk": {
-    "score": 65,
-    "base_score": 43,
+    "score": 61,
+    "base_score": 41,
     "multiplier": 1.5,
     "level": "CẢNH BÁO CAO",
     "color": "danger",
@@ -193,14 +193,14 @@
       "ETF outflow > $5B/7d"
     ],
     "breakdown": {
-      "geo": 70.0,
+      "geo": 54.0,
       "inst": 64.0,
       "market": 33.0,
       "macro": 18.0
     },
     "indicator_scores": {
       "oil": 9,
-      "hormuz": 4,
+      "hormuz": 0,
       "cot": 10,
       "etf_flow": 8,
       "sentiment": 0,
