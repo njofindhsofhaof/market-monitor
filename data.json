@@ -1,5 +1,5 @@
 {
-  "last_updated": "18:43 Saturday, 02/05/2026 (GMT+7)",
+  "last_updated": "20:08 Saturday, 02/05/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
@@ -25,12 +25,12 @@
       "statusLabel": "CẢNH GIÁC",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 11:43 UTC: 45 tin <24h / 64 tổng (reuters.com: lỗi, bbci.co.uk: 20/39 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Trump says us navy acting ‘like pirates’ to enforce iran blockade...\" (11:34 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 13:08 UTC: 45 tin <24h / 65 tổng (reuters.com: lỗi, bbci.co.uk: 20/40 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Trump says us navy acting ‘like pirates’ to enforce iran blockade...\" (11:34 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "tension",
-        "hormuz_count": 9,
+        "hormuz_count": 8,
         "fresh_total": 45,
-        "scanned_at": "2026-05-02T11:43:40Z",
+        "scanned_at": "2026-05-02T13:08:37Z",
         "classify_source": "keyword fallback"
       }
     },
