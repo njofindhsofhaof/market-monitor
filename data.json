@@ -1,5 +1,5 @@
 {
-  "last_updated": "04:39 Sunday, 03/05/2026 (GMT+7)",
+  "last_updated": "05:40 Sunday, 03/05/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
@@ -25,12 +25,12 @@
       "statusLabel": "CẢNH GIÁC",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 21:39 UTC: 40 tin <24h / 65 tổng (reuters.com: lỗi, bbci.co.uk: 15/40 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Spirit airlines collapses amid rising fuel costs from war on iran...\" (20:28 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 22:39 UTC: 38 tin <24h / 65 tổng (reuters.com: lỗi, bbci.co.uk: 13/40 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Spirit airlines collapses amid rising fuel costs from war on iran...\" (20:28 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "tension",
         "hormuz_count": 4,
-        "fresh_total": 40,
-        "scanned_at": "2026-05-02T21:39:26Z",
+        "fresh_total": 38,
+        "scanned_at": "2026-05-02T22:39:59Z",
         "classify_source": "keyword fallback"
       }
     },
