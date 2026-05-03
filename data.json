@@ -1,5 +1,5 @@
 {
-  "last_updated": "09:48 Sunday, 03/05/2026 (GMT+7)",
+  "last_updated": "12:58 Sunday, 03/05/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
@@ -25,12 +25,12 @@
       "statusLabel": "CẢNH GIÁC",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 02:47 UTC: 42 tin <24h / 64 tổng (reuters.com: lỗi, bbci.co.uk: 17/39 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran war live: trump says reviewing 14-point plan; israel pounds lebanon...\" (00:00 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 05:58 UTC: 40 tin <24h / 64 tổng (reuters.com: lỗi, bbci.co.uk: 15/39 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Millions of jobs lost as iranians battle ‘operation economic fury’...\" (04:35 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "tension",
-        "hormuz_count": 5,
-        "fresh_total": 42,
-        "scanned_at": "2026-05-03T02:47:50Z",
+        "hormuz_count": 8,
+        "fresh_total": 40,
+        "scanned_at": "2026-05-03T05:58:25Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -154,7 +154,7 @@
     {
       "category": "",
       "indicator": "2s10s spread",
-      "value": "+0.56% (3.82% vs 4.38%)",
+      "value": "+0.57% (3.81% vs 4.38%)",
       "trend": "+0.06pp ↑",
       "trend_raw": 0.058,
       "threshold": "Đảo ngược âm",
@@ -177,7 +177,7 @@
       "link": "https://finance.yahoo.com/quote/DX-Y.NYB/",
       "note": "US Dollar Index — DXY tăng mạnh >107 = USD siết chặt thanh khoản, rủi ro tài sản rủi ro tăng.",
       "_meta": {
-        "dxy": 98.21
+        "dxy": 98.211
       }
     }
   ],
