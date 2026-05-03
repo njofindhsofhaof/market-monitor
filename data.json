@@ -1,5 +1,5 @@
 {
-  "last_updated": "15:09 Sunday, 03/05/2026 (GMT+7)",
+  "last_updated": "17:03 Sunday, 03/05/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
@@ -17,20 +17,20 @@
     {
       "category": "",
       "indicator": "Xung đột Hormuz",
-      "value": "Có đề cập — theo dõi thêm",
+      "value": "Bình thường",
       "trend": "—",
       "trend_raw": null,
       "threshold": "Có phong tỏa",
-      "status": "warning",
-      "statusLabel": "CẢNH GIÁC",
+      "status": "success",
+      "statusLabel": "Bình thường",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 08:09 UTC: 43 tin <24h / 64 tổng (reuters.com: lỗi, bbci.co.uk: 18/39 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran war: what’s happening on day 65 as trump reviews new plan to end war?...\" (07:02 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 10:03 UTC: 42 tin <24h / 64 tổng (reuters.com: lỗi, bbci.co.uk: 17/39 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran war: what’s happening on day 65 as trump reviews new plan to end war?...\" (07:02 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
-        "status_key": "tension",
-        "hormuz_count": 7,
-        "fresh_total": 43,
-        "scanned_at": "2026-05-03T08:09:05Z",
+        "status_key": "none",
+        "hormuz_count": 6,
+        "fresh_total": 42,
+        "scanned_at": "2026-05-03T10:03:13Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -70,18 +70,18 @@
     {
       "category": "",
       "indicator": "Sentiment (NAAIM vs AAII)",
-      "value": "Retail 50% / Inst 94% → diff -44pp",
-      "trend": "-44pp ↓",
-      "trend_raw": -43.8,
+      "value": "AAII Bull 50% / Bear 0% (NAAIM N/A)",
+      "trend": "—",
+      "trend_raw": null,
       "threshold": "Retail − Inst > +25pp",
-      "status": "success",
-      "statusLabel": "Bình thường",
+      "status": "danger",
+      "statusLabel": "CẢNH BÁO",
       "source": "NAAIM Exposure Index · AAII Sentiment Survey",
       "link": "https://www.naaim.org/resources/naaim-exposure-index/",
-      "note": "Diff = retailBull% − instBull%. Dương cao = retail quá lạc quan vs tổ chức → contrarian bearish signal.",
+      "note": "NAAIM không lấy được. Chỉ dùng AAII Bull−Bear spread làm proxy.",
       "_meta": {
-        "naaim": 93.79,
-        "inst_bull": 93.8,
+        "naaim": null,
+        "inst_bull": null,
         "aaii_bull": 50.0,
         "aaii_bear": 0.0
       }
@@ -182,8 +182,8 @@
     }
   ],
   "risk": {
-    "score": 59,
-    "base_score": 42,
+    "score": 57,
+    "base_score": 41,
     "multiplier": 1.4,
     "level": "CẢNH BÁO CAO",
     "color": "danger",
@@ -192,17 +192,17 @@
       "Dầu WTI > $100/thùng"
     ],
     "breakdown": {
-      "geo": 70.0,
-      "inst": 58.0,
+      "geo": 54.0,
+      "inst": 64.0,
       "market": 33.0,
       "macro": 18.0
     },
     "indicator_scores": {
       "oil": 9,
-      "hormuz": 4,
+      "hormuz": 0,
       "cot": 10,
       "etf_flow": 6,
-      "sentiment": 0,
+      "sentiment": 2,
       "vix_curve": 4,
       "vix": 2,
       "put_call": 7,
