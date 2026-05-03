@@ -1,5 +1,5 @@
 {
-  "last_updated": "00:45 Monday, 04/05/2026 (GMT+7)",
+  "last_updated": "01:58 Monday, 04/05/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
@@ -25,12 +25,12 @@
       "statusLabel": "CẢNH BÁO",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 17:45 UTC: 45 tin <24h / 63 tổng (reuters.com: lỗi, bbci.co.uk: 20/38 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Bulk carrier attacked by multiple small craft off iran, ukmto says...\" (16:47 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 18:58 UTC: 45 tin <24h / 63 tổng (reuters.com: lỗi, bbci.co.uk: 20/38 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Bulk carrier attacked by multiple small craft off iran, ukmto says...\" (16:47 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "full_blockade",
         "hormuz_count": 6,
         "fresh_total": 45,
-        "scanned_at": "2026-05-03T17:45:41Z",
+        "scanned_at": "2026-05-03T18:58:11Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -54,17 +54,17 @@
     {
       "category": "",
       "indicator": "ETF Flows (SPY+QQQ)",
-      "value": "-2.38B USD (SPY: +5.39B/10d, QQQ: -7.77B/10d)",
-      "trend": "-2.38B ↓",
-      "trend_raw": -2.38,
+      "value": "+2.26B USD (SPY: +7.98B/9d, QQQ: -5.72B/9d)",
+      "trend": "+2.26B ↑",
+      "trend_raw": 2.2600000000000007,
       "threshold": "Outflow > −2B USD/7d",
-      "status": "warning",
-      "statusLabel": "CẢNH GIÁC",
+      "status": "success",
+      "statusLabel": "Bình thường",
       "source": "SPDR holdings xlsx (SPY) + Yahoo Finance (QQQ)",
       "link": "https://etf.com/etfanalytics/etf-fund-flows-tool",
       "note": "SPY: implied shares từ SPDR daily holdings. QQQ: totalAssets/price. Cần 2+ ngày snapshot.",
       "_meta": {
-        "flow_b": -2.38
+        "flow_b": 2.2600000000000007
       }
     },
     {
@@ -182,8 +182,8 @@
     }
   ],
   "risk": {
-    "score": 64,
-    "base_score": 45,
+    "score": 58,
+    "base_score": 42,
     "multiplier": 1.4,
     "level": "CẢNH BÁO CAO",
     "color": "danger",
@@ -193,7 +193,7 @@
     ],
     "breakdown": {
       "geo": 94.0,
-      "inst": 58.0,
+      "inst": 43.0,
       "market": 33.0,
       "macro": 18.0
     },
@@ -201,7 +201,7 @@
       "oil": 9,
       "hormuz": 10,
       "cot": 10,
-      "etf_flow": 6,
+      "etf_flow": 1,
       "sentiment": 0,
       "vix_curve": 4,
       "vix": 2,
