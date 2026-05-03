@@ -1,5 +1,5 @@
 {
-  "last_updated": "12:58 Sunday, 03/05/2026 (GMT+7)",
+  "last_updated": "15:09 Sunday, 03/05/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
@@ -25,12 +25,12 @@
       "statusLabel": "CẢNH GIÁC",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 05:58 UTC: 40 tin <24h / 64 tổng (reuters.com: lỗi, bbci.co.uk: 15/39 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Millions of jobs lost as iranians battle ‘operation economic fury’...\" (04:35 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 08:09 UTC: 43 tin <24h / 64 tổng (reuters.com: lỗi, bbci.co.uk: 18/39 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran war: what’s happening on day 65 as trump reviews new plan to end war?...\" (07:02 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "tension",
-        "hormuz_count": 8,
-        "fresh_total": 40,
-        "scanned_at": "2026-05-03T05:58:25Z",
+        "hormuz_count": 7,
+        "fresh_total": 43,
+        "scanned_at": "2026-05-03T08:09:05Z",
         "classify_source": "keyword fallback"
       }
     },
