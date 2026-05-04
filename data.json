@@ -1,12 +1,12 @@
 {
-  "last_updated": "16:16 Monday, 04/05/2026 (GMT+7)",
+  "last_updated": "18:47 Monday, 04/05/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
       "indicator": "Dầu WTI",
-      "value": "$102.91/thùng",
-      "trend": "+6.8% ↑",
-      "trend_raw": 6.79,
+      "value": "$105.00/thùng",
+      "trend": "+9.0% ↑",
+      "trend_raw": 8.96,
       "threshold": ">95 USD/thùng",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -25,12 +25,12 @@
       "statusLabel": "CẢNH GIÁC",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 09:16 UTC: 34 tin <24h / 62 tổng (reuters.com: lỗi, bbci.co.uk: 9/37 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Japan pm: hormuz closure ‘inflicting enormous impact’ on asia pacific...\" (08:27 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 11:47 UTC: 38 tin <24h / 62 tổng (reuters.com: lỗi, bbci.co.uk: 13/37 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"What is the ukrainian anti-drone system sky map being used in the gulf?...\" (11:27 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "tension",
-        "hormuz_count": 9,
-        "fresh_total": 34,
-        "scanned_at": "2026-05-04T09:16:25Z",
+        "hormuz_count": 11,
+        "fresh_total": 38,
+        "scanned_at": "2026-05-04T11:47:39Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -54,9 +54,9 @@
     {
       "category": "",
       "indicator": "ETF Flows (SPY+QQQ)",
-      "value": "+2.26B USD (SPY: +7.98B/9d, QQQ: -5.72B/9d)",
-      "trend": "+2.26B ↑",
-      "trend_raw": 2.2600000000000007,
+      "value": "+4.89B USD (SPY: +10.61B/9d, QQQ: -5.72B/9d)",
+      "trend": "+4.89B ↑",
+      "trend_raw": 4.89,
       "threshold": "Outflow > −2B USD/7d",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -64,7 +64,7 @@
       "link": "https://etf.com/etfanalytics/etf-fund-flows-tool",
       "note": "SPY: implied shares từ SPDR daily holdings. QQQ: totalAssets/price. Cần 2+ ngày snapshot.",
       "_meta": {
-        "flow_b": 2.2600000000000007
+        "flow_b": 4.89
       }
     },
     {
@@ -89,9 +89,9 @@
     {
       "category": "Thị trường",
       "indicator": "VIX",
-      "value": "17.52",
-      "trend": "-2.8% ↓",
-      "trend_raw": -2.77,
+      "value": "18.05",
+      "trend": "+0.2% ↑",
+      "trend_raw": 0.17,
       "threshold": ">30",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -102,7 +102,7 @@
     {
       "category": "",
       "indicator": "VIX futures curve",
-      "value": "Contango nhẹ (spot 17.5 → M1~274)",
+      "value": "Contango nhẹ (spot 18.1 → M1~274)",
       "trend": "-4.7% ↓",
       "trend_raw": -4.66,
       "threshold": "Backwardation",
@@ -154,9 +154,9 @@
     {
       "category": "",
       "indicator": "2s10s spread",
-      "value": "+0.57% (3.81% vs 4.38%)",
-      "trend": "+0.06pp ↑",
-      "trend_raw": 0.058,
+      "value": "+0.58% (3.80% vs 4.38%)",
+      "trend": "+0.07pp ↑",
+      "trend_raw": 0.074,
       "threshold": "Đảo ngược âm",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -167,9 +167,9 @@
     {
       "category": "",
       "indicator": "DXY (USD Index)",
-      "value": "98.21",
-      "trend": "-0.3% ↓",
-      "trend_raw": -0.27,
+      "value": "98.40",
+      "trend": "-0.1% ↓",
+      "trend_raw": -0.09,
       "threshold": ">107",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -177,13 +177,13 @@
       "link": "https://finance.yahoo.com/quote/DX-Y.NYB/",
       "note": "US Dollar Index — DXY tăng mạnh >107 = USD siết chặt thanh khoản, rủi ro tài sản rủi ro tăng.",
       "_meta": {
-        "dxy": 98.214
+        "dxy": 98.396
       }
     }
   ],
   "risk": {
-    "score": 53,
-    "base_score": 38,
+    "score": 55,
+    "base_score": 39,
     "multiplier": 1.4,
     "level": "CẢNH GIÁC",
     "color": "warning",
@@ -192,13 +192,13 @@
       "Dầu WTI > $100/thùng"
     ],
     "breakdown": {
-      "geo": 70.0,
+      "geo": 76.0,
       "inst": 43.0,
       "market": 33.0,
       "macro": 18.0
     },
     "indicator_scores": {
-      "oil": 9,
+      "oil": 10,
       "hormuz": 4,
       "cot": 10,
       "etf_flow": 1,
