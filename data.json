@@ -1,12 +1,12 @@
 {
-  "last_updated": "23:04 Monday, 04/05/2026 (GMT+7)",
+  "last_updated": "01:14 Tuesday, 05/05/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
       "indicator": "Dầu WTI",
-      "value": "$105.54/thùng",
-      "trend": "+9.5% ↑",
-      "trend_raw": 9.52,
+      "value": "$105.01/thùng",
+      "trend": "+9.0% ↑",
+      "trend_raw": 8.97,
       "threshold": ">95 USD/thùng",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -25,12 +25,12 @@
       "statusLabel": "CẢNH GIÁC",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 16:04 UTC: 39 tin <24h / 64 tổng (reuters.com: lỗi, bbci.co.uk: 14/39 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Does trump hold ‘all the cards’ against iran in the strait of hormuz?...\" (14:56 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 18:13 UTC: 44 tin <24h / 55 tổng (reuters.com: lỗi, bbci.co.uk: 19/30 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Captain warns ‘no ship will be a hero’ by risking hormuz transit...\" (16:27 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "tension",
-        "hormuz_count": 9,
-        "fresh_total": 39,
-        "scanned_at": "2026-05-04T16:04:11Z",
+        "hormuz_count": 6,
+        "fresh_total": 44,
+        "scanned_at": "2026-05-04T18:13:58Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -54,9 +54,9 @@
     {
       "category": "",
       "indicator": "ETF Flows (SPY+QQQ)",
-      "value": "+10.09B USD (SPY: +14.20B/9d, QQQ: -4.11B/9d)",
-      "trend": "+10.09B ↑",
-      "trend_raw": 10.09,
+      "value": "+7.55B USD (SPY: +12.74B/10d, QQQ: -5.19B/10d)",
+      "trend": "+7.55B ↑",
+      "trend_raw": 7.55,
       "threshold": "Outflow > −2B USD/7d",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -64,7 +64,7 @@
       "link": "https://etf.com/etfanalytics/etf-fund-flows-tool",
       "note": "SPY: implied shares từ SPDR daily holdings. QQQ: totalAssets/price. Cần 2+ ngày snapshot.",
       "_meta": {
-        "flow_b": 10.09
+        "flow_b": 7.55
       }
     },
     {
@@ -89,9 +89,9 @@
     {
       "category": "Thị trường",
       "indicator": "VIX",
-      "value": "18.45",
-      "trend": "+2.4% ↑",
-      "trend_raw": 2.39,
+      "value": "18.12",
+      "trend": "+0.6% ↑",
+      "trend_raw": 0.55,
       "threshold": ">30",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -102,9 +102,9 @@
     {
       "category": "",
       "indicator": "VIX futures curve",
-      "value": "Contango nhẹ (spot 18.4 → M1~278)",
-      "trend": "+0.1% ↑",
-      "trend_raw": 0.13,
+      "value": "Contango nhẹ (spot 18.1 → M1~276)",
+      "trend": "-0.7% ↓",
+      "trend_raw": -0.65,
       "threshold": "Backwardation",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -115,9 +115,9 @@
     {
       "category": "",
       "indicator": "HYG/TLT ratio",
-      "value": "0.9398",
+      "value": "0.9400",
       "trend": "+0.9% ↑",
-      "trend_raw": 0.87,
+      "trend_raw": 0.89,
       "threshold": "Giảm >5%/tuần",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -128,9 +128,9 @@
     {
       "category": "",
       "indicator": "Put/Call ratio",
-      "value": "1.318",
-      "trend": "+15.5% ↑",
-      "trend_raw": 15.51,
+      "value": "1.209",
+      "trend": "+6.0% ↑",
+      "trend_raw": 5.96,
       "threshold": ">1.1",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -141,9 +141,9 @@
     {
       "category": "Vĩ mô",
       "indicator": "10-year yield",
-      "value": "4.44%",
-      "trend": "+2.4% ↑",
-      "trend_raw": 2.4,
+      "value": "4.45%",
+      "trend": "+2.5% ↑",
+      "trend_raw": 2.54,
       "threshold": ">4.5%",
       "status": "warning",
       "statusLabel": "CẢNH GIÁC",
@@ -154,9 +154,9 @@
     {
       "category": "",
       "indicator": "2s10s spread",
-      "value": "+0.64% (3.80% vs 4.44%)",
-      "trend": "+0.11pp ↑",
-      "trend_raw": 0.11,
+      "value": "+0.65% (3.80% vs 4.45%)",
+      "trend": "+0.12pp ↑",
+      "trend_raw": 0.116,
       "threshold": "Đảo ngược âm",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -167,9 +167,9 @@
     {
       "category": "",
       "indicator": "DXY (USD Index)",
-      "value": "98.39",
+      "value": "98.42",
       "trend": "-0.1% ↓",
-      "trend_raw": -0.09,
+      "trend_raw": -0.06,
       "threshold": ">107",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -177,16 +177,16 @@
       "link": "https://finance.yahoo.com/quote/DX-Y.NYB/",
       "note": "US Dollar Index — DXY tăng mạnh >107 = USD siết chặt thanh khoản, rủi ro tài sản rủi ro tăng.",
       "_meta": {
-        "dxy": 98.393
+        "dxy": 98.421
       }
     }
   ],
   "risk": {
-    "score": 57,
-    "base_score": 41,
+    "score": 53,
+    "base_score": 38,
     "multiplier": 1.4,
-    "level": "CẢNH BÁO CAO",
-    "color": "danger",
+    "level": "CẢNH GIÁC",
+    "color": "warning",
     "active_leads": [
       "COT short ròng > 70% đỉnh lịch sử",
       "Dầu WTI > $100/thùng"
@@ -194,7 +194,7 @@
     "breakdown": {
       "geo": 76.0,
       "inst": 40.0,
-      "market": 39.0,
+      "market": 33.0,
       "macro": 18.0
     },
     "indicator_scores": {
@@ -205,7 +205,7 @@
       "sentiment": 0,
       "vix_curve": 4,
       "vix": 2,
-      "put_call": 10,
+      "put_call": 7,
       "hyg_tlt": 0,
       "spread": 0,
       "dxy": 0,
