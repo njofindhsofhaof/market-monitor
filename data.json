@@ -1,12 +1,12 @@
 {
-  "last_updated": "09:45 Monday, 04/05/2026 (GMT+7)",
+  "last_updated": "13:12 Monday, 04/05/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
       "indicator": "Dầu WTI",
-      "value": "$101.75/thùng",
-      "trend": "+5.6% ↑",
-      "trend_raw": 5.58,
+      "value": "$100.99/thùng",
+      "trend": "+4.8% ↑",
+      "trend_raw": 4.79,
       "threshold": ">95 USD/thùng",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -25,12 +25,12 @@
       "statusLabel": "CẢNH GIÁC",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 02:45 UTC: 39 tin <24h / 63 tổng (reuters.com: lỗi, bbci.co.uk: 14/38 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran war live: tehran warns trump’s hormuz mission will violate ceasefire...\" (00:00 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 06:12 UTC: 37 tin <24h / 62 tổng (reuters.com: lỗi, bbci.co.uk: 12/37 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Trump says us to begin escorting ships in strait of hormuz...\" (03:47 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "tension",
-        "hormuz_count": 5,
-        "fresh_total": 39,
-        "scanned_at": "2026-05-04T02:45:31Z",
+        "hormuz_count": 6,
+        "fresh_total": 37,
+        "scanned_at": "2026-05-04T06:12:29Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -167,9 +167,9 @@
     {
       "category": "",
       "indicator": "DXY (USD Index)",
-      "value": "98.19",
-      "trend": "-0.3% ↓",
-      "trend_raw": -0.29,
+      "value": "98.11",
+      "trend": "-0.4% ↓",
+      "trend_raw": -0.38,
       "threshold": ">107",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -177,7 +177,7 @@
       "link": "https://finance.yahoo.com/quote/DX-Y.NYB/",
       "note": "US Dollar Index — DXY tăng mạnh >107 = USD siết chặt thanh khoản, rủi ro tài sản rủi ro tăng.",
       "_meta": {
-        "dxy": 98.193
+        "dxy": 98.108
       }
     }
   ],
@@ -192,13 +192,13 @@
       "Dầu WTI > $100/thùng"
     ],
     "breakdown": {
-      "geo": 70.0,
+      "geo": 67.0,
       "inst": 43.0,
       "market": 33.0,
       "macro": 18.0
     },
     "indicator_scores": {
-      "oil": 9,
+      "oil": 8.5,
       "hormuz": 4,
       "cot": 10,
       "etf_flow": 1,
