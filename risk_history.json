@@ -1435,5 +1435,10 @@
     "date": "2026-05-05T19:00",
     "score": 55,
     "level": "CẢNH GIÁC"
+  },
+  {
+    "date": "2026-05-06T00:23",
+    "score": 63,
+    "level": "CẢNH BÁO CAO"
   }
 ]
