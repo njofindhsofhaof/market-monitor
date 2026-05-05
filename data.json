@@ -1,12 +1,12 @@
 {
-  "last_updated": "06:02 Tuesday, 05/05/2026 (GMT+7)",
+  "last_updated": "09:38 Tuesday, 05/05/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
       "indicator": "Dầu WTI",
-      "value": "$104.88/thùng",
-      "trend": "+8.8% ↑",
-      "trend_raw": 8.83,
+      "value": "$104.38/thùng",
+      "trend": "+8.3% ↑",
+      "trend_raw": 8.31,
       "threshold": ">95 USD/thùng",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -25,12 +25,12 @@
       "statusLabel": "CẢNH GIÁC",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 23:02 UTC: 46 tin <24h / 57 tổng (reuters.com: lỗi, bbci.co.uk: 21/32 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Hormuz tensions push ceasefire to the brink as trump threatens iran...\" (21:08 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 02:38 UTC: 45 tin <24h / 58 tổng (reuters.com: lỗi, bbci.co.uk: 20/33 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran war live: washington, tehran trade threats over strait of hormuz...\" (00:00 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "tension",
-        "hormuz_count": 5,
-        "fresh_total": 46,
-        "scanned_at": "2026-05-04T23:02:44Z",
+        "hormuz_count": 4,
+        "fresh_total": 45,
+        "scanned_at": "2026-05-05T02:38:09Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -128,15 +128,15 @@
     {
       "category": "",
       "indicator": "Put/Call ratio",
-      "value": "1.154",
-      "trend": "+1.1% ↑",
-      "trend_raw": 1.14,
+      "value": "1.348",
+      "trend": "+18.1% ↑",
+      "trend_raw": 18.14,
       "threshold": ">1.1",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
       "source": "Yahoo Finance (SPY options)",
       "link": "https://finance.yahoo.com/quote/SPY/options/",
-      "note": "SPY options exp 2026-05-04 — tỷ lệ put/call đo mức phòng thủ nhà đầu tư"
+      "note": "SPY options exp 2026-05-05 — tỷ lệ put/call đo mức phòng thủ nhà đầu tư"
     },
     {
       "category": "Vĩ mô",
@@ -155,8 +155,8 @@
       "category": "",
       "indicator": "2s10s spread",
       "value": "+0.65% (3.80% vs 4.45%)",
-      "trend": "+0.12pp ↑",
-      "trend_raw": 0.116,
+      "trend": "N/A",
+      "trend_raw": null,
       "threshold": "Đảo ngược âm",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -177,16 +177,16 @@
       "link": "https://finance.yahoo.com/quote/DX-Y.NYB/",
       "note": "US Dollar Index — DXY tăng mạnh >107 = USD siết chặt thanh khoản, rủi ro tài sản rủi ro tăng.",
       "_meta": {
-        "dxy": 98.479
+        "dxy": 98.476
       }
     }
   ],
   "risk": {
-    "score": 52,
-    "base_score": 37,
+    "score": 57,
+    "base_score": 40,
     "multiplier": 1.4,
-    "level": "CẢNH GIÁC",
-    "color": "warning",
+    "level": "CẢNH BÁO CAO",
+    "color": "danger",
     "active_leads": [
       "COT short ròng > 70% đỉnh lịch sử",
       "Dầu WTI > $100/thùng"
@@ -194,8 +194,8 @@
     "breakdown": {
       "geo": 70.0,
       "inst": 40.0,
-      "market": 33.0,
-      "macro": 18.0
+      "market": 39.0,
+      "macro": 22.0
     },
     "indicator_scores": {
       "oil": 9,
@@ -205,9 +205,9 @@
       "sentiment": 0,
       "vix_curve": 4,
       "vix": 2,
-      "put_call": 7,
+      "put_call": 10,
       "hyg_tlt": 0,
-      "spread": 0,
+      "spread": 1,
       "dxy": 0,
       "yield_10y": 6
     }
