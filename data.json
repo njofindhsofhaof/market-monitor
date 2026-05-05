@@ -1,12 +1,12 @@
 {
-  "last_updated": "05:54 Wednesday, 06/05/2026 (GMT+7)",
+  "last_updated": "06:45 Wednesday, 06/05/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
       "indicator": "Dầu WTI",
-      "value": "$102.47/thùng",
-      "trend": "+2.5% ↑",
-      "trend_raw": 2.54,
+      "value": "$100.20/thùng",
+      "trend": "+0.3% ↑",
+      "trend_raw": 0.27,
       "threshold": ">95 USD/thùng",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -25,12 +25,12 @@
       "statusLabel": "CẢNH GIÁC",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 22:54 UTC: 41 tin <24h / 52 tổng (reuters.com: lỗi, bbci.co.uk: 16/27 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Centcom: ‘safe path’ through hormuz is us priority in ‘project freedom’...\" (21:07 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 23:45 UTC: 42 tin <24h / 53 tổng (reuters.com: lỗi, bbci.co.uk: 17/28 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Centcom: ‘safe path’ through hormuz is us priority in ‘project freedom’...\" (21:07 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "tension",
         "hormuz_count": 9,
-        "fresh_total": 41,
-        "scanned_at": "2026-05-05T22:54:01Z",
+        "fresh_total": 42,
+        "scanned_at": "2026-05-05T23:45:34Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -182,7 +182,7 @@
     }
   ],
   "risk": {
-    "score": 67,
+    "score": 66,
     "base_score": 44,
     "multiplier": 1.5,
     "level": "CẢNH BÁO CAO",
@@ -193,13 +193,13 @@
       "ETF outflow > $5B/7d"
     ],
     "breakdown": {
-      "geo": 67.0,
+      "geo": 64.0,
       "inst": 70.0,
       "market": 33.0,
       "macro": 18.0
     },
     "indicator_scores": {
-      "oil": 8.5,
+      "oil": 8,
       "hormuz": 4,
       "cot": 10,
       "etf_flow": 10,
