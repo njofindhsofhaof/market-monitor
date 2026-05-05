@@ -1,12 +1,12 @@
 {
-  "last_updated": "00:23 Wednesday, 06/05/2026 (GMT+7)",
+  "last_updated": "02:18 Wednesday, 06/05/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
       "indicator": "Dầu WTI",
-      "value": "$102.14/thùng",
-      "trend": "+2.2% ↑",
-      "trend_raw": 2.21,
+      "value": "$102.25/thùng",
+      "trend": "+2.3% ↑",
+      "trend_raw": 2.32,
       "threshold": ">95 USD/thùng",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -25,12 +25,12 @@
       "statusLabel": "CẢNH BÁO",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 17:22 UTC: 42 tin <24h / 51 tổng (reuters.com: lỗi, bbci.co.uk: 17/26 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Uae comes under iranian attacks for second consecutive day...\" (16:50 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 19:17 UTC: 40 tin <24h / 51 tổng (reuters.com: lỗi, bbci.co.uk: 15/26 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Video: trump says iran should ‘wave the white flag’...\" (18:48 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "partial_blockade",
-        "hormuz_count": 8,
-        "fresh_total": 42,
-        "scanned_at": "2026-05-05T17:22:53Z",
+        "hormuz_count": 9,
+        "fresh_total": 40,
+        "scanned_at": "2026-05-05T19:17:39Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -54,9 +54,9 @@
     {
       "category": "",
       "indicator": "ETF Flows (SPY+QQQ)",
-      "value": "-8.39B USD (SPY: +1.31B/10d, QQQ: -9.70B/10d)",
-      "trend": "-8.39B ↓",
-      "trend_raw": -8.389999999999999,
+      "value": "-13.24B USD (SPY: -2.16B/9d, QQQ: -11.08B/9d)",
+      "trend": "-13.24B ↓",
+      "trend_raw": -13.24,
       "threshold": "Outflow > −2B USD/7d",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -64,34 +64,34 @@
       "link": "https://etf.com/etfanalytics/etf-fund-flows-tool",
       "note": "SPY: implied shares từ SPDR daily holdings. QQQ: totalAssets/price. Cần 2+ ngày snapshot.",
       "_meta": {
-        "flow_b": -8.389999999999999
+        "flow_b": -13.24
       }
     },
     {
       "category": "",
       "indicator": "Sentiment (NAAIM vs AAII)",
-      "value": "Retail 50% / Inst 94% → diff -44pp",
-      "trend": "-44pp ↓",
-      "trend_raw": -43.8,
+      "value": "N/A",
+      "trend": "—",
+      "trend_raw": null,
       "threshold": "Retail − Inst > +25pp",
       "status": "success",
       "statusLabel": "Bình thường",
       "source": "NAAIM Exposure Index · AAII Sentiment Survey",
       "link": "https://www.naaim.org/resources/naaim-exposure-index/",
-      "note": "Diff = retailBull% − instBull%. Dương cao = retail quá lạc quan vs tổ chức → contrarian bearish signal.",
+      "note": "Không lấy được dữ liệu: AAII: Không lấy được AAII data từ Stooq hoặc aaii.com",
       "_meta": {
         "naaim": 93.79,
         "inst_bull": 93.8,
-        "aaii_bull": 50.0,
-        "aaii_bear": 0.0
+        "aaii_bull": null,
+        "aaii_bear": null
       }
     },
     {
       "category": "Thị trường",
       "indicator": "VIX",
-      "value": "17.40",
-      "trend": "-2.4% ↓",
-      "trend_raw": -2.41,
+      "value": "17.23",
+      "trend": "-3.4% ↓",
+      "trend_raw": -3.37,
       "threshold": ">30",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -102,9 +102,9 @@
     {
       "category": "",
       "indicator": "VIX futures curve",
-      "value": "Contango nhẹ (spot 17.4 → M1~272)",
-      "trend": "-0.6% ↓",
-      "trend_raw": -0.58,
+      "value": "Contango nhẹ (spot 17.2 → M1~273)",
+      "trend": "-0.2% ↓",
+      "trend_raw": -0.22,
       "threshold": "Backwardation",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -115,9 +115,9 @@
     {
       "category": "",
       "indicator": "HYG/TLT ratio",
-      "value": "0.9368",
-      "trend": "+0.8% ↑",
-      "trend_raw": 0.79,
+      "value": "0.9357",
+      "trend": "+0.7% ↑",
+      "trend_raw": 0.68,
       "threshold": "Giảm >5%/tuần",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -128,9 +128,9 @@
     {
       "category": "",
       "indicator": "Put/Call ratio",
-      "value": "1.070",
-      "trend": "-21.1% ↓",
-      "trend_raw": -21.09,
+      "value": "1.095",
+      "trend": "-19.2% ↓",
+      "trend_raw": -19.25,
       "threshold": ">1.1",
       "status": "warning",
       "statusLabel": "CẢNH GIÁC",
@@ -141,9 +141,9 @@
     {
       "category": "Vĩ mô",
       "indicator": "10-year yield",
-      "value": "4.41%",
+      "value": "4.42%",
       "trend": "+1.4% ↑",
-      "trend_raw": 1.38,
+      "trend_raw": 1.42,
       "threshold": ">4.5%",
       "status": "warning",
       "statusLabel": "CẢNH GIÁC",
@@ -154,9 +154,9 @@
     {
       "category": "",
       "indicator": "2s10s spread",
-      "value": "+0.61% (3.80% vs 4.41%)",
+      "value": "+0.62% (3.80% vs 4.42%)",
       "trend": "+0.07pp ↑",
-      "trend_raw": 0.066,
+      "trend_raw": 0.068,
       "threshold": "Đảo ngược âm",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -182,8 +182,8 @@
     }
   ],
   "risk": {
-    "score": 63,
-    "base_score": 42,
+    "score": 68,
+    "base_score": 45,
     "multiplier": 1.5,
     "level": "CẢNH BÁO CAO",
     "color": "danger",
@@ -194,7 +194,7 @@
     ],
     "breakdown": {
       "geo": 79.0,
-      "inst": 64.0,
+      "inst": 76.0,
       "market": 27.0,
       "macro": 18.0
     },
@@ -202,8 +202,8 @@
       "oil": 8.5,
       "hormuz": 7,
       "cot": 10,
-      "etf_flow": 8,
-      "sentiment": 0,
+      "etf_flow": 10,
+      "sentiment": 2,
       "vix_curve": 4,
       "vix": 2,
       "put_call": 4,

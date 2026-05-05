@@ -1,5 +1,5 @@
 {
-  "scanned_at": "2026-05-05T17:22:53.439969+00:00",
+  "scanned_at": "2026-05-05T19:17:39.807793+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
@@ -11,12 +11,12 @@
     "statusLabel": "CẢNH BÁO",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 17:22 UTC: 42 tin <24h / 51 tổng (reuters.com: lỗi, bbci.co.uk: 17/26 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Uae comes under iranian attacks for second consecutive day...\" (16:50 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 19:17 UTC: 40 tin <24h / 51 tổng (reuters.com: lỗi, bbci.co.uk: 15/26 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Video: trump says iran should ‘wave the white flag’...\" (18:48 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
     "_meta": {
       "status_key": "partial_blockade",
-      "hormuz_count": 8,
-      "fresh_total": 42,
-      "scanned_at": "2026-05-05T17:22:53Z",
+      "hormuz_count": 9,
+      "fresh_total": 40,
+      "scanned_at": "2026-05-05T19:17:39Z",
       "classify_source": "keyword fallback"
     }
   }
