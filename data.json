@@ -1,12 +1,12 @@
 {
-  "last_updated": "03:21 Thursday, 07/05/2026 (GMT+7)",
+  "last_updated": "04:56 Thursday, 07/05/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
       "indicator": "Dầu WTI",
-      "value": "$95.36/thùng",
-      "trend": "-10.8% ↓",
-      "trend_raw": -10.78,
+      "value": "$96.21/thùng",
+      "trend": "-10.0% ↓",
+      "trend_raw": -9.98,
       "threshold": ">95 USD/thùng",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -25,12 +25,12 @@
       "statusLabel": "Bình thường",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 20:21 UTC: 46 tin <24h / 54 tổng (reuters.com: lỗi, bbci.co.uk: 21/29 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Why are pentagon officials talking about iran’s ‘deadly dolphins’?...\" (18:25 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 21:56 UTC: 46 tin <24h / 53 tổng (reuters.com: lỗi, bbci.co.uk: 21/28 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Trump says had ‘very good talks’ with iran as tehran reviews us proposal...\" (21:17 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "none",
         "hormuz_count": 3,
         "fresh_total": 46,
-        "scanned_at": "2026-05-06T20:21:20Z",
+        "scanned_at": "2026-05-06T21:56:05Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -54,9 +54,9 @@
     {
       "category": "",
       "indicator": "ETF Flows (SPY+QQQ)",
-      "value": "+33.63B USD (SPY: -9.44B/9d, QQQ: +43.07B/9d)",
-      "trend": "+33.63B ↑",
-      "trend_raw": 33.63,
+      "value": "+33.66B USD (SPY: -9.41B/9d, QQQ: +43.07B/9d)",
+      "trend": "+33.66B ↑",
+      "trend_raw": 33.66,
       "threshold": "Outflow > −2B USD/7d",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -64,7 +64,7 @@
       "link": "https://etf.com/etfanalytics/etf-fund-flows-tool",
       "note": "SPY: implied shares từ SPDR daily holdings. QQQ: totalAssets/price. Cần 2+ ngày snapshot.",
       "_meta": {
-        "flow_b": 33.63
+        "flow_b": 33.66
       }
     },
     {
@@ -89,9 +89,9 @@
     {
       "category": "Thị trường",
       "indicator": "VIX",
-      "value": "17.40",
+      "value": "17.39",
       "trend": "-7.5% ↓",
-      "trend_raw": -7.5,
+      "trend_raw": -7.55,
       "threshold": ">30",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -128,9 +128,9 @@
     {
       "category": "",
       "indicator": "Put/Call ratio",
-      "value": "1.043",
-      "trend": "-8.4% ↓",
-      "trend_raw": -8.43,
+      "value": "1.074",
+      "trend": "-5.7% ↓",
+      "trend_raw": -5.71,
       "threshold": ">1.1",
       "status": "warning",
       "statusLabel": "CẢNH GIÁC",
