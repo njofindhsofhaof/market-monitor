@@ -1,12 +1,12 @@
 {
-  "last_updated": "04:56 Thursday, 07/05/2026 (GMT+7)",
+  "last_updated": "05:53 Thursday, 07/05/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
       "indicator": "Dầu WTI",
-      "value": "$96.21/thùng",
-      "trend": "-10.0% ↓",
-      "trend_raw": -9.98,
+      "value": "$96.05/thùng",
+      "trend": "-10.1% ↓",
+      "trend_raw": -10.13,
       "threshold": ">95 USD/thùng",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -25,12 +25,12 @@
       "statusLabel": "Bình thường",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 21:56 UTC: 46 tin <24h / 53 tổng (reuters.com: lỗi, bbci.co.uk: 21/28 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Trump says had ‘very good talks’ with iran as tehran reviews us proposal...\" (21:17 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 22:53 UTC: 48 tin <24h / 56 tổng (reuters.com: lỗi, bbci.co.uk: 23/31 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Trump says had ‘very good talks’ with iran as tehran reviews us proposal...\" (21:17 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "none",
         "hormuz_count": 3,
-        "fresh_total": 46,
-        "scanned_at": "2026-05-06T21:56:05Z",
+        "fresh_total": 48,
+        "scanned_at": "2026-05-06T22:53:42Z",
         "classify_source": "keyword fallback"
       }
     },
