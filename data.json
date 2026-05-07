@@ -1,12 +1,12 @@
 {
-  "last_updated": "06:51 Thursday, 07/05/2026 (GMT+7)",
+  "last_updated": "09:45 Thursday, 07/05/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
       "indicator": "Dầu WTI",
-      "value": "$95.98/thùng",
-      "trend": "-10.2% ↓",
-      "trend_raw": -10.2,
+      "value": "$95.62/thùng",
+      "trend": "-10.5% ↓",
+      "trend_raw": -10.54,
       "threshold": ">95 USD/thùng",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -25,12 +25,12 @@
       "statusLabel": "Bình thường",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 23:51 UTC: 47 tin <24h / 56 tổng (reuters.com: lỗi, bbci.co.uk: 22/31 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"What are china’s surprise gains in the war on iran?...\" (23:43 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 02:45 UTC: 45 tin <24h / 57 tổng (reuters.com: lỗi, bbci.co.uk: 20/32 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran war live: trump says deal with tehran ‘possible’; israel bombs beirut...\" (00:00 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "none",
-        "hormuz_count": 4,
-        "fresh_total": 47,
-        "scanned_at": "2026-05-06T23:51:09Z",
+        "hormuz_count": 5,
+        "fresh_total": 45,
+        "scanned_at": "2026-05-07T02:45:06Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -70,9 +70,9 @@
     {
       "category": "",
       "indicator": "Sentiment (NAAIM vs AAII)",
-      "value": "Retail 50% / Inst 94% → diff -44pp",
-      "trend": "-44pp ↓",
-      "trend_raw": -43.8,
+      "value": "Retail 0% / Inst 94% → diff -94pp",
+      "trend": "-94pp ↓",
+      "trend_raw": -93.8,
       "threshold": "Retail − Inst > +25pp",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -82,7 +82,7 @@
       "_meta": {
         "naaim": 93.79,
         "inst_bull": 93.8,
-        "aaii_bull": 50.0,
+        "aaii_bull": 0.0,
         "aaii_bear": 0.0
       }
     },
@@ -128,15 +128,15 @@
     {
       "category": "",
       "indicator": "Put/Call ratio",
-      "value": "1.074",
-      "trend": "-5.7% ↓",
-      "trend_raw": -5.71,
+      "value": "1.031",
+      "trend": "-9.5% ↓",
+      "trend_raw": -9.48,
       "threshold": ">1.1",
       "status": "warning",
       "statusLabel": "CẢNH GIÁC",
       "source": "Yahoo Finance (SPY options)",
       "link": "https://finance.yahoo.com/quote/SPY/options/",
-      "note": "SPY options exp 2026-05-06 — tỷ lệ put/call đo mức phòng thủ nhà đầu tư"
+      "note": "SPY options exp 2026-05-07 — tỷ lệ put/call đo mức phòng thủ nhà đầu tư"
     },
     {
       "category": "Vĩ mô",
@@ -167,9 +167,9 @@
     {
       "category": "",
       "indicator": "DXY (USD Index)",
-      "value": "98.02",
-      "trend": "-0.9% ↓",
-      "trend_raw": -0.91,
+      "value": "97.96",
+      "trend": "-1.0% ↓",
+      "trend_raw": -0.97,
       "threshold": ">107",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -177,7 +177,7 @@
       "link": "https://finance.yahoo.com/quote/DX-Y.NYB/",
       "note": "US Dollar Index — DXY tăng mạnh >107 = USD siết chặt thanh khoản, rủi ro tài sản rủi ro tăng.",
       "_meta": {
-        "dxy": 98.015
+        "dxy": 97.961
       }
     }
   ],
