@@ -1,22 +1,22 @@
 {
-  "scanned_at": "2026-05-08T07:28:37.552543+00:00",
+  "scanned_at": "2026-05-08T09:19:19.641697+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
-    "value": "Căng thẳng leo thang",
+    "value": "Bình thường",
     "trend": "—",
     "trend_raw": null,
     "threshold": "Có phong tỏa",
-    "status": "warning",
-    "statusLabel": "CẢNH GIÁC",
+    "status": "success",
+    "statusLabel": "Bình thường",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 07:28 UTC: 61 tin <24h / 65 tổng (reuters.com: lỗi, bbci.co.uk: 36/40 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Southeast asia’s leaders confront fallout from iran war at asean summit...\" (07:11 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 09:19 UTC: 34 tin <24h / 39 tổng (reuters.com: lỗi, bbci.co.uk: 34/39 tin mới, aljazeera.com: lỗi) | Phân tích: keyword fallback | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\")); aljazeera.com: 403 Client Error: Forbidden for url: https://www.aljazeera.com/xml/rss/all.xml",
     "_meta": {
-      "status_key": "tension",
-      "hormuz_count": 7,
-      "fresh_total": 61,
-      "scanned_at": "2026-05-08T07:28:37Z",
+      "status_key": "none",
+      "hormuz_count": 0,
+      "fresh_total": 34,
+      "scanned_at": "2026-05-08T09:19:19Z",
       "classify_source": "keyword fallback"
     }
   }
