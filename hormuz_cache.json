@@ -1,9 +1,9 @@
 {
-  "scanned_at": "2026-05-08T11:13:25.566063+00:00",
+  "scanned_at": "2026-05-08T13:44:11.092881+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
-    "value": "Căng thẳng leo thang",
+    "value": "Có đề cập — theo dõi thêm",
     "trend": "—",
     "trend_raw": null,
     "threshold": "Có phong tỏa",
@@ -11,12 +11,12 @@
     "statusLabel": "CẢNH GIÁC",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 11:13 UTC: 62 tin <24h / 65 tổng (reuters.com: lỗi, bbci.co.uk: 37/40 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Us, iran clash in hormuz as war escalates: what happened, why it matters...\" (09:22 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 13:44 UTC: 61 tin <24h / 66 tổng (reuters.com: lỗi, bbci.co.uk: 36/41 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran claims to have seized ‘offending’ oil tanker in gulf of oman...\" (12:22 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
     "_meta": {
       "status_key": "tension",
-      "hormuz_count": 7,
-      "fresh_total": 62,
-      "scanned_at": "2026-05-08T11:13:25Z",
+      "hormuz_count": 5,
+      "fresh_total": 61,
+      "scanned_at": "2026-05-08T13:44:11Z",
       "classify_source": "keyword fallback"
     }
   }
