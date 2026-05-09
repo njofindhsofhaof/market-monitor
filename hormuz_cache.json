@@ -1,22 +1,22 @@
 {
-  "scanned_at": "2026-05-09T11:52:50.176386+00:00",
+  "scanned_at": "2026-05-09T13:15:15.617211+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
-    "value": "Có đề cập — theo dõi thêm",
+    "value": "Bình thường",
     "trend": "—",
     "trend_raw": null,
     "threshold": "Có phong tỏa",
-    "status": "warning",
-    "statusLabel": "CẢNH GIÁC",
+    "status": "success",
+    "statusLabel": "Bình thường",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 11:52 UTC: 43 tin <24h / 60 tổng (reuters.com: lỗi, bbci.co.uk: 18/35 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"The war on iran will likely end in american retreat...\" (09:14 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 13:15 UTC: 42 tin <24h / 61 tổng (reuters.com: lỗi, bbci.co.uk: 17/36 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran says it will play at 2026 world cup if hosts address ‘concerns’...\" (12:40 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
     "_meta": {
-      "status_key": "tension",
-      "hormuz_count": 3,
-      "fresh_total": 43,
-      "scanned_at": "2026-05-09T11:52:50Z",
+      "status_key": "none",
+      "hormuz_count": 4,
+      "fresh_total": 42,
+      "scanned_at": "2026-05-09T13:15:15Z",
       "classify_source": "keyword fallback"
     }
   }
