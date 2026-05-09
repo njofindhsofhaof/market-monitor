@@ -1,5 +1,5 @@
 {
-  "last_updated": "20:15 Saturday, 09/05/2026 (GMT+7)",
+  "last_updated": "21:50 Saturday, 09/05/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
@@ -25,12 +25,12 @@
       "statusLabel": "Bình thường",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 13:15 UTC: 42 tin <24h / 61 tổng (reuters.com: lỗi, bbci.co.uk: 17/36 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran says it will play at 2026 world cup if hosts address ‘concerns’...\" (12:40 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 14:49 UTC: 40 tin <24h / 61 tổng (reuters.com: lỗi, bbci.co.uk: 15/36 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Bahrain rounds up dozens over alleged links to iran’s irgc...\" (13:53 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "none",
         "hormuz_count": 4,
-        "fresh_total": 42,
-        "scanned_at": "2026-05-09T13:15:15Z",
+        "fresh_total": 40,
+        "scanned_at": "2026-05-09T14:49:51Z",
         "classify_source": "keyword fallback"
       }
     },
