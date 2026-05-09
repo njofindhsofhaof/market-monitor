@@ -1,5 +1,5 @@
 {
-  "last_updated": "06:55 Saturday, 09/05/2026 (GMT+7)",
+  "last_updated": "09:43 Saturday, 09/05/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
@@ -17,20 +17,20 @@
     {
       "category": "",
       "indicator": "Xung đột Hormuz",
-      "value": "Bình thường",
+      "value": "Có đề cập — theo dõi thêm",
       "trend": "—",
       "trend_raw": null,
       "threshold": "Có phong tỏa",
-      "status": "success",
-      "statusLabel": "Bình thường",
+      "status": "warning",
+      "statusLabel": "CẢNH GIÁC",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 23:55 UTC: 48 tin <24h / 64 tổng (reuters.com: lỗi, bbci.co.uk: 23/39 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Pentagon releases video of strikes on iranian oil tankers...\" (22:31 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 02:43 UTC: 51 tin <24h / 66 tổng (reuters.com: lỗi, bbci.co.uk: 26/41 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran war live: us expects tehran’s reply to peace deal; ‘clashes’ in hormuz...\" (00:00 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
-        "status_key": "none",
-        "hormuz_count": 3,
-        "fresh_total": 48,
-        "scanned_at": "2026-05-08T23:55:17Z",
+        "status_key": "tension",
+        "hormuz_count": 4,
+        "fresh_total": 51,
+        "scanned_at": "2026-05-09T02:43:47Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -128,15 +128,15 @@
     {
       "category": "",
       "indicator": "Put/Call ratio",
-      "value": "1.215",
-      "trend": "+7.3% ↑",
-      "trend_raw": 7.33,
+      "value": "1.150",
+      "trend": "+1.6% ↑",
+      "trend_raw": 1.59,
       "threshold": ">1.1",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
       "source": "Yahoo Finance (SPY options)",
       "link": "https://finance.yahoo.com/quote/SPY/options/",
-      "note": "SPY options exp 2026-05-08 — tỷ lệ put/call đo mức phòng thủ nhà đầu tư"
+      "note": "SPY options exp 2026-05-11 — tỷ lệ put/call đo mức phòng thủ nhà đầu tư"
     },
     {
       "category": "Vĩ mô",
@@ -155,8 +155,8 @@
       "category": "",
       "indicator": "2s10s spread",
       "value": "+0.56% (3.80% vs 4.36%)",
-      "trend": "+0.07pp ↑",
-      "trend_raw": 0.069,
+      "trend": "+0.00pp ↑",
+      "trend_raw": 0.002,
       "threshold": "Đảo ngược âm",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -182,8 +182,8 @@
     }
   ],
   "risk": {
-    "score": 40,
-    "base_score": 32,
+    "score": 43,
+    "base_score": 35,
     "multiplier": 1.25,
     "level": "CẢNH GIÁC",
     "color": "warning",
@@ -191,14 +191,14 @@
       "COT short ròng > 70% đỉnh lịch sử"
     ],
     "breakdown": {
-      "geo": 36.0,
+      "geo": 52.0,
       "inst": 40.0,
       "market": 33.0,
       "macro": 18.0
     },
     "indicator_scores": {
       "oil": 6,
-      "hormuz": 0,
+      "hormuz": 4,
       "cot": 10,
       "etf_flow": 0,
       "sentiment": 0,
