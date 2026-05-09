@@ -1,5 +1,5 @@
 {
-  "last_updated": "01:59 Sunday, 10/05/2026 (GMT+7)",
+  "last_updated": "02:59 Sunday, 10/05/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
@@ -25,12 +25,12 @@
       "statusLabel": "CẢNH GIÁC",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 18:59 UTC: 44 tin <24h / 63 tổng (reuters.com: lỗi, bbci.co.uk: 19/38 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"‘on level of atomic bomb’: iran highlights hormuz importance amid us talks...\" (16:35 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 19:59 UTC: 44 tin <24h / 62 tổng (reuters.com: lỗi, bbci.co.uk: 19/37 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"‘on level of atomic bomb’: iran highlights hormuz importance amid us talks...\" (16:35 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "tension",
         "hormuz_count": 3,
         "fresh_total": 44,
-        "scanned_at": "2026-05-09T18:59:46Z",
+        "scanned_at": "2026-05-09T19:59:48Z",
         "classify_source": "keyword fallback"
       }
     },
