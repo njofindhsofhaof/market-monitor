@@ -1,12 +1,12 @@
 {
-  "last_updated": "04:46 Monday, 11/05/2026 (GMT+7)",
+  "last_updated": "05:45 Monday, 11/05/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
       "indicator": "Dầu WTI",
-      "value": "$95.42/thùng",
-      "trend": "-6.4% ↓",
-      "trend_raw": -6.4,
+      "value": "$97.94/thùng",
+      "trend": "-8.0% ↓",
+      "trend_raw": -7.97,
       "threshold": ">95 USD/thùng",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -25,12 +25,12 @@
       "statusLabel": "CẢNH GIÁC",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 21:46 UTC: 42 tin <24h / 63 tổng (reuters.com: lỗi, bbci.co.uk: 17/38 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Trump to discuss iran with xi jinping during china visit: officials...\" (21:12 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 22:45 UTC: 42 tin <24h / 63 tổng (reuters.com: lỗi, bbci.co.uk: 17/38 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Trump to discuss iran with xi jinping during china visit: officials...\" (21:12 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "tension",
         "hormuz_count": 8,
         "fresh_total": 42,
-        "scanned_at": "2026-05-10T21:46:41Z",
+        "scanned_at": "2026-05-10T22:45:17Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -167,9 +167,9 @@
     {
       "category": "",
       "indicator": "DXY (USD Index)",
-      "value": "97.84",
+      "value": "98.04",
       "trend": "-0.4% ↓",
-      "trend_raw": -0.38,
+      "trend_raw": -0.44,
       "threshold": ">107",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -177,7 +177,7 @@
       "link": "https://finance.yahoo.com/quote/DX-Y.NYB/",
       "note": "US Dollar Index — DXY tăng mạnh >107 = USD siết chặt thanh khoản, rủi ro tài sản rủi ro tăng.",
       "_meta": {
-        "dxy": 97.843
+        "dxy": 98.036
       }
     }
   ],
