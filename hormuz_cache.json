@@ -1,5 +1,5 @@
 {
-  "scanned_at": "2026-05-10T15:52:53.811008+00:00",
+  "scanned_at": "2026-05-10T16:54:55.831587+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
@@ -11,12 +11,12 @@
     "statusLabel": "Bình thường",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 15:52 UTC: 44 tin <24h / 60 tổng (reuters.com: lỗi, bbci.co.uk: 19/35 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Can asian economies cope with the fallout from the iran war?...\" (13:11 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 16:54 UTC: 44 tin <24h / 60 tổng (reuters.com: lỗi, bbci.co.uk: 19/35 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Food inflation hammers households in war-hit iran...\" (16:37 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
     "_meta": {
       "status_key": "none",
-      "hormuz_count": 6,
+      "hormuz_count": 7,
       "fresh_total": 44,
-      "scanned_at": "2026-05-10T15:52:53Z",
+      "scanned_at": "2026-05-10T16:54:55Z",
       "classify_source": "keyword fallback"
     }
   }
