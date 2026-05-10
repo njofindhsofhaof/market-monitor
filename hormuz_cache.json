@@ -1,22 +1,22 @@
 {
-  "scanned_at": "2026-05-10T19:02:10.294004+00:00",
+  "scanned_at": "2026-05-10T20:44:13.849723+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
-    "value": "Bình thường",
+    "value": "Có đề cập — theo dõi thêm",
     "trend": "—",
     "trend_raw": null,
     "threshold": "Có phong tỏa",
-    "status": "success",
-    "statusLabel": "Bình thường",
+    "status": "warning",
+    "statusLabel": "CẢNH GIÁC",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 19:02 UTC: 40 tin <24h / 60 tổng (reuters.com: lỗi, bbci.co.uk: 15/35 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran may ‘give assurances on the use of nuclear facilities’...\" (17:29 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 20:44 UTC: 42 tin <24h / 63 tổng (reuters.com: lỗi, bbci.co.uk: 17/38 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"South korea says ship was struck by ‘unidentified flying objects’ in hormuz...\" (19:12 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
     "_meta": {
-      "status_key": "none",
-      "hormuz_count": 9,
-      "fresh_total": 40,
-      "scanned_at": "2026-05-10T19:02:10Z",
+      "status_key": "tension",
+      "hormuz_count": 8,
+      "fresh_total": 42,
+      "scanned_at": "2026-05-10T20:44:13Z",
       "classify_source": "keyword fallback"
     }
   }

@@ -1,5 +1,5 @@
 {
-  "last_updated": "02:02 Monday, 11/05/2026 (GMT+7)",
+  "last_updated": "03:44 Monday, 11/05/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
@@ -17,20 +17,20 @@
     {
       "category": "",
       "indicator": "Xung đột Hormuz",
-      "value": "Bình thường",
+      "value": "Có đề cập — theo dõi thêm",
       "trend": "—",
       "trend_raw": null,
       "threshold": "Có phong tỏa",
-      "status": "success",
-      "statusLabel": "Bình thường",
+      "status": "warning",
+      "statusLabel": "CẢNH GIÁC",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 19:02 UTC: 40 tin <24h / 60 tổng (reuters.com: lỗi, bbci.co.uk: 15/35 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran may ‘give assurances on the use of nuclear facilities’...\" (17:29 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 20:44 UTC: 42 tin <24h / 63 tổng (reuters.com: lỗi, bbci.co.uk: 17/38 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"South korea says ship was struck by ‘unidentified flying objects’ in hormuz...\" (19:12 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
-        "status_key": "none",
-        "hormuz_count": 9,
-        "fresh_total": 40,
-        "scanned_at": "2026-05-10T19:02:10Z",
+        "status_key": "tension",
+        "hormuz_count": 8,
+        "fresh_total": 42,
+        "scanned_at": "2026-05-10T20:44:13Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -182,8 +182,8 @@
     }
   ],
   "risk": {
-    "score": 42,
-    "base_score": 34,
+    "score": 46,
+    "base_score": 36,
     "multiplier": 1.25,
     "level": "CẢNH GIÁC",
     "color": "warning",
@@ -191,14 +191,14 @@
       "COT short ròng > 70% đỉnh lịch sử"
     ],
     "breakdown": {
-      "geo": 48.0,
+      "geo": 64.0,
       "inst": 40.0,
       "market": 33.0,
       "macro": 18.0
     },
     "indicator_scores": {
       "oil": 8,
-      "hormuz": 0,
+      "hormuz": 4,
       "cot": 10,
       "etf_flow": 0,
       "sentiment": 0,
