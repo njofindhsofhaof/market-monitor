@@ -1,12 +1,12 @@
 {
-  "last_updated": "03:49 Tuesday, 12/05/2026 (GMT+7)",
+  "last_updated": "05:07 Tuesday, 12/05/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
       "indicator": "Dầu WTI",
-      "value": "$98.26/thùng",
+      "value": "$98.25/thùng",
       "trend": "-7.7% ↓",
-      "trend_raw": -7.67,
+      "trend_raw": -7.68,
       "threshold": ">95 USD/thùng",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -25,12 +25,12 @@
       "statusLabel": "Bình thường",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 20:48 UTC: 49 tin <24h / 65 tổng (reuters.com: lỗi, bbci.co.uk: 24/40 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Uk sanctions network accused of planning attacks for iran...\" (18:25 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 22:06 UTC: 49 tin <24h / 67 tổng (reuters.com: lỗi, bbci.co.uk: 24/42 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Uk sanctions network accused of planning attacks for iran...\" (18:25 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "none",
         "hormuz_count": 5,
         "fresh_total": 49,
-        "scanned_at": "2026-05-11T20:48:52Z",
+        "scanned_at": "2026-05-11T22:06:57Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -167,9 +167,9 @@
     {
       "category": "",
       "indicator": "DXY (USD Index)",
-      "value": "97.94",
-      "trend": "-0.5% ↓",
-      "trend_raw": -0.54,
+      "value": "97.92",
+      "trend": "-0.6% ↓",
+      "trend_raw": -0.55,
       "threshold": ">107",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -177,7 +177,7 @@
       "link": "https://finance.yahoo.com/quote/DX-Y.NYB/",
       "note": "US Dollar Index — DXY tăng mạnh >107 = USD siết chặt thanh khoản, rủi ro tài sản rủi ro tăng.",
       "_meta": {
-        "dxy": 97.942
+        "dxy": 97.924
       }
     }
   ],
