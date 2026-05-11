@@ -1,22 +1,22 @@
 {
-  "scanned_at": "2026-05-11T06:46:57.820577+00:00",
+  "scanned_at": "2026-05-11T10:38:00.087538+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
-    "value": "Có đề cập — theo dõi thêm",
+    "value": "Bình thường",
     "trend": "—",
     "trend_raw": null,
     "threshold": "Có phong tỏa",
-    "status": "warning",
-    "statusLabel": "CẢNH GIÁC",
+    "status": "success",
+    "statusLabel": "Bình thường",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 06:46 UTC: 43 tin <24h / 61 tổng (reuters.com: lỗi, bbci.co.uk: 18/36 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Trump calls iran response “totally unacceptable”...\" (04:58 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 10:38 UTC: 48 tin <24h / 63 tổng (reuters.com: lỗi, bbci.co.uk: 23/38 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran says us making ‘unreasonable’ demands in negotiations to end war...\" (10:20 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
     "_meta": {
-      "status_key": "tension",
-      "hormuz_count": 8,
-      "fresh_total": 43,
-      "scanned_at": "2026-05-11T06:46:57Z",
+      "status_key": "none",
+      "hormuz_count": 5,
+      "fresh_total": 48,
+      "scanned_at": "2026-05-11T10:38:00Z",
       "classify_source": "keyword fallback"
     }
   }
