@@ -1,12 +1,12 @@
 {
-  "last_updated": "18:54 Tuesday, 12/05/2026 (GMT+7)",
+  "last_updated": "21:22 Tuesday, 12/05/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
       "indicator": "Dầu WTI",
-      "value": "$101.26/thùng",
-      "trend": "-1.0% ↓",
-      "trend_raw": -0.99,
+      "value": "$101.52/thùng",
+      "trend": "-0.7% ↓",
+      "trend_raw": -0.73,
       "threshold": ">95 USD/thùng",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -25,12 +25,12 @@
       "statusLabel": "Bình thường",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 11:54 UTC: 54 tin <24h / 71 tổng (reuters.com: lỗi, bbci.co.uk: 29/46 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran war: what’s happening on day 74 as tehran says ready for ‘aggression’...\" (06:56 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 14:22 UTC: 55 tin <24h / 72 tổng (reuters.com: lỗi, bbci.co.uk: 30/47 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Report alleges israel operated covert outpost in iraq during war on iran...\" (13:04 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "none",
-        "hormuz_count": 1,
-        "fresh_total": 54,
-        "scanned_at": "2026-05-12T11:54:46Z",
+        "hormuz_count": 3,
+        "fresh_total": 55,
+        "scanned_at": "2026-05-12T14:22:35Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -54,9 +54,9 @@
     {
       "category": "",
       "indicator": "ETF Flows (SPY+QQQ)",
-      "value": "+54.35B USD (SPY: +9.49B/9d, QQQ: +44.86B/9d)",
-      "trend": "+54.35B ↑",
-      "trend_raw": 54.35,
+      "value": "+61.36B USD (SPY: +13.15B/9d, QQQ: +48.21B/9d)",
+      "trend": "+61.36B ↑",
+      "trend_raw": 61.36,
       "threshold": "Outflow > −2B USD/7d",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -64,7 +64,7 @@
       "link": "https://etf.com/etfanalytics/etf-fund-flows-tool",
       "note": "SPY: implied shares từ SPDR daily holdings. QQQ: totalAssets/price. Cần 2+ ngày snapshot.",
       "_meta": {
-        "flow_b": 54.35
+        "flow_b": 61.36
       }
     },
     {
@@ -89,9 +89,9 @@
     {
       "category": "Thị trường",
       "indicator": "VIX",
-      "value": "18.76",
-      "trend": "+7.9% ↑",
-      "trend_raw": 7.94,
+      "value": "18.72",
+      "trend": "+7.7% ↑",
+      "trend_raw": 7.71,
       "threshold": ">30",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -102,9 +102,9 @@
     {
       "category": "",
       "indicator": "VIX futures curve",
-      "value": "Contango nhẹ (spot 18.8 → M1~274)",
-      "trend": "-1.1% ↓",
-      "trend_raw": -1.12,
+      "value": "Contango nhẹ (spot 18.7 → M1~276)",
+      "trend": "-0.4% ↓",
+      "trend_raw": -0.36,
       "threshold": "Backwardation",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -115,9 +115,9 @@
     {
       "category": "",
       "indicator": "HYG/TLT ratio",
-      "value": "0.9348",
-      "trend": "-0.5% ↓",
-      "trend_raw": -0.48,
+      "value": "0.9384",
+      "trend": "+0.3% ↑",
+      "trend_raw": 0.31,
       "threshold": "Giảm >5%/tuần",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -128,9 +128,9 @@
     {
       "category": "",
       "indicator": "Put/Call ratio",
-      "value": "1.406",
-      "trend": "+20.0% ↑",
-      "trend_raw": 19.97,
+      "value": "1.551",
+      "trend": "+32.3% ↑",
+      "trend_raw": 32.34,
       "threshold": ">1.1",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -141,9 +141,9 @@
     {
       "category": "Vĩ mô",
       "indicator": "10-year yield",
-      "value": "4.41%",
-      "trend": "-0.8% ↓",
-      "trend_raw": -0.81,
+      "value": "4.46%",
+      "trend": "+0.9% ↑",
+      "trend_raw": 0.88,
       "threshold": ">4.5%",
       "status": "warning",
       "statusLabel": "CẢNH GIÁC",
@@ -154,9 +154,9 @@
     {
       "category": "",
       "indicator": "2s10s spread",
-      "value": "+0.61% (3.80% vs 4.41%)",
-      "trend": "-0.04pp ↓",
-      "trend_raw": -0.036,
+      "value": "+0.66% (3.80% vs 4.46%)",
+      "trend": "+0.04pp ↑",
+      "trend_raw": 0.039,
       "threshold": "Đảo ngược âm",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -167,9 +167,9 @@
     {
       "category": "",
       "indicator": "DXY (USD Index)",
-      "value": "98.24",
-      "trend": "-0.2% ↓",
-      "trend_raw": -0.24,
+      "value": "98.34",
+      "trend": "-0.1% ↓",
+      "trend_raw": -0.14,
       "threshold": ">107",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -177,13 +177,13 @@
       "link": "https://finance.yahoo.com/quote/DX-Y.NYB/",
       "note": "US Dollar Index — DXY tăng mạnh >107 = USD siết chặt thanh khoản, rủi ro tài sản rủi ro tăng.",
       "_meta": {
-        "dxy": 98.244
+        "dxy": 98.345
       }
     }
   ],
   "risk": {
-    "score": 53,
-    "base_score": 38,
+    "score": 52,
+    "base_score": 37,
     "multiplier": 1.4,
     "level": "CẢNH GIÁC",
     "color": "warning",
@@ -195,7 +195,7 @@
       "geo": 48.0,
       "inst": 40.0,
       "market": 40.2,
-      "macro": 22.0
+      "macro": 18.0
     },
     "indicator_scores": {
       "oil": 8,
@@ -207,7 +207,7 @@
       "vix": 2.5,
       "put_call": 10,
       "hyg_tlt": 0,
-      "spread": 1,
+      "spread": 0,
       "dxy": 0,
       "yield_10y": 6
     }
