@@ -1,12 +1,12 @@
 {
-  "last_updated": "06:57 Tuesday, 12/05/2026 (GMT+7)",
+  "last_updated": "10:35 Tuesday, 12/05/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
       "indicator": "Dầu WTI",
-      "value": "$98.09/thùng",
-      "trend": "-7.8% ↓",
-      "trend_raw": -7.83,
+      "value": "$99.01/thùng",
+      "trend": "-7.0% ↓",
+      "trend_raw": -6.96,
       "threshold": ">95 USD/thùng",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -25,12 +25,12 @@
       "statusLabel": "Bình thường",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 23:57 UTC: 48 tin <24h / 67 tổng (reuters.com: lỗi, bbci.co.uk: 23/42 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Uk sanctions network accused of planning attacks for iran...\" (18:25 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 03:35 UTC: 54 tin <24h / 72 tổng (reuters.com: lỗi, bbci.co.uk: 29/47 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran war live: trump slams iranian proposal as ceasefire hangs by a thread...\" (00:00 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "none",
-        "hormuz_count": 5,
-        "fresh_total": 48,
-        "scanned_at": "2026-05-11T23:57:12Z",
+        "hormuz_count": 4,
+        "fresh_total": 54,
+        "scanned_at": "2026-05-12T03:35:51Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -128,15 +128,15 @@
     {
       "category": "",
       "indicator": "Put/Call ratio",
-      "value": "1.289",
-      "trend": "+10.0% ↑",
-      "trend_raw": 9.98,
+      "value": "1.406",
+      "trend": "+20.0% ↑",
+      "trend_raw": 19.97,
       "threshold": ">1.1",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
       "source": "Yahoo Finance (SPY options)",
       "link": "https://finance.yahoo.com/quote/SPY/options/",
-      "note": "SPY options exp 2026-05-11 — tỷ lệ put/call đo mức phòng thủ nhà đầu tư"
+      "note": "SPY options exp 2026-05-12 — tỷ lệ put/call đo mức phòng thủ nhà đầu tư"
     },
     {
       "category": "Vĩ mô",
@@ -155,8 +155,8 @@
       "category": "",
       "indicator": "2s10s spread",
       "value": "+0.61% (3.80% vs 4.41%)",
-      "trend": "-0.02pp ↓",
-      "trend_raw": -0.02,
+      "trend": "-0.04pp ↓",
+      "trend_raw": -0.036,
       "threshold": "Đảo ngược âm",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -167,9 +167,9 @@
     {
       "category": "",
       "indicator": "DXY (USD Index)",
-      "value": "97.97",
-      "trend": "-0.5% ↓",
-      "trend_raw": -0.5,
+      "value": "98.14",
+      "trend": "-0.3% ↓",
+      "trend_raw": -0.34,
       "threshold": ">107",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -177,13 +177,13 @@
       "link": "https://finance.yahoo.com/quote/DX-Y.NYB/",
       "note": "US Dollar Index — DXY tăng mạnh >107 = USD siết chặt thanh khoản, rủi ro tài sản rủi ro tăng.",
       "_meta": {
-        "dxy": 97.974
+        "dxy": 98.138
       }
     }
   ],
   "risk": {
-    "score": 44,
-    "base_score": 35,
+    "score": 46,
+    "base_score": 37,
     "multiplier": 1.25,
     "level": "CẢNH GIÁC",
     "color": "warning",
@@ -193,7 +193,7 @@
     "breakdown": {
       "geo": 48.0,
       "inst": 40.0,
-      "market": 33.0,
+      "market": 39.0,
       "macro": 22.0
     },
     "indicator_scores": {
@@ -204,7 +204,7 @@
       "sentiment": 0,
       "vix_curve": 4,
       "vix": 2,
-      "put_call": 7,
+      "put_call": 10,
       "hyg_tlt": 0,
       "spread": 1,
       "dxy": 0,
