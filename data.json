@@ -1,12 +1,12 @@
 {
-  "last_updated": "17:26 Wednesday, 13/05/2026 (GMT+7)",
+  "last_updated": "20:10 Wednesday, 13/05/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
       "indicator": "Dầu WTI",
-      "value": "$101.66/thùng",
-      "trend": "+6.9% ↑",
-      "trend_raw": 6.92,
+      "value": "$102.13/thùng",
+      "trend": "+7.4% ↑",
+      "trend_raw": 7.41,
       "threshold": ">95 USD/thùng",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -25,12 +25,12 @@
       "statusLabel": "CẢNH GIÁC",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 10:26 UTC: 45 tin <24h / 68 tổng (reuters.com: lỗi, bbci.co.uk: 20/43 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Un resolution calls for freedom of navigation in the strait of hormuz...\" (09:33 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 13:10 UTC: 47 tin <24h / 71 tổng (reuters.com: lỗi, bbci.co.uk: 22/46 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Activist confronts iran’s former crown prince over war on iran...\" (12:42 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "tension",
-        "hormuz_count": 3,
-        "fresh_total": 45,
-        "scanned_at": "2026-05-13T10:26:24Z",
+        "hormuz_count": 5,
+        "fresh_total": 47,
+        "scanned_at": "2026-05-13T13:10:48Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -89,9 +89,9 @@
     {
       "category": "Thị trường",
       "indicator": "VIX",
-      "value": "17.91",
-      "trend": "+3.0% ↑",
-      "trend_raw": 2.99,
+      "value": "18.21",
+      "trend": "+4.7% ↑",
+      "trend_raw": 4.72,
       "threshold": ">30",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -102,7 +102,7 @@
     {
       "category": "",
       "indicator": "VIX futures curve",
-      "value": "Contango nhẹ (spot 17.9 → M1~268)",
+      "value": "Contango nhẹ (spot 18.2 → M1~268)",
       "trend": "-3.4% ↓",
       "trend_raw": -3.36,
       "threshold": "Backwardation",
@@ -141,9 +141,9 @@
     {
       "category": "Vĩ mô",
       "indicator": "10-year yield",
-      "value": "4.46%",
-      "trend": "+1.1% ↑",
-      "trend_raw": 1.06,
+      "value": "4.48%",
+      "trend": "+2.9% ↑",
+      "trend_raw": 2.92,
       "threshold": ">4.5%",
       "status": "warning",
       "statusLabel": "CẢNH GIÁC",
@@ -154,9 +154,9 @@
     {
       "category": "",
       "indicator": "2s10s spread",
-      "value": "+0.66% (3.80% vs 4.46%)",
-      "trend": "+0.03pp ↑",
-      "trend_raw": 0.03,
+      "value": "+0.68% (3.80% vs 4.48%)",
+      "trend": "+0.11pp ↑",
+      "trend_raw": 0.11,
       "threshold": "Đảo ngược âm",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -167,9 +167,9 @@
     {
       "category": "",
       "indicator": "DXY (USD Index)",
-      "value": "98.53",
+      "value": "98.55",
       "trend": "+0.5% ↑",
-      "trend_raw": 0.52,
+      "trend_raw": 0.54,
       "threshold": ">107",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -177,7 +177,7 @@
       "link": "https://finance.yahoo.com/quote/DX-Y.NYB/",
       "note": "US Dollar Index — DXY tăng mạnh >107 = USD siết chặt thanh khoản, rủi ro tài sản rủi ro tăng.",
       "_meta": {
-        "dxy": 98.532
+        "dxy": 98.55
       }
     }
   ],
