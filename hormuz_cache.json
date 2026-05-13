@@ -1,5 +1,5 @@
 {
-  "scanned_at": "2026-05-13T18:56:19.465845+00:00",
+  "scanned_at": "2026-05-13T20:46:04.501384+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
@@ -11,12 +11,12 @@
     "statusLabel": "Bình thường",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 18:56 UTC: 48 tin <24h / 68 tổng (reuters.com: lỗi, bbci.co.uk: 23/43 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Trump-xi summit: china’s help in iran may require us concessions...\" (17:27 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 20:46 UTC: 46 tin <24h / 68 tổng (reuters.com: lỗi, bbci.co.uk: 21/43 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Republicans break ranks, but senate fails to curb trump’s iran war powers...\" (19:53 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
     "_meta": {
       "status_key": "none",
-      "hormuz_count": 2,
-      "fresh_total": 48,
-      "scanned_at": "2026-05-13T18:56:19Z",
+      "hormuz_count": 3,
+      "fresh_total": 46,
+      "scanned_at": "2026-05-13T20:46:04Z",
       "classify_source": "keyword fallback"
     }
   }
