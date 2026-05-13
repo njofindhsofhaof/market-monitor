@@ -1,22 +1,22 @@
 {
-  "scanned_at": "2026-05-13T04:42:32.004751+00:00",
+  "scanned_at": "2026-05-13T07:48:50.767804+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
-    "value": "Bình thường",
+    "value": "Căng thẳng leo thang",
     "trend": "—",
     "trend_raw": null,
     "threshold": "Có phong tỏa",
-    "status": "success",
-    "statusLabel": "Bình thường",
+    "status": "warning",
+    "statusLabel": "CẢNH GIÁC",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 04:42 UTC: 48 tin <24h / 67 tổng (reuters.com: lỗi, bbci.co.uk: 23/42 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran war live: trump travels to china as conflict with tehran looms large...\" (00:00 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 07:48 UTC: 45 tin <24h / 67 tổng (reuters.com: lỗi, bbci.co.uk: 20/42 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Bahrain-led un resolution on strait of hormuz gains support of 112 nations...\" (06:02 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
     "_meta": {
-      "status_key": "none",
-      "hormuz_count": 5,
-      "fresh_total": 48,
-      "scanned_at": "2026-05-13T04:42:32Z",
+      "status_key": "tension",
+      "hormuz_count": 4,
+      "fresh_total": 45,
+      "scanned_at": "2026-05-13T07:48:50Z",
       "classify_source": "keyword fallback"
     }
   }
