@@ -1,12 +1,12 @@
 {
-  "last_updated": "05:59 Wednesday, 13/05/2026 (GMT+7)",
+  "last_updated": "07:09 Wednesday, 13/05/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
       "indicator": "Dầu WTI",
-      "value": "$101.85/thùng",
-      "trend": "-0.4% ↓",
-      "trend_raw": -0.41,
+      "value": "$102.07/thùng",
+      "trend": "-0.2% ↓",
+      "trend_raw": -0.2,
       "threshold": ">95 USD/thùng",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -25,12 +25,12 @@
       "statusLabel": "Bình thường",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 22:59 UTC: 49 tin <24h / 72 tổng (reuters.com: lỗi, bbci.co.uk: 24/47 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Trump downplays us-iran differences as he heads to beijing to meet with xi...\" (21:02 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 00:09 UTC: 49 tin <24h / 72 tổng (reuters.com: lỗi, bbci.co.uk: 24/47 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Trump downplays us-iran differences as he heads to beijing to meet with xi...\" (21:02 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "none",
-        "hormuz_count": 7,
+        "hormuz_count": 5,
         "fresh_total": 49,
-        "scanned_at": "2026-05-12T22:59:43Z",
+        "scanned_at": "2026-05-13T00:09:51Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -128,15 +128,15 @@
     {
       "category": "",
       "indicator": "Put/Call ratio",
-      "value": "1.196",
-      "trend": "-9.3% ↓",
-      "trend_raw": -9.26,
+      "value": "1.241",
+      "trend": "-5.8% ↓",
+      "trend_raw": -5.84,
       "threshold": ">1.1",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
       "source": "Yahoo Finance (SPY options)",
       "link": "https://finance.yahoo.com/quote/SPY/options/",
-      "note": "SPY options exp 2026-05-12 — tỷ lệ put/call đo mức phòng thủ nhà đầu tư"
+      "note": "SPY options exp 2026-05-13 — tỷ lệ put/call đo mức phòng thủ nhà đầu tư"
     },
     {
       "category": "Vĩ mô",
@@ -167,9 +167,9 @@
     {
       "category": "",
       "indicator": "DXY (USD Index)",
-      "value": "98.29",
+      "value": "98.33",
       "trend": "-0.2% ↓",
-      "trend_raw": -0.19,
+      "trend_raw": -0.16,
       "threshold": ">107",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -177,7 +177,7 @@
       "link": "https://finance.yahoo.com/quote/DX-Y.NYB/",
       "note": "US Dollar Index — DXY tăng mạnh >107 = USD siết chặt thanh khoản, rủi ro tài sản rủi ro tăng.",
       "_meta": {
-        "dxy": 98.289
+        "dxy": 98.327
       }
     }
   ],
