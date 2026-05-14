@@ -1,22 +1,22 @@
 {
-  "scanned_at": "2026-05-14T14:08:40.192147+00:00",
+  "scanned_at": "2026-05-14T17:00:24.670485+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
-    "value": "Bình thường",
+    "value": "Căng thẳng leo thang",
     "trend": "—",
     "trend_raw": null,
     "threshold": "Có phong tỏa",
-    "status": "success",
-    "statusLabel": "Bình thường",
+    "status": "warning",
+    "statusLabel": "CẢNH GIÁC",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 14:08 UTC: 43 tin <24h / 73 tổng (reuters.com: lỗi, bbci.co.uk: 18/48 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Brics meeting overshadowed by war on iran...\" (13:45 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 17:00 UTC: 41 tin <24h / 74 tổng (reuters.com: lỗi, bbci.co.uk: 16/49 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Trump, xi discuss strait of hormuz as chinese vessels transit key waterway...\" (14:23 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
     "_meta": {
-      "status_key": "none",
-      "hormuz_count": 4,
-      "fresh_total": 43,
-      "scanned_at": "2026-05-14T14:08:40Z",
+      "status_key": "tension",
+      "hormuz_count": 3,
+      "fresh_total": 41,
+      "scanned_at": "2026-05-14T17:00:24Z",
       "classify_source": "keyword fallback"
     }
   }
