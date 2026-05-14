@@ -1,22 +1,22 @@
 {
-  "scanned_at": "2026-05-14T19:00:17.376180+00:00",
+  "scanned_at": "2026-05-14T20:41:14.257046+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
-    "value": "Căng thẳng leo thang",
+    "value": "Bình thường",
     "trend": "—",
     "trend_raw": null,
     "threshold": "Có phong tỏa",
-    "status": "warning",
-    "statusLabel": "CẢNH GIÁC",
+    "status": "success",
+    "statusLabel": "Bình thường",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 19:00 UTC: 44 tin <24h / 77 tổng (reuters.com: lỗi, bbci.co.uk: 19/52 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran urges brics nations to condemn us-israeli war aggression...\" (17:29 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 20:41 UTC: 46 tin <24h / 78 tổng (reuters.com: lỗi, bbci.co.uk: 21/53 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran, taiwan, and trade: trump’s high‑stakes return to beijing...\" (19:34 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
     "_meta": {
-      "status_key": "tension",
-      "hormuz_count": 4,
-      "fresh_total": 44,
-      "scanned_at": "2026-05-14T19:00:17Z",
+      "status_key": "none",
+      "hormuz_count": 3,
+      "fresh_total": 46,
+      "scanned_at": "2026-05-14T20:41:14Z",
       "classify_source": "keyword fallback"
     }
   }
