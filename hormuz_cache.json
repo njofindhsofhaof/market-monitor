@@ -1,5 +1,5 @@
 {
-  "scanned_at": "2026-05-14T11:51:49.755049+00:00",
+  "scanned_at": "2026-05-14T14:08:40.192147+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
@@ -11,12 +11,12 @@
     "statusLabel": "Bình thường",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 11:51 UTC: 45 tin <24h / 72 tổng (reuters.com: lỗi, bbci.co.uk: 20/47 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Could iran war trigger a hunger crisis?...\" (09:28 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 14:08 UTC: 43 tin <24h / 73 tổng (reuters.com: lỗi, bbci.co.uk: 18/48 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Brics meeting overshadowed by war on iran...\" (13:45 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
     "_meta": {
       "status_key": "none",
       "hormuz_count": 4,
-      "fresh_total": 45,
-      "scanned_at": "2026-05-14T11:51:49Z",
+      "fresh_total": 43,
+      "scanned_at": "2026-05-14T14:08:40Z",
       "classify_source": "keyword fallback"
     }
   }
