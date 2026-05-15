@@ -1,12 +1,12 @@
 {
-  "last_updated": "21:09 Friday, 15/05/2026 (GMT+7)",
+  "last_updated": "23:50 Friday, 15/05/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
       "indicator": "Dầu WTI",
-      "value": "$99.86/thùng",
-      "trend": "+4.6% ↑",
-      "trend_raw": 4.64,
+      "value": "$100.69/thùng",
+      "trend": "+5.5% ↑",
+      "trend_raw": 5.52,
       "threshold": ">95 USD/thùng",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -25,12 +25,12 @@
       "statusLabel": "Bình thường",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 14:09 UTC: 44 tin <24h / 54 tổng (reuters.com: lỗi, bbci.co.uk: 19/29 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Why the iran conflict is becoming a problem for brics...\" (12:21 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 16:50 UTC: 46 tin <24h / 51 tổng (reuters.com: lỗi, bbci.co.uk: 21/26 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran says lack of trust is the main obstacle in us negotiations...\" (16:31 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "none",
-        "hormuz_count": 3,
-        "fresh_total": 44,
-        "scanned_at": "2026-05-15T14:09:06Z",
+        "hormuz_count": 4,
+        "fresh_total": 46,
+        "scanned_at": "2026-05-15T16:50:32Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -54,9 +54,9 @@
     {
       "category": "",
       "indicator": "ETF Flows (SPY+QQQ)",
-      "value": "+14.67B USD (SPY: +24.97B/9d, QQQ: -10.30B/9d)",
-      "trend": "+14.67B ↑",
-      "trend_raw": 14.669999999999998,
+      "value": "+11.24B USD (SPY: +23.39B/9d, QQQ: -12.15B/9d)",
+      "trend": "+11.24B ↑",
+      "trend_raw": 11.24,
       "threshold": "Outflow > −2B USD/7d",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -64,7 +64,7 @@
       "link": "https://etf.com/etfanalytics/etf-fund-flows-tool",
       "note": "SPY: implied shares từ SPDR daily holdings. QQQ: totalAssets/price. Cần 2+ ngày snapshot.",
       "_meta": {
-        "flow_b": 14.669999999999998
+        "flow_b": 11.24
       }
     },
     {
@@ -89,9 +89,9 @@
     {
       "category": "Thị trường",
       "indicator": "VIX",
-      "value": "18.59",
-      "trend": "+8.1% ↑",
-      "trend_raw": 8.14,
+      "value": "18.14",
+      "trend": "+5.5% ↑",
+      "trend_raw": 5.53,
       "threshold": ">30",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -102,9 +102,9 @@
     {
       "category": "",
       "indicator": "VIX futures curve",
-      "value": "Contango nhẹ (spot 18.6 → M1~274)",
-      "trend": "+1.3% ↑",
-      "trend_raw": 1.33,
+      "value": "Contango nhẹ (spot 18.1 → M1~270)",
+      "trend": "-0.1% ↓",
+      "trend_raw": -0.15,
       "threshold": "Backwardation",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -115,9 +115,9 @@
     {
       "category": "",
       "indicator": "HYG/TLT ratio",
-      "value": "0.9503",
-      "trend": "+2.1% ↑",
-      "trend_raw": 2.07,
+      "value": "0.9500",
+      "trend": "+2.0% ↑",
+      "trend_raw": 2.04,
       "threshold": "Giảm >5%/tuần",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -128,12 +128,12 @@
     {
       "category": "",
       "indicator": "Put/Call ratio",
-      "value": "1.537",
-      "trend": "+47.5% ↑",
-      "trend_raw": 47.5,
+      "value": "0.934",
+      "trend": "-10.4% ↓",
+      "trend_raw": -10.36,
       "threshold": ">1.1",
-      "status": "danger",
-      "statusLabel": "CẢNH BÁO",
+      "status": "success",
+      "statusLabel": "Bình thường",
       "source": "Yahoo Finance (SPY options)",
       "link": "https://finance.yahoo.com/quote/SPY/options/",
       "note": "SPY options exp 2026-05-15 — tỷ lệ put/call đo mức phòng thủ nhà đầu tư"
@@ -141,9 +141,9 @@
     {
       "category": "Vĩ mô",
       "indicator": "10-year yield",
-      "value": "4.58%",
-      "trend": "+4.9% ↑",
-      "trend_raw": 4.93,
+      "value": "4.59%",
+      "trend": "+5.2% ↑",
+      "trend_raw": 5.16,
       "threshold": ">4.5%",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -154,9 +154,9 @@
     {
       "category": "",
       "indicator": "2s10s spread",
-      "value": "+0.78% (3.80% vs 4.58%)",
+      "value": "+0.79% (3.80% vs 4.59%)",
       "trend": "+0.20pp ↑",
-      "trend_raw": 0.195,
+      "trend_raw": 0.205,
       "threshold": "Đảo ngược âm",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -167,9 +167,9 @@
     {
       "category": "",
       "indicator": "DXY (USD Index)",
-      "value": "99.26",
+      "value": "99.21",
       "trend": "+1.4% ↑",
-      "trend_raw": 1.45,
+      "trend_raw": 1.4,
       "threshold": ">107",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -177,38 +177,39 @@
       "link": "https://finance.yahoo.com/quote/DX-Y.NYB/",
       "note": "US Dollar Index — DXY tăng mạnh >107 = USD siết chặt thanh khoản, rủi ro tài sản rủi ro tăng.",
       "_meta": {
-        "dxy": 99.263
+        "dxy": 99.212
       }
     }
   ],
   "risk": {
-    "score": 48,
-    "base_score": 39,
-    "multiplier": 1.25,
+    "score": 49,
+    "base_score": 35,
+    "multiplier": 1.4,
     "level": "CẢNH GIÁC",
     "color": "warning",
     "active_leads": [
-      "COT short ròng > 70% đỉnh lịch sử"
+      "COT short ròng > 70% đỉnh lịch sử",
+      "Dầu WTI > $100/thùng"
     ],
     "breakdown": {
-      "geo": 51.0,
+      "geo": 54.0,
       "inst": 40.0,
-      "market": 40.2,
-      "macro": 24.0
+      "market": 28.2,
+      "macro": 27.0
     },
     "indicator_scores": {
-      "oil": 8.5,
+      "oil": 9,
       "hormuz": 0,
       "cot": 10,
       "etf_flow": 0,
       "sentiment": 0,
       "vix_curve": 4,
       "vix": 2.5,
-      "put_call": 10,
+      "put_call": 4,
       "hyg_tlt": 0,
       "spread": 0,
       "dxy": 0,
-      "yield_10y": 8
+      "yield_10y": 9
     }
   }
 }
