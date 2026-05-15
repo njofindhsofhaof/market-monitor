@@ -1,5 +1,5 @@
 {
-  "last_updated": "04:58 Saturday, 16/05/2026 (GMT+7)",
+  "last_updated": "06:02 Saturday, 16/05/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
@@ -25,12 +25,12 @@
       "statusLabel": "CẢNH GIÁC",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 21:58 UTC: 43 tin <24h / 48 tổng (reuters.com: lỗi, bbci.co.uk: 18/23 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Trump calls journalist’s iran reporting ‘treasonous’...\" (20:01 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 23:02 UTC: 43 tin <24h / 48 tổng (reuters.com: lỗi, bbci.co.uk: 18/23 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Trump calls journalist’s iran reporting ‘treasonous’...\" (20:01 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "tension",
         "hormuz_count": 6,
         "fresh_total": 43,
-        "scanned_at": "2026-05-15T21:58:30Z",
+        "scanned_at": "2026-05-15T23:02:36Z",
         "classify_source": "keyword fallback"
       }
     },
