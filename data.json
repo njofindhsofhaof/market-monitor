@@ -1,12 +1,12 @@
 {
-  "last_updated": "03:16 Saturday, 16/05/2026 (GMT+7)",
+  "last_updated": "04:58 Saturday, 16/05/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
       "indicator": "Dầu WTI",
-      "value": "$101.42/thùng",
-      "trend": "+6.3% ↑",
-      "trend_raw": 6.29,
+      "value": "$101.16/thùng",
+      "trend": "+6.0% ↑",
+      "trend_raw": 6.02,
       "threshold": ">95 USD/thùng",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -25,12 +25,12 @@
       "statusLabel": "CẢNH GIÁC",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 20:16 UTC: 44 tin <24h / 48 tổng (reuters.com: lỗi, bbci.co.uk: 19/23 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Trump departs china touting deals, but little clarity on iran or taiwan...\" (17:46 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 21:58 UTC: 43 tin <24h / 48 tổng (reuters.com: lỗi, bbci.co.uk: 18/23 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Trump calls journalist’s iran reporting ‘treasonous’...\" (20:01 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "tension",
         "hormuz_count": 6,
-        "fresh_total": 44,
-        "scanned_at": "2026-05-15T20:16:26Z",
+        "fresh_total": 43,
+        "scanned_at": "2026-05-15T21:58:30Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -89,9 +89,9 @@
     {
       "category": "Thị trường",
       "indicator": "VIX",
-      "value": "18.44",
-      "trend": "+7.3% ↑",
-      "trend_raw": 7.27,
+      "value": "18.43",
+      "trend": "+7.2% ↑",
+      "trend_raw": 7.21,
       "threshold": ">30",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -128,9 +128,9 @@
     {
       "category": "",
       "indicator": "Put/Call ratio",
-      "value": "0.906",
-      "trend": "-20.9% ↓",
-      "trend_raw": -20.94,
+      "value": "0.918",
+      "trend": "-19.9% ↓",
+      "trend_raw": -19.9,
       "threshold": ">1.1",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -167,9 +167,9 @@
     {
       "category": "",
       "indicator": "DXY (USD Index)",
-      "value": "99.31",
+      "value": "99.27",
       "trend": "+1.5% ↑",
-      "trend_raw": 1.5,
+      "trend_raw": 1.46,
       "threshold": ">107",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -177,7 +177,7 @@
       "link": "https://finance.yahoo.com/quote/DX-Y.NYB/",
       "note": "US Dollar Index — DXY tăng mạnh >107 = USD siết chặt thanh khoản, rủi ro tài sản rủi ro tăng.",
       "_meta": {
-        "dxy": 99.309
+        "dxy": 99.27
       }
     }
   ],
