@@ -1,5 +1,5 @@
 {
-  "last_updated": "03:44 Sunday, 17/05/2026 (GMT+7)",
+  "last_updated": "04:48 Sunday, 17/05/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
@@ -25,12 +25,12 @@
       "statusLabel": "CẢNH GIÁC",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 20:43 UTC: 39 tin <24h / 49 tổng (reuters.com: lỗi, bbci.co.uk: 14/24 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Al jazeera’s exclusive report from the strait of hormuz...\" (16:59 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 21:47 UTC: 39 tin <24h / 49 tổng (reuters.com: lỗi, bbci.co.uk: 14/24 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Al jazeera’s exclusive report from the strait of hormuz...\" (16:59 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "tension",
         "hormuz_count": 2,
         "fresh_total": 39,
-        "scanned_at": "2026-05-16T20:43:52Z",
+        "scanned_at": "2026-05-16T21:47:55Z",
         "classify_source": "keyword fallback"
       }
     },
