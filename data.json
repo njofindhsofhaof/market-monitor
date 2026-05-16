@@ -1,12 +1,12 @@
 {
-  "last_updated": "09:47 Saturday, 16/05/2026 (GMT+7)",
+  "last_updated": "12:54 Saturday, 16/05/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
       "indicator": "Dầu WTI",
-      "value": "$101.16/thùng",
-      "trend": "+6.0% ↑",
-      "trend_raw": 6.02,
+      "value": "$105.42/thùng",
+      "trend": "+10.5% ↑",
+      "trend_raw": 10.48,
       "threshold": ">95 USD/thùng",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -25,12 +25,12 @@
       "statusLabel": "CẢNH GIÁC",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 02:47 UTC: 42 tin <24h / 48 tổng (reuters.com: lỗi, bbci.co.uk: 17/23 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran war live: lebanon, israel extend truce; tehran ready for more us talks...\" (00:00 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 05:53 UTC: 40 tin <24h / 48 tổng (reuters.com: lỗi, bbci.co.uk: 15/23 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran war live: lebanon, israel extend truce; tehran ready for more us talks...\" (00:00 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "tension",
-        "hormuz_count": 6,
-        "fresh_total": 42,
-        "scanned_at": "2026-05-16T02:47:39Z",
+        "hormuz_count": 5,
+        "fresh_total": 40,
+        "scanned_at": "2026-05-16T05:53:56Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -182,8 +182,8 @@
     }
   ],
   "risk": {
-    "score": 52,
-    "base_score": 37,
+    "score": 53,
+    "base_score": 38,
     "multiplier": 1.4,
     "level": "CẢNH GIÁC",
     "color": "warning",
@@ -192,13 +192,13 @@
       "Dầu WTI > $100/thùng"
     ],
     "breakdown": {
-      "geo": 70.0,
+      "geo": 76.0,
       "inst": 40.0,
       "market": 28.2,
       "macro": 27.0
     },
     "indicator_scores": {
-      "oil": 9,
+      "oil": 10,
       "hormuz": 4,
       "cot": 10,
       "etf_flow": 0,
