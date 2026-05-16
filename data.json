@@ -1,5 +1,5 @@
 {
-  "last_updated": "20:19 Saturday, 16/05/2026 (GMT+7)",
+  "last_updated": "21:55 Saturday, 16/05/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
@@ -25,12 +25,12 @@
       "statusLabel": "Bình thường",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 13:19 UTC: 46 tin <24h / 54 tổng (reuters.com: lỗi, bbci.co.uk: 21/29 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran war day 78: trump, tehran signal talks as lebanon truce extended...\" (08:02 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 14:55 UTC: 42 tin <24h / 50 tổng (reuters.com: lỗi, bbci.co.uk: 17/25 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran war day 78: trump, tehran signal talks as lebanon truce extended...\" (08:02 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "none",
         "hormuz_count": 2,
-        "fresh_total": 46,
-        "scanned_at": "2026-05-16T13:19:37Z",
+        "fresh_total": 42,
+        "scanned_at": "2026-05-16T14:55:11Z",
         "classify_source": "keyword fallback"
       }
     },
