@@ -1,5 +1,5 @@
 {
-  "last_updated": "06:02 Saturday, 16/05/2026 (GMT+7)",
+  "last_updated": "09:47 Saturday, 16/05/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
@@ -25,12 +25,12 @@
       "statusLabel": "CẢNH GIÁC",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 23:02 UTC: 43 tin <24h / 48 tổng (reuters.com: lỗi, bbci.co.uk: 18/23 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Trump calls journalist’s iran reporting ‘treasonous’...\" (20:01 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 02:47 UTC: 42 tin <24h / 48 tổng (reuters.com: lỗi, bbci.co.uk: 17/23 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran war live: lebanon, israel extend truce; tehran ready for more us talks...\" (00:00 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "tension",
         "hormuz_count": 6,
-        "fresh_total": 43,
-        "scanned_at": "2026-05-15T23:02:36Z",
+        "fresh_total": 42,
+        "scanned_at": "2026-05-16T02:47:39Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -128,15 +128,15 @@
     {
       "category": "",
       "indicator": "Put/Call ratio",
-      "value": "0.918",
-      "trend": "-19.9% ↓",
-      "trend_raw": -19.9,
+      "value": "1.054",
+      "trend": "-8.0% ↓",
+      "trend_raw": -8.03,
       "threshold": ">1.1",
-      "status": "success",
-      "statusLabel": "Bình thường",
+      "status": "warning",
+      "statusLabel": "CẢNH GIÁC",
       "source": "Yahoo Finance (SPY options)",
       "link": "https://finance.yahoo.com/quote/SPY/options/",
-      "note": "SPY options exp 2026-05-15 — tỷ lệ put/call đo mức phòng thủ nhà đầu tư"
+      "note": "SPY options exp 2026-05-18 — tỷ lệ put/call đo mức phòng thủ nhà đầu tư"
     },
     {
       "category": "Vĩ mô",
@@ -154,7 +154,7 @@
     {
       "category": "",
       "indicator": "2s10s spread",
-      "value": "+0.80% (3.80% vs 4.59%)",
+      "value": "+0.78% (3.82% vs 4.59%)",
       "trend": "+0.21pp ↑",
       "trend_raw": 0.211,
       "threshold": "Đảo ngược âm",
