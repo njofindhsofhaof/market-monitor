@@ -1,5 +1,5 @@
 {
-  "last_updated": "22:57 Saturday, 16/05/2026 (GMT+7)",
+  "last_updated": "00:03 Sunday, 17/05/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
@@ -25,12 +25,12 @@
       "statusLabel": "Bình thường",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 15:57 UTC: 42 tin <24h / 50 tổng (reuters.com: lỗi, bbci.co.uk: 17/25 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran war day 78: trump, tehran signal talks as lebanon truce extended...\" (08:02 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 17:03 UTC: 43 tin <24h / 51 tổng (reuters.com: lỗi, bbci.co.uk: 18/26 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran warns of readiness for war and economic costs as us talks falter...\" (15:33 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "none",
         "hormuz_count": 2,
-        "fresh_total": 42,
-        "scanned_at": "2026-05-16T15:57:42Z",
+        "fresh_total": 43,
+        "scanned_at": "2026-05-16T17:03:31Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -54,7 +54,7 @@
     {
       "category": "",
       "indicator": "ETF Flows (SPY+QQQ)",
-      "value": "+6.93B USD (SPY: +15.21B/9d, QQQ: -8.28B/9d)",
+      "value": "+6.93B USD (SPY: +15.21B/10d, QQQ: -8.28B/10d)",
       "trend": "+6.93B ↑",
       "trend_raw": 6.9300000000000015,
       "threshold": "Outflow > −2B USD/7d",
@@ -70,20 +70,20 @@
     {
       "category": "",
       "indicator": "Sentiment (NAAIM vs AAII)",
-      "value": "Retail 0% / Inst 77% → diff -77pp",
-      "trend": "-77pp ↓",
-      "trend_raw": -77.3,
+      "value": "N/A",
+      "trend": "—",
+      "trend_raw": null,
       "threshold": "Retail − Inst > +25pp",
       "status": "success",
       "statusLabel": "Bình thường",
       "source": "NAAIM Exposure Index · AAII Sentiment Survey",
       "link": "https://www.naaim.org/resources/naaim-exposure-index/",
-      "note": "Diff = retailBull% − instBull%. Dương cao = retail quá lạc quan vs tổ chức → contrarian bearish signal.",
+      "note": "Không lấy được dữ liệu: AAII: Không lấy được AAII data từ Stooq hoặc aaii.com",
       "_meta": {
         "naaim": 77.34,
         "inst_bull": 77.3,
-        "aaii_bull": 0.0,
-        "aaii_bear": 0.0
+        "aaii_bull": null,
+        "aaii_bear": null
       }
     },
     {
@@ -129,8 +129,8 @@
       "category": "",
       "indicator": "Put/Call ratio",
       "value": "1.054",
-      "trend": "-8.0% ↓",
-      "trend_raw": -8.03,
+      "trend": "+21.1% ↑",
+      "trend_raw": 21.15,
       "threshold": ">1.1",
       "status": "warning",
       "statusLabel": "CẢNH GIÁC",
@@ -182,8 +182,8 @@
     }
   ],
   "risk": {
-    "score": 50,
-    "base_score": 36,
+    "score": 52,
+    "base_score": 37,
     "multiplier": 1.4,
     "level": "CẢNH GIÁC",
     "color": "warning",
@@ -193,7 +193,7 @@
     ],
     "breakdown": {
       "geo": 60.0,
-      "inst": 40.0,
+      "inst": 46.0,
       "market": 28.2,
       "macro": 27.0
     },
@@ -202,7 +202,7 @@
       "hormuz": 0,
       "cot": 10,
       "etf_flow": 0,
-      "sentiment": 0,
+      "sentiment": 2,
       "vix_curve": 4,
       "vix": 2.5,
       "put_call": 4,
