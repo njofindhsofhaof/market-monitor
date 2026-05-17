@@ -1,9 +1,9 @@
 {
-  "scanned_at": "2026-05-17T02:56:38.514376+00:00",
+  "scanned_at": "2026-05-17T06:24:44.919999+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
-    "value": "Căng thẳng leo thang",
+    "value": "Có đề cập — theo dõi thêm",
     "trend": "—",
     "trend_raw": null,
     "threshold": "Có phong tỏa",
@@ -11,12 +11,12 @@
     "statusLabel": "CẢNH GIÁC",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 02:56 UTC: 37 tin <24h / 49 tổng (reuters.com: lỗi, bbci.co.uk: 12/24 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran war live: tehran plans tolls in hormuz; trump warns of ‘very bad time’...\" (00:00 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 06:24 UTC: 38 tin <24h / 50 tổng (reuters.com: lỗi, bbci.co.uk: 13/25 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran war live: tehran plans tolls in hormuz; trump warns of ‘very bad time’...\" (00:00 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
     "_meta": {
       "status_key": "tension",
-      "hormuz_count": 2,
-      "fresh_total": 37,
-      "scanned_at": "2026-05-17T02:56:38Z",
+      "hormuz_count": 1,
+      "fresh_total": 38,
+      "scanned_at": "2026-05-17T06:24:44Z",
       "classify_source": "keyword fallback"
     }
   }
