@@ -1,9 +1,9 @@
 {
-  "scanned_at": "2026-05-17T09:04:11.992481+00:00",
+  "scanned_at": "2026-05-17T11:05:13.550782+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
-    "value": "Có đề cập — theo dõi thêm",
+    "value": "Căng thẳng leo thang",
     "trend": "—",
     "trend_raw": null,
     "threshold": "Có phong tỏa",
@@ -11,12 +11,12 @@
     "statusLabel": "CẢNH GIÁC",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 09:04 UTC: 43 tin <24h / 50 tổng (reuters.com: lỗi, bbci.co.uk: 18/25 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran war day 79: tehran to unveil hormuz toll plan; israel bombs lebanon...\" (07:19 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 11:05 UTC: 43 tin <24h / 50 tổng (reuters.com: lỗi, bbci.co.uk: 18/25 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Al jazeera reports from strait of hormuz on iran’s plan to manage shipping...\" (08:56 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
     "_meta": {
       "status_key": "tension",
-      "hormuz_count": 3,
+      "hormuz_count": 4,
       "fresh_total": 43,
-      "scanned_at": "2026-05-17T09:04:11Z",
+      "scanned_at": "2026-05-17T11:05:13Z",
       "classify_source": "keyword fallback"
     }
   }
