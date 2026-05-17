@@ -1,5 +1,5 @@
 {
-  "last_updated": "00:03 Monday, 18/05/2026 (GMT+7)",
+  "last_updated": "02:07 Monday, 18/05/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
@@ -25,12 +25,12 @@
       "statusLabel": "Bình thường",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 17:03 UTC: 39 tin <24h / 52 tổng (reuters.com: lỗi, bbci.co.uk: 14/27 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iranian civilians get defence training...\" (16:08 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 19:07 UTC: 39 tin <24h / 52 tổng (reuters.com: lỗi, bbci.co.uk: 14/27 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iranian civilians get defence training...\" (16:08 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "none",
         "hormuz_count": 1,
         "fresh_total": 39,
-        "scanned_at": "2026-05-17T17:03:38Z",
+        "scanned_at": "2026-05-17T19:07:28Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -54,9 +54,9 @@
     {
       "category": "",
       "indicator": "ETF Flows (SPY+QQQ)",
-      "value": "+17.11B USD (SPY: +18.29B/10d, QQQ: -1.18B/10d)",
-      "trend": "+17.11B ↑",
-      "trend_raw": 17.11,
+      "value": "+20.59B USD (SPY: +19.16B/9d, QQQ: +1.43B/9d)",
+      "trend": "+20.59B ↑",
+      "trend_raw": 20.59,
       "threshold": "Outflow > −2B USD/7d",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -64,7 +64,7 @@
       "link": "https://etf.com/etfanalytics/etf-fund-flows-tool",
       "note": "SPY: implied shares từ SPDR daily holdings. QQQ: totalAssets/price. Cần 2+ ngày snapshot.",
       "_meta": {
-        "flow_b": 17.11
+        "flow_b": 20.59
       }
     },
     {
