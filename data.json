@@ -1,5 +1,5 @@
 {
-  "last_updated": "22:58 Sunday, 17/05/2026 (GMT+7)",
+  "last_updated": "00:03 Monday, 18/05/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
@@ -17,20 +17,20 @@
     {
       "category": "",
       "indicator": "Xung đột Hormuz",
-      "value": "Căng thẳng leo thang",
+      "value": "Bình thường",
       "trend": "—",
       "trend_raw": null,
       "threshold": "Có phong tỏa",
-      "status": "warning",
-      "statusLabel": "CẢNH GIÁC",
+      "status": "success",
+      "statusLabel": "Bình thường",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 15:58 UTC: 40 tin <24h / 51 tổng (reuters.com: lỗi, bbci.co.uk: 15/26 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Al jazeera reports from strait of hormuz on iran’s plan to manage shipping...\" (08:56 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 17:03 UTC: 39 tin <24h / 52 tổng (reuters.com: lỗi, bbci.co.uk: 14/27 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iranian civilians get defence training...\" (16:08 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
-        "status_key": "tension",
-        "hormuz_count": 2,
-        "fresh_total": 40,
-        "scanned_at": "2026-05-17T15:58:00Z",
+        "status_key": "none",
+        "hormuz_count": 1,
+        "fresh_total": 39,
+        "scanned_at": "2026-05-17T17:03:38Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -54,7 +54,7 @@
     {
       "category": "",
       "indicator": "ETF Flows (SPY+QQQ)",
-      "value": "+17.11B USD (SPY: +18.29B/9d, QQQ: -1.18B/9d)",
+      "value": "+17.11B USD (SPY: +18.29B/10d, QQQ: -1.18B/10d)",
       "trend": "+17.11B ↑",
       "trend_raw": 17.11,
       "threshold": "Outflow > −2B USD/7d",
@@ -129,8 +129,8 @@
       "category": "",
       "indicator": "Put/Call ratio",
       "value": "1.054",
-      "trend": "+21.1% ↑",
-      "trend_raw": 21.15,
+      "trend": "-8.3% ↓",
+      "trend_raw": -8.35,
       "threshold": ">1.1",
       "status": "warning",
       "statusLabel": "CẢNH GIÁC",
@@ -182,8 +182,8 @@
     }
   ],
   "risk": {
-    "score": 52,
-    "base_score": 37,
+    "score": 49,
+    "base_score": 35,
     "multiplier": 1.4,
     "level": "CẢNH GIÁC",
     "color": "warning",
@@ -192,14 +192,14 @@
       "Dầu WTI > $100/thùng"
     ],
     "breakdown": {
-      "geo": 70.0,
+      "geo": 54.0,
       "inst": 40.0,
       "market": 28.2,
       "macro": 27.0
     },
     "indicator_scores": {
       "oil": 9,
-      "hormuz": 4,
+      "hormuz": 0,
       "cot": 10,
       "etf_flow": 0,
       "sentiment": 0,
