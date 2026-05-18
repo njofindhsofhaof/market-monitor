@@ -1,22 +1,22 @@
 {
-  "scanned_at": "2026-05-18T16:21:55.046425+00:00",
+  "scanned_at": "2026-05-18T18:50:35.142983+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
-    "value": "Có đề cập — theo dõi thêm",
+    "value": "Bình thường",
     "trend": "—",
     "trend_raw": null,
     "threshold": "Có phong tỏa",
-    "status": "warning",
-    "statusLabel": "CẢNH GIÁC",
+    "status": "success",
+    "statusLabel": "Bình thường",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 16:21 UTC: 46 tin <24h / 60 tổng (reuters.com: lỗi, bbci.co.uk: 21/35 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Could the iran war trigger the next debt shock?...\" (15:36 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 18:50 UTC: 47 tin <24h / 62 tổng (reuters.com: lỗi, bbci.co.uk: 22/37 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran’s world cup team arrives in turkiye amid us visa uncertainty...\" (17:42 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
     "_meta": {
-      "status_key": "tension",
-      "hormuz_count": 9,
-      "fresh_total": 46,
-      "scanned_at": "2026-05-18T16:21:55Z",
+      "status_key": "none",
+      "hormuz_count": 7,
+      "fresh_total": 47,
+      "scanned_at": "2026-05-18T18:50:35Z",
       "classify_source": "keyword fallback"
     }
   }
