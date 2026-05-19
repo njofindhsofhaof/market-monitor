@@ -1,12 +1,12 @@
 {
-  "last_updated": "03:48 Wednesday, 20/05/2026 (GMT+7)",
+  "last_updated": "05:15 Wednesday, 20/05/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
       "indicator": "Dầu WTI",
-      "value": "$104.01/thùng",
-      "trend": "+1.8% ↑",
-      "trend_raw": 1.79,
+      "value": "$104.18/thùng",
+      "trend": "+2.0% ↑",
+      "trend_raw": 1.96,
       "threshold": ">95 USD/thùng",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -25,12 +25,12 @@
       "statusLabel": "Bình thường",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 20:48 UTC: 48 tin <24h / 59 tổng (reuters.com: lỗi, bbci.co.uk: 23/34 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"High prices in iran’s stunted housing market leave tenants with few options...\" (18:50 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 22:15 UTC: 46 tin <24h / 60 tổng (reuters.com: lỗi, bbci.co.uk: 21/35 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Video shows oil spill on iranian island after refinery attack last month...\" (21:04 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "none",
         "hormuz_count": 3,
-        "fresh_total": 48,
-        "scanned_at": "2026-05-19T20:48:17Z",
+        "fresh_total": 46,
+        "scanned_at": "2026-05-19T22:15:27Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -169,7 +169,7 @@
       "indicator": "DXY (USD Index)",
       "value": "99.31",
       "trend": "+1.0% ↑",
-      "trend_raw": 1.03,
+      "trend_raw": 1.04,
       "threshold": ">107",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -177,7 +177,7 @@
       "link": "https://finance.yahoo.com/quote/DX-Y.NYB/",
       "note": "US Dollar Index — DXY tăng mạnh >107 = USD siết chặt thanh khoản, rủi ro tài sản rủi ro tăng.",
       "_meta": {
-        "dxy": 99.305
+        "dxy": 99.308
       }
     }
   ],
