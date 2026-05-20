@@ -1,22 +1,22 @@
 {
-  "scanned_at": "2026-05-20T05:03:41.588694+00:00",
+  "scanned_at": "2026-05-20T09:30:53.968993+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
-    "value": "Bình thường",
+    "value": "Có đề cập — theo dõi thêm",
     "trend": "—",
     "trend_raw": null,
     "threshold": "Có phong tỏa",
-    "status": "success",
-    "statusLabel": "Bình thường",
+    "status": "warning",
+    "statusLabel": "CẢNH GIÁC",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 05:03 UTC: 42 tin <24h / 60 tổng (reuters.com: lỗi, bbci.co.uk: 17/35 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Vance: us ‘locked and loaded’ for military action if iran talks fail...\" (01:49 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 09:30 UTC: 46 tin <24h / 66 tổng (reuters.com: lỗi, bbci.co.uk: 21/41 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Chinese supertankers exit hormuz as trump, vance talk up iran deal...\" (07:47 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
     "_meta": {
-      "status_key": "none",
+      "status_key": "tension",
       "hormuz_count": 4,
-      "fresh_total": 42,
-      "scanned_at": "2026-05-20T05:03:41Z",
+      "fresh_total": 46,
+      "scanned_at": "2026-05-20T09:30:53Z",
       "classify_source": "keyword fallback"
     }
   }

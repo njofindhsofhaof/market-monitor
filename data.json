@@ -1,12 +1,12 @@
 {
-  "last_updated": "12:03 Wednesday, 20/05/2026 (GMT+7)",
+  "last_updated": "16:31 Wednesday, 20/05/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
       "indicator": "Dầu WTI",
-      "value": "$103.96/thùng",
-      "trend": "+2.9% ↑",
-      "trend_raw": 2.91,
+      "value": "$102.43/thùng",
+      "trend": "+1.4% ↑",
+      "trend_raw": 1.4,
       "threshold": ">95 USD/thùng",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -17,20 +17,20 @@
     {
       "category": "",
       "indicator": "Xung đột Hormuz",
-      "value": "Bình thường",
+      "value": "Có đề cập — theo dõi thêm",
       "trend": "—",
       "trend_raw": null,
       "threshold": "Có phong tỏa",
-      "status": "success",
-      "statusLabel": "Bình thường",
+      "status": "warning",
+      "statusLabel": "CẢNH GIÁC",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 05:03 UTC: 42 tin <24h / 60 tổng (reuters.com: lỗi, bbci.co.uk: 17/35 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Vance: us ‘locked and loaded’ for military action if iran talks fail...\" (01:49 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 09:30 UTC: 46 tin <24h / 66 tổng (reuters.com: lỗi, bbci.co.uk: 21/41 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Chinese supertankers exit hormuz as trump, vance talk up iran deal...\" (07:47 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
-        "status_key": "none",
+        "status_key": "tension",
         "hormuz_count": 4,
-        "fresh_total": 42,
-        "scanned_at": "2026-05-20T05:03:41Z",
+        "fresh_total": 46,
+        "scanned_at": "2026-05-20T09:30:53Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -89,9 +89,9 @@
     {
       "category": "Thị trường",
       "indicator": "VIX",
-      "value": "18.06",
-      "trend": "+0.4% ↑",
-      "trend_raw": 0.39,
+      "value": "18.02",
+      "trend": "+0.8% ↑",
+      "trend_raw": 0.84,
       "threshold": ">30",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -102,7 +102,7 @@
     {
       "category": "",
       "indicator": "VIX futures curve",
-      "value": "Contango nhẹ (spot 18.1 → M1~266)",
+      "value": "Contango nhẹ (spot 18.0 → M1~266)",
       "trend": "-0.6% ↓",
       "trend_raw": -0.56,
       "threshold": "Backwardation",
@@ -167,9 +167,9 @@
     {
       "category": "",
       "indicator": "DXY (USD Index)",
-      "value": "99.36",
+      "value": "99.41",
       "trend": "+0.9% ↑",
-      "trend_raw": 0.89,
+      "trend_raw": 0.94,
       "threshold": ">107",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -177,13 +177,13 @@
       "link": "https://finance.yahoo.com/quote/DX-Y.NYB/",
       "note": "US Dollar Index — DXY tăng mạnh >107 = USD siết chặt thanh khoản, rủi ro tài sản rủi ro tăng.",
       "_meta": {
-        "dxy": 99.356
+        "dxy": 99.405
       }
     }
   ],
   "risk": {
-    "score": 47,
-    "base_score": 33,
+    "score": 49,
+    "base_score": 35,
     "multiplier": 1.4,
     "level": "CẢNH GIÁC",
     "color": "warning",
@@ -192,14 +192,14 @@
       "Dầu WTI > $100/thùng"
     ],
     "breakdown": {
-      "geo": 51.0,
+      "geo": 64.0,
       "inst": 40.0,
       "market": 27.0,
       "macro": 24.0
     },
     "indicator_scores": {
-      "oil": 8.5,
-      "hormuz": 0,
+      "oil": 8,
+      "hormuz": 4,
       "cot": 10,
       "etf_flow": 0,
       "sentiment": 0,
