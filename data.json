@@ -1,12 +1,12 @@
 {
-  "last_updated": "05:15 Wednesday, 20/05/2026 (GMT+7)",
+  "last_updated": "07:04 Wednesday, 20/05/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
       "indicator": "Dầu WTI",
-      "value": "$104.18/thùng",
-      "trend": "+2.0% ↑",
-      "trend_raw": 1.96,
+      "value": "$103.98/thùng",
+      "trend": "+1.8% ↑",
+      "trend_raw": 1.76,
       "threshold": ">95 USD/thùng",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -25,12 +25,12 @@
       "statusLabel": "Bình thường",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 22:15 UTC: 46 tin <24h / 60 tổng (reuters.com: lỗi, bbci.co.uk: 21/35 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Video shows oil spill on iranian island after refinery attack last month...\" (21:04 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 00:04 UTC: 44 tin <24h / 60 tổng (reuters.com: lỗi, bbci.co.uk: 19/35 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Video shows oil spill on iranian island after refinery attack last month...\" (21:04 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
         "status_key": "none",
-        "hormuz_count": 3,
-        "fresh_total": 46,
-        "scanned_at": "2026-05-19T22:15:27Z",
+        "hormuz_count": 2,
+        "fresh_total": 44,
+        "scanned_at": "2026-05-20T00:04:21Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -128,15 +128,15 @@
     {
       "category": "",
       "indicator": "Put/Call ratio",
-      "value": "1.124",
-      "trend": "-2.9% ↓",
-      "trend_raw": -2.94,
+      "value": "1.054",
+      "trend": "-9.0% ↓",
+      "trend_raw": -8.98,
       "threshold": ">1.1",
-      "status": "danger",
-      "statusLabel": "CẢNH BÁO",
+      "status": "warning",
+      "statusLabel": "CẢNH GIÁC",
       "source": "Yahoo Finance (SPY options)",
       "link": "https://finance.yahoo.com/quote/SPY/options/",
-      "note": "SPY options exp 2026-05-19 — tỷ lệ put/call đo mức phòng thủ nhà đầu tư"
+      "note": "SPY options exp 2026-05-20 — tỷ lệ put/call đo mức phòng thủ nhà đầu tư"
     },
     {
       "category": "Vĩ mô",
@@ -167,9 +167,9 @@
     {
       "category": "",
       "indicator": "DXY (USD Index)",
-      "value": "99.31",
+      "value": "99.28",
       "trend": "+1.0% ↑",
-      "trend_raw": 1.04,
+      "trend_raw": 1.01,
       "threshold": ">107",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -177,13 +177,13 @@
       "link": "https://finance.yahoo.com/quote/DX-Y.NYB/",
       "note": "US Dollar Index — DXY tăng mạnh >107 = USD siết chặt thanh khoản, rủi ro tài sản rủi ro tăng.",
       "_meta": {
-        "dxy": 99.308
+        "dxy": 99.285
       }
     }
   ],
   "risk": {
-    "score": 49,
-    "base_score": 35,
+    "score": 46,
+    "base_score": 33,
     "multiplier": 1.4,
     "level": "CẢNH GIÁC",
     "color": "warning",
@@ -194,7 +194,7 @@
     "breakdown": {
       "geo": 48.0,
       "inst": 40.0,
-      "market": 33.0,
+      "market": 27.0,
       "macro": 24.0
     },
     "indicator_scores": {
@@ -205,7 +205,7 @@
       "sentiment": 0,
       "vix_curve": 4,
       "vix": 2,
-      "put_call": 7,
+      "put_call": 4,
       "hyg_tlt": 0,
       "spread": 0,
       "dxy": 0,
