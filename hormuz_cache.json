@@ -1,22 +1,22 @@
 {
-  "scanned_at": "2026-05-21T11:22:28.443810+00:00",
+  "scanned_at": "2026-05-21T15:21:42.393485+00:00",
   "result": {
     "category": "",
     "indicator": "Xung đột Hormuz",
-    "value": "Bình thường",
+    "value": "Có đề cập — theo dõi thêm",
     "trend": "—",
     "trend_raw": null,
     "threshold": "Có phong tỏa",
-    "status": "success",
-    "statusLabel": "Bình thường",
+    "status": "warning",
+    "statusLabel": "CẢNH GIÁC",
     "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
     "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-    "note": "RSS scan 11:22 UTC: 50 tin <24h / 59 tổng (reuters.com: lỗi, bbci.co.uk: 25/34 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"How chinese, iranian companies profit in russia-occupied ukrainian regions...\" (10:52 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+    "note": "RSS scan 15:21 UTC: 53 tin <24h / 63 tổng (reuters.com: lỗi, bbci.co.uk: 28/38 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Maths behind hormuz toll: is paying iran for transit cheaper than blockade?...\" (13:31 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
     "_meta": {
-      "status_key": "none",
-      "hormuz_count": 6,
-      "fresh_total": 50,
-      "scanned_at": "2026-05-21T11:22:28Z",
+      "status_key": "tension",
+      "hormuz_count": 5,
+      "fresh_total": 53,
+      "scanned_at": "2026-05-21T15:21:42Z",
       "classify_source": "keyword fallback"
     }
   }
