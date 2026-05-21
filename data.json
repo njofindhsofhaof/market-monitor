@@ -1,12 +1,12 @@
 {
-  "last_updated": "06:12 Thursday, 21/05/2026 (GMT+7)",
+  "last_updated": "10:34 Thursday, 21/05/2026 (GMT+7)",
   "indicators": [
     {
       "category": "Địa chính trị",
       "indicator": "Dầu WTI",
-      "value": "$99.00/thùng",
-      "trend": "-2.0% ↓",
-      "trend_raw": -2.0,
+      "value": "$99.23/thùng",
+      "trend": "-1.8% ↓",
+      "trend_raw": -1.77,
       "threshold": ">95 USD/thùng",
       "status": "danger",
       "statusLabel": "CẢNH BÁO",
@@ -17,20 +17,20 @@
     {
       "category": "",
       "indicator": "Xung đột Hormuz",
-      "value": "Có đề cập — theo dõi thêm",
+      "value": "Bình thường",
       "trend": "—",
       "trend_raw": null,
       "threshold": "Có phong tỏa",
-      "status": "warning",
-      "statusLabel": "CẢNH GIÁC",
+      "status": "success",
+      "statusLabel": "Bình thường",
       "source": "Reuters · BBC · Al Jazeera (RSS tự động, 24h)",
       "link": "https://www.reuters.com/search/news?blob=Strait+of+Hormuz",
-      "note": "RSS scan 23:12 UTC: 48 tin <24h / 55 tổng (reuters.com: lỗi, bbci.co.uk: 23/30 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Controlled reopening ends iran’s lengthy stock market shutdown...\" (17:18 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
+      "note": "RSS scan 03:34 UTC: 47 tin <24h / 55 tổng (reuters.com: lỗi, bbci.co.uk: 22/30 tin mới, aljazeera.com: 25/25 tin mới) | Phân tích: keyword fallback | Headline: \"Iran war live: tehran says no surrender to us, diplomacy ‘wiser’ than war...\" (00:00 UTC) | Lỗi feed: reuters.com: HTTPSConnectionPool(host='feeds.reuters.com', port=443): Max retries exceeded with url: /reuters/worldNews (Caused by NameResolutionError(\"HTTPSConnection(host='feeds.reuters.com', port=443): Failed to resolve 'feeds.reuters.com' ([Errno -2] Name or service not known)\"))",
       "_meta": {
-        "status_key": "tension",
+        "status_key": "none",
         "hormuz_count": 2,
-        "fresh_total": 48,
-        "scanned_at": "2026-05-20T23:12:19Z",
+        "fresh_total": 47,
+        "scanned_at": "2026-05-21T03:34:30Z",
         "classify_source": "keyword fallback"
       }
     },
@@ -128,15 +128,15 @@
     {
       "category": "",
       "indicator": "Put/Call ratio",
-      "value": "0.819",
-      "trend": "-47.2% ↓",
-      "trend_raw": -47.2,
+      "value": "0.818",
+      "trend": "-47.3% ↓",
+      "trend_raw": -47.26,
       "threshold": ">1.1",
       "status": "success",
       "statusLabel": "Bình thường",
       "source": "Yahoo Finance (SPY options)",
       "link": "https://finance.yahoo.com/quote/SPY/options/",
-      "note": "SPY options exp 2026-05-20 — tỷ lệ put/call đo mức phòng thủ nhà đầu tư"
+      "note": "SPY options exp 2026-05-21 — tỷ lệ put/call đo mức phòng thủ nhà đầu tư"
     },
     {
       "category": "Vĩ mô",
@@ -154,9 +154,9 @@
     {
       "category": "",
       "indicator": "2s10s spread",
-      "value": "+0.77% (3.80% vs 4.57%)",
+      "value": "+0.75% (3.82% vs 4.57%)",
       "trend": "+0.09pp ↑",
-      "trend_raw": 0.088,
+      "trend_raw": 0.091,
       "threshold": "Đảo ngược âm",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -167,9 +167,9 @@
     {
       "category": "",
       "indicator": "DXY (USD Index)",
-      "value": "99.13",
+      "value": "99.17",
       "trend": "+0.7% ↑",
-      "trend_raw": 0.66,
+      "trend_raw": 0.7,
       "threshold": ">107",
       "status": "success",
       "statusLabel": "Bình thường",
@@ -177,13 +177,13 @@
       "link": "https://finance.yahoo.com/quote/DX-Y.NYB/",
       "note": "US Dollar Index — DXY tăng mạnh >107 = USD siết chặt thanh khoản, rủi ro tài sản rủi ro tăng.",
       "_meta": {
-        "dxy": 99.126
+        "dxy": 99.17
       }
     }
   ],
   "risk": {
-    "score": 55,
-    "base_score": 41,
+    "score": 52,
+    "base_score": 39,
     "multiplier": 1.35,
     "level": "CẢNH GIÁC",
     "color": "warning",
@@ -192,14 +192,14 @@
       "ETF outflow > $5B/7d"
     ],
     "breakdown": {
-      "geo": 64.0,
+      "geo": 48.0,
       "inst": 70.0,
       "market": 23.0,
       "macro": 24.0
     },
     "indicator_scores": {
       "oil": 8,
-      "hormuz": 4,
+      "hormuz": 0,
       "cot": 10,
       "etf_flow": 10,
       "sentiment": 0,
